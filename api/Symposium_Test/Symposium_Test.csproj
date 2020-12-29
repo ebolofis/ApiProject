@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.16.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.16.0\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C0B9A914-99CF-4446-9F02-81E40428B9FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symposium_Test</RootNamespace>
+    <AssemblyName>Symposium_Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Pos_WebApiHlprs">
+      <HintPath>..\Symposium_Helpers\bin\Debug\Pos_WebApiHlprs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAOs\Integration Tests\GenericDAO_IntegrationTest.cs" />
+    <Compile Include="DTs\CashedDTsTest.cs" />
+    <Compile Include="Helpers\UnitTests\JsonSerializers_UnitTest.cs" />
+    <Compile Include="Helpers\UnitTests\Pagination_UnitTest.cs" />
+    <Compile Include="IoCSupportedTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\IntegrationTests\Allowance_IntegrationTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\IntegrationTests\CancelReceipt_IntegrationTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\IntegrationTests\EndOfday_IntegrationTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\IntegrationTests\EstablishTestEnvironment.cs" />
+    <Compile Include="MainLogic\PublicMembers\IntegrationTests\ExternalSystems\ICoupon_IntegretionTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\IntegrationTests\NFCCard_IntegrationTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\MockupTests\EndOfday_MockupTest.cs" />
+    <Compile Include="MainLogic\PublicMembers\MockupTests\ExternalSystems\ICoupon_IMockupTest.cs" />
+    <Compile Include="Mappings\Mappings.cs" />
+    <Compile Include="MockupObjs\EndOfDayDaoMock.cs" />
+    <Compile Include="MockupObjs\GenericDAOMock.cs" />
+    <Compile Include="Models\PosEnvironment.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="TestModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\MockupData\orderStatus.csv" />
+    <None Include="bin\Debug\MockupData\creditTransactions.csv" />
+    <None Include="bin\Debug\MockupData\transferToPms.csv" />
+    <None Include="bin\Debug\MockupData\transactions.csv" />
+    <None Include="bin\Debug\MockupData\orderDetailInvoices.csv" />
+    <None Include="bin\Debug\MockupData\invoices.csv" />
+    <None Include="bin\Debug\MockupData\orderDetailIgredients.csv" />
+    <None Include="bin\Debug\MockupData\orderDetail.csv" />
+    <None Include="bin\Debug\MockupData\order.csv" />
+    <None Include="bin\Debug\MockupData\EndOfDayAnalysis.csv" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMSConnectionLib\Symposium_PmsInterface.csproj">
+      <Project>{89b08db2-bb38-472c-8ea3-0a7cfeecb72f}</Project>
+      <Name>Symposium_PmsInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PosInfo_DB\Symposium_DTOs.csproj">
+      <Project>{e4e12035-70a0-4baa-bf23-65e792958536}</Project>
+      <Name>Symposium_DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_DataBase\Symposium_DataAccess.csproj">
+      <Project>{b3834cca-4ff3-4f38-bf76-781634f92508}</Project>
+      <Name>Symposium_DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Helpers\Symposium_Helpers.csproj">
+      <Project>{ed15b2dd-fb51-4c87-893b-f5820fc5e127}</Project>
+      <Name>Symposium_Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_MainLogic\Symposium_MainLogic.csproj">
+      <Project>{9e49c4f1-a294-4fca-a109-87b8c70fc504}</Project>
+      <Name>Symposium_MainLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Models\Symposium_Models.csproj">
+      <Project>{9fc67b5b-9151-40e2-b5f2-5b88cc716d2b}</Project>
+      <Name>Symposium_Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="bin\Debug\MockupData\Accounts.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.16.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.16.0\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

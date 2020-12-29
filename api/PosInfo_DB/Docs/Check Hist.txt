@@ -1,0 +1,236 @@
+DECLARE @Res TABLE (tblName VARCHAR(200), Records INT)
+INSERT INTO @Res (tblName, Records)
+SELECT 'CreditAccounts_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM CreditAccounts
+	UNION ALL
+	SELECT COUNT(*) FROM CreditAccounts_Hist
+)a
+UNION ALL
+SELECT 'CreditCodes_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM CreditCodes
+	UNION ALL
+	SELECT COUNT(*) FROM CreditCodes_Hist
+)a
+UNION ALL
+SELECT 'CreditTransactions_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM CreditTransactions
+	UNION ALL
+	SELECT COUNT(*) FROM CreditTransactions_Hist
+)a
+UNION ALL
+SELECT 'EndOfDay_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM EndOfDay
+	UNION ALL
+	SELECT COUNT(*) FROM EndOfDay_Hist
+)a
+UNION ALL
+SELECT 'EndOfDayDetail_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM EndOfDayDetail
+	UNION ALL
+	SELECT COUNT(*) FROM EndOfDayDetail_Hist
+)a
+UNION ALL
+SELECT 'EndOfDayPaymentAnalysis_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM EndOfDayPaymentAnalysis
+	UNION ALL
+	SELECT COUNT(*) FROM EndOfDayPaymentAnalysis_Hist
+)a
+UNION ALL
+SELECT 'EndOfDayVoidsAnalysis_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM EndOfDayVoidsAnalysis
+	UNION ALL
+	SELECT COUNT(*) FROM EndOfDayVoidsAnalysis_Hist
+)a
+UNION ALL
+SELECT 'EODAccountToPmsTransfer_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM EODAccountToPmsTransfer
+	UNION ALL
+	SELECT COUNT(*) FROM EODAccountToPmsTransfer_Hist
+)a
+UNION ALL
+SELECT 'ExternalLostOrders_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM ExternalLostOrders
+	UNION ALL
+	SELECT COUNT(*) FROM ExternalLostOrders_Hist
+)a
+UNION ALL
+SELECT 'HitPosOrders_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM HitPosOrders
+	UNION ALL
+	SELECT COUNT(*) FROM HitPosOrders_Hist
+)a
+UNION ALL
+SELECT 'Invoice_Guests_Trans_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM Invoice_Guests_Trans
+	UNION ALL
+	SELECT COUNT(*) FROM Invoice_Guests_Trans_Hist
+)a
+UNION ALL
+SELECT 'Invoices_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM Invoices
+	UNION ALL
+	SELECT COUNT(*) FROM Invoices_Hist
+)a
+UNION ALL
+SELECT 'InvoiceShippingDetails_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM InvoiceShippingDetails
+	UNION ALL
+	SELECT COUNT(*) FROM InvoiceShippingDetails_Hist
+)a
+UNION ALL
+SELECT 'KitchenInstruction_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM KitchenInstruction
+	UNION ALL
+	SELECT COUNT(*) FROM KitchenInstruction_Hist
+)a
+UNION ALL
+SELECT 'KitchenInstructionLogger_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM KitchenInstructionLogger
+	UNION ALL
+	SELECT COUNT(*) FROM KitchenInstructionLogger_Hist
+)a
+UNION ALL
+SELECT 'OnlineRegistration_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OnlineRegistration
+	UNION ALL
+	SELECT COUNT(*) FROM OnlineRegistration_Hist
+)a
+UNION ALL
+SELECT 'Order_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM [Order]
+	UNION ALL
+	SELECT COUNT(*) FROM Order_Hist
+)a
+UNION ALL
+SELECT 'OrderDetail_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrderDetail
+	UNION ALL
+	SELECT COUNT(*) FROM OrderDetail_Hist
+)a
+UNION ALL
+SELECT 'OrderDetailIgredients_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrderDetailIgredients
+	UNION ALL
+	SELECT COUNT(*) FROM OrderDetailIgredients_Hist
+)a
+UNION ALL
+SELECT 'OrderDetailIgredientVatAnal_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrderDetailIgredientVatAnal
+	UNION ALL
+	SELECT COUNT(*) FROM OrderDetailIgredientVatAnal_Hist
+)a
+UNION ALL
+SELECT 'OrderDetailInvoices_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrderDetailInvoices
+	UNION ALL
+	SELECT COUNT(*) FROM OrderDetailInvoices_Hist
+)a
+UNION ALL
+SELECT 'OrderDetailVatAnal_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrderDetailVatAnal
+	UNION ALL
+	SELECT COUNT(*) FROM OrderDetailVatAnal_Hist
+)a
+UNION ALL
+SELECT 'OrdersStaff_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrdersStaff
+	UNION ALL
+	SELECT COUNT(*) FROM OrdersStaff_Hist
+)a
+UNION ALL
+SELECT 'OrderStatus_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM OrderStatus
+	UNION ALL
+	SELECT COUNT(*) FROM OrderStatus_Hist
+)a
+UNION ALL
+SELECT 'StoreMessages_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM StoreMessages
+	UNION ALL
+	SELECT COUNT(*) FROM StoreMessages_Hist
+)a
+UNION ALL
+SELECT 'Transactions_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM Transactions
+	UNION ALL
+	SELECT COUNT(*) FROM Transactions_Hist
+)a
+UNION ALL
+SELECT 'TransferMappingDetails_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM TransferMappingDetails
+	UNION ALL
+	SELECT COUNT(*) FROM TransferMappingDetails_Hist
+)a
+UNION ALL
+SELECT 'TransferMappings_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM TransferMappings
+	UNION ALL
+	SELECT COUNT(*) FROM TransferMappings_Hist
+)a
+UNION ALL
+SELECT 'TransferToPms_Hist', SUM(a.Recs)
+FROM (
+	SELECT COUNT(*) Recs
+	FROM TransferToPms
+	UNION ALL
+	SELECT COUNT(*) FROM TransferToPms_Hist
+)a
+
+SELECT * FROM @Res
+

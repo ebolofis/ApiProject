@@ -1,0 +1,1582 @@
+<?xml version="1.0"?>
+<orders>
+<Order>
+    <Customer>
+        <customerID>1307175</customerID>
+        <ShopcustomerID>ShopcustomerID</ShopcustomerID>
+        <surname>Xrysafi</surname>
+        <name>Sofoklis</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>ΧΡΥΣΑΦΗ</bellname>
+        <tel>+306942952207</tel>
+        <addressID>4784905</addressID>
+        <address>Ιωάννου Δροσοπούλου 227Β</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Πατήσια</region>
+        <zip>11255</zip>
+        <datetime>2019-01-22 14:58:59</datetime>
+        <ll>ll</ll>
+        <floor>1πρωτος</floor>
+        <addresscomments>6942952207</addresscomments>
+        <company_name>company_name</company_name>
+        <timologio>False</timologio>
+        <company>company</company>
+        <company_address>company_address</company_address>
+        <profession>profession</profession>
+        <vat_number>vat_number</vat_number>
+        <doy>doy</doy>
+        <comments>comments</comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68559348</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>15.20</total>
+        <grandTotal>15.20</grandTotal>
+        <Products>
+            <Product flag='0' productID='29' sizeID='1' quantity='2' price='7.60' total='15.20' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>370089</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>spiliopoulos</surname>
+        <name>alexis</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Spiliopoulos</bellname>
+        <tel>+306944911078</tel>
+        <addressID>1518241</addressID>
+        <address>Εθνικής Αντιστάσεως 69</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Νέα Ερυθραία</region>
+        <zip>14671</zip>
+        <datetime>2019-01-22 14:58:42</datetime>
+        <ll></ll>
+        <floor>Monokatoikia</floor>
+        <addresscomments>6944911078</addresscomments>v
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68559302</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>23.70</total>
+        <grandTotal>23.70</grandTotal>
+        <Products>
+            <Product flag='0' productID='1814' sizeID='1' quantity='1' price='4.90' total='4.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='368' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1740' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='209' flag='-1' price='0' />
+            </Product>
+            <Product flag='0' productID='1408' sizeID='1' quantity='1' price='7.00' total='7.00' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='239' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='204' flag='-1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+            <Product flag='0' productID='43' sizeID='1' quantity='3' price='1.30' total='3.90' featureID='0' offerCode='' itemComments=''>
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>636208</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Βεληβασακης</surname>
+        <name>Μανος</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>βεληβασακη</bellname>
+        <tel>+306983369557</tel>
+        <addressID>5563725</addressID>
+        <address>Δικαιάρχου 90</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Παγκράτι</region>
+        <zip>11632</zip>
+        <datetime>2019-01-22 14:58:03</datetime>
+        <ll></ll>
+        <floor>4ο</floor>
+        <addresscomments>+306983369557</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68559229</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>6.00</total>
+        <grandTotal>6.00</grandTotal>
+        <Products>
+            <Product flag='0' productID='1741' sizeID='1' quantity='1' price='6.00' total='6.00' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1307175</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Xrysafi</surname>
+        <name>Sofoklis</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>δεν λειτουργει να κανει κλησει στον αριθμο</bellname>
+        <tel>+306942952207</tel>
+        <addressID>4784905</addressID>
+        <address>Ιωάννου Δροσοπούλου 227Β</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Πατήσια</region>
+        <zip>11255</zip>
+        <datetime>2019-01-22 14:57:50</datetime>
+        <ll></ll>
+        <floor>1πρωτος</floor>
+        <addresscomments>6942952207</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>να κανει κλησει</comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68559205</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>15.20</total>
+        <grandTotal>15.20</grandTotal>
+        <Products>
+            <Product flag='0' productID='29' sizeID='1' quantity='2' price='7.60' total='15.20' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1350791</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Καψαλη</surname>
+        <name>Ισιδωρα</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>καψαλης</bellname>
+        <tel>+306975920895</tel>
+        <addressID>3415752</addressID>
+        <address>Θερίσου 3</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Γαλάτσι</region>
+        <zip>11146</zip>
+        <datetime>2019-01-22 14:54:16</datetime>
+        <ll></ll>
+        <floor>3</floor>
+        <addresscomments>6975920895</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68558734</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>7.80</total>
+        <grandTotal>7.80</grandTotal>
+        <Products>
+            <Product flag='0' productID='31' sizeID='1' quantity='1' price='7.80' total='7.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='270' flag='1' price='0' />
+                    <Material materialID='239' flag='1' price='0' />
+                    <Material materialID='360' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1067036</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>sampson</surname>
+        <name>rafaela</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>mr &amp; mrs pearl</bellname>
+        <tel>+306971574240</tel>
+        <addressID>4029912</addressID>
+        <address>Πλατεία Εσπερίδων 3</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Γλυφάδα</region>
+        <zip>16674</zip>
+        <datetime>2019-01-22 14:50:21</datetime>
+        <ll></ll>
+        <floor>ισογειο</floor>
+        <addresscomments></addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68558237</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>7.90</total>
+        <grandTotal>7.90</grandTotal>
+        <Products>
+            <Product flag='0' productID='1740' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='204' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1240307</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Xrisanthakopoulou</surname>
+        <name>Giota</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>είναι ξεκλείδωτα κατο</bellname>
+        <tel>+306980063133</tel>
+        <addressID>3106646</addressID>
+        <address>Πατησίων 351</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Κλωναρίδου</region>
+        <zip>11144</zip>
+        <datetime>2019-01-22 14:49:14</datetime>
+        <ll></ll>
+        <floor>3</floor>
+        <addresscomments>6980063133</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68558069</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>14.30</total>
+        <grandTotal>14.30</grandTotal>
+        <Products>
+            <Product flag='0' productID='1589' sizeID='1' quantity='1' price='3.70' total='3.70' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1590' sizeID='1' quantity='1' price='6.50' total='6.50' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1593' sizeID='1' quantity='1' price='4.10' total='4.10' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='354' flag='1' price='0' />
+                    <Material materialID='355' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>342169</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Team</surname>
+        <name>Travel Zone</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Travel Zone</bellname>
+        <tel>+306977717555</tel>
+        <addressID>557908</addressID>
+        <address>Πανδρόσου 50</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Παλαιό Φάληρο</region>
+        <zip>17564</zip>
+        <datetime>2019-01-22 14:47:41</datetime>
+        <ll></ll>
+        <floor>4</floor>
+        <addresscomments>2109484186</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557890</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>7.70</total>
+        <grandTotal>7.70</grandTotal>
+        <Products>
+            <Product flag='0' productID='32' sizeID='1' quantity='1' price='7.70' total='7.70' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='277' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='200' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>29558</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>ΛΕΚΚΑΣ</surname>
+        <name>ΠΑΝΑΓΙΩΤΗΣ</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>FRANK &amp; FAME</bellname>
+        <tel>+306931000112</tel>
+        <addressID>3753635</addressID>
+        <address>Λεωφόρος Κηφισίας 250-254</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Χαλάνδρι</region>
+        <zip>15231</zip>
+        <datetime>2019-01-22 14:47:40</datetime>
+        <ll></ll>
+        <floor>2</floor>
+        <addresscomments>6931000112</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>Όνομα: Λέκκας</comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557885</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>6.80</total>
+        <grandTotal>6.80</grandTotal>
+        <Products>
+            <Product flag='0' productID='1814' sizeID='1' quantity='1' price='6.80' total='6.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='369' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='368' flag='1' price='0' />
+                    <Material materialID='388' flag='1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1294544</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>χανιωτησ</surname>
+        <name>θοδωρησ </name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Χανιωτης</bellname>
+        <tel>+306941644634</tel>
+        <addressID>3248385</addressID>
+        <address>Γυμναστηρίου 2</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Νέα Ερυθραία</region>
+        <zip>14671</zip>
+        <datetime>2019-01-22 14:47:33</datetime>
+        <ll></ll>
+        <floor>μονοκατοικια</floor>
+        <addresscomments>+306941644634</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557873</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>9.20</total>
+        <grandTotal>9.20</grandTotal>
+        <Products>
+            <Product flag='0' productID='41' sizeID='1' quantity='1' price='1.30' total='1.30' featureID='0' offerCode='' itemComments=''>
+            </Product>
+            <Product flag='0' productID='1740' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='204' flag='-1' price='0' />
+                    <Material materialID='200' flag='-1' price='0' />
+                    <Material materialID='209' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1696017</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Jaco</surname>
+        <name>Courtney</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>ΦΑMΕΛΛΟΥ ΓΕΟΡΓΙΑ</bellname>
+        <tel>+306945109692</tel>
+        <addressID>5590450</addressID>
+        <address>Λυκούργου 33</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Καλλιθέα</region>
+        <zip>17676</zip>
+        <datetime>2019-01-22 14:46:04</datetime>
+        <ll></ll>
+        <floor>2</floor>
+        <addresscomments></addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>bring change</comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557684</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>6.40</total>
+        <grandTotal>6.40</grandTotal>
+        <Products>
+            <Product flag='0' productID='1754' sizeID='1' quantity='1' price='5.50' total='5.50' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='295' flag='1' price='0' />
+                    <Material materialID='291' flag='1' price='0' />
+                    <Material materialID='360' flag='1' price='0' />
+                    <Material materialID='319' flag='1' price='0' />
+                    <Material materialID='305' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1457' sizeID='1' quantity='1' price='0.90' total='0.90' featureID='0' offerCode='' itemComments=''>
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>679388</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Μετζογιαννάκης</surname>
+        <name>Γιώργος Μετζογιαννάκης</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>ΜΕΤΖΟΓΙΑΝΝΑΚΗΣ ΓΙΑΝΝΗΣ ΣΤΑΘΟΠΟΥΛΟΥ ΣΟΦΙΑ</bellname>
+        <tel>+306998220854</tel>
+        <addressID>1275472</addressID>
+        <address>Αισχύλου 46</address>
+        <streetno>0</streetno>
+        <region>Πειραιάς, Νίκαια</region>
+        <zip>18452</zip>
+        <datetime>2019-01-22 14:44:23</datetime>
+        <ll></ll>
+        <floor>3ος</floor>
+        <addresscomments>6998220854</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557457</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>9.60</total>
+        <grandTotal>9.60</grandTotal>
+        <Products>
+            <Product flag='0' productID='1414' sizeID='1' quantity='1' price='9.60' total='9.60' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>926400</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Σχιζα</surname>
+        <name>Μαρια</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Σπανος </bellname>
+        <tel>+306994208860</tel>
+        <addressID>2122825</addressID>
+        <address>Κολοκοτρώνη 46</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Νέα Ιωνία</region>
+        <zip>14232</zip>
+        <datetime>2019-01-22 14:44:10</datetime>
+        <ll></ll>
+        <floor>Ισόγειο </floor>
+        <addresscomments>6994208860</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557428</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>10.10</total>
+        <grandTotal>10.10</grandTotal>
+        <Products>
+            <Product flag='0' productID='1897' sizeID='1' quantity='1' price='3.60' total='3.60' featureID='0' offerCode='' itemComments=''>
+            </Product>
+            <Product flag='0' productID='1590' sizeID='1' quantity='1' price='6.50' total='6.50' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>705735</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Παράσχου</surname>
+        <name>Σοφία</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>παρασχος</bellname>
+        <tel>+306940303116</tel>
+        <addressID>1696752</addressID>
+        <address>Απειράνθου 1γ</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Μαρούσι</region>
+        <zip>15126</zip>
+        <datetime>2019-01-22 14:43:52</datetime>
+        <ll></ll>
+        <floor>1ος</floor>
+        <addresscomments>6940303116</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557384</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>15.20</total>
+        <grandTotal>15.20</grandTotal>
+        <Products>
+            <Product flag='0' productID='1590' sizeID='1' quantity='1' price='6.50' total='6.50' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='35' sizeID='1' quantity='1' price='8.70' total='8.70' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='260' flag='1' price='0' />
+                    <Material materialID='233' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1572502</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Δαρσακλή</surname>
+        <name>Χρύσα</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Olive Media (Χρύσα Δαρσακλή) </bellname>
+        <tel>+306957316567</tel>
+        <addressID>5217484</addressID>
+        <address>Λεωφόρος Μεσογείων 2-4</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Πλατεία Μαβίλη</region>
+        <zip>11527</zip>
+        <datetime>2019-01-22 14:43:16</datetime>
+        <ll></ll>
+        <floor>20ος</floor>
+        <addresscomments>6957316567</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>Είναι στον Πύργο Αθηνών </comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557288</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>7.90</total>
+        <grandTotal>7.90</grandTotal>
+        <Products>
+            <Product flag='0' productID='1740' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='209' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>320004</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>ΚΩΤΗΣ</surname>
+        <name>ΣΠΗΛΙΟΣ</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Σπηλιος ΚΩΣΤΗΣ </bellname>
+        <tel>+306977999428</tel>
+        <addressID>728349</addressID>
+        <address>Λιγνάδη 15</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Νέος Κόσμος</region>
+        <zip>17121</zip>
+        <datetime>2019-01-22 14:42:14</datetime>
+        <ll></ll>
+        <floor>1ος</floor>
+        <addresscomments>6977999428</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557134</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>10.80</total>
+        <grandTotal>10.80</grandTotal>
+        <Products>
+            <Product flag='0' productID='1740' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='204' flag='-1' price='0' />
+                    <Material materialID='200' flag='-1' price='0' />
+                    <Material materialID='209' flag='-1' price='0' />
+            </Product>
+            <Product flag='0' productID='1852' sizeID='1' quantity='1' price='2.90' total='2.90' featureID='0' offerCode='' itemComments=''>
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>135050</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Καρδοματέα</surname>
+        <name>Ναυσικά </name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Καρδοματεας</bellname>
+        <tel>+306983778032</tel>
+        <addressID>2150508</addressID>
+        <address>Αγίας ΛαύραςΑ 54</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Γέρακας</region>
+        <zip>15344</zip>
+        <datetime>2019-01-22 14:41:46</datetime>
+        <ll></ll>
+        <floor>0</floor>
+        <addresscomments>2106614409</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557075</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>9.20</total>
+        <grandTotal>9.20</grandTotal>
+        <Products>
+            <Product flag='0' productID='1754' sizeID='1' quantity='1' price='5.50' total='5.50' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='295' flag='1' price='0' />
+                    <Material materialID='360' flag='1' price='0' />
+                    <Material materialID='319' flag='1' price='0' />
+                    <Material materialID='305' flag='1' price='0' />
+                    <Material materialID='291' flag='-1' price='0' />
+            </Product>
+            <Product flag='0' productID='1589' sizeID='1' quantity='1' price='3.70' total='3.70' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>909451</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Daichristou</surname>
+        <name>Georgia</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Δαιχρηστου</bellname>
+        <tel>+306980168902</tel>
+        <addressID>5695035</addressID>
+        <address>Εκάβης 35</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Γαλάτσι</region>
+        <zip>11146</zip>
+        <datetime>2019-01-22 14:41:21</datetime>
+        <ll></ll>
+        <floor>1</floor>
+        <addresscomments>2102927604</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68557020</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>14.50</total>
+        <grandTotal>14.50</grandTotal>
+        <Products>
+            <Product flag='0' productID='1631' sizeID='1' quantity='1' price='6.50' total='6.50' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='238' flag='1' price='0' />
+                    <Material materialID='299' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1414' sizeID='1' quantity='1' price='8.00' total='8.00' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>895893</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>γριβακου</surname>
+        <name>νανσυ</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Γριβάκος </bellname>
+        <tel>+306938874109</tel>
+        <addressID>5675602</addressID>
+        <address>Νάρκισσου 6</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Μεταμόρφωση</region>
+        <zip>14451</zip>
+        <datetime>2019-01-22 14:40:42</datetime>
+        <ll></ll>
+        <floor>1ος</floor>
+        <addresscomments>2102843417</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68556928</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>8.80</total>
+        <grandTotal>8.80</grandTotal>
+        <Products>
+            <Product flag='0' productID='40' sizeID='1' quantity='1' price='8.80' total='8.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='260' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='233' flag='1' price='0' />
+                    <Material materialID='258' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>75462</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Σπιθα</surname>
+        <name>Ευαγγελια</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>4</bellname>
+        <tel>+306947801386</tel>
+        <addressID>949148</addressID>
+        <address>Μητρώου 100</address>
+        <streetno>0</streetno>
+        <region> Πειραιάς</region>
+        <zip>18537</zip>
+        <datetime>2019-01-22 14:38:54</datetime>
+        <ll></ll>
+        <floor>4</floor>
+        <addresscomments>212 1046338</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68556712</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>9.60</total>
+        <grandTotal>9.60</grandTotal>
+        <Products>
+            <Product flag='0' productID='1420' sizeID='1' quantity='1' price='4.60' total='4.60' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='238' flag='1' price='0' />
+                    <Material materialID='368' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1411' sizeID='1' quantity='1' price='5.00' total='5.00' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='238' flag='1' price='0' />
+                    <Material materialID='258' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1303550</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Gaming</surname>
+        <name>XristoZ</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Παπαδόπουλος Κυριακος</bellname>
+        <tel>+306986906906</tel>
+        <addressID>4363793</addressID>
+        <address>Μολδοβανίων 6Γ</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Νέα Ερυθραία</region>
+        <zip>14671</zip>
+        <datetime>2019-01-22 14:35:25</datetime>
+        <ll></ll>
+        <floor>μονοκατοικία</floor>
+        <addresscomments>6986906906</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68556243</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>8.60</total>
+        <grandTotal>8.60</grandTotal>
+        <Products>
+            <Product flag='0' productID='1815' sizeID='1' quantity='1' price='4.90' total='4.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='238' flag='1' price='0' />
+                    <Material materialID='368' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='1589' sizeID='1' quantity='1' price='3.70' total='3.70' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1055389</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Δασκαλοπουλος</surname>
+        <name>Κωσταντινος </name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Ρουσωπουλος</bellname>
+        <tel>+306970189096</tel>
+        <addressID>2374289</addressID>
+        <address>Μαβίλη 31</address>
+        <streetno>0</streetno>
+        <region>Δροσιά, Δροσιά</region>
+        <zip>14572</zip>
+        <datetime>2019-01-22 14:35:02</datetime>
+        <ll></ll>
+        <floor>3ος</floor>
+        <addresscomments>6970189096</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>Υπαρχουν δυο 31, ειναι η πρασινη πορτα με τον κισσο.  </comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68556186</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>13.30</total>
+        <grandTotal>13.30</grandTotal>
+        <Products>
+            <Product flag='0' productID='109' sizeID='1' quantity='1' price='1.70' total='1.70' featureID='0' offerCode='' itemComments=''>
+            </Product>
+            <Product flag='0' productID='37' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='260' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='238' flag='1' price='0' />
+                    <Material materialID='258' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+                    <Material materialID='204' flag='-1' price='0' />
+                    <Material materialID='209' flag='-1' price='0' />
+            </Product>
+            <Product flag='0' productID='1589' sizeID='1' quantity='1' price='3.70' total='3.70' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='280' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1152793</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>TSATSAROS</surname>
+        <name>KONSTANTINOS</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>DOLPHIN</bellname>
+        <tel>+306945944074</tel>
+        <addressID>2724177</addressID>
+        <address>Βουκουρεστίου 11</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Σύνταγμα</region>
+        <zip>10671</zip>
+        <datetime>2019-01-22 14:33:41</datetime>
+        <ll></ll>
+        <floor>2</floor>
+        <addresscomments>6945944074</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>Κωνσταντίνος Τσατσαρος 2ος όροφος Dolphin</comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555998</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>18.00</total>
+        <grandTotal>18.00</grandTotal>
+        <Products>
+            <Product flag='0' productID='42' sizeID='1' quantity='1' price='1.30' total='1.30' featureID='0' offerCode='' itemComments=''>
+            </Product>
+            <Product flag='0' productID='31' sizeID='1' quantity='1' price='7.80' total='7.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='270' flag='1' price='0' />
+                    <Material materialID='239' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='360' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='30' sizeID='1' quantity='1' price='8.90' total='8.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='239' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1286785</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>ΜΠΑΡΗ</surname>
+        <name>ΚΩΝΣΤΑΝΤΙΝΑ </name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>ΜΠΑΡΗ Κ. - ΝΤΟΥΝΙΑΔΑΚΗΣ Δ.</bellname>
+        <tel>+306980655259</tel>
+        <addressID>3196459</addressID>
+        <address>Λυκόφρονος 13</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Άγιος Αρτέμιος</region>
+        <zip>11632</zip>
+        <datetime>2019-01-22 14:33:36</datetime>
+        <ll></ll>
+        <floor>3ος</floor>
+        <addresscomments>6980655259</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555983</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>8.90</total>
+        <grandTotal>8.90</grandTotal>
+        <Products>
+            <Product flag='0' productID='33' sizeID='1' quantity='1' price='8.90' total='8.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='266' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='329' flag='1' price='0' />
+                    <Material materialID='360' flag='1' price='0' />
+                    <Material materialID='368' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>136747</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Κορφιατης</surname>
+        <name>Γρηγορης</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>chorus call</bellname>
+        <tel>+306984207140</tel>
+        <addressID>4407089</addressID>
+        <address>Υμηττού 7</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Παλαιό Φάληρο</region>
+        <zip>17564</zip>
+        <datetime>2019-01-22 14:31:54</datetime>
+        <ll></ll>
+        <floor>4ος</floor>
+        <addresscomments>6984207140</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments>Εταιρεια</comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555768</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>7.90</total>
+        <grandTotal>7.90</grandTotal>
+        <Products>
+            <Product flag='0' productID='1740' sizeID='1' quantity='1' price='7.90' total='7.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1097178</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Αργύρη</surname>
+        <name>Μάλλυ</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Μινι μάρκετ </bellname>
+        <tel>+306971580771</tel>
+        <addressID>2883321</addressID>
+        <address>Πυθαγόρα 2</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Κορυδαλλός</region>
+        <zip>18120</zip>
+        <datetime>2019-01-22 14:27:34</datetime>
+        <ll></ll>
+        <floor>ισογειο</floor>
+        <addresscomments>2104952965</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555176</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>8.80</total>
+        <grandTotal>8.80</grandTotal>
+        <Products>
+            <Product flag='0' productID='40' sizeID='1' quantity='1' price='8.80' total='8.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='247' flag='1' price='0' />
+                    <Material materialID='369' flag='1' price='0' />
+                    <Material materialID='260' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='233' flag='1' price='0' />
+                    <Material materialID='258' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='203' flag='1' price='0' />
+                    <Material materialID='204' flag='-1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>826983</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>kazamia</surname>
+        <name>anastasia</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Kazamia</bellname>
+        <tel>+306944135828</tel>
+        <addressID>2877412</addressID>
+        <address>Βάλτου 6</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Αμπελόκηποι</region>
+        <zip>11526</zip>
+        <datetime>2019-01-22 14:27:31</datetime>
+        <ll></ll>
+        <floor>1os</floor>
+        <addresscomments>6944135828</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555169</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>13.40</total>
+        <grandTotal>13.40</grandTotal>
+        <Products>
+            <Product flag='0' productID='60' sizeID='1' quantity='1' price='0.70' total='0.70' featureID='0' offerCode='' itemComments=''>
+            </Product>
+            <Product flag='0' productID='62' sizeID='1' quantity='1' price='0.00' total='0.00' featureID='0' offerCode='' itemComments=''>
+            </Product>
+            <Product flag='0' productID='1448' sizeID='1' quantity='1' price='4.90' total='4.90' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='310' flag='1' price='0' />
+            </Product>
+            <Product flag='0' productID='31' sizeID='1' quantity='1' price='7.80' total='7.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='270' flag='1' price='0' />
+                    <Material materialID='239' flag='1' price='0' />
+                    <Material materialID='360' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>49548</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Δανιήλ</surname>
+        <name>Δημήτρης</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Δανιήλ </bellname>
+        <tel>+306955423859</tel>
+        <addressID>1366323</addressID>
+        <address>Φθιώτιδος 10Α</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Αμπελόκηποι</region>
+        <zip>11523</zip>
+        <datetime>2019-01-22 14:27:31</datetime>
+        <ll></ll>
+        <floor>4ος</floor>
+        <addresscomments>6955423859</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555165</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>8.30</total>
+        <grandTotal>8.30</grandTotal>
+        <Products>
+            <Product flag='0' productID='29' sizeID='1' quantity='1' price='8.30' total='8.30' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='332' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>1223257</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Θεολόγου</surname>
+        <name>Μαριλένα</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>θεολόγος</bellname>
+        <tel>+306972974823</tel>
+        <addressID>3092247</addressID>
+        <address>Πέτρου Κούσουλα 10-12</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Ηράκλειο</region>
+        <zip>15122</zip>
+        <datetime>2019-01-22 14:27:11</datetime>
+        <ll></ll>
+        <floor>ισόγειο</floor>
+        <addresscomments>+306972974823</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68555113</orderID>
+        <credit>0</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>10.10</total>
+        <grandTotal>10.10</grandTotal>
+        <Products>
+            <Product flag='0' productID='1741' sizeID='1' quantity='1' price='6.00' total='6.00' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='204' flag='1' price='0' />
+                    <Material materialID='200' flag='1' price='0' />
+                    <Material materialID='209' flag='1' price='0' />
+                    <Material materialID='220' flag='1' price='0' />
+                    <Material materialID='219' flag='1' price='0' />
+                    <Material materialID='269' flag='1' price='0' />
+                    <Material materialID='255' flag='1' price='0' />
+                    <Material materialID='307' flag='1' price='0' />
+                    <Material materialID='333' flag='-1' price='0' />
+            </Product>
+            <Product flag='0' productID='1593' sizeID='1' quantity='1' price='4.10' total='4.10' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='355' flag='1' price='0' />
+                    <Material materialID='354' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+<Order>
+    <Customer>
+        <customerID>573702</customerID>
+        <ShopcustomerID></ShopcustomerID>
+        <surname>Χαδουλα</surname>
+        <name>Έλλη</name>
+        <loyaltyID>False</loyaltyID>
+        <bellname>Μαλτζη</bellname>
+        <tel>+306945260124</tel>
+        <addressID>1705774</addressID>
+        <address>Δεμιρδεσίου 159</address>
+        <streetno>0</streetno>
+        <region>Αθήνα, Νέα Ιωνία</region>
+        <zip>14233</zip>
+        <datetime>2019-01-22 14:25:26</datetime>
+        <ll></ll>
+        <floor>1</floor>
+        <addresscomments>6988029149</addresscomments>
+        <company_name></company_name>
+        <timologio>False</timologio>
+        <company></company>
+        <company_address></company_address>
+        <profession></profession>
+        <vat_number></vat_number>
+        <doy></doy>
+        <comments></comments>
+    </Customer>
+    <OrderBody>
+        <orderID>68554863</orderID>
+        <credit>1</credit>
+        <delivery>1</delivery>
+        <origin>e-food</origin>
+        <discount>0.00</discount>
+        <deliverycharge>0.00</deliverycharge>
+        <total>6.80</total>
+        <grandTotal>6.80</grandTotal>
+        <Products>
+            <Product flag='0' productID='149' sizeID='1' quantity='1' price='6.80' total='6.80' featureID='0' offerCode='' itemComments=''>
+                    <Material materialID='356' flag='1' price='0' />
+            </Product>
+        </Products>
+    </OrderBody>
+</Order>
+</orders>

@@ -1,0 +1,20 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Symposium_Test.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Store_NikkiBeach" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{"DataBase":"Pos_NikkiBeach","DataBasePassword":"111111","DataBaseUsername":"sqladmin","DataSource":"sisifos","Id":"dd07eeec-752a-45cf-a219-2a868731f089","IsIntegrated":"true","Password":"12","Role":"role1","Username":"12"}
+</Value>
+    </Setting>
+    <Setting Name="PosInfo" Type="System.Int64" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="Store_DeliveryAgent" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{"DataBase":"DeliveryAgent","DataBasePassword":"111111","DataBaseUsername":"sqladmin","DataSource":"SISIFOS","Id":"dd07eeec-752a-45cf-a229-2a868731f081","IsIntegrated":"true","Password":"12","Role":"role1","Username":"12"}</Value>
+    </Setting>
+    <Setting Name="Store_NikkiBeach_Local" Type="System.String" Scope="User">
+      <Value Profile="(Default)">{"DataBase":"Pos_NikkiBeach","DataBasePassword":"111111","DataBaseUsername":"sa","DataSource":"KMANOLATOS-PC","Id":"dd07eeec-752a-45cf-a219-2a868731f089","IsIntegrated":"true","Password":"12","Role":"role1","Username":"12"}
+</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

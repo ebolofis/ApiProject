@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BARCODEEXISTS" xml:space="preserve">
+    <value>Το barcode {0} υπάρχει</value>
+  </data>
+  <data name="DELETEFAILED" xml:space="preserve">
+    <value>Η διαγραφή απέτυχε</value>
+  </data>
+  <data name="DELIVERYCUSTOMERDELETE" xml:space="preserve">
+    <value>Σφάλμα κατά τη διαγραφή πελάτη Delivery</value>
+  </data>
+  <data name="DELIVERYCUSTOMERDETBYIDS" xml:space="preserve">
+    <value>Σφάλμα κατά την ανάγνωση πελάτη Delivery με id</value>
+  </data>
+  <data name="FAILEDLOADPROMOTIONS" xml:space="preserve">
+    <value>Σφάλμα κατά την ανάκτηση Προτάσεων</value>
+  </data>
+  <data name="FAILEDINSERTPROMOTIONS" xml:space="preserve">
+    <value>Σφάλμα κατά την Εισαγωγή Προτάσεων</value>
+  </data>
+  <data name="OUTOFTRADINGHOURS" xml:space="preserve">
+    <value>Αυτή τη στιγμή δεν μπορούμε να σας εξυπηρετήσουμε προσπαθήστε αργότερα</value>
+  </data>
+  <data name="FAILEDUPDATEPROMOTIONS" xml:space="preserve">
+    <value>Σφάλμα κατά την τροποποίηση Προτάσεων</value>
+  </data>
+  <data name="FAILEDDELETEPROMOTIONS" xml:space="preserve">
+    <value>Σφάλμα κατά την Διαγραφή Προτάσεων</value>
+  </data>
+  <data name="DELIVERYCUSTOMERINSERT" xml:space="preserve">
+    <value>Σφάλμα κατά την εισαγωγή πελάτη Delivery</value>
+  </data>
+  <data name="DELIVERYCUSTOMERLOOKUPS" xml:space="preserve">
+    <value>Σφάλμα κατά τη φόρτωση Lookup δεδομένων  Delivery</value>
+  </data>
+  <data name="DELIVERYCUSTOMERSEARCHPAGED" xml:space="preserve">
+    <value>Σφάλμα κατά την αναζήτηση πελατών Delivery σε σελίδες</value>
+  </data>
+  <data name="DELIVERYCUSTOMERUPDATE" xml:space="preserve">
+    <value>Σφάλμα κατά την ανανέωση πελάτη Delivery</value>
+  </data>
+  <data name="DELIVERYCUSTOMERUPDATEGUEST" xml:space="preserve">
+    <value>Error while updating Guest from Delivery Customer</value>
+  </data>
+  <data name="DELIVERYCUSTOMERUPSERTCUSTOMEREXTCUSTID" xml:space="preserve">
+    <value>Σφάλμα κατά την ανανέωση / εισαγωγή πελάτη Delivery με ExtCustId</value>
+  </data>
+  <data name="DELIVERYORDERSPAGGEDBYSTATE" xml:space="preserve">
+    <value>Σφάλμα κατά τη φόρτωση Delivery παραγγελιών </value>
+  </data>
+  <data name="DELIVERYORDERSSTATECOUNTS" xml:space="preserve">
+    <value>Σφάλμα κατά τη φόρτωση Μετρητών Delivery παραγγελιών</value>
+  </data>
+  <data name="DELIVERYORDERSUPDATESHIPPINGCOORDS" xml:space="preserve">
+    <value>Σφάλμα κατά την ανανέωση στοιχείων αποστολής παραγγελίας σε αλλαγή διεύθυνσης</value>
+  </data>
+  <data name="DUPLICATEVALUESREMOVEDFAILED" xml:space="preserve">
+    <value>Η αφαίρεση διπλών τιμών απέτυχε</value>
+  </data>
+  <data name="ENTRIESALREADYEXISTS" xml:space="preserve">
+    <value>Δεν μπορούν να αποθηκευτούν ήδη υπάρχουσες καταχωρήσεις.</value>
+  </data>
+  <data name="EODIDNULL" xml:space="preserve">
+    <value>Το End of day Id  είναι null!</value>
+  </data>
+  <data name="ERROROCCURED" xml:space="preserve">
+    <value>Προέκυψε ένα σφάλμα!</value>
+  </data>
+  <data name="EXTECRNOTFOUND" xml:space="preserve">
+    <value>Ο εκτυπωτής '{0}' δεν βρέθηκε</value>
+  </data>
+  <data name="FAILED" xml:space="preserve">
+    <value>Απέτυχε</value>
+  </data>
+  <data name="GREATERNUMBER" xml:space="preserve">
+    <value>Ο αριθμός της τωρινής σελίδας πρέπει να είναι 0 ή μεγαλύτερος</value>
+  </data>
+  <data name="GREATERPAGELENGTH" xml:space="preserve">
+    <value>Το μέγεθος της σελίδας πρέπει να είναι 1 ή μεγαλύτερο</value>
+  </data>
+  <data name="INSERTBADMODEL" xml:space="preserve">
+    <value>Λάθος μοντέλο για καταχώρηση</value>
+  </data>
+  <data name="INSERTFAILED" xml:space="preserve">
+    <value>Η καταχώρηση απέτυχε</value>
+  </data>
+  <data name="INVALIDCARDMODEL" xml:space="preserve">
+    <value>Μη έγκυρη κάρτα μοντέλου!</value>
+  </data>
+  <data name="INVALIDDATESECTOR" xml:space="preserve">
+    <value>Μη έγκυρος τομέας ημερομηνίας: {0} {1}</value>
+  </data>
+  <data name="INVALIDROOMSECTOR" xml:space="preserve">
+    <value>Μη έγκυρος τομέας δωματίου: {0}</value>
+  </data>
+  <data name="INVOICECANCELATIONFAILED" xml:space="preserve">
+    <value>Η ακύρωση παραστατικού απέτυχε!</value>
+  </data>
+  <data name="POINTSARENOTENOUGH" xml:space="preserve">
+    <value>Οι πόντοι δεν επαρκούν!</value>
+  </data>
+  <data name="DACANCELFAILED" xml:space="preserve">
+    <value>Η ακύρωση της παραγγελίες δεν μπορεί να πραγματοποιηθεί!</value>
+  </data>
+  <data name="STOREIDAUTHFAILDED" xml:space="preserve">
+    <value>Το StoreId {0} της παραγγελίας διαφέρει από το επιθυμητό! </value>
+  </data>
+  <data name="ORDERCANNOTBEUPDATED" xml:space="preserve">
+    <value>H παραγγελία δεν μπορεί να μεταβληθεί</value>
+  </data>
+  <data name="NOSTOREIDORPOSID" xml:space="preserve">
+    <value>Δεν βρέθηκε StoreId ή PosId</value>
+  </data>
+  <data name="USERLOGINFAILED" xml:space="preserve">
+    <value>Εσφαλμένος Κωδικός ή Όνομα Χρήστη</value>
+  </data>
+  <data name="INVOICECANNOTCANCELED" xml:space="preserve">
+    <value>Το παραστατικό δεν μπορεί να ακυρωθεί!</value>
+  </data>
+  <data name="INVOICETYPENOTFOUND" xml:space="preserve">
+    <value>Ο τύπος του παραστατικού δεν βρέθηκε για το InvoiceTypeId: {0}</value>
+  </data>
+  <data name="MODELDESCRIPTIONNOTCREATED" xml:space="preserve">
+    <value>Δεν είναι δυνατή η δημιουργία μιας περιγραφής μοντέλου. Το ίδιο όνομα μοντέλου '{0}' βρέθηκε για τους τύπους '{1}' και '{2}'. Χρησιμοποίησε το [ModelName] χαρακτηριστικό για να αλλάξεις το όνομα του μοντέλου τουλάχιστον για έναν απο τους τύπους έτσι ώστε να έχει ένα μοναδικό όνομα.</value>
+  </data>
+  <data name="NEGATIVEBALANCE" xml:space="preserve">
+    <value>Το υπόλοιπο των ανθρώπων είναι αρνητικό</value>
+  </data>
+  <data name="NOCLOSINGDATE" xml:space="preserve">
+    <value>Δεν έχει καθοριστεί ημερομηνία λήξης.</value>
+  </data>
+  <data name="NOQUERYIDEXECUTED" xml:space="preserve">
+    <value>Δεν δόθηκε παράμετρος id για εκτέλεση</value>
+  </data>
+  <data name="NOQUERYLISTEXECUTED" xml:space="preserve">
+    <value>Δεν δόθηκε λίστα αναζήτησης για εκτέλεση</value>
+  </data>
+  <data name="NOTFOUND" xml:space="preserve">
+    <value>Δεν βρέθηκε</value>
+  </data>
+  <data name="NULLARGUMENT" xml:space="preserve">
+    <value>Η παράμετρος δεν μπορεί να είναι null: {0}</value>
+  </data>
+  <data name="PRICESMISSMATCHESFAILED" xml:space="preserve">
+    <value>Οι αναντιστοιχίες των τιμών των προϊόντων απέτυχαν</value>
+  </data>
+  <data name="QUERYIDNOTEXIST" xml:space="preserve">
+    <value>Το ερώτημα με το τρέχον id δεν υπάρχει</value>
+  </data>
+  <data name="REGISTRATIONALREADYCLOSED" xml:space="preserve">
+    <value>Η εγγραφή είναι ήδη κλειστή</value>
+  </data>
+  <data name="REGISTRATIONNOTFOUND" xml:space="preserve">
+    <value>Η καταχώρηση δεν βρέθηκε</value>
+  </data>
+  <data name="REPRINTZREPORTFAILED" xml:space="preserve">
+    <value>Η αναφορά επανεκτύπωσης Ζ απέτυχε!</value>
+  </data>
+  <data name="SAVEDELETEDFAILED" xml:space="preserve">
+    <value>Η αποθήκευση των διαγραμμένων αρχείων απέτυχε</value>
+  </data>
+  <data name="STOREDPROCEDUREERRORREASONS" xml:space="preserve">
+    <value>Ενδεχομένως να μην έχει εκτυπωθεί ή να μην έχει πληρωθεί ή έχει ήδη ακυρωθεί ή λάθος τύπος παραστατικού!</value>
+  </data>
+  <data name="STOREDPROCEDURENOTEXECUTE" xml:space="preserve">
+    <value>Η αποθηκευμένη διαδικασία δεν εκτελέστηκε σωστά!</value>
+  </data>
+  <data name="TABLENOTFOUND" xml:space="preserve">
+    <value>Το τραπέζι δεν βρέθηκε!</value>
+  </data>
+  <data name="TOOMANYFOUND" xml:space="preserve">
+    <value>Βρέθηκαν πολλοί</value>
+  </data>
+  <data name="UPDATEFAILED" xml:space="preserve">
+    <value>Η μεταβολή απέτυχε</value>
+  </data>
+  <data name="USERNOTFOUND" xml:space="preserve">
+    <value>Ο χρήστης {0} δεν βρέθηκε.</value>
+  </data>
+  <data name="VATDETAILTOTAL" xml:space="preserve">
+    <value>Το σύνολο των λεπτομερειών του ΦΠΑ δεν ήταν δυνατό να ταιριάξουν με τη λεπτομέρεια του παραστατικού vatid</value>
+  </data>
+  <data name="WRONGASSOCIATION" xml:space="preserve">
+    <value>Λάθος συσχέτιση μεταξύ του Pos και του Client!</value>
+  </data>
+  <data name="WRONGCLIENTCODE" xml:space="preserve">
+    <value>Λάθος o κωδικός του Client!</value>
+  </data>
+  <data name="WRONGIP" xml:space="preserve">
+    <value>Λάθος IP!</value>
+  </data>
+  <data name="MISSING_DELIVERY_ADDRESS" xml:space="preserve">
+    <value>Δεν έχει δηλωθεί διεύθυνση αποστολής</value>
+  </data>
+  <data name="MISSING_DELIVERY_PHONE" xml:space="preserve">
+    <value>Δεν έχει δηλωθεί τηλέφωνο</value>
+  </data>
+  <data name="MISSING_INVOICE_INFO" xml:space="preserve">
+    <value>Παραγγελία τυπου πληρωμής τιμολόγιο χωρίς στοιχεία παραστατικού</value>
+  </data>
+  <data name="MISSING_PRODUCTS_FOR_DELIVERYAGENT_ORDER" xml:space="preserve">
+    <value>Δεν  υπάρχουν προϊόντα για την παραγγελία</value>
+  </data>
+  <data name="MISSING_PRODUCTCATEGORY_FOR_DA" xml:space="preserve">
+    <value>Λείπει η κατηγορία προϊόντος για την παραγγελία {0} και το είδος {1}</value>
+  </data>
+  <data name="MISSING_PRODUCTCODE_FOR_DA" xml:space="preserve">
+    <value>Λείπει ο κωδικός προϊόντος για την παραγγελία {0} και το είδος {1}</value>
+  </data>
+  <data name="MISSING_PRODUCTID_FOR_DA" xml:space="preserve">
+    <value>Λείπει το προϊόν για την παραγγελία {0} και το είδος {1}</value>
+  </data>
+  <data name="MISSING_PRODUCTPRICELIST_FOR_DA" xml:space="preserve">
+    <value>Λείπει ο τιμοκατάλογος προϊόντος για την παραγγελία {0} και το είδος {1}</value>
+  </data>
+  <data name="MISSING_PRODUCTVAT_FOR_DA" xml:space="preserve">
+    <value>Λείπει το Φ.Π.Α. προϊόντος για την παραγγελία {0} και το είδος {1}</value>
+  </data>
+  <data name="DELIVERY_AGENT_INVOICE_NOT_FOUND_FOR_UPDATE" xml:space="preserve">
+    <value>Δεν βρέθηκε Δελτίο Παραγγελίας για την παραγγελία {0}</value>
+  </data>
+  <data name="DELIVERY_ORDER_CAN_NOT_BE_UPDATED" xml:space="preserve">
+    <value>Η παραγγελία {0} δεν μπορεί να ματαβληθεί γιατί έχει ολοκληρωθεί</value>
+  </data>
+  <data name="STAFFNOASSIGNED" xml:space="preserve">
+    <value>Ο Χρήστης δεν έχει αντιστοιχιστεί σε κατάστημα στον DA Server</value>
+  </data>
+  <data name="INVALIDPRICELISTFORITEM" xml:space="preserve">
+    <value>Λάθος τιμοκατάλογος στο είδος {0}</value>
+  </data>
+  <data name="PRICELISTSTORENOFOUND" xml:space="preserve">
+    <value>Δε βρέθηκαν τιμοκατάλογοι συνδεμένοι με το κατάστημα για delivery ή take out</value>
+  </data>
+  <data name="SMALLTOTAL" xml:space="preserve">
+    <value>Η ελλάχιστη παραγγελία δεν μπορεί να είναι μικρότερη του 0.01</value>
+  </data>
+  <data name="STORECLOSE" xml:space="preserve">
+    <value>Το κατάστημα είναι κλειστό.</value>
+  </data>
+  <data name="STORENODELIVERY" xml:space="preserve">
+    <value>Το κατάστημα δεν υποστηρίζει delivery.</value>
+  </data>
+  <data name="STORENOTAKEOUT" xml:space="preserve">
+    <value>Το κατάστημα δεν υποστηρίζει τη λήψη παραγγελιών από τον χώρο του καταστηματος</value>
+  </data>
+  <data name="WRONGDATOTALEFOOD" xml:space="preserve">
+    <value>Ασυμφωνία Συνολικού Ποσού από e-food (έκπτωση). Yπολογίστηκε {0} αντι για {1}.</value>
+  </data>
+  <data name="UNIQUEEMAIL" xml:space="preserve">
+    <value>Το email υπάρχει είδη.</value>
+  </data>
+  <data name="PHONESNULL" xml:space="preserve">
+    <value>Πρέπει να εισαχθεί τουλάχιστον ένα τηλέφωνο</value>
+  </data>
+  <data name="WRONGCUSTOMERIDS" xml:space="preserve">
+    <value>Λανθασμένοι κωδικοί πελάτη</value>
+  </data>
+  <data name="ANONYMOUSCUSTOMERNULLMODEL" xml:space="preserve">
+    <value>Δεν υπάρχει πελάτης στη παραγγελία</value>
+  </data>
+  <data name="WRONGEMAIL" xml:space="preserve">
+    <value>Το email δε βρέθηκε</value>
+  </data>
+  <data name="ADDRESSNOTVALID" xml:space="preserve">
+    <value>Η διεύθυνση δεν έχει αντιστοιχηθεί ή δεν είναι έγκυρη</value>
+  </data>
+  <data name="ADDRNOZIPNOREGION" xml:space="preserve">
+    <value>Η διεύθυνση είναι ελλειπής</value>
+  </data>
+  <data name="ORDERBODYEMPTY" xml:space="preserve">
+    <value>Η Παραγγελία (order body) είναι κενη</value>
+  </data>
+  <data name="PRODUCTHAVENOEXTRA" xml:space="preserve">
+    <value>Το προϊόν '{0}' δεν έχει πρόσθετο '{1}' με κωδ: {2}</value>
+  </data>
+  <data name="PRODUCTNOTFOUND" xml:space="preserve">
+    <value>Το προϊόν με κωδ: {0} δε βρέθηκε. (Η περιγραφή του αντικαταστάθηκε με '{1}')</value>
+  </data>
+  <data name="STORENOTMATCHED" xml:space="preserve">
+    <value>Δεν έχει αντιστοιχηθεί κατάστημα</value>
+  </data>
+  <data name="STORENOTMATCHED2" xml:space="preserve">
+    <value>Δεν έχει αντιστοιχηθεί κατάστημα. Ορίστε πρώτα στη διεύθυνση πελάτη γεωγραφικό μήκος και πλάτος</value>
+  </data>
+  <data name="ADDRAPPROXIMATE" xml:space="preserve">
+    <value>Η γεωγραφική θέση δεν είναι ακριβής. Ελέγξτε τη διεύθυνση.</value>
+  </data>
+  <data name="NOEXTRACODE" xml:space="preserve">
+    <value>Δε βρέθηκε πρόσθετο με κωδ. '{0}'</value>
+  </data>
+  <data name="EXTECRNOTCONNECTED" xml:space="preserve">
+    <value>Ο Εκτυπωτής Καταστήματος (extecr) {0} δεν είναι συνδεμένος</value>
+  </data>
+  <data name="STORENOTSUPPORT" xml:space="preserve">
+    <value>Το κατάστημα αυτή τη στιγμή δεν υποστηρίζει παραγγελίες {0} </value>
+  </data>
+  <data name="WRONGDATOTAL" xml:space="preserve">
+    <value>Λάθος Συνολικό Ποσό. υπολογίστηκε {0} αντι για {1}</value>
+  </data>
+  <data name="PRODUCTNOTFOUNDRICELIST" xml:space="preserve">
+    <value>Το προϊόν με κωδ: {0} δε βρέθηκε στον τιμοκατάλογο αναζήτησης. (Η περιγραφή του αντικαταστάθηκε με '{1}')</value>
+  </data>
+  <data name="MAXLOYALTYPOINTSLIMITREACHED" xml:space="preserve">
+    <value>Δεν μπορεί να πραγματοποιηθεί προσθήκη επιπλέον πόντων διότι το άθροισμα τους ξεπερνάει το μέγιστο επιτρεπτό όριο</value>
+  </data>
+  <data name="UNAUTHORIZEDADMINUSER" xml:space="preserve">
+    <value>Ο χρήστης δεν είναι εξουσιοδοτημένος διαχειριστής</value>
+  </data>
+  <data name="ROOMCHARGEONCHECKEDOUTGUESTDENIED" xml:space="preserve">
+    <value>Δεν μπορεί να γίνει χρέωση δωματίου σε πελάτη που έχει ήδη αναχωρήσει απο το δωμάτιο</value>
+  </data>
+  <data name="DAMESSAGES" xml:space="preserve">
+    <value>Σφάλμα κατά τη φόρτωση των μηνυμάτων!</value>
+  </data>
+  <data name="FAILEDDAMESSAGESDELETE" xml:space="preserve">
+    <value>Σφάλαμα κατά τη διαγραφή των μηνυμάτων!</value>
+  </data>
+  <data name="DACUSTOMERMESSAGES" xml:space="preserve">
+    <value>Σφάλμα κατά την επιλογή μηνυμάτων</value>
+  </data>
+  <data name="DACUSTMESSAGEINSERTION" xml:space="preserve">
+    <value>Σφάλμα κατά την εισαγώγη DA Customer Message</value>
+  </data>
+  <data name="CUSTOMERNOTFOUND" xml:space="preserve">
+    <value>Ο Πελάτης δε βρέθηκε.</value>
+  </data>
+  <data name="INACTIVEPOLYGON" xml:space="preserve">
+    <value>Το κατάστημα αυτή τη στιγμή δεν εξηπηρετεί τη περιοχή για παραγγελίες delivery. Δοκιμάστε take out.</value>
+  </data>
+  <data name="STORENOTFOUND" xml:space="preserve">
+    <value>Δε βρέθηκε κατάστημα για την επιλεγμένη διεύθυνση.</value>
+  </data>
+  <data name="WRONGSTOREID" xml:space="preserve">
+    <value>Λάθος Κατάστημα</value>
+  </data>
+  <data name="WEBPOSREPORTSTAFFLOGININACTIVE" xml:space="preserve">
+    <value>Ο χρήστης είναι ανενεργός</value>
+  </data>
+  <data name="WEBPOSREPORTSTAFFLOGINNOTFOUND" xml:space="preserve">
+    <value>Δε βρέθηκε χρήστης με τα συγκεκριμένα διαπιστευτήρια</value>
+  </data>
+  <data name="WEBPOSREPORTSTAFFLOGINUNAUTHORIZED" xml:space="preserve">
+    <value>Ο χρήστης δεν έχει δικαίωμα προβολής των αναφορών</value>
+  </data>
+  <data name="WEBPOSREPORTSTAFFLOGINNOCREDENTIALS" xml:space="preserve">
+    <value>Δεν έχουν εισαχθεί επαρκή διαπιστευτήρια. Απαιτείται η εισαγωγή ονόματος χρήστη και κωδικού</value>
+  </data>
+  <data name="DACUSTMESSAGEUPDATE" xml:space="preserve">
+    <value>Σφάλμα κατά την ενημέρωση DA Customer Message</value>
+  </data>
+</root>

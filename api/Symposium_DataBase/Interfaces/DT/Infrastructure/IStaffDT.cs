@@ -1,0 +1,82 @@
+﻿using Symposium.Models.Models;
+using Symposium.Models.Models.DeliveryAgent;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Symposium.WebApi.DataAccess.Interfaces.DT
+{
+    public interface IStaffDT
+    {
+        /// <summary>
+        /// Gets all staff from db
+        /// </summary>
+        /// <param name="DBInfo"></param>
+        /// <returns></returns>
+        List<DA_StaffModel> GetAllStaff(DBInfoModel DBInfo);
+
+        /// <summary>
+        /// get all active staff for a specific pos. Assigned Positions and Actions per staff are included
+        /// </summary>
+        /// <param name="storeid"></param>
+        /// <param name="forlogin">always true</param>
+        /// <param name="posid">posinfo.id</param>
+        /// <returns>
+        /// for every staff return: 
+        ///               Id, Code, FirstName, LastName, 
+        ///               list of AssignedPositions,  
+        ///               IsCheckedIn, ImageUri, 
+        ///               list of ActionsId, 
+        ///               list of ActionsDescription, 
+        ///               password, Identification
+        /// </returns>
+        StaffModelsPreview GetStaffs(DBInfoModel Store, string storeid, bool forlogin, long posid);
+
+        /// <summary>
+        /// Return  the DAStore for a specific staff
+        /// </summary>
+        /// <param name="Store">db connection</param>
+        /// <param name="staddId">staff.Id</param>
+        /// <returns></returns>
+        long GetDaStore(DBInfoModel Store, long staddId);
+
+        /// <summary>
+        /// Return's a Staff Model by Id
+        /// </summary>
+        /// <param name="Store"></param>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        StaffModels GetStaffById(DBInfoModel Store, long Id);
+        
+        /// <summary>
+        /// return staff model by code
+        /// </summary>
+        /// <param name="Store">DBInfoModel</param>
+        /// <param name="code">string</param>
+        /// <returns>StaffModels</returns>
+        StaffModels GetStaffByCode(DBInfoModel Store, string code);
+
+        long LoyaltyAdminAuthorization(DBInfoModel DBInfo, string loyaltyadminusername, string loyaltyadminpassword );
+
+        /// <summary>
+        /// check staff credentials supplied from webpos_reports login page to authorize staff to view reports
+        /// </summary>
+        /// <param name="reportsusername">string</param>
+        /// <param name="reportspassword">string</param>
+        /// <returns>bool</returns>
+        bool ReportsAuthorization(DBInfoModel DBInfo, string reportsusername, string reportspassword);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="DBInfo"></param>
+        /// <param name="usr"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        bool externalAppAuth(DBInfoModel DBInfo, string usr, string pass);
+    }
+
+    
+}

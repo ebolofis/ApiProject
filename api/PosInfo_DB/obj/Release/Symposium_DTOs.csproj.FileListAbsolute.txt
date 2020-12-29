@@ -1,0 +1,14 @@
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\PosInfo_DB.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\PosInfo_DB.pdb
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Dapper.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Microsoft.SqlServer.Types.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Symposiummdls.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Newtonsoft.Json.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Symposiummdls.pdb
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Dapper.xml
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Release\Newtonsoft.Json.xml
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Release\Symposium_DTOs.csprojAssemblyReference.cache
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Release\Symposium_DTOs.csproj.CoreCompileInputs.cache
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Release\Symposium_DTOs.csproj.CopyComplete
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Release\PosInfo_DB.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Release\PosInfo_DB.pdb

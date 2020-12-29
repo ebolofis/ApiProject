@@ -1,0 +1,82 @@
+﻿@using Pos_WebApi.Models;
+
+@model List<WebConfig>
+
+@{
+    ViewBag.Title = "WebConfig";
+}
+<script src="~/Scripts/knockout-2.2.0.js"></script>
+
+
+<h2 class="headertekst">WebConfig</h2>
+
+<div data-bind="foreach: $root.configs">
+    <div>
+        <!--ko if: key() != ''-->
+        <label class="labelConfig" data-bind="text: $data.key"></label>
+        <!-- /ko-->
+        <!--ko if: key() == ''-->
+        <input class="inputConfig" data-bind="value: $data.key" />
+        <!-- /ko-->
+        <!-- ko if: value() == true || value() == false -->
+        <input type="checkbox" data-bind="checked: value" />
+        <!-- /ko-->
+        <!-- ko if: value() != true && value() != false -->
+        <input type="text" class="inputConfig" data-bind="value: $data.value" />
+        <!-- /ko-->
+    </div>
+</div>
+<div class="labelConfig">
+  <button data-bind="click: $root.save.bind()">Save</button>
+  @*<button data-bind="click: $root.addKey.bind()">Add</button>*@
+</div>
+
+<script type="text/javascript">
+
+    function viewModel() {
+        var self = this;
+        self.tmp = ko.observable();
+
+        self.configs = ko.observableArray();
+        var dictionary = @Html.Raw(Json.Encode(Model));
+
+        dictionary.forEach(function (item) {
+            var tmp = { key: ko.observable(), value: ko.observable() };
+            tmp.key(item.key);
+            if (item.value == 'true')
+                tmp.value(true);
+            else if (item.value == 'false')
+                tmp.value(false);
+            else
+                tmp.value(item.value);
+            self.configs().push(tmp);
+            debugger;
+        });
+
+        self.addKey = function () {
+            var tmp = { key: ko.observable(''), value: ko.observable() };
+            self.configs().push(tmp);
+            self.configs.valueHasMutated();
+        }
+
+        self.save = function ()
+        {
+            $.ajax({
+                type: "POST",
+                url: '../Home/Save/',
+                dataType: 'json',
+                data: {configs: self.configs()},
+                success: function (data) {
+
+                },
+                error: function (data) {
+
+                }
+            });
+        }
+    }   
+
+    var vm = new viewModel();
+    ko.applyBindings(vm);
+</script>
+

@@ -1,0 +1,236 @@
+﻿{
+  "General": [
+    {
+      "Key": "DA_BaseURL",
+      "Description": "Url of local api. Μόνο για DA client. Ο DA πρέπει να έχει κενή τιμή. πχ:  http://192.168.1.12:8080",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_StoreId",
+      "Description": "guid for Agent DB. O DA επιλέγει την DB από το αρχείο UsersToDatabases.xml βάση της τιμής της DA_StoreId. Μόνο για DA. Ενας DΑ Client πρέπει να έχει κενή τιμη. βλέπε: UsersToDatabases.xml",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_Staff_Username",
+      "Description": "virtual staff's username που υπάρχει στην DB του DA. Στην DB του DA το staff θα πρέπει να συνδεθεί με το κατάστημα, βλ backoffice DA (χρησιμοποιείται για εσωτερική χρήστη του backoffice στο DA). Ενας DΑ Client πρέπει να έχει κενή τιμη.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_Staff_Password",
+      "Description": "virtual staff's password που υπάρχει στην DB του DA. Στην DB του DA το staff θα πρέπει να συνδεθεί με το κατάστημα, βλ backoffice DA  (χρησιμοποιείται για εσωτερική χρήστη του backoffice στο DA). Ενας DΑ Client πρέπει να έχει κενή τιμη.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_Cancel",
+      "Description": "Λίστα με τα statuses, τα οποία μία παραγγελία μπορεί να έχει, ώστε αυτή να είναι δυνατόν να ακυρωθεί. πχ: 0,1,5,11.  (statuses: Received = 0, Preparing(κουζίνα) = 1,Ready = 2,Onroad = 3,Canceled =5,Complete = 6, Returned=7, OnHold=11).  Μόνο για DA.",
+      "Type": "string",
+      "DefaultValue": "0,1,5,11",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "NewDeliveryMask",
+      "Description": "Show different delivery orders depending on their order status.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_OpeningHours",
+      "Description": "Ενεργοποίηση  ελέγχου για το αν οι παραγγελίες του DA είναι εντός των ωρών λειτουργίας",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.63.0"
+    },
+    {
+      "Key": "DA_LoyaltypointsThresholdHours",
+      "Description": "Χρονικό όριο σε hours μετά την εισαγωγή παραγγελίας για τον υπολογισμό πόντων loyalty που προστέθηκαν από αυτή.  Μόνο για DA. ",
+      "Type": "int",
+      "DefaultValue": "1",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_DeleteOnHoldMinutes",
+      "Description": "Χρονικό όριο σε min για να μεταβληθουν παραγγελίες από κατάσταση '11. On Hold' σε κατάσταση '5. Cancel'. Μόνο για DA. ",
+      "Type": "int",
+      "DefaultValue": "15",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_DeleteAfterFailed",
+      "Description": "Χρόνος σε min για διαγραφή παραγγελίας η οποία αποτυγχάνει να μεταφερθεί στο κατάστημα.  Μόνο για DA. ",
+      "Type": "int",
+      "DefaultValue": "120",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_SendToKitchenTime",
+      "Description": " Ο χρόνος σε min για να μεταφερθεί μια παραγγελία με Dealy στη Κουζίνα. Ισχύει η συνάρτηση : Αν [EstTakeOutDate >= (Datetime.Now - DA_SendToKitchenTime)] τότε η παραγγελία μεταφέρεται στη κουζίνα.  Μόνο για DA client",
+      "Type": "int",
+      "DefaultValue": "20",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_GeolocationUseShape",
+      "Description": " Τροποποιεί τον τρόπο δημιουργία πολυγώνου για εύρεση storeid βάση της διεύθυνσης του πελάτη. true: χρήση τιμης shape, false: χρήση των αναλυτικών συντεταγμένων της DA_GeoPolygonsDetails  ",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_AnonymousCustomerId",
+      "Description": "Ορίζουμε το AnonymousCustomerId για πελάτη της Goodys ",
+      "Type": "int",
+      "DefaultValue": 800,
+      "ApiVersion": "5.2.55.0"
+    },
+    {
+      "Key": "DA_OriginalProductName",
+      "Description": "Ορίζουμε αν θέλουμε να κρατήσουμε για τα προϊόντα τη δική μας ονομασία από τη βάση",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.55.0"
+    }
+  ],
+  "AddressSearch": [
+    {
+      "Key": "DA_AddressSearchMode",
+      "Description": "Τρόπος αναζήτησης πελάτων μέσω διεύθυνσης.<br> 0: Χωρίς χρήση Full Text Indexes.<br>  1: Με χρήση Full Text Indexes <br>Βλ. '\\\\sisifos\\ftp\\WebPosDeploy\\Releases\\01_WebPOS_Product_Updates\\Documents\\Customers Search.docx' για επιπλέον πληροφορίες.",
+      "Type": "int",
+      "DefaultValue": "0",
+      "ApiVersion": "5.2.55.0"
+    },
+    {
+      "Key": "DA_AddressSearchStar",
+      "Description": "Οταν DA_AddressSearchMode = 1 και DA_AddressSearchStar = true τότε κατά την αναζήτηση πελάτων μέσω διεύθυνσης, σε κάθε λέξη αναζήτησης προστήθεται αυτόματα στο τέλος ο χαρακτήρας '*'. Εξαιρούνται οι συντομογραφίες και οι αριθμοί.  <br>Βλ. '\\\\sisifos\\ftp\\WebPosDeploy\\Releases\\01_WebPOS_Product_Updates\\Documents\\Customers Search.docx' για επιπλέον πληροφορίες. ",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.2.55.0"
+    },
+    {
+      "Key": "DA_AddressSearchAnd",
+      "Description": "Οταν DA_AddressSearchMode = 1 και DA_AddressSearchAnd = true τότε κατά την αναζήτηση πελάτων μέσω διεύθυνσης, οι λέξεις της διεύθυνσης αναζήτησης συνδέονται με AND μεταξύ τους. Σε διαφορετική περίπτωση οι λέξεις συνδέονται με OR.<br>Το ίδιο ισχύει και για τη σχέση των λέξεων της περιοχής.<br>Βλ. '\\\\sisifos\\ftp\\WebPosDeploy\\Releases\\01_WebPOS_Product_Updates\\Documents\\Customers Search.docx' για επιπλέον πληροφορίες. ",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.2.55.0"
+    }
+  ],
+  "Services": [
+    {
+      "Key": "DA_ServerOrderExec",
+      "Description": "Χρονοπρογραμματισμός για μεταφορά παραγγελιών από τον DA στα καταστήματα. Η κενή τιμή απενεργοποιεί τη διαδικασία. Μόνο για DA. Ενας DΑ Client πρέπει να έχει κενή τιμη. (πχ: για εκτέλεση κάθε 1 min για τις ώρες 12-02: * 0-2,12-23 * * *). <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "* 0-2,12-23 * * *",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_ClientOrderExec",
+      "Description": "Χρονοπρογραμματισμός για ανανέωση της κατάστασης της παραγγελίας από το κατάστημα στον DA. Η κενή τιμή απενεργοποιεί τη διαδικασία.  Μόνο για DA client. Ο DA πρέπει να έχει κενή τιμή.  (πχ: για εκτέλεση κάθε 1 min για τις ώρες 12-02: * 0-2,12-23 * * *).  <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "* 0-2,12-23 * * *",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_UpdateClientTablesExec",
+      "Description": "Χρονοπρογραμματισμός για μεταφορά δεδομένων (product, price lists ...) από τον DA στα καταστήματα. Η κενή τιμή απενεργοποιεί τη διαδικασία.  Μόνο για DA. Ενας DΑ Client πρέπει να έχει κενή τιμη. ( πχ: για εκτέλεση κάθε 30 minutes για τις ώρες 6-12: 0,30 6-12 * * *).  <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "0,30 6-12 * * *",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_SendDelayToKitchenExec",
+      "Description": "Χρονοπρογραμματισμός για μετακίνηση των μεταχρονολογιμένων παραγγελιών (IsDelay) στην κουζίνα. Η κενή τιμή απενεργοποιεί τη διαδικασία.  Μόνο για DA client. Ο DA πρέπει να έχει κενή τιμή. (πχ: για εκτέλεση κάθε 1 min για τις ώρες 12-02: * 0-2,12-23 * * *).  <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "* 0-2,12-23 * * *",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_MakeCustomerAnonymousExec",
+      "Description": "Χρονοπρογραμματισμός για μετατροπή των DA_Customers απο status 'WillBeAnonymous' σε 'IsAnonymous'. Η κενή τιμή απενεργοποιεί τη διαδικασία.   Μόνο για DA. Ενας DΑ Client πρέπει να έχει κενή τιμη. (πχ: για εκτέλεση κάθε μέρα στις  00:00: 0 0 * * *).  <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_DeleteLoyaltyPointsExec",
+      "Description": "Χρονοπρογραμματισμός για διαγραφή παλιών loyalty πόντων DA_LoyalPoints based on oldness. Η κενή τιμή απενεργοποιεί τη διαδικασία.   Μόνο για DA. Ενας DΑ Client πρέπει να έχει κενή τιμη. (πχ: για εκτέλεση κάθε μέρα στις  00:00: 0 0 * * *).  <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "DA_EFoodOrdersExec",
+      "Description": "Χρονοπρογραμματισμός για λήψη παραγγελιών E-Food/Click Delivery/Deliveras/. Η κενή τιμή απενεργοποιεί τη διαδικασία.   Μόνο για DA. Ενας DΑ Client πρέπει να έχει κενή τιμη.  βλ και plugins ExternalDelivery.<br> (πχ: για εκτέλεση κάθε 2 min για τις ώρες 12-02: */2 0-2,12-23 * * *).  <a target=\"_blank\" rel=\"noopener\", \"noreferrer\" href=\"https://crontab-generator.org/\">Δημιουργία cron</a>",
+      "Type": "string",
+      "DefaultValue": "* 0-2,12-23 * * *",
+      "ApiVersion": "4.5.0.0"
+    }
+  ],
+  "DineIn": [
+    {
+      "Key": "DineInPosInfoDetailIdForOrder",
+      "Description": "Ορίζει το παραστατικό (PosInfoDetail) που πρέπει να εκτυπωθεί κατά τη δημιουργία δελτίου παραγγελίας. (Λειτουργία DineIn ΜΟΝΟ) <br>Οι τιμές ορίζονται με βάση τα Id του πίνακα PosInfoDetail.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.40.0"
+    },
+    {
+      "Key": "DineInPosInfoDetailIdForInvoice",
+      "Description": "Ορίζει το παραστατικό (PosInfoDetail) που πρέπει να εκτυπωθεί κατά τη δημιουργία απόδειξης. (Λειτουργία DineIn ΜΟΝΟ) <br>Οι τιμές ορίζονται με βάση τα Id του πίνακα PosInfoDetail.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.41.0"
+    }
+  ],
+  "Efood": [
+    {
+      "Key": "OriginId",
+      "Description": "Oριζει την προέλευση της παραγγελίας: 3 για Efood, 4 για ClickDelivery, και 5 για  Deliveras",
+      "Type": "int",
+      "DefaultValue": 3,
+      "ApiVersion": "1.0.0.0"
+    },
+    {
+      "Key": "Pricelist",
+      "Description": "To Pricelist Id το οποίο θα χρεισημοποιηθεί για τις παραγγελίες από τη συγκεκριμένη  προέλευση",
+      "Type": "int",
+      "DefaultValue": 1,
+      "ApiVersion": "1.0.0.0"
+    },
+    {
+      "Key": "DefaultProductId",
+      "Description": " Default ProductId (To προϊόν πρέπει να περιέχει ένα ExtrasId).<br> Αν το code του προϊόντος που έρχεται από το external delivery system δε βρίσκεται στην DB, τότε το άγνωστο προϊόν αντιστοιχίζεται με το DefaultProductId",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "1.0.0.0"
+    },
+    {
+      "Key": "RemoveRecipeExtras",
+      "Description": "true: στη λίστα των extras δε συμπεριλαμβάνονται όσα ανήκουν στη Συνταγή",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "1.0.0.0"
+    },
+    {
+      "Key": "PhonePrefix",
+      "Description": "Πρόθεμα διεθνών κλήσεων της χώρας. πχ: +30.  Μόνο για DA. ",
+      "Type": "string",
+      "DefaultValue": "+30",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "MobilePrefix",
+      "Description": "Πρόθεμα αριθμών κινητών τηλεφώνων της χώρας. πχ: 69.  Μόνο για DA. ",
+      "Type": "string",
+      "DefaultValue": "69",
+      "ApiVersion": "4.5.0.0"
+    }
+  ]
+}

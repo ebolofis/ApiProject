@@ -1,0 +1,265 @@
+CREATE VIEW CreditAccounts_View AS
+	SELECT YEAR(GETDATE()) nYear, Id, [Description], EndOfDayId, ActivateTS, DeactivateTS
+	FROM CreditAccounts
+	UNION ALL
+	SELECT nYear, Id, [Description], EndOfDayId, ActivateTS, DeactivateTS
+	FROM CreditAccounts_Hist
+
+/************************************************************************************************************/
+CREATE VIEW CreditCodes_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, [Description], Code, [Type], CreditAccountId
+	FROM CreditCodes
+	UNION ALL
+	SELECT nYear, Id, [Description], Code, [Type], CreditAccountId
+	FROM CreditCodes_Hist
+/************************************************************************************************************/
+CREATE VIEW CreditTransactions_View AS
+	SELECT YEAR(GETDATE()) nYear, Id, CreditAccountId, CreditCodeId, Amount, CreationTS, [Type], StaffId, [Description], PosInfoId, EndOfDayId,
+		InvoiceId, TransactionId
+	FROM CreditTransactions
+	UNION ALL
+	SELECT nYear, Id, CreditAccountId, CreditCodeId, Amount, CreationTS, [Type], StaffId, [Description], PosInfoId, EndOfDayId,
+		InvoiceId, TransactionId
+	FROM CreditTransactions_Hist
+/************************************************************************************************************/
+CREATE VIEW EndOfDay_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, FODay, PosInfoId, CloseId, Gross, Net, TicketsCount, ItemCount, TicketAverage, StaffId, 
+		Discount, Barcodes, dtDateTime
+	FROM EndOfDay
+	UNION ALL
+	SELECT nYear,Id, FODay, PosInfoId, CloseId, Gross, Net, TicketsCount, ItemCount, TicketAverage, StaffId, 
+		Discount, Barcodes, dtDateTime
+	FROM EndOfDay_Hist
+/************************************************************************************************************/
+CREATE VIEW EndOfDayDetail_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, EndOfdayId, VatId, VatRate, VatAmount, TaxId, TaxAmount, Gross, Net, Discount
+	FROM EndOfDayDetail
+	UNION ALL
+	SELECT nYear,Id, EndOfdayId, VatId, VatRate, VatAmount, TaxId, TaxAmount, Gross, Net, Discount
+	FROM EndOfDayDetail_Hist
+/************************************************************************************************************/
+CREATE VIEW EndOfDayPaymentAnalysis_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, EndOfDayId, AccountId, Total, [Description], AccountType
+	FROM EndOfDayPaymentAnalysis
+	UNION ALL
+	SELECT nYear,Id, EndOfDayId, AccountId, Total, [Description], AccountType
+	FROM EndOfDayPaymentAnalysis_Hist
+/************************************************************************************************************/
+CREATE VIEW EndOfDayVoidsAnalysis_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, EndOfDayId, AccountId, Total, [Description], AccountType
+	FROM EndOfDayVoidsAnalysis
+	UNION ALL
+	SELECT nYear,Id, EndOfDayId, AccountId, Total, [Description], AccountType
+	FROM EndOfDayVoidsAnalysis_Hist
+/************************************************************************************************************/
+CREATE VIEW EODAccountToPmsTransfer_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, PosInfoId, AccountId, PmsRoom, [Description], [Status], PmsDepartmentId, PmsDepDescription
+	FROM EODAccountToPmsTransfer
+	UNION ALL
+	SELECT nYear,Id, PosInfoId, AccountId, PmsRoom, [Description], [Status], PmsDepartmentId, PmsDepDescription
+	FROM EODAccountToPmsTransfer_Hist
+/************************************************************************************************************/
+CREATE VIEW ExternalLostOrders_View AS
+	SELECT YEAR(GETDATE()) nYear,OrderNo, ExtType
+	FROM ExternalLostOrders
+	UNION ALL
+	SELECT nYear,OrderNo, ExtType
+	FROM ExternalLostOrders_Hist
+/************************************************************************************************************/
+CREATE VIEW HitPosOrders_View AS
+	SELECT YEAR(GETDATE()) nYear,CurId, id, orderno, pos, shop_id, item_group, item_code, item_descr, item_subgroup, item_vat, cont_line, sp,
+       prep_time, start_time, load_time, otd, qty, amount, total, waiter, ttable, listino, receipt, member, priority, kdws, ready, rqty,
+       nieko_flag, [status], status_time, rest_time, room, payment, [type], comments, mqty, rec_time_start, status_time2, status_time3,
+       status_time4, status_time5, fo_day, delivery_time, agent, flag_up, [sent], correct, completed, CreationDate
+	FROM HitPosOrders
+	UNION ALL
+	SELECT nYear,CurId, id, orderno, pos, shop_id, item_group, item_code, item_descr, item_subgroup, item_vat, cont_line, sp,
+       prep_time, start_time, load_time, otd, qty, amount, total, waiter, ttable, listino, receipt, member, priority, kdws, ready, rqty,
+       nieko_flag, [status], status_time, rest_time, room, payment, [type], comments, mqty, rec_time_start, status_time2, status_time3,
+       status_time4, status_time5, fo_day, delivery_time, agent, flag_up, [sent], correct, completed, CreationDate
+	FROM HitPosOrders_Hist
+/************************************************************************************************************/
+CREATE VIEW Invoice_Guests_Trans_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, InvoiceId, GuestId, TransactionId
+	FROM Invoice_Guests_Trans
+	UNION ALL
+	SELECT nYear,Id, InvoiceId, GuestId, TransactionId
+	FROM Invoice_Guests_Trans_Hist
+/************************************************************************************************************/
+CREATE VIEW Invoices_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, [Description], InvoiceTypeId, [Counter], [Day], IsPrinted, GuestId, Total, Discount, Vat, Tax, Net, StaffId,
+       Cover, TableId, PosInfoId, PdaModuleId, ClientPosId, EndOfDayId, PosInfoDetailId, IsVoided, IsDeleted, DiscountRemark, PaymentsDesc,
+       IsPaid, PaidTotal, Rooms, OrderNo, IsInvoiced, Hashcode, TableSum, CashAmount, BuzzerNumber
+	FROM Invoices
+	UNION ALL
+	SELECT nYear,Id, [Description], InvoiceTypeId, [Counter], [Day], IsPrinted, GuestId, Total, Discount, Vat, Tax, Net, StaffId,
+       Cover, TableId, PosInfoId, PdaModuleId, ClientPosId, EndOfDayId, PosInfoDetailId, IsVoided, IsDeleted, DiscountRemark, PaymentsDesc,
+       IsPaid, PaidTotal, Rooms, OrderNo, IsInvoiced, Hashcode, TableSum, CashAmount, BuzzerNumber
+	FROM Invoices_Hist
+/************************************************************************************************************/
+CREATE VIEW InvoiceShippingDetails_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, InvoicesId, ShippingAddressId, ShippingAddress, ShippingCity, ShippingZipCode, BillingAddressId,
+       BillingAddress, BillingCity, BillingZipCode, [Floor], CustomerRemarks, StoreRemarks, CustomerName, Longtitude, Latitude, Phone
+	FROM InvoiceShippingDetails
+	UNION ALL
+	SELECT nYear,Id, InvoicesId, ShippingAddressId, ShippingAddress, ShippingCity, ShippingZipCode, BillingAddressId,
+       BillingAddress, BillingCity, BillingZipCode, [Floor], CustomerRemarks, StoreRemarks, CustomerName, Longtitude, Latitude, Phone
+	FROM InvoiceShippingDetails_Hist
+/************************************************************************************************************/
+CREATE VIEW KitchenInstructionLogger_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, KicthcenInstuctionId, StaffId, PdaModulId, ClientId, PosInfoId, SendTS, ReceivedTS, EndOfDayId, 
+		[Status], TableId, ExtecrName, [Description]
+	FROM KitchenInstructionLogger
+	UNION ALL
+	SELECT nYear,Id, KicthcenInstuctionId, StaffId, PdaModulId, ClientId, PosInfoId, SendTS, ReceivedTS, EndOfDayId, 
+		[Status], TableId, ExtecrName, [Description]
+	FROM KitchenInstructionLogger_Hist
+/************************************************************************************************************/
+CREATE VIEW Lockers_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, HasLockers, TotalLockers, TotalLockersAmount, Paidlockers, PaidlockersAmount, 
+		OccLockers, OccLockersAmount, EndOfDayId
+	FROM Lockers
+	UNION ALL
+	SELECT nYear,Id, HasLockers, TotalLockers, TotalLockersAmount, Paidlockers, PaidlockersAmount, 
+		OccLockers, OccLockersAmount, EndOfDayId
+	FROM Lockers_Hist
+/************************************************************************************************************/
+CREATE VIEW Loyalty_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, [Day], LoyalltyId, CouponCode, GiftcardCode, CouponType, Campaign, Channel, InvoicesId, ErrorDescription,
+	       GiftCardCouponType, GiftCardCampaign
+	FROM Loyalty
+	UNION ALL
+	SELECT nYear,Id, [Day], LoyalltyId, CouponCode, GiftcardCode, CouponType, Campaign, Channel, InvoicesId, ErrorDescription,
+	       GiftCardCouponType, GiftCardCampaign
+	FROM Loyalty_Hist
+/************************************************************************************************************/
+CREATE VIEW MealConsumption_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, GuestId, ConsumedMeals, ConsumedTS, IsDeleted, BoardCode, ReservationId, ConsumedMealsChild, 
+		DepartmentId, EndOfDayId, PosInfoId
+	FROM MealConsumption
+	UNION ALL
+	SELECT nYear,Id, GuestId, ConsumedMeals, ConsumedTS, IsDeleted, BoardCode, ReservationId, ConsumedMealsChild, 
+		DepartmentId, EndOfDayId, PosInfoId
+	FROM MealConsumption_Hist
+/************************************************************************************************************/
+CREATE VIEW OnlineRegistration_View AS
+	SELECT YEAR(GETDATE()) nYear,BarCode, FirtName, LastName, Mobile, Dates, Children, Adults, PaymentType, ChildTicket, AdultTicket,
+	       RegistrationDate, TotalChildren, TotalAdults, ChildrenEntered, AdultsEntered, TotalAmount, RemainingAmount, [Status]
+	FROM OnlineRegistration
+	UNION ALL
+	SELECT nYear,BarCode, FirtName, LastName, Mobile, Dates, Children, Adults, PaymentType, ChildTicket, AdultTicket,
+	       RegistrationDate, TotalChildren, TotalAdults, ChildrenEntered, AdultsEntered, TotalAmount, RemainingAmount, [Status]
+	FROM OnlineRegistration_Hist
+/************************************************************************************************************/
+CREATE VIEW Order_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, OrderNo, [Day], Total, PosId, StaffId, EndOfDayId, Discount, ReceiptNo, TotalBeforeDiscount, PdaModuleId,
+	       ClientPosId, IsDeleted, ExtType, ExtObj, ExtKey, OrderOrigin, Couver
+	FROM [Order]
+	UNION ALL
+	SELECT nYear,Id, OrderNo, [Day], Total, PosId, StaffId, EndOfDayId, Discount, ReceiptNo, TotalBeforeDiscount, PdaModuleId,
+	       ClientPosId, IsDeleted, ExtType, ExtObj, ExtKey, OrderOrigin, Couver
+	FROM Order_Hist
+/************************************************************************************************************/
+CREATE VIEW OrderDetail_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, OrderId, ProductId, KitchenId, KdsId, PreparationTime, TableId, [Status], StatusTS, Price, PriceListDetailId,
+	       Qty, SalesTypeId, Discount, PaidStatus, TransactionId, TotalAfterDiscount, GuestId, Couver, Guid, IsDeleted, PendingQty
+	FROM OrderDetail
+	UNION ALL
+	SELECT nYear,Id, OrderId, ProductId, KitchenId, KdsId, PreparationTime, TableId, [Status], StatusTS, Price, PriceListDetailId,
+	       Qty, SalesTypeId, Discount, PaidStatus, TransactionId, TotalAfterDiscount, GuestId, Couver, Guid, IsDeleted, PendingQty
+	FROM OrderDetail_Hist
+/************************************************************************************************************/
+CREATE VIEW OrderDetailIgredients_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, IngredientId, Qty, UnitId, Price, OrderDetailId, PriceListDetailId, Discount, TotalAfterDiscount, IsDeleted
+	FROM OrderDetailIgredients
+	UNION ALL
+	SELECT nYear,Id, IngredientId, Qty, UnitId, Price, OrderDetailId, PriceListDetailId, Discount, TotalAfterDiscount, IsDeleted
+	FROM OrderDetailIgredients_Hist
+/************************************************************************************************************/
+CREATE VIEW OrderDetailIgredientVatAnal_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, OrderDetailIgredientsId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted
+	FROM OrderDetailIgredientVatAnal
+	UNION ALL
+	SELECT nYear,Id, OrderDetailIgredientsId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted
+	FROM OrderDetailIgredientVatAnal_Hist
+/************************************************************************************************************/
+CREATE VIEW OrderDetailInvoices_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, OrderDetailId, StaffId, PosInfoDetailId, [Counter], CreationTS, IsPrinted, CustomerId, InvoicesId, IsDeleted,
+       OrderDetailIgredientsId, Price, Discount, Net, VatRate, VatAmount, VatId, TaxId, VatCode, TaxAmount, Qty, Total, PricelistId, ProductId,
+       [Description], ItemCode, ItemRemark, InvoiceType, TableId, TableCode, RegionId, OrderNo, OrderId, IsExtra, PosInfoId, EndOfDayId,
+       Abbreviation, DiscountId, SalesTypeId, ProductCategoryId, CategoryId, ItemPosition, ItemSort, ItemRegion, RegionPosition, ItemBarcode,
+       TotalBeforeDiscount, ReceiptSplitedDiscount, TotalAfterDiscount
+	FROM OrderDetailInvoices
+	UNION ALL
+	SELECT nYear,Id, OrderDetailId, StaffId, PosInfoDetailId, [Counter], CreationTS, IsPrinted, CustomerId, InvoicesId, IsDeleted,
+       OrderDetailIgredientsId, Price, Discount, Net, VatRate, VatAmount, VatId, TaxId, VatCode, TaxAmount, Qty, Total, PricelistId, ProductId,
+       [Description], ItemCode, ItemRemark, InvoiceType, TableId, TableCode, RegionId, OrderNo, OrderId, IsExtra, PosInfoId, EndOfDayId,
+       Abbreviation, DiscountId, SalesTypeId, ProductCategoryId, CategoryId, ItemPosition, ItemSort, ItemRegion, RegionPosition, ItemBarcode,
+       TotalBeforeDiscount, ReceiptSplitedDiscount, TotalAfterDiscount
+	FROM OrderDetailInvoices_Hist
+/************************************************************************************************************/
+CREATE VIEW OrderDetailVatAnal_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, OrderDetailId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted
+	FROM OrderDetailVatAnal
+	UNION ALL
+	SELECT nYear,Id, OrderDetailId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted
+	FROM OrderDetailVatAnal_Hist
+/************************************************************************************************************/
+CREATE VIEW OrdersStaff_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, StaffId, OrderId, [Type]
+	FROM OrdersStaff
+	UNION ALL
+	SELECT nYear,Id, StaffId, OrderId, [Type]
+	FROM OrdersStaff_Hist
+/************************************************************************************************************/
+CREATE VIEW OrderStatus_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, [Status], TimeChanged, OrderId, StaffId, ExtState
+	FROM OrderStatus
+	UNION ALL
+	SELECT nYear,Id, [Status], TimeChanged, OrderId, StaffId, ExtState
+	FROM OrderStatus_Hist
+/************************************************************************************************************/
+CREATE VIEW StoreMessages_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, [Message], CreationDate, Title, StoreId, ShowFrom, ShowTo, ImageUri, [Status]
+	FROM StoreMessages
+	UNION ALL
+	SELECT nYear,Id, [Message], CreationDate, Title, StoreId, ShowFrom, ShowTo, ImageUri, [Status]
+	FROM StoreMessages_Hist
+/************************************************************************************************************/
+CREATE VIEW TablePaySuggestion_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, AccountId, GuestId, Amount, OrderDetailId, IsUsed, CreditCodeId
+	FROM TablePaySuggestion
+	UNION ALL
+	SELECT nYear,Id, AccountId, GuestId, Amount, OrderDetailId, IsUsed, CreditCodeId
+	FROM TablePaySuggestion_Hist
+/************************************************************************************************************/
+CREATE VIEW Transactions_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, [Day], PosInfoId, StaffId, OrderId, TransactionType, Amount, DepartmentId, [Description], AccountId, InOut,
+	       Gross, Net, Vat, Tax, EndOfDayId, ExtDescription, InvoicesId, IsDeleted
+	FROM Transactions
+	UNION ALL
+	SELECT nYear,Id, [Day], PosInfoId, StaffId, OrderId, TransactionType, Amount, DepartmentId, [Description], AccountId, InOut,
+	       Gross, Net, Vat, Tax, EndOfDayId, ExtDescription, InvoicesId, IsDeleted
+	FROM Transactions_Hist
+/************************************************************************************************************/
+CREATE VIEW TransferToPms_View AS
+	SELECT YEAR(GETDATE()) nYear,Id, RegNo, PmsDepartmentId, [Description], ProfileId, ProfileName, TransactionId, TransferType, RoomId,
+	       RoomDescription, ReceiptNo, PosInfoDetailId, SendToPMS, Total, SendToPmsTS, ErrorMessage, PmsResponseId, TransferIdentifier,
+	       PmsDepartmentDescription, [Status], PosInfoId, EndOfDayId, HotelId, IsDeleted
+	FROM TransferToPms
+	UNION ALL
+	SELECT nYear,Id, RegNo, PmsDepartmentId, [Description], ProfileId, ProfileName, TransactionId, TransferType, RoomId,
+	       RoomDescription, ReceiptNo, PosInfoDetailId, SendToPMS, Total, SendToPmsTS, ErrorMessage, PmsResponseId, TransferIdentifier,
+	       PmsDepartmentDescription, [Status], PosInfoId, EndOfDayId, HotelId, IsDeleted
+	FROM TransferToPms_Hist
+/************************************************************************************************************/
+
+/************************************************************************************************************/
+
+/************************************************************************************************************/
+
+/************************************************************************************************************/
+
+/************************************************************************************************************/
+
+/************************************************************************************************************/

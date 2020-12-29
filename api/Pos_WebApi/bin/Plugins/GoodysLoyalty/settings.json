@@ -1,0 +1,9 @@
+﻿{
+  "Channel": "call_center",
+  "goodysStoreIds": "2,1-6MLL1;7,1-6MLL1;11,1-6MLL1;17,1-6MLL1;19,1-6MLL1;20,1-6MLL1;21,1-6MLL1;22,1-6MLL1;23,1-6MLL1;24,1-6MLL1",
+  "veltiApi": "http://195.230.102.60/mgc/cgi/api/web/custom/voucherCoupon/",
+  "veltiLoyalty": "http://195.230.102.60/mgc/cgi/api/web/custom/loyalty/",
+  "callMobile": "http://www.goodysdelivery.gr/mobile/api/v2/DigitalTablesOrder/CompleteOrder?orderNumber=",
+  "SupplementaryLoyaltyProduct": "3522",
+  "SupplementaryCouponProduct": "3593"
+}

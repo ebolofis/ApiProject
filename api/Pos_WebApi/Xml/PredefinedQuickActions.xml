@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RemoteDefinedActionModel>
+  <Action
+    Id="1"
+    Name="Dummy Vat"
+    Description="A test INS query"
+    Information="Test Ins"
+    Query="INSERT INTO vat (Description, Percentage, Code) VALUES ('Desctest' , 0.25 , '69');"
+    Qtype="Functionality"
+    SecurityPolicy="BODeveloper"/>
+
+  <Action
+    Id="2"
+    Name="Del test of insertion"
+    Description="I am a delete fun to vat desc Desctest"
+    Information="Test del of ins 1"
+    Query="Delete from vat where Description like ('Desctest')"
+    Qtype="Lookup"
+    SecurityPolicy="BODeveloper"/>
+
+  <Action
+     Id="3"
+     Name="Eισαγωγη Oμαδας"
+     Description="---εισαγωγη ομαδας---"
+     Information=""
+     Query="INSERT INTO WebPos.dbo.PRODUCTCATEGORIES ([DESCRIPTION],Code,[Status],[TYPE],CategoryId) SELECT distinct Description5, fitemCategoryCode,1,0,1  from ESFIWEB2POS
+  WHERE fitemCategoryCode  collate Greek_CI_AS    not in (SELECT isnull(CODE,' ')  collate Greek_CI_As FROM PRODUCTCATEGORIES) order by fitemcategorycode"
+     Qtype="INSERT"
+     SecurityPolicy="Admin"/>
+
+  <Action
+     Id="4"
+     Name="Eισαγωγη Eιδους"
+     Description="---εισαγωγη ειδους---"
+     Information=""
+     Query="INSERT INTO WebPos.dbo.PRODUCT (Description, ExtraDescription, SalesDescription, UnitId,  ProductCategoryId, Code, IsCustom)
+      select left(ESFIWEB2POS.[Description],50),left(ESFIWEB2POS.[Description],50),left(ESFIWEB2POS.[Description],50), case MMCODE
+      when 'ΜΕΡΙΔΑ' then 2 else 1 end,  productcategories.id  ,ESFIWEB2POS.code,0
+      from ESFIWEB2POS left outer join ProductCategories on cast(ProductCategories.Code as int)=CAST(fitemCategoryCode AS INT)
+      where cast(ESFIWEB2POS.code as int) not in (select cast(code as int) from Product)"
+     Qtype="INSERT"
+     SecurityPolicy="Admin"/>
+
+  <Action
+      Id="5"
+      Name="ΕΝΗΜΕΡΩΣΗ BARCODE"
+      Description="---ΕΝΗΜΕΡΩΣΗ BARCODE----"
+      Information=""
+      Query="insert into ProductBarcodes(ProductId,Barcode )
+    select  DISTINCT webposr.dbo.product.id,
+    ESFIWEB2POSBARCODE.barcode
+    from WebPosr.dbo.ESFIWEB2POSbarcode
+    left outer join ProductCategories on cast(ProductCategories.Code as int)=CAST(CATEGORYCODE AS INT)
+    left outer join Product on cast(Product.Code as int)=CAST(ESFIWEB2POSbarcode.itemcode AS INT)
+    left outer join PRODUCTBARCODES on cast(ProductBARCODES.PRODUCTID as int)=CAST(PRODUCT.ID AS INT)
+    WHERE cast  ( product.[id]  as int) not IN( SELECT cast( [productid] as int) FROM DBO.ProductBarcodes)"
+      Qtype="INSERT"
+      SecurityPolicy="Admin"/>
+
+  <Action
+    Id="6"
+    Name="Eisagvgh Timis Basikos"
+    Description="------eisagvgh timis basikos---"
+    Information=""
+    Query="insert into pricelistdetail(pricelistid,productid,price,vatid,taxid )
+    select 1,webpos.dbo.product.id,esfiweb2pos.retailPrice,case description7when 'Μειωμένη' then 2when 'Κανονική 24%'then 3when  'Χαμηλή 6' then 1 else 5 end,1
+    from ESFIWEB2POS left outer join ProductCategories on cast(ProductCategories.Code as int)=CAST(fitemCategoryCode AS INT)
+    left outer join Product on cast(Product.code as int)=CAST(ESFIWEB2POS.code AS INT)
+    left outer join pricelistdetail on cast(pricelistdetail.productid as int)=CAST(product.id AS INT)
+    where cast(product.id as int) not in (select cast(productid as int) from pricelistdetail  )"
+    Qtype="INSERT"
+    SecurityPolicy="Admin"/>
+  
+  <Action
+    Id="7"
+    Name="Eisagogi Timis Maizon"
+    Description="-----eisagogi timis maizon ----"
+    Information=""
+    Query="insert into pricelistdetail(pricelistid,productid,price,vatid,taxid )
+select 3, webpos.dbo.product.id, esfiweb2pos.retailPrice, case description7 when 'Μειωμένη' then 2 when 'Κανονική 24%'then 3 when  'Χαμηλή 6' then 1 else 5 end,1
+from ESFIWEB2POS left outer join ProductCategories on cast(ProductCategories.Code as int)=CAST(fitemCategoryCode AS INT)
+left outer join Product on cast(Product.code as int)=CAST(ESFIWEB2POS.code AS INT)
+left outer join pricelistdetail on cast(pricelistdetail.productid as int)=CAST(product.id AS INT)
+where cast(product.id as int) not in (select cast(productid as int) from pricelistdetail where pricelistdetail.PricelistId not in(1,4,5,6,7) )"
+    Qtype="INSERT"
+    SecurityPolicy="Admin"/>
+
+  <Action
+  Id="8"
+  Name="Eisagogi Pelati Autogrill Timokatalogou"
+  Description="---eisagogi pelati autogrill timokatalogou-----"
+  Information=""
+  Query="insert into pricelistdetail(pricelistid,productid,price,vatid,taxid )
+select 5, webpos.dbo.product.id, ESFIWEB2POSPRICES.pricen, case description8 when 'Μειωμένη' then 2 when 'Κανονική 24%'then 3 when  'Χαμηλή 6' then 1 else 5 end,1
+from ESFIWEB2POSprices left outer join ProductCategories on cast(ProductCategories.Code as int)=CAST(fitemCategoryCode AS INT)
+left outer join Product on cast(Product.code as int)=CAST(ESFIWEB2POSprices.code AS INT)
+left outer join pricelistdetail on cast(pricelistdetail.productid as int)=CAST(product.id AS INT)
+where cast(pricelistdetail.productid as int)  in (select cast(productid as int) from pricelistdetail where pricelistdetail.PricelistId   in(1,3) )"
+  Qtype="INSERT"
+  SecurityPolicy="Admin"/>
+
+</RemoteDefinedActionModel>
+
+
+
+
+
+
+
+
+
+
+

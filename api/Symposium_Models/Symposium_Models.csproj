@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FC67B5B-9151-40E2-B5F2-5B88CC716D2B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symposium.Models</RootNamespace>
+    <AssemblyName>Symposiummdls</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomAttributes\EnsureMinimumElementsAttribute.cs" />
+    <Compile Include="Enums\DA_LoyaltyEnums.cs" />
+    <Compile Include="Enums\DA_OrderDetail_OtherDiscountEnum.cs" />
+    <Compile Include="Enums\DeliveryRoutingEnums.cs" />
+    <Compile Include="Enums\KdsKitchenStatusEnums.cs" />
+    <Compile Include="Enums\HotelEnums.cs" />
+    <Compile Include="Enums\PayrollEnum.cs" />
+    <Compile Include="Enums\AddressProximityEnum.cs" />
+    <Compile Include="Enums\DA_CustomerEnums.cs" />
+    <Compile Include="Enums\DAOrderStatusEnum.cs" />
+    <Compile Include="Enums\DAStoreStatusEnum.cs" />
+    <Compile Include="Enums\DA_GetOrdersFilterEnum.cs" />
+    <Compile Include="Enums\DA_OrderOriginEnum.cs" />
+    <Compile Include="Enums\DA_LoyaltyGainPointsTypeEnums.cs" />
+    <Compile Include="Enums\DA_LoyaltyRedeemTypeEnums.cs" />
+    <Compile Include="Enums\GeneralEnums.cs" />
+    <Compile Include="Enums\Promotions\PromoDiscountTypeEnum.cs" />
+    <Compile Include="Enums\StaffActionsEnum.cs" />
+    <Compile Include="Enums\TransactionEnums.cs" />
+    <Compile Include="Interfaces\IGuidModel.cs" />
+    <Compile Include="Interfaces\ISchedulerModel.cs" />
+    <Compile Include="Models\Configuration\DescriptorsModel.cs" />
+    <Compile Include="Models\Configuration\VersionModel.cs" />
+    <Compile Include="Models\DahuaRecorder\PosRecorderModel.cs" />
+    <Compile Include="Models\DateRange\DateRange.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_ClientsResponceModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_CustomerMessagesModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_CustomerTokenModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_MainMessagesModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_MessagesDetailsModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_MessagesModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_OpeningHoursModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_EfoodModel.cs" />
+    <Compile Include="Models\DeliveryAgent\MessagesDetailLookup.cs" />
+    <Compile Include="Models\DeliveryAgent\MessagesLookup.cs" />
+    <Compile Include="Models\DeliveryAgent\PhoneCenterModels.cs" />
+    <Compile Include="Models\Delivery\DeliveryRoutingModel.cs" />
+    <Compile Include="Models\Delivery\DeliveryRoutingOrdersModel.cs" />
+    <Compile Include="Models\Delivery\DeliveryRoutingRoutesList.cs" />
+    <Compile Include="Models\Delivery\DeliveryRoutingStaffModel.cs" />
+    <Compile Include="Models\ExternalSystems\GoodysDA_OrderModel.cs" />
+    <Compile Include="Models\ExternalSystems\GoodysLoyaltyModels.cs" />
+    <Compile Include="Models\Helper\Node.cs" />
+    <Compile Include="Models\Helper\PosReservationHelper.cs" />
+    <Compile Include="Models\Hotelizer\HotelizerCustomerModel.cs" />
+    <Compile Include="Models\Hotelizer\HotelizerDepartmentModel.cs" />
+    <Compile Include="Models\Hotelizer\HotelizerMethodOfPaymentModel.cs" />
+    <Compile Include="Models\Hotelizer\HotelizerPostOrderModel.cs" />
+    <Compile Include="Models\Hotelizer\HotelizerResponcePostOrderModel.cs" />
+    <Compile Include="Models\Hotelizer\HotelizerTaxesModel.cs" />
+    <Compile Include="Models\Hotelizer\MappingMethodOfPaymentsModel.cs" />
+    <Compile Include="Models\Hotel\GuestListModel.cs" />
+    <Compile Include="Models\Hotel\BoardModel.cs" />
+    <Compile Include="Models\Hotel\BookedRoomTypeModel.cs" />
+    <Compile Include="Models\Hotel\AllowanceModel.cs" />
+    <Compile Include="Models\Hotel\CustomMessageModel.cs" />
+    <Compile Include="Models\Hotel\CustomMessageDBModel.cs" />
+    <Compile Include="Models\Hotel\GroupModel.cs" />
+    <Compile Include="Models\Hotel\HotelCustomerDataConfigModel.cs" />
+    <Compile Include="Models\Hotel\HotelPricelistModel.cs" />
+    <Compile Include="Models\Hotel\Hotel_ CustomerDataConfigModel.cs" />
+    <Compile Include="Models\Hotel\Hotel_CustomMessagesModel.cs" />
+    <Compile Include="Models\Hotel\MacroDBModel.cs" />
+    <Compile Include="Models\Hotel\MacroModel.cs" />
+    <Compile Include="Models\Hotel\MacroResultModel.cs" />
+    <Compile Include="Models\Hotel\MacroRuleModel.cs" />
+    <Compile Include="Models\Hotel\MacroTimezoneDBModel.cs" />
+    <Compile Include="Models\Hotel\MacroTimezoneModel.cs" />
+    <Compile Include="Models\Hotel\MembershipModel.cs" />
+    <Compile Include="Models\Hotel\NationalityCodeModel.cs" />
+    <Compile Include="Models\Hotel\ParamModel.cs" />
+    <Compile Include="Models\Hotel\ProductLookupHelper.cs" />
+    <Compile Include="Models\Hotel\ProtelHotelModel.cs" />
+    <Compile Include="Models\Hotel\RoomModel.cs" />
+    <Compile Include="Models\Hotel\RoomTypeModel.cs" />
+    <Compile Include="Models\Hotel\SourceModel.cs" />
+    <Compile Include="Models\Hotel\SubmembershipModel.cs" />
+    <Compile Include="Models\Hotel\TravelAgentModel.cs" />
+    <Compile Include="Models\Hotel\MealConsumptionModel.cs" />
+    <Compile Include="Models\Hotel\UpdateConsumptionModel.cs" />
+    <Compile Include="Models\Hotel\VipModel.cs" />
+    <Compile Include="Models\HubModels.cs" />
+    <Compile Include="Models\Infrastructure\Customers.cs" />
+    <Compile Include="Models\Infrastructure\GuestFutureModel.cs" />
+    <Compile Include="Models\Infrastructure\MetadataModel.cs" />
+    <Compile Include="Models\Infrastructure\SupplierModel.cs" />
+    <Compile Include="Models\Infrastructure\VATCustomerModel.cs" />
+    <Compile Include="Models\Kds\KdsDeleteIngredientsRequestModel.cs" />
+    <Compile Include="Models\Kds\KdsTopRowResponceModel.cs" />
+    <Compile Include="Models\Kds\KdsIngredientsResponceModel.cs" />
+    <Compile Include="Models\Kds\KdsUpdateResponceModel.cs" />
+    <Compile Include="Models\Kds\KdsUpdateKitchenStatusRequestModel.cs" />
+    <Compile Include="Models\Kds\KdsResponceModel.cs" />
+    <Compile Include="Models\Kds\KdsGetOrdersRequestModel.cs" />
+    <Compile Include="Models\MealBoards\CustomerModel.cs" />
+    <Compile Include="Models\OldGoodysModel\Account.cs" />
+    <Compile Include="Models\OldGoodysModel\Address.cs" />
+    <Compile Include="Models\OldGoodysModel\OldGoodysLoginResponse.cs" />
+    <Compile Include="Models\OldGoodysModel\OldWebGoodysOrderModel.cs" />
+    <Compile Include="Models\Orders\InvoiceQRModel.cs" />
+    <Compile Include="Models\Orders\LoyaltyModel.cs" />
+    <Compile Include="Models\Orders\OrderDetailIngredientsKDSModel.cs" />
+    <Compile Include="Models\Orders\PluginCardPaymentModel.cs" />
+    <Compile Include="Models\Orders\PMSPaymentModels.cs" />
+    <Compile Include="Models\Payroll\PayrollNewModel.cs" />
+    <Compile Include="Models\Payroll\PayrollModels.cs" />
+    <Compile Include="Models\Plugins\PluginModel.cs" />
+    <Compile Include="Models\Products\BarcodeModel.cs" />
+    <Compile Include="Models\Products\CategoriesModel.cs" />
+    <Compile Include="Models\Products\ComboDetailModel.cs" />
+    <Compile Include="Models\Products\ComboModel.cs" />
+    <Compile Include="Models\Infrastructure\CustomerModel.cs" />
+    <Compile Include="Enums\DeliveryEnums.cs" />
+    <Compile Include="Enums\OrderEnums.cs" />
+    <Compile Include="Models\DeliveryAgent\DAStore_PriceListAssocModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_AddressesModels.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_ConfigModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_CustomerModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_GeoPolygonsModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_LoyaltyModels.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_OrderDetailsModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_OrderModels.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_ScheduledTaskesModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_ShortagesModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_StaffModel.cs" />
+    <Compile Include="Models\DeliveryAgent\DA_StoreModel.cs" />
+    <Compile Include="Models\Delivery\DeliveryCustomerModel.cs" />
+    <Compile Include="Enums\AccountEnums.cs" />
+    <Compile Include="Enums\EndOfDayEnums.cs" />
+    <Compile Include="Enums\InvoiceEnums.cs" />
+    <Compile Include="Enums\NFCEnums.cs" />
+    <Compile Include="Models\Orders\AccountModel.cs" />
+    <Compile Include="Models\Delivery\DeliveryModels.cs" />
+    <Compile Include="Models\Delivery\Delivery_CustomersBillingAddressModel.cs" />
+    <Compile Include="Models\Delivery\Delivery_CustomersShippingAddressModel.cs" />
+    <Compile Include="Models\ExternalSystems\ExtDeliveryModels.cs" />
+    <Compile Include="Models\ExternalSystems\ICouponModels.cs" />
+    <Compile Include="Models\ExternalSystems\ForexServiceModel.cs" />
+    <Compile Include="Models\Infrastructure\HotelsInfoModel.cs" />
+    <Compile Include="Models\Products\IngredientCategoriesModel.cs" />
+    <Compile Include="Models\Products\IngredientsModel.cs" />
+    <Compile Include="Models\Products\Ingredient_ProdCategoryAssocModel.cs" />
+    <Compile Include="Models\Orders\InsertNewInvoiceModel.cs" />
+    <Compile Include="Models\Orders\InvoiceShippingDetailsModel.cs" />
+    <Compile Include="Models\Orders\Invoice_Guests_TransModel.cs" />
+    <Compile Include="Models\Orders\OrderDetailIngredientsModel.cs" />
+    <Compile Include="Models\Products\PageButtonDetailModel.cs" />
+    <Compile Include="Models\Products\PageButtonPricelistDetailsAssoc.cs" />
+    <Compile Include="Models\Products\PageSetModel.cs" />
+    <Compile Include="Models\Orders\PMSInvoiceTypes.cs" />
+    <Compile Include="Models\Orders\PMSPaymentsModel.cs" />
+    <Compile Include="Models\Products\PricelistDetailModel.cs" />
+    <Compile Include="Models\Products\PricelistMasterModel.cs" />
+    <Compile Include="Models\Products\PriceList_EffectiveHoursModel.cs" />
+    <Compile Include="Models\Products\ProductBarcodesModel.cs" />
+    <Compile Include="Models\Products\ProductCategoriesModel.cs" />
+    <Compile Include="Models\Products\ProductExtrasModel.cs" />
+    <Compile Include="Models\Infrastructure\RegionLockersModel.cs" />
+    <Compile Include="Models\Orders\ExtecrReceiptModel.cs" />
+    <Compile Include="Models\ExternalDelivery\ForkeyModels.cs" />
+    <Compile Include="Models\Infrastructure\GuestModel.cs" />
+    <Compile Include="Models\Orders\KitchenInstructionLoggerModel.cs" />
+    <Compile Include="Models\Orders\EndOfDayTransferToPmsModel.cs" />
+    <Compile Include="Models\Orders\EndOfDayPaymentAnalysisModel.cs" />
+    <Compile Include="Models\Orders\EndOfDayVoidsAnalysisModel.cs" />
+    <Compile Include="Models\Orders\EndOfDayDetailModel.cs" />
+    <Compile Include="Models\Orders\EndOfDayModel.cs" />
+    <Compile Include="Models\Orders\EndOfDayModels.cs" />
+    <Compile Include="Models\Orders\CreditTransactionsModel.cs" />
+    <Compile Include="Models\Infrastructure\LockersStatisticsModel.cs" />
+    <Compile Include="Models\Products\MealConsumptionModel.cs" />
+    <Compile Include="Models\Orders\OrderStatusModel.cs" />
+    <Compile Include="Models\Products\PageButtonModels.cs" />
+    <Compile Include="Models\Products\PagesModels.cs" />
+    <Compile Include="Models\Orders\PredefinedCreditsModels.cs" />
+    <Compile Include="Models\Products\ProductSkroutzModel.cs" />
+    <Compile Include="Models\Products\ProductModel.cs" />
+    <Compile Include="Models\Products\ProductPricesModel.cs" />
+    <Compile Include="Models\Orders\ReceiptDetails.cs" />
+    <Compile Include="Models\Orders\ReceiptPayments.cs" />
+    <Compile Include="Models\Orders\Receipts.cs" />
+    <Compile Include="Models\Infrastructure\RegionModels.cs" />
+    <Compile Include="Models\Products\ProductRecipeModel.cs" />
+    <Compile Include="Models\Products\SalesPosLookupsModels.cs" />
+    <Compile Include="Models\Orders\SalesTypeModel.cs" />
+    <Compile Include="Models\Infrastructure\StaffModels.cs" />
+    <Compile Include="Models\Infrastructure\StoreMessagesModels.cs" />
+    <Compile Include="Models\Infrastructure\StoreModels.cs" />
+    <Compile Include="Models\Products\TableForDisplayModels.cs" />
+    <Compile Include="Models\Products\PricelistModel.cs" />
+    <Compile Include="Models\Promos\PromotionsPricelistModel.cs" />
+    <Compile Include="Models\Promos\PromotionsModels.cs" />
+    <Compile Include="Models\Promos\Vodafone11Models.cs" />
+    <Compile Include="Models\Scheduler\ParametersSchedulerModel.cs" />
+    <Compile Include="Models\TableReservations\CapacitiesModel.cs" />
+    <Compile Include="Models\TableReservations\ComboListModel.cs" />
+    <Compile Include="Models\TableReservations\ConfigModel.cs" />
+    <Compile Include="Models\TableReservations\EmailConfigModel.cs" />
+    <Compile Include="Models\TableReservations\ExcludeDaysModel.cs" />
+    <Compile Include="Models\TableReservations\ExcludeRestrictionsModel.cs" />
+    <Compile Include="Models\TableReservations\OverwrittenCapacitiesModel.cs" />
+    <Compile Include="Models\TableReservations\PrintModel.cs" />
+    <Compile Include="Models\TableReservations\ReservationCustomersModel.cs" />
+    <Compile Include="Models\TableReservations\ReservationsModel.cs" />
+    <Compile Include="Models\TableReservations\ReservationTypeModel.cs" />
+    <Compile Include="Models\TableReservations\RestaurantsModel.cs" />
+    <Compile Include="Models\TableReservations\RestrictionsModel.cs" />
+    <Compile Include="Models\TableReservations\RestrictionsRestaurantsAssocModel.cs" />
+    <Compile Include="Models\Orders\TaxModel.cs" />
+    <Compile Include="Models\Orders\TransferMappingsModel.cs" />
+    <Compile Include="Models\Orders\TransferToPmsModel.cs" />
+    <Compile Include="Models\Orders\OrderModel.cs" />
+    <Compile Include="Models\Orders\InvoiceModel.cs" />
+    <Compile Include="Models\Orders\InvoiceTypeModel.cs" />
+    <Compile Include="Models\Infrastructure\LockersModel.cs" />
+    <Compile Include="Models\Infrastructure\NFCcardModel.cs" />
+    <Compile Include="Models\Infrastructure\NfcCustomerModel.cs" />
+    <Compile Include="Models\Orders\TransactionsModel.cs" />
+    <Compile Include="Models\Orders\OrderDetailInvoicesModel.cs" />
+    <Compile Include="Models\PaginationModel.cs" />
+    <Compile Include="Models\Infrastructure\PosInfoDetailModel.cs" />
+    <Compile Include="Models\Infrastructure\PosInfoModel.cs" />
+    <Compile Include="Models\ExternalSystems\RemoteDefinedActionModel.cs" />
+    <Compile Include="Models\Infrastructure\ReportModels.cs" />
+    <Compile Include="Models\SignalRAfterInvoiceModel.cs" />
+    <Compile Include="Models\Products\UnitsModel.cs" />
+    <Compile Include="Models\TableReservations\TradingHoursModel.cs" />
+    <Compile Include="Models\UpsertListResultModel.cs" />
+    <Compile Include="Models\UsersToDatabasesModels.cs" />
+    <Compile Include="Models\Orders\VatModels.cs" />
+    <Compile Include="Models\VatPercentageModel.cs" />
+    <Compile Include="Models\WebGoodysOrders\WebGoodysOrdersModel.cs" />
+    <Compile Include="PosInfoModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

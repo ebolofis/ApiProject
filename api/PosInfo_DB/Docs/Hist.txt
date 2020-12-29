@@ -1,0 +1,2354 @@
+CREATE PROCEDURE dbo.MoveDataToHistoric @Year INT AS
+BEGIN
+ 	DECLARE @OK SMALLINT
+ 	BEGIN TRY
+ 		DECLARE @CreditAccounts TABLE (ID BIGINT)
+ 		DECLARE @CreditCodes TABLE (ID BIGINT)
+ 		DECLARE @CreditTransactions TABLE (ID BIGINT)
+ 		DECLARE @EndOfDay TABLE (ID BIGINT)
+ 		DECLARE @EndOfDayDetail TABLE (ID BIGINT)
+ 		DECLARE @EndOfDayPaymentAnalysis TABLE (ID BIGINT)
+ 		DECLARE @EndOfDayVoidsAnalysis TABLE (ID BIGINT)
+ 		DECLARE @EODAccountToPmsTransfer TABLE (ID BIGINT)
+ 		DECLARE @ExternalLostOrders TABLE (OrderNo VARCHAR(255), ExtType INT)
+ 		DECLARE @HitPosOrders TABLE (ID BIGINT)
+ 		DECLARE @Invoice_Guests_Trans TABLE (ID BIGINT)
+ 		DECLARE @Invoices TABLE (ID BIGINT)
+ 		DECLARE @InvoiceShippingDetails TABLE (ID BIGINT)
+ 		DECLARE @KitchenInstructionLogger TABLE (ID BIGINT)
+ 		DECLARE @Lockers TABLE (ID BIGINT)
+ 		DECLARE @Loyalty TABLE (ID BIGINT)
+ 		DECLARE @MealConsumption TABLE (ID BIGINT)
+ 		DECLARE @OnlineRegistration TABLE (BarCode VARCHAR(255))
+ 		DECLARE @Order TABLE (ID BIGINT)
+ 		DECLARE @OrderDetail TABLE (ID BIGINT)
+ 		DECLARE @OrderDetailIgredients TABLE (ID BIGINT)
+ 		DECLARE @OrderDetailIgredientVatAnal TABLE (ID BIGINT)
+ 		DECLARE @OrderDetailInvoices TABLE (ID BIGINT)
+ 		DECLARE @OrderDetailVatAnal TABLE (ID BIGINT)
+ 		DECLARE @OrdersStaff TABLE (ID BIGINT)
+ 		DECLARE @OrderStatus TABLE (ID BIGINT)
+ 		DECLARE @StoreMessages TABLE (ID BIGINT)
+ 		DECLARE @TablePaySuggestion TABLE (ID BIGINT)
+ 		DECLARE @Transactions TABLE (ID BIGINT)
+ 		DECLARE @TransferToPms TABLE (ID BIGINT)
+ 		
+ 	
+ 		DECLARE @ResTable TABLE (ID INT IDENTITY(1,1), tblName VARCHAR(200), StartRecs INT, EndRecs INT)
+ 		INSERT INTO @ResTable(tblName, StartRecs, EndRecs)
+ 		SELECT 'CreditAccounts' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM CreditAccounts ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM CreditAccounts_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'CreditCodes' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM CreditCodes ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM CreditCodes_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'CreditTransactions' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM CreditTransactions ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM CreditTransactions_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'EndOfDay' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDay ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDay_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'EndOfDayDetail' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDayDetail ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDayDetail_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'EndOfDayPaymentAnalysis' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDayPaymentAnalysis ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDayPaymentAnalysis_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'EndOfDayVoidsAnalysis' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDayVoidsAnalysis ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EndOfDayVoidsAnalysis_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'EODAccountToPmsTransfer' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EODAccountToPmsTransfer ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM EODAccountToPmsTransfer_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'ExternalLostOrders' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM ExternalLostOrders ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM ExternalLostOrders_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'HitPosOrders' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM HitPosOrders ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM HitPosOrders_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'Invoice_Guests_Trans' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Invoice_Guests_Trans ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Invoice_Guests_Trans_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'Invoices' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Invoices ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Invoices_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'InvoiceShippingDetails' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM InvoiceShippingDetails ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM InvoiceShippingDetails_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'KitchenInstructionLogger' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM KitchenInstructionLogger ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM KitchenInstructionLogger_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'Lockers' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Lockers ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Lockers_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'Loyalty' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Loyalty ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Loyalty_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'MealConsumption' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM MealConsumption ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM MealConsumption_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OnlineRegistration' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OnlineRegistration ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OnlineRegistration_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'Order' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM [Order] ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Order_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrderDetail' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetail ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetail_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrderDetailIgredients' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailIgredients ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailIgredients_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrderDetailIgredientVatAnal' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailIgredientVatAnal ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailIgredientVatAnal_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrderDetailInvoices' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailInvoices ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailInvoices_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrderDetailVatAnal' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailVatAnal ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderDetailVatAnal_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrdersStaff' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrdersStaff ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrdersStaff_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'OrderStatus' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderStatus ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM OrderStatus_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'StoreMessages' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM StoreMessages ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM StoreMessages_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'TablePaySuggestion' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM TablePaySuggestion ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM TablePaySuggestion_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'Transactions' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Transactions ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM Transactions_Hist cah
+ 		) fin
+ 		UNION ALL
+ 		SELECT 'TransferToPms' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 		FROM (
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM TransferToPms ca
+ 			UNION ALL
+ 			SELECT ISNULL(COUNT(*),0) nCnt
+ 			FROM TransferToPms_Hist cah
+ 		) fin
+ 		
+ 		
+ 		BEGIN TRY 
+ 			BEGIN TRANSACTION		
+	 		
+ 			INSERT INTO EndOfYear(ClosedYear,ClosedDate,[Description])
+ 			SELECT @Year, GETDATE(), 'End of year for season '+CAST(@Year AS VARCHAR(20))
+	 		
+	 		INSERT INTO @CreditAccounts (ID)
+	 		SELECT DISTINCT ca.Id
+ 			FROM CreditAccounts ca 
+ 			INNER JOIN EndOfDay eod ON eod.Id = ca.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO CreditAccounts_Hist (nYear, Id, [Description], EndOfDayId, ActivateTS, DeactivateTS)
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear, ca.Id, ca.[Description], ca.EndOfDayId, ca.ActivateTS, ca.DeactivateTS
+ 			FROM CreditAccounts ca 
+ 			INNER JOIN EndOfDay eod ON eod.Id = ca.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+
+			INSERT INTO @CreditCodes (ID)
+			SELECT DISTINCT cc.Id
+ 			FROM CreditCodes cc
+ 			INNER JOIN (
+ 				SELECT ca.Id, YEAR(eod.FODay) nYear
+ 				FROM CreditAccounts ca 
+ 				INNER JOIN EndOfDay eod ON eod.Id = ca.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			) ca ON ca.Id = cc.CreditAccountId
+ 			
+ 			INSERT INTO CreditCodes_Hist(nYear,Id,[Description],Code,[Type],CreditAccountId)
+ 			SELECT DISTINCT ca.nYear nYear,cc.Id, cc.[Description], cc.Code, cc.[Type], cc.CreditAccountId
+ 			FROM CreditCodes cc
+ 			INNER JOIN (
+ 				SELECT ca.Id, YEAR(eod.FODay) nYear
+ 				FROM CreditAccounts ca 
+ 				INNER JOIN EndOfDay eod ON eod.Id = ca.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			) ca ON ca.Id = cc.CreditAccountId
+	 
+	 
+			INSERT INTO @CreditTransactions(ID)
+			SELECT DISTINCT ct.Id
+ 			FROM CreditTransactions ct 
+ 			INNER JOIN EndOfDay eod ON eod.Id = ct.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO CreditTransactions_Hist(nYear,Id,CreditAccountId,CreditCodeId,Amount,CreationTS,[Type],
+ 				StaffId,[Description],PosInfoId,EndOfDayId,InvoiceId,TransactionId)
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear,ct.Id,ct.CreditAccountId,ct.CreditCodeId,ct.Amount,ct.CreationTS,ct.[Type],
+ 				ct.StaffId,ct.[Description],ct.PosInfoId,ct.EndOfDayId,ct.InvoiceId,ct.TransactionId
+ 			FROM CreditTransactions ct 
+ 			INNER JOIN EndOfDay eod ON eod.Id = ct.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		
+	 		INSERT INTO @EndOfDayDetail (ID)
+	 		SELECT DISTINCT eodd.Id
+ 			FROM EndOfDayDetail eodd
+ 			INNER JOIN EndOfDay eod ON eod.Id = eodd.EndOfdayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO EndOfDayDetail_Hist(nYear,Id,EndOfdayId,VatId,VatRate,VatAmount,TaxId,TaxAmount,Gross,Net,Discount)
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear,eodd.Id, eodd.EndOfdayId, eodd.VatId, eodd.VatRate, eodd.VatAmount,
+ 				   eodd.TaxId, eodd.TaxAmount, eodd.Gross, eodd.Net, eodd.Discount
+ 			FROM EndOfDayDetail eodd
+ 			INNER JOIN EndOfDay eod ON eod.Id = eodd.EndOfdayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		
+	 		INSERT INTO @EndOfDayPaymentAnalysis(ID)
+	 		SELECT DISTINCT eodpa.Id
+ 			FROM EndOfDayPaymentAnalysis eodpa
+ 			INNER JOIN EndOfDay eod ON eod.Id = eodpa.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO EndOfDayPaymentAnalysis_Hist(nYear,Id,EndOfDayId,AccountId,Total,[Description],AccountType)
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear,eodpa.Id, eodpa.EndOfDayId, eodpa.AccountId, eodpa.Total, eodpa.[Description], eodpa.AccountType
+ 			FROM EndOfDayPaymentAnalysis eodpa
+ 			INNER JOIN EndOfDay eod ON eod.Id = eodpa.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		
+	 		INSERT INTO @EndOfDayVoidsAnalysis(ID)
+	 		SELECT eodva.Id
+ 			FROM EndOfDayVoidsAnalysis eodva
+ 			INNER JOIN EndOfDay eod ON eod.Id = eodva.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO EndOfDayVoidsAnalysis_Hist(nYear,Id,EndOfDayId,AccountId,Total,[Description],AccountType)
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear,eodva.Id, eodva.EndOfDayId, eodva.AccountId, eodva.Total, eodva.[Description], eodva.AccountType
+ 			FROM EndOfDayVoidsAnalysis eodva
+ 			INNER JOIN EndOfDay eod ON eod.Id = eodva.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		
+	 		INSERT INTO @EndOfDay (ID)
+	 		SELECT DISTINCT eod.Id
+ 			FROM EndOfDay eod
+ 			WHERE YEAR(eod.FODay) = @Year
+ 			
+ 			INSERT INTO EndOfDay_Hist(nYear,Id,FODay,PosInfoId,CloseId,Gross,Net,TicketsCount,ItemCount,TicketAverage,
+ 				StaffId,Discount,Barcodes,dtDateTime)
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear, eod.Id, eod.FODay, eod.PosInfoId, eod.CloseId, eod.Gross, eod.Net,
+ 				   eod.TicketsCount, eod.ItemCount, eod.TicketAverage, eod.StaffId,
+ 				   eod.Discount, eod.Barcodes, eod.dtDateTime 
+ 			FROM EndOfDay eod
+ 			WHERE YEAR(eod.FODay) = @Year
+	 		
+	 		
+	 		INSERT INTO @EODAccountToPmsTransfer (ID)
+	 		SELECT etpt.Id
+ 			FROM EODAccountToPmsTransfer etpt
+ 			
+ 			INSERT INTO EODAccountToPmsTransfer_Hist(nYear,Id,PosInfoId,AccountId,PmsRoom,[Description],[Status],
+ 				PmsDepartmentId,PmsDepDescription)
+ 			SELECT @Year nYear, etpt.Id, etpt.PosInfoId, etpt.AccountId, etpt.PmsRoom,etpt.[Description], etpt.[Status], 
+ 				etpt.PmsDepartmentId, etpt.PmsDepDescription
+ 			FROM EODAccountToPmsTransfer etpt
+	 		
+	 		
+	 		INSERT INTO @ExternalLostOrders (OrderNo, ExtType)
+	 		SELECT elo.OrderNo, elo.ExtType	
+ 			FROM ExternalLostOrders elo
+ 			INNER JOIN HitPosOrders hpo ON CAST(hpo.orderno AS VARCHAR(255)) = elo.OrderNo AND YEAR(hpo.CreationDate) <= @Year
+ 			
+ 			INSERT INTO ExternalLostOrders_Hist(nYear,OrderNo,ExtType)
+ 			SELECT YEAR(hpo.CreationDate) nYear, elo.OrderNo, elo.ExtType	
+ 			FROM ExternalLostOrders elo
+ 			INNER JOIN HitPosOrders hpo ON CAST(hpo.orderno AS VARCHAR(255)) = elo.OrderNo AND YEAR(hpo.CreationDate) <= @Year
+	 		
+	 		
+	 		INSERT INTO @HitPosOrders(ID)
+	 		SELECT CurId
+ 			FROM HitPosOrders hpo
+ 			WHERE YEAR(hpo.CreationDate) <= @Year
+ 			
+ 			INSERT INTO HitPosOrders_Hist(nYear,CurId,id,orderno,pos,shop_id,item_group,item_code,item_descr,item_subgroup,item_vat,cont_line,
+ 				sp,prep_time,start_time,load_time,otd,qty,amount,total,waiter,ttable,listino,receipt,member,priority,kdws,ready,rqty,nieko_flag,
+ 				[status],status_time,rest_time,room,payment,[type],comments,mqty,rec_time_start,status_time2,status_time3,status_time4,
+ 				status_time5,fo_day,delivery_time,agent,flag_up,[sent],correct,completed,CreationDate)
+ 			SELECT YEAR(hpo.CreationDate) nYear,CurId,id,orderno,pos,shop_id,item_group,item_code,item_descr,item_subgroup,item_vat,cont_line,
+ 				sp,prep_time,start_time,load_time,otd,qty,amount,total,waiter,ttable,listino,receipt,member,priority,kdws,ready,rqty,nieko_flag,
+ 				[status],status_time,rest_time,room,payment,[type],comments,mqty,rec_time_start,status_time2,status_time3,status_time4,
+ 				status_time5,fo_day,delivery_time,agent,flag_up,[sent],correct,completed,CreationDate
+ 			FROM HitPosOrders hpo
+ 			WHERE YEAR(hpo.CreationDate) <= @Year
+	 		
+	 		
+	 		INSERT INTO @InvoiceShippingDetails (ID)
+	 		SELECT DISTINCT isd.Id
+ 			FROM InvoiceShippingDetails isd
+ 			INNER JOIN Invoices i ON i.Id = isd.InvoicesId AND YEAR(i.[Day]) <= @Year
+ 			
+ 			INSERT INTO InvoiceShippingDetails_Hist(nYear,Id,InvoicesId,ShippingAddressId,ShippingAddress,ShippingCity,ShippingZipCode,
+ 				BillingAddressId,BillingAddress,BillingCity,BillingZipCode,[Floor],CustomerRemarks,StoreRemarks,CustomerName,
+ 				Longtitude,Latitude,Phone)
+ 			SELECT DISTINCT YEAR(i.[Day]) nYear,isd.Id,InvoicesId,ShippingAddressId,ShippingAddress,ShippingCity,ShippingZipCode,
+ 				BillingAddressId,BillingAddress,BillingCity,BillingZipCode,[Floor],CustomerRemarks,StoreRemarks,CustomerName,
+ 				Longtitude,Latitude,Phone
+ 			FROM InvoiceShippingDetails isd
+ 			INNER JOIN Invoices i ON i.Id = isd.InvoicesId AND YEAR(i.[Day]) <= @Year
+	 		
+	 		
+	 		INSERT INTO @Invoices(ID)
+	 		SELECT Id
+ 			FROM Invoices i
+ 			WHERE YEAR(i.[Day]) <= @Year
+ 			
+ 			INSERT INTO Invoices_Hist(nYear,Id,[Description],InvoiceTypeId,[Counter],[Day],IsPrinted,GuestId,Total,Discount,Vat,Tax,Net,StaffId,
+ 				Cover,TableId,PosInfoId,PdaModuleId,ClientPosId,EndOfDayId,PosInfoDetailId,IsVoided,IsDeleted,DiscountRemark,PaymentsDesc,
+ 				IsPaid,	PaidTotal,Rooms,OrderNo,IsInvoiced,Hashcode,TableSum,CashAmount,BuzzerNumber)
+ 			SELECT YEAR(i.[Day]) nYear,Id,[Description],InvoiceTypeId,[Counter],[Day],IsPrinted,GuestId,Total,Discount,Vat,Tax,Net,StaffId,
+ 				Cover,TableId,PosInfoId,PdaModuleId,ClientPosId,EndOfDayId,PosInfoDetailId,IsVoided,IsDeleted,DiscountRemark,PaymentsDesc,
+ 				IsPaid,	PaidTotal,Rooms,OrderNo,IsInvoiced,Hashcode,TableSum,CashAmount,BuzzerNumber
+ 			FROM Invoices i
+ 			WHERE YEAR(i.[Day]) <= @Year
+	 		
+	 		
+	 		INSERT INTO @Invoice_Guests_Trans (ID)
+ 			SELECT DISTINCT igt.Id 
+ 			FROM Invoice_Guests_Trans igt
+ 			INNER JOIN Invoices i ON i.Id = igt.InvoiceId AND YEAR(i.[Day]) <= @Year
+ 			
+ 			INSERT INTO Invoice_Guests_Trans_Hist(nYear,Id,InvoiceId,GuestId,TransactionId)
+ 			SELECT DISTINCT YEAR(i.[Day]) nYear,igt.Id, igt.InvoiceId, igt.GuestId, igt.TransactionId 
+ 			FROM Invoice_Guests_Trans igt
+ 			INNER JOIN Invoices i ON i.Id = igt.InvoiceId AND YEAR(i.[Day]) <= @Year
+ 			
+ 			
+ 			INSERT INTO @KitchenInstructionLogger (ID)
+	 		SELECT kil.Id
+ 			FROM KitchenInstructionLogger kil
+ 			INNER JOIN EndOfDay eod ON eod.Id = kil.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO KitchenInstructionLogger_Hist(nYear,Id,KicthcenInstuctionId,StaffId,PdaModulId,ClientId,PosInfoId,SendTS,
+ 				ReceivedTS,EndOfDayId,[Status],TableId,ExtecrName,[Description])
+ 			SELECT DISTINCT YEAR(eod.FODay) nYear, kil.Id, kil.KicthcenInstuctionId, kil.StaffId, kil.PdaModulId,kil.ClientId, kil.PosInfoId, kil.SendTS, 
+ 				kil.ReceivedTS, kil.EndOfDayId,kil.[Status], kil.TableId, kil.ExtecrName, kil.[Description]
+ 			FROM KitchenInstructionLogger kil
+ 			INNER JOIN EndOfDay eod ON eod.Id = kil.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			
+ 			INSERT INTO KitchenInstruction_Hist(nYear,Id,KitchenId,[Message],[Description])
+ 			SELECT @Year nYear, ki.Id, ki.KitchenId, ki.[Message], ki.[Description]
+ 			FROM KitchenInstruction ki
+ 			
+ 			
+ 			INSERT INTO @Lockers (ID)
+	 		SELECT l.Id
+	 		FROM Lockers l
+	 		INNER JOIN EndOfDay eod ON eod.Id = l.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		INSERT INTO Lockers_Hist(nYear,Id,HasLockers,TotalLockers,TotalLockersAmount,Paidlockers,PaidlockersAmount,OccLockers,
+	 			OccLockersAmount,EndOfDayId)
+	 		SELECT YEAR(eod.FODay) nYear, l.Id,l.HasLockers,l.TotalLockers,l.TotalLockersAmount,l.Paidlockers,l.PaidlockersAmount,l.OccLockers,
+	 			l.OccLockersAmount,l.EndOfDayId
+	 		FROM Lockers l
+	 		INNER JOIN EndOfDay eod ON eod.Id = l.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		
+	 		INSERT INTO @Loyalty(ID)
+	 		SELECT l.Id
+	 		FROM Loyalty l
+	 		INNER JOIN Invoices i ON i.Id = l.InvoicesId AND YEAR(i.[Day]) <= @Year
+	 		
+	 		INSERT INTO Loyalty_Hist(nYear, [Day],LoyalltyId,CouponCode,GiftcardCode,CouponType,Campaign,Channel,InvoicesId,Id,
+	 			ErrorDescription,GiftCardCouponType,GiftCardCampaign)
+	 		SELECT YEAR(i.[Day])nYear, l.[Day], l.LoyalltyId, l.CouponCode, l.GiftcardCode,l.CouponType, l.Campaign, l.Channel, l.InvoicesId, l.Id,
+	 		       l.ErrorDescription, l.GiftCardCouponType, l.GiftCardCampaign
+	 		FROM Loyalty l
+	 		INNER JOIN Invoices i ON i.Id = l.InvoicesId AND YEAR(i.[Day]) <= @Year
+	 		
+	 		
+	 		INSERT INTO @MealConsumption(ID) 
+	 		SELECT mc.Id
+	 		FROM MealConsumption mc
+	 		INNER JOIN EndOfDay eod ON eod.Id = mc.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		INSERT INTO MealConsumption_Hist(nYear, Id, GuestId, ConsumedMeals,ConsumedTS, IsDeleted, BoardCode, ReservationId,
+	 		            ConsumedMealsChild, DepartmentId, EndOfDayId, PosInfoId)
+	 		SELECT YEAR(eod.FODay) nYear, mc.Id, mc.GuestId, mc.ConsumedMeals, mc.ConsumedTS, mc.IsDeleted, mc.BoardCode, mc.ReservationId,
+	 		       mc.ConsumedMealsChild, mc.DepartmentId, mc.EndOfDayId,
+	 		       mc.PosInfoId
+	 		FROM MealConsumption mc
+	 		INNER JOIN EndOfDay eod ON eod.Id = mc.EndOfDayId AND YEAR(eod.FODay) <= @Year
+	 		
+	 		
+	 		INSERT INTO @OnlineRegistration (BarCode)
+	 		SELECT BarCode
+ 			FROM OnlineRegistration or1
+ 			
+ 			INSERT INTO OnlineRegistration_Hist(nYear,BarCode,FirtName,LastName,Mobile,Dates,Children,Adults,PaymentType,ChildTicket,
+ 				AdultTicket,RegistrationDate,TotalChildren,TotalAdults,ChildrenEntered,AdultsEntered,TotalAmount,RemainingAmount,[Status])
+ 			SELECT @Year nYear,BarCode,FirtName,LastName,Mobile,Dates,Children,Adults,PaymentType,ChildTicket,
+ 				AdultTicket,RegistrationDate,TotalChildren,TotalAdults,ChildrenEntered,AdultsEntered,TotalAmount,RemainingAmount,[Status]
+ 			FROM OnlineRegistration or1
+ 			
+ 			
+	 		INSERT INTO @Order (ID)
+	 		SELECT o.Id
+ 			FROM [Order] o
+ 			WHERE YEAR(o.[Day]) <= @Year
+ 			
+ 			INSERT INTO Order_Hist(nYear,Id,OrderNo,[Day],Total,PosId,StaffId,EndOfDayId,Discount,ReceiptNo,TotalBeforeDiscount,
+ 				PdaModuleId,ClientPosId,IsDeleted,ExtType,ExtObj,ExtKey,OrderOrigin,Couver)
+ 			SELECT YEAR(o.[Day]) nYear, o.Id, o.OrderNo, o.[Day], o.Total, o.PosId, o.StaffId, o.EndOfDayId,o.Discount, o.ReceiptNo, o.TotalBeforeDiscount, 
+ 				o.PdaModuleId, o.ClientPosId, o.IsDeleted, o.ExtType, o.ExtObj, o.ExtKey,o.OrderOrigin, o.Couver 
+ 			FROM [Order] o
+ 			WHERE YEAR(o.[Day]) <= @Year
+ 			
+ 			
+ 			INSERT INTO @OrderStatus(ID)
+	 		SELECT os.Id
+ 			FROM OrderStatus os
+ 			INNER JOIN [Order] o ON o.Id = os.OrderId AND YEAR(o.[Day]) <= @Year
+ 			
+ 			INSERT INTO OrderStatus_Hist(nYear,Id,[Status],TimeChanged,OrderId,StaffId,ExtState)
+ 			SELECT YEAR(o.[Day]) nYear, os.Id, os.[Status], os.TimeChanged, os.OrderId, os.StaffId, os.ExtState
+ 			FROM OrderStatus os
+ 			INNER JOIN [Order] o ON o.Id = os.OrderId AND YEAR(o.[Day]) <= @Year
+ 			
+ 			
+ 			INSERT INTO @OrdersStaff(ID)
+	 		SELECT os.Id
+ 			FROM OrdersStaff os 
+ 			INNER JOIN [Order] o ON o.Id = os.OrderId AND YEAR(o.[Day]) <= @Year
+ 			
+ 			INSERT INTO OrdersStaff_Hist(nYear,Id,StaffId,OrderId,[Type])
+ 			SELECT YEAR(o.[Day]) nYear,os.Id, os.StaffId, os.OrderId, os.[Type] 
+ 			FROM OrdersStaff os 
+ 			INNER JOIN [Order] o ON o.Id = os.OrderId AND YEAR(o.[Day]) <= @Year
+	 		
+	 		
+	 		INSERT INTO @OrderDetail (ID)
+	 		SELECT od.Id
+ 			FROM OrderDetail od
+ 			INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year
+ 			
+ 			INSERT INTO OrderDetail_Hist(nYear,Id,OrderId,ProductId,KitchenId,KdsId,PreparationTime,TableId,[Status],StatusTS,Price,PriceListDetailId,
+ 				Qty,SalesTypeId,Discount,PaidStatus,TransactionId,TotalAfterDiscount,GuestId,Couver,Guid,IsDeleted,	PendingQty)
+ 			SELECT YEAR(o.[Day]) nYear, od.Id, od.OrderId, od.ProductId, od.KitchenId, od.KdsId, od.PreparationTime, od.TableId, od.[Status], od.StatusTS, 
+ 				od.Price,od.PriceListDetailId, od.Qty, od.SalesTypeId, od.Discount, od.PaidStatus, od.TransactionId, od.TotalAfterDiscount, od.GuestId, 
+ 				od.Couver,od.Guid, od.IsDeleted, od.PendingQty 
+ 			FROM OrderDetail od
+ 			INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year
+	 		
+	 		
+	 		INSERT INTO @OrderDetailVatAnal(ID)
+	 		SELECT odva.Id 
+ 			FROM OrderDetailVatAnal odva
+ 			INNER JOIN (
+ 				SELECT DISTINCT od.Id, YEAR(o.[Day]) nYear
+ 				FROM OrderDetail od
+ 				INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year
+ 			) od ON od.Id = odva.OrderDetailId
+ 			
+ 			INSERT INTO OrderDetailVatAnal_Hist(nYear,Id,OrderDetailId,Gross,Net,VatRate,VatAmount,VatId,TaxId,TaxAmount,IsDeleted)
+ 			SELECT od.nYear, odva.Id, odva.OrderDetailId, odva.Gross, odva.Net, odva.VatRate, odva.VatAmount, odva.VatId, odva.TaxId, odva.TaxAmount, 
+ 				odva.IsDeleted    
+ 			FROM OrderDetailVatAnal odva
+ 			INNER JOIN (
+ 				SELECT DISTINCT od.Id, YEAR(o.[Day]) nYear
+ 				FROM OrderDetail od
+ 				INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year
+ 			) od ON od.Id = odva.OrderDetailId
+	 		
+	 		
+	 		INSERT INTO @OrderDetailIgredients(ID)
+	 		SELECT odi.Id
+ 			FROM OrderDetailIgredients odi
+ 			INNER JOIN (
+ 				SELECT DISTINCT od.Id, YEAR(o.[Day]) nYear
+ 				FROM OrderDetail od
+ 				INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year	
+ 			) od ON od.Id = odi.OrderDetailId
+ 			
+ 			INSERT INTO OrderDetailIgredients_Hist(	nYear,Id,IngredientId,Qty,UnitId,Price,OrderDetailId,PriceListDetailId,Discount,TotalAfterDiscount,
+ 				IsDeleted)
+ 			SELECT od.nYear, odi.Id, odi.IngredientId, odi.Qty, odi.UnitId, odi.Price, odi.OrderDetailId, odi.PriceListDetailId, odi.Discount,
+ 				   odi.TotalAfterDiscount, odi.IsDeleted
+ 			FROM OrderDetailIgredients odi
+ 			INNER JOIN (
+ 				SELECT DISTINCT od.Id, YEAR(o.[Day]) nYear
+ 				FROM OrderDetail od
+ 				INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year	
+ 			) od ON od.Id = odi.OrderDetailId
+	 		
+	 		
+	 		INSERT INTO @OrderDetailIgredientVatAnal (ID)
+	 		SELECT odiva.Id
+ 			FROM OrderDetailIgredientVatAnal odiva
+ 			INNER JOIN (
+ 				SELECT DISTINCT odi.Id, od.nYear
+ 				FROM OrderDetailIgredients odi
+ 				INNER JOIN (
+ 					SELECT DISTINCT od.Id, YEAR(o.[Day]) nYear
+ 					FROM OrderDetail od
+ 					INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year	
+ 				) od ON od.Id = odi.OrderDetailId	
+ 			) odi ON odi.Id = odiva.OrderDetailIgredientsId
+ 			
+ 			INSERT INTO OrderDetailIgredientVatAnal_Hist (nYear,Id,OrderDetailIgredientsId,Gross,Net,VatRate,VatAmount,VatId,TaxId,TaxAmount,IsDeleted)
+ 			SELECT odi.nYear, odiva.Id, odiva.OrderDetailIgredientsId, odiva.Gross, odiva.Net, odiva.VatRate, odiva.VatAmount, odiva.VatId, odiva.TaxId,
+ 				odiva.TaxAmount, odiva.IsDeleted
+ 			FROM OrderDetailIgredientVatAnal odiva
+ 			INNER JOIN (
+ 				SELECT DISTINCT odi.Id, od.nYear
+ 				FROM OrderDetailIgredients odi
+ 				INNER JOIN (
+ 					SELECT DISTINCT od.Id, YEAR(o.[Day]) nYear
+ 					FROM OrderDetail od
+ 					INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year	
+ 				) od ON od.Id = odi.OrderDetailId	
+ 			) odi ON odi.Id = odiva.OrderDetailIgredientsId
+ 			
+ 			
+	 		
+	 		INSERT INTO @OrderDetailInvoices (ID)
+	 		SELECT odi.Id
+ 			FROM OrderDetailInvoices odi
+ 			INNER JOIN Invoices i ON i.Id = odi.InvoicesId AND YEAR(i.[Day]) <= @Year
+ 			
+ 			INSERT INTO OrderDetailInvoices_Hist(nYear,Id,OrderDetailId,StaffId,PosInfoDetailId,[Counter],CreationTS,IsPrinted,CustomerId,InvoicesId,
+ 				IsDeleted,OrderDetailIgredientsId,Price,Discount,Net,VatRate,VatAmount,VatId,TaxId,VatCode,TaxAmount,Qty,Total,PricelistId,ProductId,
+ 				[Description],ItemCode,ItemRemark,InvoiceType,TableId,TableCode,RegionId,OrderNo,OrderId,IsExtra,PosInfoId,EndOfDayId,Abbreviation,
+ 				DiscountId,SalesTypeId,ProductCategoryId,CategoryId,ItemPosition,ItemSort,ItemRegion,RegionPosition,ItemBarcode,TotalBeforeDiscount,
+ 				TotalAfterDiscount,ReceiptSplitedDiscount)
+ 			SELECT YEAR(i.[Day]) nYear, odi.Id, odi.OrderDetailId, odi.StaffId, odi.PosInfoDetailId,odi.[Counter], odi.CreationTS, odi.IsPrinted, odi.CustomerId,
+ 				   odi.InvoicesId, odi.IsDeleted, odi.OrderDetailIgredientsId, odi.Price,odi.Discount, odi.Net, odi.VatRate, odi.VatAmount, odi.VatId, 
+ 				   odi.TaxId,odi.VatCode, odi.TaxAmount, odi.Qty, odi.Total, odi.PricelistId,odi.ProductId, odi.[Description], odi.ItemCode, odi.ItemRemark,
+ 				   odi.InvoiceType, odi.TableId, odi.TableCode, odi.RegionId, odi.OrderNo,odi.OrderId, odi.IsExtra, odi.PosInfoId, odi.EndOfDayId,
+ 				   odi.Abbreviation, odi.DiscountId, odi.SalesTypeId,odi.ProductCategoryId, odi.CategoryId, odi.ItemPosition, odi.ItemSort,
+ 				   odi.ItemRegion, odi.RegionPosition, odi.ItemBarcode,odi.TotalBeforeDiscount, odi.TotalAfterDiscount,odi.ReceiptSplitedDiscount
+ 			FROM OrderDetailInvoices odi
+ 			INNER JOIN Invoices i ON i.Id = odi.InvoicesId AND YEAR(i.[Day]) <= @Year
+ 			
+ 			
+	 		INSERT INTO @StoreMessages (ID)
+	 		SELECT sm.Id
+ 			FROM StoreMessages sm
+ 			WHERE YEAR(sm.ShowTo) <= @Year
+ 			
+ 			INSERT INTO StoreMessages_Hist(nYear,Id,[Message],CreationDate,Title,StoreId,ShowFrom,ShowTo,ImageUri,[Status])
+ 			SELECT YEAR(sm.ShowTo) nYear, sm.Id, sm.[Message], sm.CreationDate, sm.Title, sm.StoreId, sm.ShowFrom,
+ 				   sm.ShowTo, sm.ImageUri, sm.[Status]
+ 			FROM StoreMessages sm
+ 			WHERE YEAR(sm.ShowTo) <= @Year
+ 			
+ 			
+	 		INSERT INTO @TablePaySuggestion(ID)
+	 		SELECT tps.Id
+	 		FROM TablePaySuggestion tps
+	 		INNER JOIN OrderDetail od ON od.Id = tps.OrderDetailId
+	 		INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year
+	 		
+	 		INSERT INTO TablePaySuggestion_Hist(nYear,Id,AccountId,GuestId,	Amount,	OrderDetailId,IsUsed,CreditCodeId)
+	 		SELECT YEAR(o.[Day]) nYear, tps.Id, tps.AccountId, tps.GuestId, tps.Amount, tps.OrderDetailId, tps.IsUsed, tps.CreditCodeId
+	 		FROM TablePaySuggestion tps
+	 		INNER JOIN OrderDetail od ON od.Id = tps.OrderDetailId
+	 		INNER JOIN [Order] o ON o.Id = od.OrderId AND YEAR(o.[Day]) <= @Year
+	 		
+	 		
+	 		INSERT INTO @Transactions(ID)
+	 		SELECT t.Id
+ 			FROM Transactions t
+ 			INNER JOIN EndOfDay eod ON eod.Id = t.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			INSERT INTO Transactions_Hist(nYear,Id,[Day],PosInfoId,StaffId,OrderId,TransactionType,Amount,DepartmentId,[Description],
+ 				AccountId,InOut,Gross,Net,Vat,Tax,EndOfDayId,ExtDescription,InvoicesId,IsDeleted)
+ 			SELECT YEAR(eod.FODay) nYear, t.Id, t.[Day], t.PosInfoId, t.StaffId, t.OrderId, t.TransactionType,t.Amount, t.DepartmentId, t.[Description], 
+ 				t.AccountId, t.InOut, t.Gross, t.Net, t.Vat, t.Tax, t.EndOfDayId, t.ExtDescription,t.InvoicesId, t.IsDeleted
+ 			FROM Transactions t
+ 			INNER JOIN EndOfDay eod ON eod.Id = t.EndOfDayId AND YEAR(eod.FODay) <= @Year
+ 			
+ 			
+ 			INSERT INTO TransferMappingDetails_Hist(nYear,Id,TransferMappingsId,ProductCategoryId,ProductId)
+ 			SELECT DISTINCT @Year nYear, tmd.Id, tmd.TransferMappingsId, tmd.ProductCategoryId, tmd.ProductId
+ 			FROM TransferMappingDetails tmd
+ 			INNER JOIN TransferMappings tm ON tm.Id = tmd.TransferMappingsId
+ 			
+ 			
+ 			INSERT INTO TransferMappings_Hist(nYear,Id,PmsDepartmentId,	PmsDepDescription,ProductId,SalesTypeId,VatPercentage,PosDepartmentId,
+ 				PriceListId,VatCode,ProductCategoryId,HotelId)
+ 			SELECT @Year nYear,Id,PmsDepartmentId,	PmsDepDescription,ProductId,SalesTypeId,VatPercentage,PosDepartmentId,
+ 				PriceListId,VatCode,ProductCategoryId,HotelId
+ 			FROM TransferMappings tm
+ 			
+ 			
+ 			INSERT INTO @TransferToPms (ID)
+			SELECT Id
+ 			FROM TransferToPms ttp
+ 			WHERE YEAR(ttp.SendToPMS) <= @Year
+ 			
+ 			INSERT INTO TransferToPms_Hist(nYear,Id,RegNo,PmsDepartmentId,[Description],ProfileId,ProfileName,TransactionId,TransferType,
+ 				RoomId,RoomDescription,ReceiptNo,PosInfoDetailId,SendToPMS,Total,SendToPmsTS,ErrorMessage,PmsResponseId,TransferIdentifier,
+ 				PmsDepartmentDescription,[Status],PosInfoId,EndOfDayId,HotelId,IsDeleted)
+ 			SELECT YEAR(ttp.SendToPMS) nYear,Id,RegNo,PmsDepartmentId,[Description],ProfileId,ProfileName,TransactionId,TransferType,
+ 				RoomId,RoomDescription,ReceiptNo,PosInfoDetailId,SendToPMS,Total,SendToPmsTS,ErrorMessage,PmsResponseId,TransferIdentifier,
+ 				PmsDepartmentDescription,[Status],PosInfoId,EndOfDayId,HotelId,IsDeleted
+ 			FROM TransferToPms ttp
+ 			WHERE YEAR(ttp.SendToPMS) <= @Year
+ 			
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 			
+ 		END TRY
+ 		BEGIN CATCH 
+ 			SET @OK = 0
+			ROLLBACK TRANSACTION
+			SELECT
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH 
+ 		
+ 		
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		/*CreditTransactions*/
+ 		
+ 		
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM CreditTransactions
+ 			WHERE Id IN (SELECT cch.Id FROM CreditTransactions_Hist cch)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted CreditTransactions' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*TablePaySuggestion*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM TablePaySuggestion
+ 			WHERE Id IN (SELECT cch.Id FROM TablePaySuggestion_Hist cch)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted TablePaySuggestion' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*CreditCodes*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM CreditCodes
+ 			WHERE Id IN (SELECT cch.Id FROM CreditCodes_Hist cch) AND 
+ 				Id NOT IN (
+ 					SELECT ct.CreditCodeId
+ 					FROM CreditTransactions ct
+ 					WHERE ct.CreditCodeId IS NOT NULL
+ 					UNION ALL
+ 					SELECT tps.CreditCodeId
+ 					FROM TablePaySuggestion tps
+ 					WHERE tps.CreditCodeId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted CreditCodes' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*CreditAccounts*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM CreditAccounts
+ 			WHERE Id IN (SELECT cch.Id FROM CreditAccounts_Hist cch) AND 
+ 				Id NOT IN (
+ 					SELECT ct.CreditAccountId
+ 					FROM CreditTransactions ct
+ 					WHERE ct.CreditAccountId IS NOT NULL
+ 					UNION ALL
+ 					SELECT cc.CreditAccountId
+ 					FROM CreditCodes cc
+ 					WHERE cc.CreditAccountId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted CreditAccounts' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*EndOfDayDetail*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM EndOfDayDetail
+ 			WHERE Id IN (SELECT cch.Id FROM EndOfDayDetail_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted EndOfDayDetail' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*EndOfDayPaymentAnalysis*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM EndOfDayPaymentAnalysis
+ 			WHERE Id IN (SELECT cch.Id FROM EndOfDayPaymentAnalysis_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted EndOfDayPaymentAnalysis' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*EndOfDayVoidsAnalysis*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM EndOfDayVoidsAnalysis
+ 			WHERE Id IN (SELECT cch.Id FROM EndOfDayVoidsAnalysis_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted EndOfDayVoidsAnalysis' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*EODAccountToPmsTransfer*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM EODAccountToPmsTransfer
+ 			WHERE Id IN (SELECT cch.Id FROM EODAccountToPmsTransfer_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted EODAccountToPmsTransfer' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*ExternalLostOrders*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM ExternalLostOrders
+ 			WHERE OrderNo+'-'+CAST(ExtType AS VARCHAR(50)) IN (SELECT cch.OrderNo+'-'+CAST(cch.ExtType AS VARCHAR(50)) FROM ExternalLostOrders_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted ExternalLostOrders' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*HitPosOrders*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM HitPosOrders
+ 			WHERE Id IN (SELECT cch.Id FROM HitPosOrders_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted HitPosOrders' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*Invoice_Guests_Trans*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM Invoice_Guests_Trans
+ 			WHERE Id IN (SELECT cch.Id FROM Invoice_Guests_Trans_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted Invoice_Guests_Trans' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*InvoiceShippingDetails*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM InvoiceShippingDetails
+ 			WHERE Id IN (SELECT cch.Id FROM InvoiceShippingDetails_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted InvoiceShippingDetails' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*KitchenInstructionLogger*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM KitchenInstructionLogger
+ 			WHERE Id IN (SELECT cch.Id FROM KitchenInstructionLogger_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted KitchenInstructionLogger' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*Lockers*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM Lockers
+ 			WHERE Id IN (SELECT cch.Id FROM Lockers_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted Lockers' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*Loyalty*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM Loyalty
+ 			WHERE Id IN (SELECT cch.Id FROM Loyalty_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted Loyalty' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*MealConsumption*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM MealConsumption
+ 			WHERE Id IN (SELECT cch.Id FROM MealConsumption_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted MealConsumption' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*OnlineRegistration*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OnlineRegistration
+ 			WHERE BarCode IN (SELECT cch.BarCode FROM OnlineRegistration_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OnlineRegistration' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+	
+		/*OrderDetailInvoices*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrderDetailInvoices
+ 			WHERE Id IN (SELECT cch.Id FROM OrderDetailInvoices_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrderDetailInvoices' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*OrderDetailIgredientVatAnal*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrderDetailIgredientVatAnal
+ 			WHERE Id IN (SELECT cch.Id FROM OrderDetailIgredientVatAnal_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrderDetailIgredientVatAnal' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*OrderDetailIgredients*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrderDetailIgredients
+ 			WHERE Id IN (SELECT cch.Id FROM OrderDetailIgredients_Hist cch) AND 
+ 				id NOT IN (
+ 					SELECT odiva.OrderDetailIgredientsId
+ 					FROM OrderDetailIgredientVatAnal odiva
+ 					WHERE odiva.OrderDetailIgredientsId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.OrderDetailIgredientsId
+ 					FROM OrderDetailInvoices odi
+ 					WHERE odi.OrderDetailIgredientsId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrderDetailIgredients' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*OrderDetailVatAnal*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrderDetailVatAnal
+ 			WHERE Id IN (SELECT cch.Id FROM OrderDetailVatAnal_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrderDetailVatAnal' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*OrderDetail*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrderDetail
+ 			WHERE Id IN (SELECT cch.Id FROM OrderDetail_Hist cch) AND 
+ 				id NOT IN (
+ 					SELECT tps.OrderDetailId
+ 					FROM TablePaySuggestion tps
+ 					WHERE tps.OrderDetailId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.OrderDetailId
+ 					FROM OrderDetailIgredients odi
+ 					WHERE odi.OrderDetailId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.OrderDetailId
+ 					FROM OrderDetailInvoices odi
+ 					WHERE odi.OrderDetailId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odva.OrderDetailId
+ 					FROM OrderDetailVatAnal odva
+ 					WHERE odva.OrderDetailId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrderDetail' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*OrdersStaff*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrdersStaff
+ 			WHERE Id IN (SELECT cch.Id FROM OrdersStaff_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrdersStaff' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*OrderStatus*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM OrderStatus
+ 			WHERE Id IN (SELECT cch.Id FROM OrderStatus_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted OrderStatus' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*TransferToPms*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM TransferToPms
+ 			WHERE Id IN (SELECT cch.Id FROM TransferToPms_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted TransferToPms' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+	
+		/*Transactions*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM Transactions
+ 			WHERE Id IN (SELECT cch.Id FROM Transactions_Hist cch) AND 
+ 				id NOT IN (
+ 					SELECT tps.TransactionId
+ 					FROM CreditTransactions tps
+ 					WHERE tps.TransactionId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.TransactionId
+ 					FROM TransferToPms odi
+ 					WHERE odi.TransactionId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.TransactionId
+ 					FROM Invoice_Guests_Trans odi
+ 					WHERE odi.TransactionId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odva.TransactionId
+ 					FROM OrderDetail odva
+ 					WHERE odva.TransactionId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted Transactions' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*Order*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM [Order]
+ 			WHERE Id IN (SELECT cch.Id FROM Order_Hist cch) AND 
+ 				id NOT IN (
+ 					SELECT t.OrderId
+ 					FROM Transactions t
+ 					WHERE t.OrderId IS NOT NULL
+ 					UNION ALL
+ 					SELECT od.OrderId
+ 					FROM OrderDetail od
+ 					WHERE od.OrderId IS NOT NULL
+ 					UNION ALL
+ 					SELECT os.OrderId
+ 					FROM OrdersStaff os
+ 					WHERE os.OrderId IS NOT NULL
+ 					UNION ALL
+ 					SELECT os.OrderId
+ 					FROM OrderStatus os
+ 					WHERE os.OrderId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted Order' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*Invoices*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM Invoices
+ 			WHERE Id IN (SELECT cch.Id FROM Invoices_Hist cch) AND 
+ 				id NOT IN (
+ 					SELECT t.InvoicesId
+ 					FROM Transactions t
+ 					WHERE t.InvoicesId IS NOT NULL
+ 					UNION ALL
+ 					SELECT ct.InvoiceId
+ 					FROM CreditTransactions ct
+ 					WHERE ct.InvoiceId IS NOT NULL
+ 					UNION ALL
+ 					SELECT isd.InvoicesId
+ 					FROM InvoiceShippingDetails isd
+ 					WHERE isd.InvoicesId IS NOT NULL
+ 					UNION ALL
+ 					SELECT igt.InvoiceId
+ 					FROM Invoice_Guests_Trans igt
+ 					WHERE igt.InvoiceId IS NOT NULL
+ 					UNION ALL
+ 					SELECT l.InvoicesId
+ 					FROM Loyalty l
+ 					WHERE l.InvoicesId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.InvoicesId
+ 					FROM OrderDetailInvoices odi
+ 					WHERE odi.InvoicesId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted Invoices' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+		
+		/*EndOfDay*/
+		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM EndOfDay
+ 			WHERE Id IN (SELECT cch.Id FROM EndOfDay_Hist cch) AND 
+ 				id NOT IN (
+ 					SELECT ca.EndOfDayId
+ 					FROM CreditAccounts ca
+ 					WHERE ca.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT ct.EndOfDayId
+ 					FROM CreditTransactions ct
+ 					WHERE ct.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT eodd.EndOfdayId
+ 					FROM EndOfDayDetail eodd
+ 					WHERE eodd.EndOfdayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT eodpa.EndOfDayId
+ 					FROM EndOfDayPaymentAnalysis eodpa
+ 					WHERE eodpa.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT eodva.EndOfDayId
+ 					FROM EndOfDayVoidsAnalysis eodva
+ 					WHERE eodva.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT t.EndOfDayId
+ 					FROM Transactions t
+ 					WHERE t.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT ttp.EndOfDayId
+ 					FROM TransferToPms ttp
+ 					WHERE ttp.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT i.EndOfDayId
+ 					FROM Invoices i
+ 					WHERE i.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT kil.EndOfDayId
+ 					FROM KitchenInstructionLogger kil
+ 					WHERE kil.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT l.EndOfDayId
+ 					FROM Lockers l
+ 					WHERE l.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT mc.EndOfDayId
+ 					FROM MealConsumption mc
+ 					WHERE mc.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT o.EndOfDayId
+ 					FROM [Order] o
+ 					WHERE o.EndOfDayId IS NOT NULL
+ 					UNION ALL
+ 					SELECT odi.EndOfDayId
+ 					FROM OrderDetailInvoices odi
+ 					WHERE odi.EndOfDayId IS NOT NULL
+ 				)
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted EndOfDay' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+ 		/*StoreMessages*/
+ 		BEGIN TRY
+ 			BEGIN TRANSACTION 
+ 			DELETE FROM StoreMessages
+ 			WHERE Id IN (SELECT cch.Id FROM StoreMessages_Hist cch) 
+ 			SET @OK = 1
+ 			COMMIT TRANSACTION
+ 		END TRY
+ 		BEGIN CATCH
+ 			ROLLBACK TRANSACTION
+ 			SET @OK = 0
+			SELECT 'Deleted StoreMessages' sTbl, 
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+ 		END CATCH
+ 		IF @OK = 0
+ 			GOTO ExitCall;
+ 		
+
+		BEGIN TRY
+			BEGIN TRANSACTION 
+			DELETE FROM CreditAccounts_Hist WHERE Id IN (SELECT Id FROM CreditAccounts)
+			DELETE FROM CreditCodes_Hist WHERE Id IN (SELECT Id FROM CreditCodes)
+			DELETE FROM CreditTransactions_Hist WHERE Id IN (SELECT Id FROM CreditTransactions)
+			DELETE FROM EndOfDay_Hist WHERE Id IN (SELECT Id FROM EndOfDay)
+			DELETE FROM EndOfDayDetail_Hist WHERE Id IN (SELECT Id FROM EndOfDayDetail)
+			DELETE FROM EndOfDayPaymentAnalysis_Hist WHERE Id IN (SELECT Id FROM EndOfDayPaymentAnalysis)
+			DELETE FROM EndOfDayVoidsAnalysis_Hist WHERE Id IN (SELECT Id FROM EndOfDayVoidsAnalysis)
+			DELETE FROM EODAccountToPmsTransfer_Hist WHERE Id IN (SELECT Id FROM EODAccountToPmsTransfer)
+			DELETE FROM ExternalLostOrders_Hist WHERE OrderNo+'-'+CAST(ExtType AS VARCHAR(50)) IN (SELECT OrderNo+'-'+CAST(ExtType AS VARCHAR(50)) FROM ExternalLostOrders)
+			DELETE FROM HitPosOrders_Hist WHERE Id IN (SELECT Id FROM HitPosOrders)
+			DELETE FROM Invoice_Guests_Trans_Hist WHERE Id IN (SELECT Id FROM Invoice_Guests_Trans)
+			DELETE FROM Invoices_Hist WHERE Id IN (SELECT Id FROM Invoices)
+			DELETE FROM InvoiceShippingDetails_Hist WHERE Id IN (SELECT Id FROM InvoiceShippingDetails)
+			DELETE FROM KitchenInstructionLogger_Hist WHERE Id IN (SELECT Id FROM KitchenInstructionLogger)
+			DELETE FROM Lockers_Hist WHERE Id IN (SELECT Id FROM Lockers)
+			DELETE FROM Loyalty_Hist WHERE Id IN (SELECT Id FROM Loyalty)
+			DELETE FROM MealConsumption_Hist WHERE Id IN (SELECT Id FROM MealConsumption)
+			DELETE FROM OnlineRegistration_Hist WHERE BarCode IN (SELECT BarCode FROM OnlineRegistration)
+			DELETE FROM Order_Hist WHERE Id IN (SELECT Id FROM [Order])
+			DELETE FROM OrderDetail_Hist WHERE Id IN (SELECT Id FROM OrderDetail)
+			DELETE FROM OrderDetailIgredients_Hist WHERE Id IN (SELECT Id FROM OrderDetailIgredients)
+			DELETE FROM OrderDetailIgredientVatAnal_Hist WHERE Id IN (SELECT Id FROM OrderDetailIgredientVatAnal)
+			DELETE FROM OrderDetailInvoices_Hist WHERE Id IN (SELECT Id FROM OrderDetailInvoices)
+			DELETE FROM OrderDetailVatAnal_Hist WHERE Id IN (SELECT Id FROM OrderDetailVatAnal)
+			DELETE FROM OrdersStaff_Hist WHERE Id IN (SELECT Id FROM OrdersStaff)
+			DELETE FROM OrderStatus_Hist WHERE Id IN (SELECT Id FROM OrderStatus)
+			DELETE FROM StoreMessages_Hist WHERE Id IN (SELECT Id FROM StoreMessages)
+			DELETE FROM TablePaySuggestion_Hist WHERE Id IN (SELECT Id FROM TablePaySuggestion)
+			DELETE FROM Transactions_Hist WHERE Id IN (SELECT Id FROM Transactions)
+			DELETE FROM TransferToPms_Hist WHERE Id IN (SELECT Id FROM TransferToPms)
+			
+			COMMIT TRANSACTION
+			SET @OK = 1
+		END TRY
+		BEGIN CATCH
+			ROLLBACK TRANSACTION
+			SET @OK = 0
+			SELECT 'Deleted Check',
+				ERROR_NUMBER() AS ErrorNumber,
+				ERROR_SEVERITY() AS ErrorSeverity,
+				ERROR_STATE() AS ErrorState,
+				ERROR_PROCEDURE() AS ErrorProcedure,
+				ERROR_LINE() AS ErrorLine,
+				ERROR_MESSAGE() AS ErrorMessage
+		END CATCH
+		
+		UPDATE r SET r.EndRecs = res.StartRecs
+		FROM @ResTable r
+		INNER JOIN (
+			SELECT 'CreditAccounts' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM CreditAccounts ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM CreditAccounts_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'CreditCodes' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM CreditCodes ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM CreditCodes_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'CreditTransactions' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM CreditTransactions ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM CreditTransactions_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'EndOfDay' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDay ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDay_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'EndOfDayDetail' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDayDetail ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDayDetail_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'EndOfDayPaymentAnalysis' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDayPaymentAnalysis ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDayPaymentAnalysis_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'EndOfDayVoidsAnalysis' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDayVoidsAnalysis ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EndOfDayVoidsAnalysis_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'EODAccountToPmsTransfer' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EODAccountToPmsTransfer ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM EODAccountToPmsTransfer_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'ExternalLostOrders' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM ExternalLostOrders ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM ExternalLostOrders_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'HitPosOrders' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM HitPosOrders ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM HitPosOrders_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'Invoice_Guests_Trans' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Invoice_Guests_Trans ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Invoice_Guests_Trans_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'Invoices' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Invoices ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Invoices_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'InvoiceShippingDetails' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM InvoiceShippingDetails ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM InvoiceShippingDetails_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'KitchenInstructionLogger' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM KitchenInstructionLogger ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM KitchenInstructionLogger_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'Lockers' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Lockers ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Lockers_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'Loyalty' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Loyalty ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Loyalty_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'MealConsumption' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM MealConsumption ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM MealConsumption_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OnlineRegistration' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OnlineRegistration ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OnlineRegistration_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'Order' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM [Order] ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Order_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrderDetail' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetail ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetail_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrderDetailIgredients' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailIgredients ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailIgredients_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrderDetailIgredientVatAnal' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailIgredientVatAnal ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailIgredientVatAnal_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrderDetailInvoices' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailInvoices ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailInvoices_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrderDetailVatAnal' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailVatAnal ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderDetailVatAnal_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrdersStaff' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrdersStaff ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrdersStaff_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'OrderStatus' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderStatus ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM OrderStatus_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'StoreMessages' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM StoreMessages ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM StoreMessages_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'TablePaySuggestion' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM TablePaySuggestion ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM TablePaySuggestion_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'Transactions' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Transactions ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM Transactions_Hist cah
+ 			) fin
+ 			UNION ALL
+ 			SELECT 'TransferToPms' tblName, SUM(fin.nCnt) StartRecs, 0 EndRecs
+ 			FROM (
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM TransferToPms ca
+ 				UNION ALL
+ 				SELECT ISNULL(COUNT(*),0) nCnt
+ 				FROM TransferToPms_Hist cah
+ 			) fin
+		) res ON res.tblName = r.tblName
+		
+		SET @OK = 1
+		IF EXISTS(SELECT 1 FROM @ResTable WHERE StartRecs - EndRecs <> 0)
+		BEGIN 
+			SET @OK = 0
+			SELECT * FROM @ResTable WHERE StartRecs - EndRecs <> 0
+		END
+		
+	END TRY
+	BEGIN CATCH
+		SET @OK = 0
+		SELECT
+			ERROR_NUMBER() AS ErrorNumber,
+			ERROR_SEVERITY() AS ErrorSeverity,
+			ERROR_STATE() AS ErrorState,
+			ERROR_PROCEDURE() AS ErrorProcedure,
+			ERROR_LINE() AS ErrorLine,
+			ERROR_MESSAGE() AS ErrorMessage
+	END CATCH
+	
+ExitCall:
+	BEGIN 	
+		IF @OK = 1
+		BEGIN
+			SELECT 0 ErrorNumber,0 ErrorSeverity,0 ErrorState,'OK' ErrorProcedure,0 ErrorLine,'Operation completed Succesfully' ErrorMessage
+		END
+		ELSE
+		BEGIN 
+			SET IDENTITY_INSERT dbo.StoreMessages ON
+			INSERT INTO StoreMessages(Id, [Message], CreationDate, Title, StoreId, ShowFrom, ShowTo, ImageUri, [Status]	)
+			SELECT Id, [Message], CreationDate, Title, StoreId, ShowFrom, ShowTo, ImageUri, [Status]
+			FROM StoreMessages_Hist smh
+			WHERE smh.Id IN (SELECT ID FROM @StoreMessages) 
+			SET IDENTITY_INSERT dbo.StoreMessages OFF
+			DELETE FROM StoreMessages_Hist  
+			WHERE id IN (SELECT ID FROM @StoreMessages)
+
+			SET IDENTITY_INSERT dbo.EndOfDay ON
+			INSERT INTO EndOfDay (Id, FODay, PosInfoId, CloseId, Gross, Net, TicketsCount, ItemCount, TicketAverage, StaffId, Discount,
+			    dtDateTime, Barcodes)
+			SELECT Id, FODay, PosInfoId, CloseId, Gross, Net, TicketsCount, ItemCount, TicketAverage, StaffId, Discount,
+			    dtDateTime, Barcodes
+			FROM EndOfDay_Hist eodh
+			WHERE eodh.Id IN (SELECT ID FROM @EndOfDay)
+			SET IDENTITY_INSERT dbo.EndOfDay OFF
+			DELETE FROM EndOfDay_Hist 
+			WHERE id IN (SELECT ID FROM @EndOfDay)
+			
+			SET IDENTITY_INSERT dbo.Invoices ON
+			INSERT INTO Invoices(Id, [Description], InvoiceTypeId, [Counter], [Day], IsPrinted, GuestId, Total, Discount, Vat, Tax, Net,
+	            StaffId, Cover, TableId, PosInfoId, PdaModuleId, ClientPosId, EndOfDayId, PosInfoDetailId, IsVoided, IsDeleted, 
+	            DiscountRemark, PaymentsDesc, IsPaid, PaidTotal, Rooms, OrderNo, IsInvoiced, Hashcode, TableSum, CashAmount, BuzzerNumber)
+	        SELECT Id, [Description], InvoiceTypeId, [Counter], [Day], IsPrinted, GuestId, Total, Discount, Vat, Tax, Net,
+	            StaffId, Cover, TableId, PosInfoId, PdaModuleId, ClientPosId, EndOfDayId, PosInfoDetailId, IsVoided, IsDeleted, 
+	            DiscountRemark, PaymentsDesc, IsPaid, PaidTotal, Rooms, OrderNo, IsInvoiced, Hashcode, TableSum, CashAmount, BuzzerNumber
+	        FROM Invoices_Hist ih
+	        WHERE ih.Id IN (SELECT ID FROM @Invoices)
+			SET IDENTITY_INSERT dbo.Invoices OFF
+			DELETE FROM Invoices_Hist 
+			WHERE Id IN (SELECT ID FROM @Invoices)
+			
+			SET IDENTITY_INSERT dbo.[Order] ON
+			INSERT INTO [Order](Id, OrderNo, [Day], Total, PosId, StaffId, EndOfDayId, Discount, ReceiptNo, TotalBeforeDiscount,
+				PdaModuleId, ClientPosId, IsDeleted, ExtType, ExtObj, ExtKey, OrderOrigin, Couver)
+			SELECT Id, OrderNo, [Day], Total, PosId, StaffId, EndOfDayId, Discount, ReceiptNo, TotalBeforeDiscount,
+				PdaModuleId, ClientPosId, IsDeleted, ExtType, ExtObj, ExtKey, OrderOrigin, Couver
+			FROM Order_Hist
+			WHERE ID IN (SELECT ID FROM @Order)      
+			SET IDENTITY_INSERT dbo.[Order] OFF
+			DELETE FROM Order_Hist
+			WHERE ID IN (SELECT ID FROM @Order)
+			
+			SET IDENTITY_INSERT dbo.Transactions ON
+			INSERT INTO Transactions(Id, [Day], PosInfoId, StaffId, OrderId, TransactionType, Amount, DepartmentId, [Description],
+				AccountId, InOut, Gross, Net, Vat, Tax, EndOfDayId, ExtDescription, InvoicesId, IsDeleted)
+			SELECT Id, [Day], PosInfoId, StaffId, OrderId, TransactionType, Amount, DepartmentId, [Description],
+				AccountId, InOut, Gross, Net, Vat, Tax, EndOfDayId, ExtDescription, InvoicesId, IsDeleted
+			FROM Transactions_Hist th
+			WHERE id IN (SELECT ID FROM @Transactions)
+			SET IDENTITY_INSERT dbo.Transactions OFF
+			DELETE FROM Transactions_Hist
+			WHERE Id IN (SELECT ID FROM @Transactions)
+			
+			SET IDENTITY_INSERT dbo.TransferToPms ON
+			INSERT INTO TransferToPms(Id, RegNo, PmsDepartmentId, [Description], ProfileId, ProfileName, TransactionId, TransferType,
+	            RoomId, RoomDescription, ReceiptNo, PosInfoDetailId, SendToPMS, Total, SendToPmsTS, ErrorMessage, PmsResponseId,
+	            TransferIdentifier, PmsDepartmentDescription, [Status], PosInfoId, EndOfDayId, HotelId, IsDeleted)
+	        SELECT Id, RegNo, PmsDepartmentId, [Description], ProfileId, ProfileName, TransactionId, TransferType,
+	            RoomId, RoomDescription, ReceiptNo, PosInfoDetailId, SendToPMS, Total, SendToPmsTS, ErrorMessage, PmsResponseId,
+	            TransferIdentifier, PmsDepartmentDescription, [Status], PosInfoId, EndOfDayId, HotelId, IsDeleted
+	        FROM TransferToPms_Hist ttph
+	        WHERE ttph.Id IN (SELECT ID FROM @TransferToPms)
+			SET IDENTITY_INSERT dbo.TransferToPms OFF
+			DELETE FROM TransferToPms_Hist
+			WHERE id IN (SELECT ID FROM @TransferToPms)
+			
+			SET IDENTITY_INSERT dbo.OrderStatus ON
+			INSERT INTO OrderStatus(Id, [Status], TimeChanged, OrderId, StaffId, ExtState)
+			SELECT Id, [Status], TimeChanged, OrderId, StaffId, ExtState
+			FROM OrderStatus_Hist osh
+			WHERE osh.Id IN (SELECT ID FROM @OrderStatus)
+			SET IDENTITY_INSERT dbo.OrderStatus OFF
+			DELETE FROM OrderStatus_Hist
+			WHERE Id IN (SELECT ID FROM @OrderStatus)
+			
+			
+			SET IDENTITY_INSERT dbo.OrdersStaff ON
+			INSERT INTO OrdersStaff(Id, StaffId, OrderId, [Type])
+			SELECT Id, StaffId, OrderId, [Type]
+			FROM OrdersStaff_Hist osh
+			WHERE osh.Id IN (SELECT ID FROM @OrdersStaff)
+			SET IDENTITY_INSERT dbo.OrdersStaff OFF
+			DELETE FROM OrdersStaff_Hist
+			WHERE Id IN (SELECT ID FROM @OrdersStaff)
+			
+			SET IDENTITY_INSERT dbo.OrderDetail ON
+			INSERT INTO OrderDetail(Id, OrderId, ProductId, KitchenId, KdsId, PreparationTime, TableId, [Status], StatusTS, Price,
+				PriceListDetailId, Qty, SalesTypeId, Discount, PaidStatus, TransactionId, TotalAfterDiscount, GuestId, Couver, Guid,
+				IsDeleted, PendingQty)
+			SELECT Id, OrderId, ProductId, KitchenId, KdsId, PreparationTime, TableId, [Status], StatusTS, Price,
+				PriceListDetailId, Qty, SalesTypeId, Discount, PaidStatus, TransactionId, TotalAfterDiscount, GuestId, Couver, Guid,
+				IsDeleted, PendingQty
+			FROM OrderDetail_Hist odh
+			WHERE odh.Id IN (SELECT ID FROM @OrderDetail)
+			SET IDENTITY_INSERT dbo.OrderDetail OFF
+			DELETE FROM OrderDetail_Hist
+			WHERE ID IN (SELECT ID FROM @OrderDetail) 
+			
+			SET IDENTITY_INSERT dbo.OrderDetailVatAnal ON
+			INSERT INTO OrderDetailVatAnal(Id, OrderDetailId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted)
+			SELECT Id, OrderDetailId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted
+			FROM OrderDetailVatAnal_Hist odvah
+			WHERE ID IN (SELECT ID FROM @OrderDetailVatAnal)
+			SET IDENTITY_INSERT dbo.OrderDetailVatAnal OFF
+			DELETE FROM OrderDetailVatAnal_Hist
+			WHERE ID IN (SELECT ID FROM @OrderDetailVatAnal)
+			
+			SET IDENTITY_INSERT dbo.OrderDetailIgredients ON
+			INSERT INTO OrderDetailIgredients(Id, IngredientId, Qty, UnitId, Price, OrderDetailId, PriceListDetailId, Discount,
+				TotalAfterDiscount, IsDeleted)
+			SELECT Id, IngredientId, Qty, UnitId, Price, OrderDetailId, PriceListDetailId, Discount,
+				TotalAfterDiscount, IsDeleted
+			FROM OrderDetailIgredients_Hist odih
+			WHERE ID IN (SELECT ID FROM @OrderDetailIgredients)
+			SET IDENTITY_INSERT dbo.OrderDetailIgredients OFF
+			DELETE FROM OrderDetailIgredients_Hist
+			WHERE ID IN (SELECT ID FROM @OrderDetailIgredients)
+			
+			SET IDENTITY_INSERT dbo.OrderDetailIgredientVatAnal ON
+			INSERT INTO OrderDetailIgredientVatAnal(Id, OrderDetailIgredientsId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted)
+			SELECT Id, OrderDetailIgredientsId, Gross, Net, VatRate, VatAmount, VatId, TaxId, TaxAmount, IsDeleted
+			FROM OrderDetailIgredientVatAnal_Hist odivah
+			WHERE id IN (SELECT ID FROM @OrderDetailIgredientVatAnal)
+			SET IDENTITY_INSERT dbo.OrderDetailIgredientVatAnal OFF
+			DELETE FROM OrderDetailIgredientVatAnal_Hist
+			WHERE ID IN (SELECT ID FROM @OrderDetailIgredientVatAnal)
+			
+			SET IDENTITY_INSERT dbo.OrderDetailInvoices ON
+			INSERT INTO OrderDetailInvoices(Id, OrderDetailId, StaffId, PosInfoDetailId, [Counter], CreationTS, IsPrinted,
+	            CustomerId, InvoicesId, IsDeleted, OrderDetailIgredientsId, Price, Discount, Net, VatRate, VatAmount, VatId, TaxId,
+	            VatCode, TaxAmount, Qty, Total, PricelistId, ProductId, [Description], ItemCode, ItemRemark, InvoiceType, TableId,
+	            TableCode, RegionId, OrderNo, OrderId, IsExtra, PosInfoId, EndOfDayId, Abbreviation, DiscountId, SalesTypeId,
+	            ProductCategoryId, CategoryId, ItemPosition, ItemSort, ItemRegion, RegionPosition, ItemBarcode,
+	            TotalBeforeDiscount, TotalAfterDiscount, ReceiptSplitedDiscount)
+	        SELECT Id, OrderDetailId, StaffId, PosInfoDetailId, [Counter], CreationTS, IsPrinted,
+	            CustomerId, InvoicesId, IsDeleted, OrderDetailIgredientsId, Price, Discount, Net, VatRate, VatAmount, VatId, TaxId,
+	            VatCode, TaxAmount, Qty, Total, PricelistId, ProductId, [Description], ItemCode, ItemRemark, InvoiceType, TableId,
+	            TableCode, RegionId, OrderNo, OrderId, IsExtra, PosInfoId, EndOfDayId, Abbreviation, DiscountId, SalesTypeId,
+	            ProductCategoryId, CategoryId, ItemPosition, ItemSort, ItemRegion, RegionPosition, ItemBarcode,
+	            TotalBeforeDiscount, TotalAfterDiscount, ReceiptSplitedDiscount
+	        FROM OrderDetailInvoices_Hist odih
+	        WHERE ID IN (SELECT ID FROM @OrderDetailInvoices)
+			SET IDENTITY_INSERT dbo.OrderDetailInvoices OFF
+			DELETE FROM OrderDetailInvoices_Hist
+			WHERE ID IN (SELECT ID FROM @OrderDetailInvoices)
+			
+			
+			INSERT INTO OnlineRegistration(BarCode, FirtName, LastName, Mobile, Dates, Children, Adults, PaymentType, ChildTicket,
+	            AdultTicket, RegistrationDate, TotalChildren, TotalAdults, ChildrenEntered, AdultsEntered, TotalAmount,
+	            RemainingAmount, [Status])
+	        SELECT BarCode, FirtName, LastName, Mobile, Dates, Children, Adults, PaymentType, ChildTicket,
+	            AdultTicket, RegistrationDate, TotalChildren, TotalAdults, ChildrenEntered, AdultsEntered, TotalAmount,
+	            RemainingAmount, [Status]
+	        FROM OnlineRegistration_Hist orh
+	        WHERE orh.BarCode IN (SELECT BarCode FROM @OnlineRegistration)
+	        DELETE FROM OnlineRegistration_Hist
+	        WHERE BarCode IN (SELECT BarCode FROM @OnlineRegistration)
+	        
+	        SET IDENTITY_INSERT dbo.MealConsumption ON
+	        INSERT INTO MealConsumption(Id, GuestId, ConsumedMeals, ConsumedTS, IsDeleted, BoardCode, ReservationId, ConsumedMealsChild,
+	                    DepartmentId, EndOfDayId, PosInfoId)
+	        SELECT Id, GuestId, ConsumedMeals, ConsumedTS, IsDeleted, BoardCode, ReservationId, ConsumedMealsChild,
+	                    DepartmentId, EndOfDayId, PosInfoId
+	        FROM MealConsumption_Hist mch
+	        WHERE mch.Id IN (SELECT ID FROM @MealConsumption)
+	        SET IDENTITY_INSERT dbo.MealConsumption OFF
+	        DELETE FROM MealConsumption_Hist
+	        WHERE ID IN (SELECT ID FROM @MealConsumption)
+	        
+			SET IDENTITY_INSERT dbo.Loyalty ON
+			INSERT INTO Loyalty([Day], LoyalltyId, CouponCode, GiftcardCode, CouponType, Campaign, Channel, InvoicesId, Id,
+				ErrorDescription, GiftCardCouponType, GiftCardCampaign)
+			SELECT [Day], LoyalltyId, CouponCode, GiftcardCode, CouponType, Campaign, Channel, InvoicesId, Id,
+				ErrorDescription, GiftCardCouponType, GiftCardCampaign
+			FROM Loyalty_Hist lh
+			WHERE ID IN (SELECT ID FROM @Loyalty)
+			SET IDENTITY_INSERT dbo.Loyalty OFF
+			DELETE FROM Loyalty_Hist
+			WHERE ID IN (SELECT ID FROM @Loyalty)
+			
+			SET IDENTITY_INSERT dbo.Lockers ON
+			INSERT INTO Lockers(Id, HasLockers, TotalLockers, TotalLockersAmount, Paidlockers, PaidlockersAmount, OccLockers, OccLockersAmount, EndOfDayId)
+			SELECT Id, HasLockers, TotalLockers, TotalLockersAmount, Paidlockers, PaidlockersAmount, OccLockers, OccLockersAmount, EndOfDayId
+			FROM Lockers_Hist lh
+			WHERE ID IN (SELECT ID FROM @Lockers)
+			SET IDENTITY_INSERT dbo.Lockers OFF
+			DELETE FROM Lockers_Hist
+			WHERE ID IN (SELECT ID FROM @Lockers)
+			
+			SET IDENTITY_INSERT dbo.KitchenInstructionLogger ON
+			INSERT INTO KitchenInstructionLogger(Id, KicthcenInstuctionId, StaffId, PdaModulId, ClientId, PosInfoId, SendTS, ReceivedTS,
+				EndOfDayId, [Status], TableId, ExtecrName, [Description])
+			SELECT Id, KicthcenInstuctionId, StaffId, PdaModulId, ClientId, PosInfoId, SendTS, ReceivedTS,
+				EndOfDayId, [Status], TableId, ExtecrName, [Description]
+			FROM KitchenInstructionLogger_Hist kilh
+			WHERE ID IN (SELECT ID FROM @KitchenInstructionLogger)
+			SET IDENTITY_INSERT dbo.KitchenInstructionLogger OFF
+			DELETE FROM KitchenInstructionLogger_Hist
+			WHERE ID IN (SELECT ID FROM @KitchenInstructionLogger)
+			
+			SET IDENTITY_INSERT dbo.InvoiceShippingDetails ON
+			INSERT INTO InvoiceShippingDetails(Id, InvoicesId, ShippingAddressId, ShippingAddress, ShippingCity, ShippingZipCode,
+	            BillingAddressId, BillingAddress, BillingCity, BillingZipCode, [Floor], CustomerRemarks, StoreRemarks,
+	            CustomerName, Longtitude, Latitude, Phone)
+	        SELECT Id, InvoicesId, ShippingAddressId, ShippingAddress, ShippingCity, ShippingZipCode,
+	            BillingAddressId, BillingAddress, BillingCity, BillingZipCode, [Floor], CustomerRemarks, StoreRemarks,
+	            CustomerName, Longtitude, Latitude, Phone
+	        FROM InvoiceShippingDetails_Hist isdh
+	        WHERE ID IN (SELECT ID FROM @InvoiceShippingDetails)
+			SET IDENTITY_INSERT dbo.InvoiceShippingDetails OFF
+			DELETE FROM InvoiceShippingDetails_Hist
+			WHERE ID IN (SELECT ID FROM @InvoiceShippingDetails)
+			
+			SET IDENTITY_INSERT dbo.Invoice_Guests_Trans ON
+			INSERT INTO Invoice_Guests_Trans(Id, InvoiceId, GuestId, TransactionId)
+			SELECT Id, InvoiceId, GuestId, TransactionId
+			FROM Invoice_Guests_Trans_Hist igth
+			WHERE ID IN (SELECT ID FROM @Invoice_Guests_Trans)
+			SET IDENTITY_INSERT dbo.Invoice_Guests_Trans OFF
+			DELETE FROM Invoice_Guests_Trans_Hist
+			WHERE ID IN (SELECT ID FROM @Invoice_Guests_Trans)
+			
+			SET IDENTITY_INSERT dbo.HitPosOrders ON
+			INSERT INTO HitPosOrders(CurId, id, orderno, pos, shop_id, item_group, item_code, item_descr, item_subgroup, item_vat, cont_line,
+	            sp, prep_time, start_time, load_time, otd, qty, amount, total, waiter, ttable, listino, receipt, member, priority,
+	            kdws, ready, rqty, nieko_flag, [status], status_time, rest_time, room, payment, [type], comments, mqty,
+	            rec_time_start, status_time2, status_time3, status_time4, status_time5, fo_day, delivery_time, agent, flag_up,
+	            [sent], correct, completed, CreationDate)
+	        SELECT CurId, id, orderno, pos, shop_id, item_group, item_code, item_descr, item_subgroup, item_vat, cont_line,
+	            sp, prep_time, start_time, load_time, otd, qty, amount, total, waiter, ttable, listino, receipt, member, priority,
+	            kdws, ready, rqty, nieko_flag, [status], status_time, rest_time, room, payment, [type], comments, mqty,
+	            rec_time_start, status_time2, status_time3, status_time4, status_time5, fo_day, delivery_time, agent, flag_up,
+	            [sent], correct, completed, CreationDate
+	        FROM HitPosOrders_Hist hpoh
+	        WHERE hpoh.CurId IN (SELECT ID FROM @HitPosOrders)
+			SET IDENTITY_INSERT dbo.HitPosOrders OFF
+			DELETE FROM HitPosOrders_Hist
+			WHERE CurId IN (SELECT ID FROM @HitPosOrders)
+			
+			
+			INSERT INTO ExternalLostOrders(OrderNo, ExtType)
+			SELECT OrderNo, ExtType
+			FROM ExternalLostOrders_Hist eloh
+			WHERE CAST(eloh.OrderNo AS VARCHAR(255))+'-'+CAST(eloh.ExtType AS VARCHAR(20)) IN 
+				(SELECT CAST(OrderNo AS VARCHAR(255))+'-'+CAST(ExtType AS VARCHAR(20)) FROM @ExternalLostOrders)
+			DELETE FROM ExternalLostOrders_Hist
+			WHERE CAST(OrderNo AS VARCHAR(255))+'-'+CAST(ExtType AS VARCHAR(20)) IN 
+				(SELECT CAST(OrderNo AS VARCHAR(255))+'-'+CAST(ExtType AS VARCHAR(20)) FROM @ExternalLostOrders)
+			
+			
+			SET IDENTITY_INSERT dbo.EODAccountToPmsTransfer ON
+			INSERT INTO EODAccountToPmsTransfer(Id, PosInfoId, AccountId, PmsRoom, [Description], [Status], PmsDepartmentId, PmsDepDescription)
+			SELECT Id, PosInfoId, AccountId, PmsRoom, [Description], [Status], PmsDepartmentId, PmsDepDescription
+			FROM EODAccountToPmsTransfer_Hist etpth
+			WHERE ID IN (SELECT ID FROM @EODAccountToPmsTransfer)
+			SET IDENTITY_INSERT dbo.EODAccountToPmsTransfer OFF
+			DELETE FROM EODAccountToPmsTransfer_Hist
+			WHERE ID IN (SELECT ID FROM @EODAccountToPmsTransfer)
+			
+			SET IDENTITY_INSERT dbo.EndOfDayVoidsAnalysis ON
+			INSERT INTO EndOfDayVoidsAnalysis(Id, EndOfDayId, AccountId, Total, [Description], AccountType)
+			SELECT Id, EndOfDayId, AccountId, Total, [Description], AccountType
+			FROM EndOfDayVoidsAnalysis_Hist eodvah
+			WHERE id IN (SELECT ID FROM @EndOfDayVoidsAnalysis)
+			SET IDENTITY_INSERT dbo.EndOfDayVoidsAnalysis OFF
+			DELETE FROM EndOfDayVoidsAnalysis_Hist
+			WHERE id IN (SELECT ID FROM @EndOfDayVoidsAnalysis)
+			
+			SET IDENTITY_INSERT dbo.EndOfDayPaymentAnalysis ON
+			INSERT INTO EndOfDayPaymentAnalysis(Id, EndOfDayId, AccountId, Total, [Description], AccountType)
+			SELECT Id, EndOfDayId, AccountId, Total, [Description], AccountType
+			FROM EndOfDayPaymentAnalysis_Hist eodpah
+			WHERE ID IN (SELECT ID FROM @EndOfDayPaymentAnalysis)
+			SET IDENTITY_INSERT dbo.EndOfDayPaymentAnalysis OFF
+			DELETE FROM EndOfDayPaymentAnalysis_Hist
+			WHERE ID IN (SELECT ID FROM @EndOfDayPaymentAnalysis)
+			
+			SET IDENTITY_INSERT dbo.EndOfDayDetail ON
+			INSERT INTO EndOfDayDetail(Id, EndOfdayId, VatId, VatRate, VatAmount, TaxId, TaxAmount, Gross, Net, Discount)
+			SELECT Id, EndOfdayId, VatId, VatRate, VatAmount, TaxId, TaxAmount, Gross, Net, Discount
+			FROM EndOfDayDetail_Hist eoddh
+			WHERE ID IN (SELECT ID FROM @EndOfDayDetail)
+			SET IDENTITY_INSERT dbo.EndOfDayDetail OFF
+			DELETE FROM EndOfDayDetail_Hist
+			WHERE ID IN (SELECT ID FROM @EndOfDayDetail)
+			
+			SET IDENTITY_INSERT dbo.CreditAccounts ON
+			INSERT INTO CreditAccounts(Id, [Description], EndOfDayId, ActivateTS, DeactivateTS)
+			SELECT Id, [Description], EndOfDayId, ActivateTS, DeactivateTS
+			FROM CreditAccounts_Hist cah
+			WHERE ID IN (SELECT ID FROM @CreditAccounts)
+			SET IDENTITY_INSERT dbo.CreditAccounts OFF
+			DELETE FROM CreditAccounts_Hist
+			WHERE ID IN (SELECT ID FROM @CreditAccounts)
+			
+			SET IDENTITY_INSERT dbo.CreditCodes ON
+			INSERT INTO CreditCodes (Id, [Description], Code, [Type], CreditAccountId)
+			SELECT Id, [Description], Code, [Type], CreditAccountId
+			FROM CreditCodes_Hist cch
+			WHERE ID IN (SELECT ID FROM @CreditCodes) 
+			SET IDENTITY_INSERT dbo.CreditCodes OFF
+			DELETE FROM CreditCodes_Hist
+			WHERE ID IN (SELECT ID FROM @CreditCodes) 
+			
+			SET IDENTITY_INSERT dbo.TablePaySuggestion ON
+			INSERT INTO TablePaySuggestion(Id, AccountId, GuestId, Amount, OrderDetailId, IsUsed, CreditCodeId)
+			SELECT Id, AccountId, GuestId, Amount, OrderDetailId, IsUsed, CreditCodeId
+			FROM TablePaySuggestion_Hist tpsh
+			WHERE ID IN (SELECT Id FROM @TablePaySuggestion)
+			SET IDENTITY_INSERT dbo.TablePaySuggestion OFF
+			DELETE FROM TablePaySuggestion_Hist
+			WHERE ID IN (SELECT Id FROM @TablePaySuggestion)
+			
+			SET IDENTITY_INSERT dbo.CreditTransactions ON
+			INSERT INTO CreditTransactions(Id, CreditAccountId, CreditCodeId, Amount, CreationTS, [Type], StaffId, [Description],
+				PosInfoId, EndOfDayId, InvoiceId, TransactionId)
+			SELECT Id, CreditAccountId, CreditCodeId, Amount, CreationTS, [Type], StaffId, [Description],
+				PosInfoId, EndOfDayId, InvoiceId, TransactionId
+			FROM CreditTransactions_Hist cth
+			WHERE Id IN (SELECT ID FROM @CreditTransactions)
+			SET IDENTITY_INSERT dbo.CreditTransactions OFF
+			DELETE FROM CreditTransactions_Hist
+			WHERE Id IN (SELECT ID FROM @CreditTransactions)
+			
+			SELECT 10000 ErrorNumber,0 ErrorSeverity,0 ErrorState,'Error' ErrorProcedure,0 ErrorLine,'Operation completed with errors' ErrorMessage
+		END
+	END
+
+END
+/*************************************************************************************************************/
+
+CREATE PROCEDURE dbo.ReIndexAndShrink AS 
+BEGIN
+	BEGIN TRY
+		DECLARE @tables TABLE (ID INT IDENTITY(1,1), tblName VARCHAR(255))
+		DECLARE @idx INT, @totRec INT, @tblName VARCHAR(255), @logFile VARCHAR(MAX), @DBName VARCHAR(MAX)
+
+		INSERT INTO @tables
+		SELECT table_name 
+		FROM INFORMATION_SCHEMA.TABLES 
+		WHERE table_type = 'BASE TABLE' 
+
+		SELECT @idx = MIN(ID), @totRec = MAX(ID) FROM @tables
+		WHILE @idx <= @totRec
+		BEGIN
+			SELECT @tblName = tblName FROM @tables WHERE ID = @idx
+			DBCC DBREINDEX(@tblName,'',90)
+			SET @idx = @idx + 1
+		END	
+				
+		SELECT @DBName = db.name 
+		FROM sys.master_files mf
+		INNER JOIN  sys.databases db ON db.database_id = mf.database_id
+		INNER JOIN sys.database_files df ON df.Physical_Name = mf.Physical_Name AND df.type = 1
+
+		EXEC('ALTER DATABASE '+@DBName+' SET RECOVERY SIMPLE')
+
+		EXEC('DBCC SHRINKFILE ('''+@logFile+''', 10)')
+
+		EXEC('ALTER DATABASE '+@DBName+' SET RECOVERY FULL')
+		
+		SELECT 0 ErrorNumber,0 ErrorSeverity,0 ErrorState,'OK' ErrorProcedure,0 ErrorLine,'Operation completed Succesfully' ErrorMessage 
+	END TRY
+	BEGIN CATCH
+		SELECT 0 ErrorNumber,0 ErrorSeverity,0 ErrorState,'OK' ErrorProcedure,0 ErrorLine,'Operation completed Succesfully' ErrorMessage
+	END CATCH
+END
+
+/*************************************************************************************************************/
+SELECT * FROM sys.tables WHERE NAME LIKE '%_Hist' ORDER BY NAME
+/*TablePaySuggestion, Lockers, MealConsumption, Loyalty
+--	CreditAccounts_Hist				CreditCodes,CreditTransactions
+--	CreditCodes_Hist				CreditTransactions,TablePaySuggestion
+--	CreditTransactions_Hist
+EndOfDay_Hist					Order,OrderDetailInvoices,CreditAccounts,CreditTransactions,EndOfDayDetail,EndOfDayPaymentAnalysis,EndOfDayVoidsAnalysis,
+								Transactions,TransferToPms,Invoices,KitchenInstructionLogger,Lockers,MealConsumption
+--	EndOfDayDetail_Hist
+--	EndOfDayPaymentAnalysis_Hist
+--	EndOfDayVoidsAnalysis_Hist
+--	EODAccountToPmsTransfer_Hist
+--	ExternalLostOrders_Hist
+--	HitPosOrders_Hist
+--	Invoice_Guests_Trans_Hist
+--	Invoices_Hist					OrderDetailInvoices,CreditTransactions,Transactions,InvoiceShippingDetails,Invoice_Guests_Trans,Loyalty
+--	InvoiceShippingDetails_Hist
+KitchenInstruction_Hist			NOT DELETED
+--	KitchenInstructionLogger_Hist
+--	Lockers_Hist
+--	Loyalty_Hist
+--	MealConsumption_Hist
+--	OnlineRegistration_Hist
+--	Order_Hist						OrderDetail,OrdersStaff,OrderStatus,Transactions
+--	OrderDetail_Hist				OrderDetailIgredients,OrderDetailInvoices,OrderDetailVatAnal,TablePaySuggestion
+--	OrderDetailIgredients_Hist		OrderDetailIgredientVatAnal,OrderDetailInvoices
+--	OrderDetailIgredientVatAnal_Hist
+--	OrderDetailInvoices_Hist
+--	OrderDetailVatAnal_Hist
+--	OrdersStaff_Hist
+--	OrderStatus_Hist
+--	StoreMessages_Hist
+--	TablePaySuggestion_Hist
+--	Transactions_Hist				OrderDetail,CreditTransactions,TransferToPms,Invoice_Guests_Trans
+TransferMappingDetails_Hist		NOT DELETED
+TransferMappings_Hist			NOT DELETED
+--	TransferToPms_Hist
+*/

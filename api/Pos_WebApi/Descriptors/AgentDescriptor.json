@@ -1,0 +1,237 @@
+﻿{
+  "General": [
+    {
+      "Key": "AdministratorPassword",
+      "Description": "Password για ενέργειες διαχειριστή (διαγραφή πελάτη, διαγραφή διεύθυνσης, ακύρωση παραγγελίας).",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.15.0"
+    }
+  ],
+  "Store": [
+    {
+      "Key": "UpdateShortagesTimer",
+      "Description": "Ορίζει τη συχνότητα (ανά παραγγελίες) που θα ανανεώνονται οι ελλείψεις προϊόντων των καταστημάτων. π.χ. αν η τιμή είναι 5, τότε ανά 5 παραγγελίες θα γίνετε λήψη των ελλείψεων <br>Η τιμή πρέπει να είναι μεγαλύτερη ή ίση του 1.",
+      "Type": "int",
+      "DefaultValue": 1,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "SortStores",
+      "Description": "Ταξινομεί τα καταστήματα. <br>Οι διαθέσιμες τιμές είναι 0, 1. <br>Αν η τιμή είναι 0, τότε τα καταστήματα ταξινομούνται με βάση το Code. <br>Αν η τιμή είναι 1, τότε τα καταστήματα ταξινομούνται με βάση το Title.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.23.0"
+    }
+  ],
+  "Search": [
+    {
+      "Key": "ScrollableCustomers",
+      "Description": "Στα αποτελέσματα αναζήτησης πελατών ενεργοποιεί το scrollable customer loading. <br>Αν η τιμή είναι false, τότε τα αποτελέσματα αναζήτησης εμφανίζονται με σελιδοποίηση.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "4.5.20.0"
+    },
+    {
+      "Key": "AddressInformation",
+      "Description": "Στα αποτελέσματα αναζήτησης πελατών εμφανίζει επιπλέον στοιχεία της διεύθυνσης. <br>Οι διαθέσιμες τιμές είναι 0, 1, 2, 3. <br>Αν η τιμή είναι 0, τότε δεν εμφανίζει επιπλέον στοιχεία. <br>Αν η τιμή είναι 1, τότε εμφανίζει περιοχή (area). <br>Αν η τιμή είναι 2, τότε εμφανίζει πόλη (city). <br>Αν η τιμή είναι 3, τότε εμφανίζει και περιοχή και πόλη (area and city).",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.11.0"
+    },
+    {
+      "Key": "ShowLoyalty",
+      "Description": "Στα αποτελέσματα αναζήτησης πελατών εμφανίζει αν ο πελάτης είναι Loyalty.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ShowTelephones",
+      "Description": "Στα αποτελέσματα αναζήτησης πελατών εμφανίζει τα καταχωρημένα τηλέφωνα κάθε πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+  "Customer": [
+    {
+      "Key": "EnableCopyCustomer",
+      "Description": "Ενεργοποιεί τη δυνατότητα αντιγραφής πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.86.0"
+    },
+    {
+      "Key": "ShowEditCustomer",
+      "Description": "Εμφανίζει το κουμπί επεξεργασίας πελάτη στην παραγγελία πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ShowCopyAddress",
+      "Description": "Εμφανίζει το κουμπί αντιγραφής διεύθυνσης στην παραγγελία πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "HasTelephoneNumber",
+      "Description": "Ενεργοποιεί την εισαγωγή τηλεφώνου επικοινωνίας (σαν υποχρεωτικό πεδίο) στην παραγγελία πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.5.10.0"
+    },
+    {
+      "Key": "HasLoyaltyCode",
+      "Description": "Ενεργοποιεί την εισαγωγή κωδικού Loyalty στην παραγγελία πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.5.5.0"
+    },
+    {
+      "Key": "NotifyLastOrderNote",
+      "Description": "Ενεργοποιεί την ειδοποίηση σχολίου τελευταίας παραγγελίας στην παραγγελία πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.34.0"
+    },
+    {
+      "Key": "NotifyCommunicationPhone",
+      "Description": "Ενεργοποιεί την ειδοποίηση επιβεβαίωσης τηλεφώνου επικοινωνίας του πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.82.0"
+    }
+  ],
+  "Address": [
+    {
+      "Key": "EnableCopyAddress",
+      "Description": "Ενεργοποιεί τη δυνατότητα αντιγραφής διεύθυνσης.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.86.0"
+    },
+    {
+      "Key": "MatchNewAddress",
+      "Description": "Κατά την εισαγωγή νέας διεύθυνσης ελέγχεται αν αυτή αντιστοιχεί σε κατάστημα. Αν δεν αντιστοιχεί σε κατάστημα εμφανίζεται σφάλμα και δεν επιτρέπεται η εισαγωγή της στη βάση.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "UpdateAddressFromMap",
+      "Description": "Κατά την επεξεργασία ή εισαγωγή διεύθυνσης ενημερώνει τα στοιχεία της διεύθυνσης απευθείας από τα νέα στοιχεία του χάρτη. <br>Αν η τιμή είναι false, τότε τα στοιχεία της διεύθυνσης ενημερώνονται πατώντας τον marker ή το popup του χάρτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ShowAddressOptions",
+      "Description": "Κατά τη λήψη στοιχείων από τον χάρτη παρέχει δυνατότητα επιλογής ανάμεσα σε πιθανές διευθύνσεις. <br>Αν η τιμή είναι false, τότε επιλέγεται αυτόματα η πρώτη διαθέσιμη διεύθυνση.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.11.0"
+    },
+    {
+      "Key": "ShowPopupMap",
+      "Description": "Εμφανίζει τον χάρτη σε ξεχωριστό παράθυρο στην παραγγελία πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.82.0"
+    }
+  ],
+  "Order": [
+    {
+      "Key": "SetAddressPriority",
+      "Description": "Ορίζει το κριτήριο επιλογής διεύθυνσης για νέα παραγγελία. <br>Οι διαθέσιμες τιμές είναι 0, 1. <br>Αν η τιμή είναι 0, τότε επιλέγει την τελευταία διεύθυνση παραγγελίας. <br>Αν η τιμή είναι 1, τότε επιλέγει τη διεύθυνση που αντιστοιχεί στο τηλέφωνο της κλήσης.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.22.0"
+    },
+    {
+      "Key": "SelectDeliveryStore",
+      "Description": "Ενεργοποιεί τη δυνατότητα επιλογής καταστήματος σε παραγγελία delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.22.0"
+    },
+    {
+      "Key": "ShowModifyOrder",
+      "Description": "Εμφανίζει το κουμπί μεταβολής παραγγελίας στην προεπισκόπηση παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.2.17.0"
+    },
+    {
+      "Key": "ShowIngredientQuantity",
+      "Description": "Εμφανίζει την ποσότητα των Ingredients σε ένα Product. <br>Οι διαθέσιμες τιμές είναι 0, 1, 2. <br>Αν η τιμή είναι 0, τότε εμφανίζει την ποσότητα με αριθμό. <br>Αν η τιμή είναι 1, τότε εμφανίζει την ποσότητα με '-' και '+'. <br>Αν η τιμή είναι 2, τότε εμφανίζει την ποσότητα με 'Χωρίς' και 'Έξτρα'.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.86.0"
+    },
+    {
+      "Key": "MinimumOrderAmount",
+      "Description": "Ορίζει το ελάχιστο ποσό παραγγελίας. Ο χειριστής, με επιβεβαίωση, μπορεί να προχωρήσει στην παραγγελία, αν το τρέχον ποσό είναι μικρότερο από το ελάχιστο ποσο.<br>Αν η τιμή είναι 0, τότε δεν υπάρχει ελάχιστο ποσό.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.17.0"
+    }
+  ],
+  "Messages": [
+    {
+      "Key": "ShowMessages",
+      "Description": "Ενεργοποιεί τη διαχείριση αιτημάτων στον πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.5.2.0"
+    },
+    {
+      "Key": "CreateMessageOnClear",
+      "Description": "Ενεργοποιεί τη δυνατότητα δημιουργίας αιτήματος κατά την ακύρωση της τρέχουσας παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.34.0"
+    }
+  ],
+  "Loyalty": [
+    {
+      "Key": "ActiveLoyalty",
+      "Description": "Ενεργοποιεί την αντίστοιχη λειτουργικότητα Loyalty. <br>Οι διαθέσιμες τιμές είναι 0, 1. <br>Αν η τιμή είναι 0, τότε ενεργοποιείται το Loyalty της HIT. <br>Αν η τιμή είναι 1, τότε ενεργοποιείται το Loyalty της Goody's.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.13.0"
+    },
+    {
+      "Key": "ApplyLoyaltyPoints",
+      "Description": "Κατά την εισαγωγή ή μεταβολή παραγγελίας στην οποία υπάρχει κωδικός έκπτωσης, ορίζουμε αν θα εισαχθούν και πόντοι Loyalty.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.0.5.0"
+    }
+  ],
+  "Supervisor": [
+    {
+      "Key": "OrderNo",
+      "Description": "Εμφανίζει τον αντίστοιχο αριθμό παραγγελίας. <br>Οι διαθέσιμες τιμές είναι 0, 1. <br>Αν η τιμή είναι 0, τότε εμφανίζει τον αριθμό παραγγελίας του τηλεφωνικού κέντρου. <br>Αν η τιμή είναι 1, τότε εμφανίζει τον αριθμό παραγγελίας του καταστήματος.",
+      "Type": "int",
+      "DefaultValue": 1,
+      "ApiVersion": "5.2.19.0"
+    },
+    {
+      "Key": "ExtId1Description",
+      "Description": "Ορίζει το λεκτικό που θα χρησιμοποιηθεί για την περιγραφή του External Id 1 στην οθόνη του Supervisor.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.97.0"
+    },
+    {
+      "Key": "ExtId2Description",
+      "Description": "Ορίζει το λεκτικό που θα χρησιμοποιηθεί για την περιγραφή του External Id 2 στην οθόνη του Supervisor.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.97.0"
+    }
+  ]
+}

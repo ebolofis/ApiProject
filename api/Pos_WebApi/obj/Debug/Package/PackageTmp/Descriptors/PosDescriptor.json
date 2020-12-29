@@ -1,0 +1,568 @@
+﻿{
+  "General": [
+    {
+      "Key": "GoodysTakeoutDelayTime",
+      "Description": "Πεδίο που ορίζει τον έλεγχο της χρονοκαθυστέρησης των Takeout παραγγελιών",
+      "Type": "long",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    },
+	  {
+      "Key": "GoodysDeliveryDelayTime",
+      "Description": "Πεδίο που ορίζει τον έλεγχο της χρονοκαθυστέρησης των Delivery παραγγελιών",
+      "Type": "long",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ExtraFieldForReceipt",
+      "Description": "Επιπλέον πεδίο της απόδειξης που θέλουμε να εκτυπωθεί. Οι τιμές ορίζονται από το μοντέλο EXTECR_ReceiptModel. <br>Λειτουργεί μόνο με OPOS3.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ExcludedInvoiceCategories",
+      "Description": "Λίστα με τους τύπους παραστατικών που στέλνονται σε διαφορετικό εκτυπωτή. πχ: 1,7. <br>Τύποι: Απόδειξη = 1, Δελτίο Παραγγελίας = 2, Ακύρωση Απόδειξης = 3, Complimentary = 4, Allowance = 5, Πίστωση Barcode = 6, Τιμολόγιο = 7, Ακύρωση Δελτίου Παραγγελίας = 8, Απόδειξη Πληρωμής = 11, Απόδειξη Επιστροφής = 12, Πίστωση Λιανικής = 13, Pre-Bill = 14. <br>Λειτουργεί μόνο με OPOS3.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "PartialPrint",
+      "Description": "Ενεργοποιεί τη σταδιακή εκτύπωση των αντικειμένων που εισάγουμε στην παραγγελία. Λειτουργεί μόνο με OPOS3. <br>Αν η τιμή είναι false, τότε η παραγγελία εκτυπώνεται ολόκληρη στο τέλος.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ReturnItem",
+      "Description": "Ενεργοποιεί το κουμπί επιστροφής αντικειμένου. <br>Επίσης απαιτείται η λειτουργία σταδιακής εκτύπωσης να είναι απενεργοποιημένη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "NoOfSearchResults",
+      "Description": "Ορίζει το μέγιστο πληθος των προϊόντων που θα εμφανιστούν κατά την αναζήτηση προϊόντος.",
+      "Type": "int",
+      "DefaultValue": 10,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Cover",
+      "Description": "Προαπαιτεί την εισαγωγή κουβέρ κατά τη δημιουργία νέας παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Abbreviation",
+      "Description": "Επιλέγει τη συντομογραφία που θα φαίνεται στα αντικείμενα παραγγελίας. <br>Οι διαθέσιμες τιμές είναι 'salesType' και 'kitchenRegion'. <br>Αν η τιμή είναι 'salesType', τοτε εμφανίζει τον τύπο παραγγελίας. <br>Αν η τιμή είναι 'kitchenRegion', τοτε εμφανίζει την κουζίνα που αντιστοιχεί το αντικείμενο.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "QtyDecimalPlaces",
+      "Description": "Ορίζει το πλήθος των δεκαδικών ψηφίων στην ποσότητα του προϊόντος. <br>Οι διαθέσιμες τιμές είναι 0, 1, 2, 3.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "AllOpenItems",
+      "Description": "Ενεργοποιεί τη δυνατότητα ορισμού τιμής σε όλα τα προϊόντα κατά τη δημιουργία νέας παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Buzzer",
+      "Description": "Ενεργοποιεί το κουμπί ανάθεσης buzzer κατά την ολοκλήρωση παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IsCaptainOrderRequiresCustomer",
+      "Description": "Προαπαιτεί την εισαγωγή πελάτη κατά τη δημιουργία νέου δελτίου παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "DeletedCustomerPassword",
+      "Description": "Password για διαγραφή πελάτη. Λειτουργία delivery.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "LcdMessage",
+      "Description": "Ενεργοποιεί την αποστολή μηνύματος στην LCD οθόνη του ExtECR, όταν εισάγουμε ένα νέο προϊόν στην παραγγελία.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "CreditCardMessage",
+      "Description": "Ενεργοποιεί την αποστολή μηνύματος στον ExtECR, όταν επιλέγουμε να πληρώσουμε με πιστωτική κάρτα.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Coupons",
+      "Description": "Ενεργοποιεί τη λειτουργία κουπονιών στην οθόνη του POS.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Lockers",
+      "Description": "Ενεργοποιεί τη λειτουργία ντουλαπιών στην οθόνη του POS.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Barcodes",
+      "Description": "Ενεργοποιεί τη λειτουργία βραχιολιών στην οθόνη του POS. Επίσης ενεργοποιείται η οθόνη διαχείρισης βραχιολιών.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "CustomInstallation",
+      "Description": "Ενεργοποιεί λειτουργίες ανά πελάτη. <br>Οι διαθέσιμες τιμές είναι 'Autogrill', 'Goodys' και 'Grecotel'. <br>Αν είναι κενό, δεν ενεργοποιείται τίποτα.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "StaffCash",
+      "Description": "Επιτρέπει στον χρήστη να εισάγει το ποσό των μετρητών κατά την παράδοση ταμείου στην οθόνη κλεισίματος ημέρας. <br>Αν η τιμή είναι false, τότε το ποσό των μετρητών υπολογίζεται αυτόματα από το σύστημα.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "PrintAfterFundClosure",
+      "Description": "Ενεργοποιεί την εκτύπωση μετά την παράδοση ταμείου.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "CashVisibility",
+      "Description": "Ενεργοποιεί την οθόνη διαχείρισης ταμείου.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "Payroll",
+      "Description": "Ενεργοποιεί τη λειτουργία της μισθοδοσίας στο μενου του POS.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "OnlineRegistration",
+      "Description": "Ενεργοποιεί τη λειτουργία κρατήσεων στο μενου του POS.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ChooseCurrency",
+      "Description": "Εμφανίζει το επιλεγμένο συνάλλαγμα κατά την εξόφληση παραγγελίας. <br>Οι διαθέσιμες τιμές είναι 'euro', 'mkd', 'leke' και 'dram'.",
+      "Type": "string",
+      "DefaultValue": "euro",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "AdministratorPassword",
+      "Description": "Password για ενέργειες διαχειριστή.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.1.3.0"
+    },
+    {
+      "Key": "ReceiptCancelAuthorization",
+      "Description": "Ορίζουμε αν είναι απαραίτητη η χρήση Password διαχειριστή για την δυνατότητα Ακύρωσης μιας Απόδειξης.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.10.0"
+    },
+    {
+      "Key": "InvoiceTypeAuthorization",
+      "Description": "Ορίζουμε για ποια InvoiceType είναι απαραίτητη η χρήση Password διαχειριστή. <br>Τοποθετούμε τα αντιστοιχα Id χωρισμένα με κόμμα (π.χ. 1,3,5)",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.10.0"
+    },
+    {
+      "Key": "KeepCustomerAndRoom",
+      "Description": "Ορίζουμε αν θέλουμε στην οθόνη της πληρωμής να μένει ο επιλεγμένος πελάτης χρέωσης καθώς και το δωμάτιο του και στους άλλους τρόπους πληρωμής εκτός από το Roomcharge.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.38.0"
+    }
+  ],
+
+  "Tables": [
+    {
+      "Key": "Tables",
+      "Description": "Εμφανίζει το πλάνο των τραπεζιών μετά την ολοκλήρωση μιας παραγγελίας.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "TableLabel",
+      "Description": "Ενεργοποιεί την εισαγωγή μιας νέας παραγγελίας σε κάποιο υπο-τραπέζι.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "OnlyOnePricelistAllowed",
+      "Description": "Ενεργοποιεί τη δυνατότητα χρήσης ενός μόνο τιμοκαταλόγου σε ένα τραπέζι.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "OpenTablesMaskForDelivery",
+      "Description": "Προαπαιτεί την εισαγωγή τραπεζίου κατά τη δημιουργία νέου δελτίου παραγγελίας. Λειτουργία delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "MultipleCustomers",
+      "Description": "Ενεργοποιεί τη δυνατότητα εισαγωγής πολλαπλών πελατών σε ένα τραπέζι.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "PosInfoDetailsButtons",
+      "Description": "Εμφανίζει αναλυτικά κουμπιά εξόφλησης παραγγελίας από τραπέζι. <br>Αν η τιμή είναι false, τότε εμφανίζει μόνο τα κουμπιά 'Εξόφληση' και 'Έκδοση Απόδειξης'.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "OfflineTimologio",
+      "Description": "Εμφανίζει κουμπί εξόφλησης παραγγελίας με τιμολόγιο από τραπέζι.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "DisplayRoomNoOnTable",
+      "Description": "Να Εμφανίζαι ο αριθμός δωματίου πάνω στο τραπέζι.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.0.0"
+    },
+    {
+      "Key": "DisplaySelectSpecificCustomerModal",
+      "Description": "Ορίζουμε αν θέλουμε να εμφανίζεται παράθυρο για την Επιλογή συγκεκριμένου πελάτη για να γίνει η χρέωση ή όχι.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.67.0"
+    }
+  ],
+
+  "Pricelists": [
+    {
+      "Key": "DefaultPricelist",
+      "Description": "Ενεργοποιεί την αυτόματη αλλαγή τιμοκαταλόγου, όπως αυτός έχει οριστεί για κάθε σελίδα προϊόντων.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "DefaultPricelistId",
+      "Description": "Ενεργοποιεί την αυτόματη αλλαγή τιμοκαταλόγου, με βάση ένα προκαθορισμένο Id. Οι τιμές ορίζονται με βάση τα Id του πίνακα Pricelist. <br>Επίσης απαιτείται η λειτουργία αυτόματης αλλαγής τιμοκαταλόγου με βάση τη σελίδα προϊόντων να είναι απενεργοποιημένη.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "Products": [
+    {
+      "Key": "SearchExternalProduct",
+      "Description": "Ενεργοποιεί την διαδικασία αναζήτησης δίχως να απαιτείται το πλήρες όνομα στο κελί αναζήτησης, ενώ παράλληλα ο έλεγχος των data πραγματοποιείται στον Server",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.1.0"
+    }
+  ],
+
+  "Barcodes": [
+    {
+      "Key": "Retail",
+      "Description": "Ενεργοποιεί το πεδίο εισαγωγής barcode για αναζήτηση προϊόντος στην οθόνη του POS.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "CodeQuantity",
+      "Description": "Διαφοροποιεί το σκανάρισμα προϊόντος μέσω barcode. Επίσης απαιτείται η λειτουργία εισαγωγής barcode να είναι ενεργοποιημένη. <br>Οι διαθέσιμες τιμές είναι 1, 2, 3. <br>Αν η τιμή είναι 1, τοτε στο σκανάρισμα διαβάζεται το barcode. <br>Αν η τιμή είναι 2, τοτε στο σκανάρισμα διαβάζεται και το barcode και η ποσότητα του προϊόντος σε γραμμαρια. <br>Αν η τιμή είναι 3, τοτε ισχύουν και οι δύο πρηγούμενες λειτουργίες.",
+      "Type": "int",
+      "DefaultValue": 1,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "Hotel": [
+    {
+      "Key": "RequiredCustomer",
+      "Description": "Καθιστά την επιλογή πελάτη στη παραγγελία υποχρεωτική και δεν επιτρέπει τη δημιουργία παραγγελίας χωρίς να έχει προηγηθεί η επιλογή πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.4.0"
+    },
+    {
+      "Key": "RequiredLoyalty",
+      "Description": "Υποχρεωτική χρήση του Loyalty σε περίπτωση πελάτη με loyalty στο Pos. <br>Αν η τιμή είναι <b>true</b>, τότε κατά τη πληρωμή είναι υποχρεωτική η επιλογή loyalty Έκπτωσης. <br>Αν η τιμή είναι <b>false</b>, τότε κατά τη πληρωμή είναι προαιρετική η επιλογή loyalty Έκπτωσης.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.10.0"
+    }
+  ],
+
+  "Customer Display": [
+    {
+      "Key": "HasCustomerDisplay",
+      "Description": "Ενεργοποιεί την οθόνη πελάτη.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.3.0"
+    },
+    {
+      "Key": "DisplayMultimedia",
+      "Description": "Ορίζει αν θα εμφανίζονται multimedia στην οθόνη πελάτη. Οι τυποι των multimedia που υποστηρίζονται είναι: jpg, gif, mp4",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.0.4.0"
+    },
+    {
+      "Key": "DisplaySourcePath",
+      "Description": "Το path που βρίσκονται τα αρχεία που θέλουμε να εμφανίσουμε.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.4.0"
+    },
+    {
+      "Key": "DisplayFileNames",
+      "Description": "Τα ονόματα των αρχείων που θέλουμε να εμφανίσουμε. Τα αρχεία πρέπει να βρίσκονται στο παραπάνω path. <br>Τα ονόματα πρέπει να χωρίζονται με κομμα. <br>Σε κάθε όνομα πρέπει να υπάρχει και ως κατάληξη ο τύπος του αρχείου. πχ. αν θέλουμε να εμφανίσουμε το βίντεο 'view' και την εικόνα 'image' πρέπει να γράψουμε 'view.mp4,image.jpg'",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.4.0"
+    },
+    {
+      "Key": "DisplayTime",
+      "Description": "Ο χρόνος, σε δευτερόλεπτα, που εμφανίζεται ένα αρχείο εικόνας.",
+      "Type": "int",
+      "DefaultValue": 2,
+      "ApiVersion": "5.0.4.0"
+    },
+    {
+      "Key": "DisplayOrientation",
+      "Description": "Ο τρόπος που προσανατολίζεται η οθόνη. <br>Τύποι: Οριζόντια = 0, Κάθετα = 1",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.3.0"
+    },
+    {
+      "Key": "DisplayWeight",
+      "Description": "Ποσοστό της οθόνης που καταλαμβάνει το αρχείο. Εξαρτάται και από τον προσανατολισμό της οθόνης. <br>Ευρός τιμών από 0 μέχρι 100. πχ η τιμή '30' ορίζει ότι το αρχείο θα καταλαμβάνει το 30% της οθόνης.",
+      "Type": "int",
+      "DefaultValue": 50,
+      "ApiVersion": "5.0.3.0"
+    }
+  ],
+
+  "Receipt Managment": [
+    {
+      "Key": "VisibleReceipts",
+      "Description": "Ενεργοποιεί την οθόνη διαχείρισης αποδείξεων.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "PastDateReceipts",
+      "Description": "Εμφανίζει κουμπί φιλτραρίσματος αποδείξεων κατά ημερομηνία στην οθόνη διαχείρισης αποδείξεων.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "End Of Day": [
+    {
+      "Key": "EodTotalsPreview",
+      "Description": "Ενεργοποιεί τα δικαιώματα στην οθόνη κλεισίματος ημέρας. Μόνο προσωπικό με δικαιώματα διαχειριστή μπορεί να πραγματοποιεί ενέργειες. <br>Αν η τιμή είναι false, τότε όλοι οι χρήστες μπορούν να πραγματοποιούν ενέργειες.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "NotAllowPrintZ",
+      "Description": "Δεν επιτρέπει την έκδοση Ζ, ενώ υπάρχουν μη τιμολογημένες παραγγελίες ή μη εξοφλημένες αποδείξεις.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "ShowTotals",
+      "Description": "Εμφανίζει τα σύνολα των αποδείξεων στην οθόνη του κλείσιμου ημέρας και στην οθόνη του ταμείου.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "Cashier": [
+    {
+      "Key": "ShowCashierTotals",
+      "Description": "Εμφανίζει τα σύνολα των αποδείξεων στην οθόνη του ταμείου.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.0.6.0"
+    }
+  ],
+
+  "Delivery": [
+    {
+      "Key": "IsDeliveryAgent",
+      "Description": "Ενεργοποιεί την καινούρια οθόνη delivery. <br>Αν η τιμή είναι false, τότε ενεργοποιείται η παλιά οθόνη. Λειτουργία delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "DefaultDelayDeliveryTime",
+      "Description": "Προεπιλεγμένος χρόνος που απαιτείται για την ολοκλήρωση μιας παραγγελίας delivery. Λειτουργία delivery.",
+      "Type": "int",
+      "DefaultValue": 30,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "StatusTimeAlert",
+      "Description": "Ελάχιστος χρόνος που που μια παραγγελία delivery μένει σε ένα status. Λειτουργία delivery.",
+      "Type": "int",
+      "DefaultValue": 30,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "EnableOrderReturned",
+      "Description": "Εμφανίζει κουμπί επιστροφής παραγγελίας στην οθόνη ανάθεσης. Λειτουργία delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "PrintOrderOnKitchen",
+      "Description": "Ενεργοποιεί την επανεκτύπωση μιας παραγγελίας στην κουζίνα, όταν το status της αλλάζει σε preparing. Λειτουργία delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "DeliveryRouting": [
+    {
+      "Key": "drAllowAcceptRejectRouting",
+      "Description": "Ορίζει το δικαίωμα των διανομέων να αποδέχονται ή να απορρίπτουν τα δρομολόγια παραγγελιών που τους ανατίθενται. True: Επιτρέπεται η αποδοχή και η απόρριψη αναθέσεων δρομολογίων παραγγελιών, False: Δεν επιτρέπεται η αποδοχή ή η απόρριψη αναθέσεων δρομολογίων παραγγελιών",
+      "Type": "bool",
+      "DefaultValue": "false",
+      "ApiVersion": "5.2.23.0"
+    }
+  ],
+
+  "iCoupons": [
+    {
+      "Key": "iCouponsActive",
+      "Description": "Ενεργοποιεί τις λειτουργίες της iCoupon. (βλ. και configuration api)",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "iCouponsDiscountId",
+      "Description": "Ορίζει την έκπτωση της iCoupon. Επίσης απαιτείται η λειτουργία iCoupons να είναι ενεργοποιημένη.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "iCouponsAccountId",
+      "Description": "Ορίζει τον βασικό τρόπο πληρωμής της iCoupon. Επίσης απαιτείται η λειτουργία iCoupons να είναι ενεργοποιημένη.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "iCouponsSecondaryAccountId",
+      "Description": "Ορίζει τον δευτερεύων τρόπο πληρωμής της iCoupon. Επίσης απαιτείται η λειτουργία iCoupons να είναι ενεργοποιημένη.",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "Forkey": [
+    {
+      "Key": "ForkeyFunctionality",
+      "Description": "Ενεργοποιεί τις λειτουργίες της Forkey. Λειτουργία delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    }
+  ],
+
+  "XVRRevorder": [
+    {
+      "Key": "ActivateRecorder",
+      "Description": "Ενεργοποιεί την αποστολή στοιχείων της απόδειξης στο Καταγραφικό.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.15.0"
+    },
+    {
+      "Key": "RecorderStartChar",
+      "Description": "Επιλογή χαρακτήρα που δηλώνει την έναρξη νέας απόδειξης στο Καταγραφικό (π.χ. @).",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.15.0"
+    }
+  ],
+
+  "KDS": [
+    {
+      "Key": "SoundOnKds",
+      "Description": "Ενεργοποιεί τον ήχο κάθε φορά που έρχεται μια νέα παραγγελία στο KDS.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "OrderInfo",
+      "Description": "Στα στοιχεία της παραγγελίας εμφανίζει είτε τον αριθμό παραγγελίας (OrderNo) είτε τον αριθμό παραστατικού (Counter). <br>Τύποι: OrderNo = 0, Counter = 1",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.1.1.0"
+    }
+  ]
+
+}

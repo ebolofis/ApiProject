@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3834CCA-4FF3-4F38-BF76-781634F92508}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symposium.WebApi.DataAccess</RootNamespace>
+    <AssemblyName>Symposiumda</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD, Version=1.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.SimpleCRUD.1.13.0\lib\net45\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Symposiummdls">
+      <HintPath>..\Symposium_Models\bin\Debug\Symposiummdls.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapperConfig.cs" />
+    <Compile Include="CashManager.cs" />
+    <Compile Include="DAOs\AccountDAO.cs" />
+    <Compile Include="DT\CashedObjects\CashedDT.cs" />
+    <Compile Include="DAOs\ComboDAO.cs" />
+    <Compile Include="DAOs\ComboDetailDAO.cs" />
+    <Compile Include="DAOs\Delivery\DeliveryCustomersDAO.cs" />
+    <Compile Include="DAOs\Delivery\DeliveryCustomersBillingAddressDAO.cs" />
+    <Compile Include="DAOs\Delivery\DeliveryCustomersPhonesDAO.cs" />
+    <Compile Include="DAOs\Delivery\DeliveryCustomersShippingAddressDAO.cs" />
+    <Compile Include="DAOs\ForexServiceDAO.cs" />
+    <Compile Include="DAOs\GenericDAO.cs" />
+    <Compile Include="DAOs\GenericITableDAO.cs" />
+    <Compile Include="DAOs\Goodys\GoodysDAO.cs" />
+    <Compile Include="DAOs\GuestDAO.cs" />
+    <Compile Include="DAOs\HotelInfo\HotelInfoV3DAO.cs" />
+    <Compile Include="DAOs\InvoicesDAO.cs" />
+    <Compile Include="DAOs\InvoiceShippingDetailsDAO.cs" />
+    <Compile Include="DAOs\InvoiceTypeDAO.cs" />
+    <Compile Include="DAOs\OrderStatusDAO.cs" />
+    <Compile Include="DAOs\PricelistDetailDAO.cs" />
+    <Compile Include="DT\CashedObjects\HotelCustomMessagesDT.cs" />
+    <Compile Include="DT\CashedObjects\HotelMacrosDT.cs" />
+    <Compile Include="DT\CashedObjects\HotelMacroTimezoneDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_CustomerMessagesDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_CustomerTokenDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_OpeningHoursDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_OrderNoDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_PhoneticsDT.cs" />
+    <Compile Include="DT\ExternalSystems\oldGoodysDT.cs" />
+    <Compile Include="DT\Delivery\DeliveryRoutingDT.cs" />
+    <Compile Include="DT\Goodys\GoodysDT.cs" />
+    <Compile Include="DT\HotelInfo\HotelInfoV3DT.cs" />
+    <Compile Include="DT\Hotel\CustomMessageDT.cs" />
+    <Compile Include="DT\Hotel\HotelDT.cs" />
+    <Compile Include="DT\Hotel\MacroDT.cs" />
+    <Compile Include="DT\Hotel\MacroTimezoneDT.cs" />
+    <Compile Include="DT\Infrastructure\GuestFutureDT.cs" />
+    <Compile Include="DT\Infrastructure\SuppliersDT.cs" />
+    <Compile Include="DT\Kds\KdsDT.cs" />
+    <Compile Include="DT\Orders\LoyaltyDT.cs" />
+    <Compile Include="DT\Orders\PaymentsDT.cs" />
+    <Compile Include="DT\Payroll\PayrollDT.cs" />
+    <Compile Include="DT\Products\CategoriesDT.cs" />
+    <Compile Include="DT\Products\ComboDetailDT.cs" />
+    <Compile Include="DT\Products\ComboDT.cs" />
+    <Compile Include="DT\Orders\CreditTransactionDT.cs" />
+    <Compile Include="DT\Infrastructure\CustomerDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_AddressesDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_ClientJobsDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_ConfigDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_CustomerDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_HangFireJobsDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_GeoPolygonsDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_LoyaltyDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_OrdersDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_OrderStatusDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_ScheduledTaskesDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_ShortagesDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_StaffDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_StoresDT.cs" />
+    <Compile Include="DT\DeliveryAgent\DA_Store_PriceListAssocDT.cs" />
+    <Compile Include="DT\Delivery\Delivery_CustomersBillingAddressDT.cs" />
+    <Compile Include="DT\Delivery\Delivery_CustomersShippingAddressDT.cs" />
+    <Compile Include="DT\Infrastructure\DepartmentDT.cs" />
+    <Compile Include="DT\ExternalSystems\EfoodDT.cs" />
+    <Compile Include="DT\ExternalSystems\ForexServiceDT.cs" />
+    <Compile Include="DT\Infrastructure\HotelInfoDT.cs" />
+    <Compile Include="DT\Products\IngredientCategoriesDT.cs" />
+    <Compile Include="DT\Products\IngredientsDT.cs" />
+    <Compile Include="DT\Products\Ingredient_ProdCategoryAssocDT.cs" />
+    <Compile Include="DT\Orders\InvoiceShippingDetailsDT.cs" />
+    <Compile Include="DT\Orders\Invoice_Guests_TransDT.cs" />
+    <Compile Include="DT\Orders\OrderDetailIngredientsDT.cs" />
+    <Compile Include="DT\Orders\OrderDetailsDT.cs" />
+    <Compile Include="DT\Orders\OrderDT.cs" />
+    <Compile Include="DT\Orders\OrderStatusDT.cs" />
+    <Compile Include="DT\Products\PageButtonDetailDT.cs" />
+    <Compile Include="DT\Products\PageSetDT.cs" />
+    <Compile Include="DT\Products\PricelistDetailDT.cs" />
+    <Compile Include="DT\Products\PricelistDT.cs" />
+    <Compile Include="DT\Products\PricelistMasterDT.cs" />
+    <Compile Include="DT\Products\PriceList_EffectiveHoursDT.cs" />
+    <Compile Include="DT\Products\ProductBarcodesDT.cs" />
+    <Compile Include="DT\Products\ProductCategoriesDT.cs" />
+    <Compile Include="DT\Products\ProductDT.cs" />
+    <Compile Include="DT\Products\ProductExtrasDT.cs" />
+    <Compile Include="DT\Orders\SalesTypeDT.cs" />
+    <Compile Include="DT\Infrastructure\TableDT.cs" />
+    <Compile Include="DT\Orders\TaxDT.cs" />
+    <Compile Include="DT\Orders\TransactionsDT.cs" />
+    <Compile Include="DT\Orders\TransferMappingsDT.cs" />
+    <Compile Include="DT\Orders\TransferToPmsDT.cs" />
+    <Compile Include="DT\Products\ProductRecipeDT.cs" />
+    <Compile Include="DT\Products\UnitsDT.cs" />
+    <Compile Include="DT\Promos\PromotionsDT.cs" />
+    <Compile Include="DT\Promos\Vodafone11DT.cs" />
+    <Compile Include="DT\TableReservations\ReservationTypesDT.cs" />
+    <Compile Include="Interfaces\DAO\Goodys\IGoodysDAO.cs" />
+    <Compile Include="Interfaces\DAO\HotelInfo\IHotelInfoV3DAO.cs" />
+    <Compile Include="Interfaces\DAO\Payroll\IPayrollDAO.cs" />
+    <Compile Include="Interfaces\DT\CashedObjects\IHotelCustomMessagesDT.cs" />
+    <Compile Include="Interfaces\DT\CashedObjects\IHotelMacrosDT.cs" />
+    <Compile Include="Interfaces\DT\CashedObjects\IHotelMacroTimezoneDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_CustomerMessagesDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_CustomerTokenDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_OpeningHoursDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_PhoneticsDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_ScheduledTaskesDT.cs" />
+    <Compile Include="Interfaces\DT\Delivery\IDeliveryRoutingDT.cs" />
+    <Compile Include="Interfaces\DT\ExternalSystems\IEfoodDT.cs" />
+    <Compile Include="Interfaces\DT\ExternalSystems\IoldGoodysDT.cs" />
+    <Compile Include="Interfaces\DT\Goodys\IGoodysDT.cs" />
+    <Compile Include="Interfaces\DT\HotelInfo\IHotelInfoV3DT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IAllowedMealDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IAllowedMealOverwriteDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\ICustomMessageDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IHotelDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IHotelCustomerDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IMacroDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IMacroResultDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IMacroRuleDT.cs" />
+    <Compile Include="Interfaces\DT\Hotel\IMacroTimezoneDT.cs" />
+    <Compile Include="Interfaces\DT\ICashedDT.cs" />
+    <Compile Include="Interfaces\DT\IDA_OrderNoDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IGuestFutureDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\ISuppliersDT.cs" />
+    <Compile Include="Interfaces\DT\Kds\IKdsDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\ILoyaltyDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IPaymentsDT.cs" />
+    <Compile Include="Interfaces\DT\Payroll\IPayrollDT.cs" />
+    <Compile Include="Interfaces\DT\Products\ICategoriesDT.cs" />
+    <Compile Include="Interfaces\DAO\IComboDAO.cs" />
+    <Compile Include="Interfaces\DAO\IComboDetailDAO.cs" />
+    <Compile Include="Interfaces\DAO\IForexServiceDAO.cs" />
+    <Compile Include="Interfaces\DAO\IOrderStatusDAO.cs" />
+    <Compile Include="DAOs\OrderDAO.cs" />
+    <Compile Include="DAOs\PosInfoDAO.cs" />
+    <Compile Include="DAOs\PosInfoDetailDAO.cs" />
+    <Compile Include="DAOs\PricelistDAO.cs" />
+    <Compile Include="DAOs\ProductDAO.cs" />
+    <Compile Include="DAOs\ReportDAO.cs" />
+    <Compile Include="DAOs\SalesTypeDAO.cs" />
+    <Compile Include="DAOs\StaffDAO.cs" />
+    <Compile Include="DAOs\VatDAO.cs" />
+    <Compile Include="DataAccessDIModule.cs" />
+    <Compile Include="DT\Delivery\DeliveryCustomersDT.cs" />
+    <Compile Include="DT\Delivery\DeliveryOrdersDT.cs" />
+    <Compile Include="DT\Infrastructure\GdprDT.cs" />
+    <Compile Include="DT\Infrastructure\RegionLockersDT.cs" />
+    <Compile Include="DT\ExternalDelivery\ForkeyDT.cs" />
+    <Compile Include="DT\Infrastructure\GuestDT.cs" />
+    <Compile Include="DT\Infrastructure\LockersDT.cs" />
+    <Compile Include="DT\Orders\InvoicesDT.cs" />
+    <Compile Include="DT\Orders\InvoiceTypesDT.cs" />
+    <Compile Include="DT\Infrastructure\NFCcardDT.cs" />
+    <Compile Include="DT\Orders\OrderDetailInvoicesDT.cs" />
+    <Compile Include="DT\Products\PageButtonDT.cs" />
+    <Compile Include="DT\Products\PagesDT.cs" />
+    <Compile Include="DT\Orders\PredefinedCreditsDT.cs" />
+    <Compile Include="DT\Products\ReceiptDetailsForExtecrDT.cs" />
+    <Compile Include="DT\Infrastructure\RegionDT.cs" />
+    <Compile Include="DT\Infrastructure\ReportDT.cs" />
+    <Compile Include="DT\Infrastructure\PosInfoDetailDT.cs" />
+    <Compile Include="DT\Infrastructure\PosInfoDT.cs" />
+    <Compile Include="DT\Products\SalesPosLookupsDT.cs" />
+    <Compile Include="DT\Infrastructure\StaffDT.cs" />
+    <Compile Include="DT\Infrastructure\StoreDT.cs" />
+    <Compile Include="DT\Infrastructure\StoreMessagesDT.cs" />
+    <Compile Include="DT\Products\TableForDisplayDT.cs" />
+    <Compile Include="DT\TableReservations\CapacitiesDT.cs" />
+    <Compile Include="DT\TableReservations\ConfigDT.cs" />
+    <Compile Include="DT\TableReservations\EmailConfigDT.cs" />
+    <Compile Include="DT\TableReservations\EmailDT.cs" />
+    <Compile Include="DT\TableReservations\ExcludeDaysDT.cs" />
+    <Compile Include="DT\TableReservations\ExcludeRestrictionsDT.cs" />
+    <Compile Include="DT\TableReservations\OverwrittenCapacitiesDT.cs" />
+    <Compile Include="DT\TableReservations\ReservationCustomersDT.cs" />
+    <Compile Include="DT\TableReservations\ReservationsDT.cs" />
+    <Compile Include="DT\TableReservations\RestaurantsDT.cs" />
+    <Compile Include="DT\TableReservations\RestrictionsDT.cs" />
+    <Compile Include="DT\TableReservations\RestrictionsRestaurantsAssocDT.cs" />
+    <Compile Include="DT\Orders\VatDT.cs" />
+    <Compile Include="Interfaces\DAO\Delivery\IDeliveryCustomersBillingAddressDAO.cs" />
+    <Compile Include="Interfaces\DAO\Delivery\IDeliveryCustomersShippingAddressDAO.cs" />
+    <Compile Include="Interfaces\DAO\Delivery\IDeliveryCustomersPhonesDAO.cs" />
+    <Compile Include="Interfaces\DAO\Delivery\IDeliveryCustomersDAO.cs" />
+    <Compile Include="Interfaces\DAO\IAccountDAO.cs" />
+    <Compile Include="Interfaces\DAO\IEndOfDayDAO.cs" />
+    <Compile Include="Interfaces\DAO\IGenericDAO.cs" />
+    <Compile Include="Interfaces\DAO\IGenericITableDAO.cs" />
+    <Compile Include="Interfaces\DAO\IGuestDAO.cs" />
+    <Compile Include="Interfaces\DAO\IInvoicesDAO.cs" />
+    <Compile Include="Interfaces\DAO\IInvoiceShippingDetailsDAO.cs" />
+    <Compile Include="Interfaces\DAO\IInvoiceTypeDAO.cs" />
+    <Compile Include="Interfaces\DAO\IOrderDAO.cs" />
+    <Compile Include="Interfaces\DAO\IPosInfoDetailDAO.cs" />
+    <Compile Include="Interfaces\DAO\IPricelistDetailDAO.cs" />
+    <Compile Include="Interfaces\DAO\ISalesTypeDAO.cs" />
+    <Compile Include="Interfaces\DAO\IPosInfoDAO.cs" />
+    <Compile Include="Interfaces\DAO\IPricelistDAO.cs" />
+    <Compile Include="Interfaces\DAO\IReportDAO.cs" />
+    <Compile Include="Interfaces\DAO\IStaffDAO.cs" />
+    <Compile Include="Interfaces\DT\Orders\ICreditTransactionDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_OrderStatusDT.cs" />
+    <Compile Include="Interfaces\DT\Delivery\IDelivery_CustomersBillingAddressDT.cs" />
+    <Compile Include="Interfaces\DT\Delivery\IDelivery_CustomersShippingAddressDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IDepartmentDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IIngredientCategoriesDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IIngredientsDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IIngredient_ProdCategoryAssocDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IInvoiceShippingDetailsDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IInvoice_Guests_TransDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IOrderDetailIngredientsDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IOrderDetailsDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IOrderDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IOrderStatusDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPageButtonDetailDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPageSetDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPricelistDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPricelistMasterDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPriceList_EffectiveHoursDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IProductBarcodesDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IProductDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IProductExtrasDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\ISalesTypeDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\ITableDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\ITransactionsDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\ITransferMappingsDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\ITransferToPmsDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IProductRecipeDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IUnitsDT.cs" />
+    <Compile Include="Interfaces\DAO\IVatDAO.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_AddressesDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_ConfigDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_ClientJobsDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_CustomerDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_GeoPolygonsDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_LoyaltyDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_HangFireJobsDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_OrdersDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_ShortagesDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_StaffDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_StoresDT.cs" />
+    <Compile Include="Interfaces\DT\DeliveryAgent\IDA_Store_PriceListAssocDT.cs" />
+    <Compile Include="Interfaces\DT\ExternalDelivery\IForkeyDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IComboDetailDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IComboDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\ICustomerDT.cs" />
+    <Compile Include="Interfaces\DT\Delivery\IDeliveryCustomersDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IAccountsDT.cs" />
+    <Compile Include="Interfaces\DT\Delivery\IDeliveryOrdersDT.cs" />
+    <Compile Include="Interfaces\DT\ExternalSystems\IForexServiceDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IGdprDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IHotelInfoDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPricelistDetailDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IRegionLockersDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IGuestDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\ILockersDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IEndOfDayDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IInvoicesDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IInvoiceTypesDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\INFCcardDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IOrderDetailInvoicesDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPageButtonDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IPagesDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IPosInfoDetailDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IPosInfoDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IPredefinedCreditsDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IReceiptDetailsForExtecrDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IRegionDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IReportDT.cs" />
+    <Compile Include="Interfaces\DT\Products\ISalesPosLookupsDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IStaffDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IStoreDT.cs" />
+    <Compile Include="Interfaces\DT\Infrastructure\IStoreMessagesDT.cs" />
+    <Compile Include="Interfaces\DT\Products\ITableForDisplayDT.cs" />
+    <Compile Include="Interfaces\DT\Orders\IVatDT.cs" />
+    <Compile Include="Interfaces\DT\Promos\IPromotionsDT.cs" />
+    <Compile Include="Interfaces\DT\Promos\IVodafone11DT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\ICapacitiesDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IConfigDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IEmailConfigDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IEmailDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IExcludeDaysDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IExcludeRestrictionsDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IOverwrittenCapacitiesDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IReservationCustomersDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IReservationsDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IReservationTypesDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IRestaurantsDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IRestrictionDT.cs" />
+    <Compile Include="Interfaces\DT\TableReservations\IRestrictionsRestaurantsAssocDT.cs" />
+    <Compile Include="Interfaces\DAO\IProductDAO.cs" />
+    <Compile Include="Interfaces\DT\Orders\ITaxDT.cs" />
+    <Compile Include="Interfaces\DT\Products\IProductCategoriesDT.cs" />
+    <Compile Include="Interfaces\XMLs\IUsersToDatabasesXML.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DAOs\EndOfDayDAO.cs" />
+    <Compile Include="DT\Orders\AccountsDT.cs" />
+    <Compile Include="XMLs\UsersToDatabasesXML.cs" />
+    <Compile Include="DT\Orders\EndOfDayDT.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMSConnectionLib\Symposium_PmsInterface.csproj">
+      <Project>{89B08DB2-BB38-472C-8EA3-0A7CFEECB72F}</Project>
+      <Name>Symposium_PmsInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PosInfo_DB\Symposium_DTOs.csproj">
+      <Project>{E4E12035-70A0-4BAA-BF23-65E792958536}</Project>
+      <Name>Symposium_DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Helpers\Symposium_Helpers.csproj">
+      <Project>{ed15b2dd-fb51-4c87-893b-f5820fc5e127}</Project>
+      <Name>Symposium_Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Resources\Symposium_Resources.csproj">
+      <Project>{80728d71-9a95-4e60-9e16-0462ea44c339}</Project>
+      <Name>Symposium_Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\DAO\TableReservations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

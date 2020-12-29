@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4E12035-70A0-4BAA-BF23-65E792958536}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symposium_DTOs</RootNamespace>
+    <AssemblyName>PosInfo_DB</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IIsDeleted.cs" />
+    <Compile Include="INoSql.cs" />
+    <Compile Include="ITables.cs" />
+    <Compile Include="MainClass.cs" />
+    <Compile Include="PosModel_Info\AccountDTO.cs" />
+    <Compile Include="PosModel_Info\ActionDTO.cs" />
+    <Compile Include="PosModel_Info\AllowedMealsPerBoardDTO.cs" />
+    <Compile Include="PosModel_Info\AllowedMealsPerBoardDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\AssignedPositionsDTO.cs" />
+    <Compile Include="PosModel_Info\AuthorizedGroupDTO.cs" />
+    <Compile Include="PosModel_Info\AuthorizedGroupDetailDTO.cs" />
+    <Compile Include="PosModel_Info\BoardMealsDTO.cs" />
+    <Compile Include="PosModel_Info\CategoriesDTO.cs" />
+    <Compile Include="PosModel_Info\ClientPosDTO.cs" />
+    <Compile Include="PosModel_Info\ComboDetailDTO.cs" />
+    <Compile Include="PosModel_Info\ComboDTO.cs" />
+    <Compile Include="PosModel_Info\CreditAccountsDTO.cs" />
+    <Compile Include="PosModel_Info\CreditAccounts_HistDTO.cs" />
+    <Compile Include="PosModel_Info\CreditCodesDTO.cs" />
+    <Compile Include="PosModel_Info\CreditCodes_HistDTO.cs" />
+    <Compile Include="PosModel_Info\CreditTransactionsDTO.cs" />
+    <Compile Include="PosModel_Info\CreditTransactions_HistDTO.cs" />
+    <Compile Include="PosModel_Info\DAStore_PriceListAssocDTO.cs" />
+    <Compile Include="PosModel_Info\DA_AddressesDTO.cs" />
+    <Compile Include="PosModel_Info\DA_CustomerMessagesDTO.cs" />
+    <Compile Include="PosModel_Info\DA_CustomersDTO.cs" />
+    <Compile Include="PosModel_Info\DA_CustomersTokensDTO.cs" />
+    <Compile Include="PosModel_Info\DA_GeoPolygonsDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\DA_GeoPolygonsDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalConfigDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalGainAmountRangeDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalGainAmountRatioDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalPointsDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalPointsHistDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalRedeemDiscountDTO.cs" />
+    <Compile Include="PosModel_Info\DA_LoyalRedeemFreeProductDTO.cs" />
+    <Compile Include="PosModel_Info\DA_MessagesDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\DA_MessagesDTO.cs" />
+    <Compile Include="PosModel_Info\DA_OpeningHoursDTO.cs" />
+    <Compile Include="PosModel_Info\DA_OrderDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\DA_OrderDetailsExtrasDTO.cs" />
+    <Compile Include="PosModel_Info\DA_OrderNoDTO.cs" />
+    <Compile Include="PosModel_Info\DA_OrdersDTO.cs" />
+    <Compile Include="PosModel_Info\DeliveryRoutingDTO.cs" />
+    <Compile Include="PosModel_Info\DeliveryRoutingHistDTO.cs" />
+    <Compile Include="PosModel_Info\GuestFutureDTO.cs" />
+    <Compile Include="PosModel_Info\HotelCustomerDataConfigDTO.cs" />
+    <Compile Include="PosModel_Info\HotelCustomMessagesDTO.cs" />
+    <Compile Include="PosModel_Info\HotelMacroResultsDTO.cs" />
+    <Compile Include="PosModel_Info\HotelMacroRulesDTO.cs" />
+    <Compile Include="PosModel_Info\HotelMacrosDTO.cs" />
+    <Compile Include="PosModel_Info\HotelMacros_HistDTO.cs" />
+    <Compile Include="PosModel_Info\HotelMacroTimezoneDTO.cs" />
+    <Compile Include="PosModel_Info\InvoiceQRDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailIgredientsKDSDTO.cs" />
+    <Compile Include="PosModel_Info\PayrollNewDTO.cs" />
+    <Compile Include="PosModel_Info\Promotions_PricelistsDTO.cs" />
+    <Compile Include="PosModel_Info\StaffCashDTO.cs" />
+    <Compile Include="PosModel_Info\DA_OrderStatusDTO.cs" />
+    <Compile Include="PosModel_Info\DA_ScheduledTaskesDTO.cs" />
+    <Compile Include="PosModel_Info\DA_ShortageProdsDTO.cs" />
+    <Compile Include="PosModel_Info\DA_StoresDTO.cs" />
+    <Compile Include="PosModel_Info\DA_MainMessagesDTO.cs" />
+    <Compile Include="PosModel_Info\Promotions_CombosDTO.cs" />
+    <Compile Include="PosModel_Info\Promotions_DiscountsDTO.cs" />
+    <Compile Include="PosModel_Info\SuppliersDTO.cs" />
+    <Compile Include="PosModel_Info\TR_ReservationTypesDTO.cs" />
+    <Compile Include="PosModel_Info\TR_TradingHoursDTO.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_1.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_10.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_11.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_12.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_13.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_14.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_15.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_16.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_17.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_18.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_19.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_2.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_20.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_21.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_22.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_23.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_24.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_25.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_26.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_27.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_28.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_29.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_3.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_30.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_31.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_32.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_33.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_34.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_35.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_36.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_37.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_38.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_39.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_4.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_40.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_41.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_42.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_43.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_44.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_45.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_46.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_47.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_48.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_5.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_51.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_50.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_52.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_53.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_54.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_56.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_6.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_7.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_8.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_9.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_49.cs" />
+    <Compile Include="PosModel_Info\Version_2_0_0_55.cs" />
+    <Compile Include="PosModel_Info\Vodafone11DetailsDTO.cs" />
+    <Compile Include="PosModel_Info\Vodafone11HeadersDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_AddressTypesDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_CustomersDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_CustomersBillingAddressDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_CustomersPhonesDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_CustomersPhonesAndAddressDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_CustomersShippingAddressDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_CustomersTypesDTO.cs" />
+    <Compile Include="PosModel_Info\Delivery_PhoneTypesDTO.cs" />
+    <Compile Include="PosModel_Info\DepartmentDTO.cs" />
+    <Compile Include="PosModel_Info\DigitalSignatureDTO.cs" />
+    <Compile Include="PosModel_Info\DiscountDTO.cs" />
+    <Compile Include="PosModel_Info\EFoodBucketDTO.cs" />
+    <Compile Include="PosModel_Info\EmailConfigDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayDetailDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayDetail_HistDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayPaymentAnalysisDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayPaymentAnalysis_HistDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayVoidsAnalysisDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDayVoidsAnalysis_HistDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfDay_HistDTO.cs" />
+    <Compile Include="PosModel_Info\EndOfYearDTO.cs" />
+    <Compile Include="PosModel_Info\EODAccountToPmsTransferDTO.cs" />
+    <Compile Include="PosModel_Info\EODAccountToPmsTransfer_HistDTO.cs" />
+    <Compile Include="PosModel_Info\ExternalLostOrdersDTO.cs" />
+    <Compile Include="PosModel_Info\ExternalLostOrders_HistDTO.cs" />
+    <Compile Include="PosModel_Info\ExternalProductMappingDTO.cs" />
+    <Compile Include="PosModel_Info\ExternalStateMatchDTO.cs" />
+    <Compile Include="PosModel_Info\ExternalUsersDTO.cs" />
+    <Compile Include="PosModel_Info\ForexServiceDTO.cs" />
+    <Compile Include="PosModel_Info\GuestDTO.cs" />
+    <Compile Include="PosModel_Info\HitPosCustomersDTO.cs" />
+    <Compile Include="PosModel_Info\HitPosOrdersDTO.cs" />
+    <Compile Include="PosModel_Info\HitPosOrders_HistDTO.cs" />
+    <Compile Include="PosModel_Info\HotelInfoDTO.cs" />
+    <Compile Include="PosModel_Info\IngredientCategoriesDTO.cs" />
+    <Compile Include="PosModel_Info\IngredientsDTO.cs" />
+    <Compile Include="PosModel_Info\Ingredient_ProdCategoryAssocDTO.cs" />
+    <Compile Include="PosModel_Info\InvoicesDTO.cs" />
+    <Compile Include="PosModel_Info\InvoiceShippingDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\InvoiceShippingDetails_HistDTO.cs" />
+    <Compile Include="PosModel_Info\Invoices_HistDTO.cs" />
+    <Compile Include="PosModel_Info\InvoiceTypesDTO.cs" />
+    <Compile Include="PosModel_Info\Invoice_Guests_TransDTO.cs" />
+    <Compile Include="PosModel_Info\Invoice_Guests_Trans_HistDTO.cs" />
+    <Compile Include="PosModel_Info\ItemsDTO.cs" />
+    <Compile Include="PosModel_Info\KdsDTO.cs" />
+    <Compile Include="PosModel_Info\KitchenDTO.cs" />
+    <Compile Include="PosModel_Info\KitchenInstructionDTO.cs" />
+    <Compile Include="PosModel_Info\KitchenInstructionLoggerDTO.cs" />
+    <Compile Include="PosModel_Info\KitchenInstructionLogger_HistDTO.cs" />
+    <Compile Include="PosModel_Info\KitchenInstruction_HistDTO.cs" />
+    <Compile Include="PosModel_Info\KitchenRegionDTO.cs" />
+    <Compile Include="PosModel_Info\LockersDTO.cs" />
+    <Compile Include="PosModel_Info\Lockers_HistDTO.cs" />
+    <Compile Include="PosModel_Info\LoyaltyDTO.cs" />
+    <Compile Include="PosModel_Info\Loyalty_HistDTO.cs" />
+    <Compile Include="PosModel_Info\MealConsumptionDTO.cs" />
+    <Compile Include="PosModel_Info\MealConsumption_HistDTO.cs" />
+    <Compile Include="PosModel_Info\MetadataTableDTO.cs" />
+    <Compile Include="PosModel_Info\NFCcardInfoDTO.cs" />
+    <Compile Include="PosModel_Info\NotificationsDTO.cs" />
+    <Compile Include="PosModel_Info\OnlineRegistrationDTO.cs" />
+    <Compile Include="PosModel_Info\OnlineRegistration_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailIgredientsDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailIgredients_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailIgredientVatAnalDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailIgredientVatAnal_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailInvoicesDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailInvoices_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailVatAnalDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetailVatAnal_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrderDetail_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrdersStaffDTO.cs" />
+    <Compile Include="PosModel_Info\OrdersStaff_HistDTO.cs" />
+    <Compile Include="PosModel_Info\OrderStatusDTO.cs" />
+    <Compile Include="PosModel_Info\OrderStatus_HistDTO.cs" />
+    <Compile Include="PosModel_Info\Order_HistDTO.cs" />
+    <Compile Include="PosModel_Info\PageButtonDTO.cs" />
+    <Compile Include="PosModel_Info\PageButtonDetailDTO.cs" />
+    <Compile Include="PosModel_Info\PagePosAssocDTO.cs" />
+    <Compile Include="PosModel_Info\PagesDTO.cs" />
+    <Compile Include="PosModel_Info\PageSetDTO.cs" />
+    <Compile Include="PosModel_Info\PayroleDTO.cs" />
+    <Compile Include="PosModel_Info\PdaModuleDTO.cs" />
+    <Compile Include="PosModel_Info\PdaModuleDetailDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfoDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfoDetailDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfoDetail_Excluded_AccountsDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfoDetail_Pricelist_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfoKdsAssocDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfo_KitchenInstruction_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfo_Pricelist_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfo_Region_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\PosInfo_StaffPositin_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\PredefinedCreditsDTO.cs" />
+    <Compile Include="PosModel_Info\PricelistDTO.cs" />
+    <Compile Include="PosModel_Info\PricelistDetailDTO.cs" />
+    <Compile Include="PosModel_Info\PricelistMasterDTO.cs" />
+    <Compile Include="PosModel_Info\PriceList_EffectiveHoursDTO.cs" />
+    <Compile Include="PosModel_Info\ProductDTO.cs" />
+    <Compile Include="PosModel_Info\ProductBarcodesDTO.cs" />
+    <Compile Include="PosModel_Info\ProductCategoriesDTO.cs" />
+    <Compile Include="PosModel_Info\ProductExtrasDTO.cs" />
+    <Compile Include="PosModel_Info\ProductForBarcodeEodDTO.cs" />
+    <Compile Include="PosModel_Info\ProductRecipeDTO.cs" />
+    <Compile Include="PosModel_Info\ProductSalesHistoryPerDayDTO.cs" />
+    <Compile Include="PosModel_Info\ProductsForEODDTO.cs" />
+    <Compile Include="PosModel_Info\RegionDTO.cs" />
+    <Compile Include="PosModel_Info\RegionLockerProductDTO.cs" />
+    <Compile Include="PosModel_Info\ReportEntity.cs" />
+    <Compile Include="PosModel_Info\ReportListDTO.cs" />
+    <Compile Include="PosModel_Info\SalesTypeDTO.cs" />
+    <Compile Include="PosModel_Info\SalesType_PricelistMaster_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\StaffDTO.cs" />
+    <Compile Include="PosModel_Info\StaffAuthorizationDTO.cs" />
+    <Compile Include="PosModel_Info\StaffPositionDTO.cs" />
+    <Compile Include="PosModel_Info\StaffScheduleDTO.cs" />
+    <Compile Include="PosModel_Info\StaffSecheduleDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\StatisticsMenusDTO.cs" />
+    <Compile Include="PosModel_Info\StoreDTO.cs" />
+    <Compile Include="PosModel_Info\StoreMessagesDTO.cs" />
+    <Compile Include="PosModel_Info\StoreMessages_HistDTO.cs" />
+    <Compile Include="PosModel_Info\TableDTO.cs" />
+    <Compile Include="PosModel_Info\TablePaySuggestionDTO.cs" />
+    <Compile Include="PosModel_Info\TablePaySuggestion_HistDTO.cs" />
+    <Compile Include="PosModel_Info\TaxDTO.cs" />
+    <Compile Include="PosModel_Info\TransactionsDTO.cs" />
+    <Compile Include="PosModel_Info\Transactions_HistDTO.cs" />
+    <Compile Include="PosModel_Info\TransactionTypesDTO.cs" />
+    <Compile Include="PosModel_Info\TransferMappingDetailsDTO.cs" />
+    <Compile Include="PosModel_Info\TransferMappingDetails_HistDTO.cs" />
+    <Compile Include="PosModel_Info\TransferMappingsDTO.cs" />
+    <Compile Include="PosModel_Info\TransferMappings_HistDTO.cs" />
+    <Compile Include="PosModel_Info\TransferToPmsDTO.cs" />
+    <Compile Include="PosModel_Info\TransferToPms_HistDTO.cs" />
+    <Compile Include="PosModel_Info\TransferToPms_LastIdsDTO.cs" />
+    <Compile Include="PosModel_Info\TR_CapacitiesDTO.cs" />
+    <Compile Include="PosModel_Info\TR_ConfigDTO.cs" />
+    <Compile Include="PosModel_Info\TR_ExcludeDaysDTO.cs" />
+    <Compile Include="PosModel_Info\TR_ExcludeRestrictionsDTO.cs" />
+    <Compile Include="PosModel_Info\TR_OvewrittenCapacitiesDTO.cs" />
+    <Compile Include="PosModel_Info\TR_ReservationCustomersDTO.cs" />
+    <Compile Include="PosModel_Info\TR_ReservationsDTO.cs" />
+    <Compile Include="PosModel_Info\TR_RestaurantsDTO.cs" />
+    <Compile Include="PosModel_Info\TR_RestrictionsDTO.cs" />
+    <Compile Include="PosModel_Info\TR_Restrictions_Restaurants_AssocDTO.cs" />
+    <Compile Include="PosModel_Info\UnitsDTO.cs" />
+    <Compile Include="PosModel_Info\ValidModulesDTO.cs" />
+    <Compile Include="PosModel_Info\VatDTO.cs" />
+    <Compile Include="PosModel_Info\VersionsDTO.cs" />
+    <Compile Include="PosModel_Info\WorkSheetDTO.cs" />
+    <Compile Include="PosModel_Info\Promotions_HeadersDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Symposium_Models\Symposium_Models.csproj">
+      <Project>{9FC67B5B-9151-40E2-B5F2-5B88CC716D2B}</Project>
+      <Name>Symposium_Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="SqlServerTypes\x64\" />
+    <Folder Include="SqlServerTypes\x86\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

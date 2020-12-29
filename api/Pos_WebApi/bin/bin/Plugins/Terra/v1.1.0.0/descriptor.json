@@ -1,0 +1,60 @@
+{
+  "General": [
+    {
+      "Key": "Geolocation",
+      "Description": "Πάροχος χαρτών. Πρέπει πάντα να έχει τιμή 'TerraMaps'",
+      "Type": "string",
+      "DefaultValue": "TerraMaps",
+      "ApiVersion": "5.0.1.0"
+    },
+    {
+      "Key": "IMapGeocode_Language",
+      "Description": "Επιλεγμένη Γλώσσα πχ el,en ...",
+      "Type": "string",
+      "DefaultValue": "el",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IMapGeocode_RequestUrl",
+      "Description": "Το Απαιτούμενο URL για να κάνουμε κλήση στο api της Terra ώστε να πραγματοποιηθεί το geolocation . <br> Το τροποποιούμε μόνο σε ενδεχόμενες αλλαγές της Terra.",
+      "Type": "string",
+      "DefaultValue": "https://locators.terra.gr/TerraLocatorEverestWithPOI/findAddressCandidatesEverest",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IMapGeocode_RemoveRegions",
+      "Description": "Λέξεις που θέλουν να παραλείπονται όταν πραγματοποιούμε μια νεα αναζήτηση πχ Αθήνα,Αθηνα,ΑΘΗΝΑ ...",
+      "Type": "string",
+      "DefaultValue": "Αθήνα,Αθηνα,ΑΘΗΝΑ",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IMapGeocode_ApiJs",
+      "Description": "Tο Απαιτούμενο URL για να φορτωθούν οι χάρτες της Terra. <br> Το τροποποιούμε μόνο σε ενδεχόμενες αλλαγές της Terra.",
+      "Type": "string",
+      "DefaultValue": "https://js.arcgis.com/4.12/",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IMapGeocode_UrlLatLng",
+      "Description": "Tο Απαιτούμενο URL για να κάνουμε κλήση στο api της Terra και να πάρουμε διεύθυνση με βάση τις συντεταγμένες. <br> Το τροποποιούμε μόνο σε ενδεχόμενες αλλαγές της Terra.",
+      "Type": "string",
+      "DefaultValue": "https://maps.google.com/maps/api/geocode/json",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IMapGeocode_MapInit",
+      "Description": "Tο Απαιτούμενο URL για να φορτώσουμε τους χάρτες με βάση τα στοιχεία του Javascript Api (ArcGis). <br> Το τροποποιούμε μόνο σε ενδεχόμενες αλλαγές του του Javascript Api (ArcGis).",
+      "Type": "string",
+      "DefaultValue": "http://tiles.arcgis.com/tiles/mrOMWpWGs9ExyHNf/arcgis/rest/services/gr16Q4WMGr/VectorTileServer/resources/styles/root.json",
+      "ApiVersion": "5.0.0.0"
+    },
+    {
+      "Key": "IMapGeocode_MapCss",
+      "Description": "Tο Απαιτούμενο URL για να φορτώσουμε τα απαιτούμενα css για τους χάρτες με βάση τα στοιχεία του Javascript Api (ArcGis). <br> Το τροποποιούμε μόνο σε ενδεχόμενες αλλαγές του του Javascript Api (ArcGis).",
+      "Type": "string",
+      "DefaultValue": "https://js.arcgis.com/4.12/esri/themes/light/main.css",
+      "ApiVersion": "5.0.0.0"
+    }
+  ]
+}

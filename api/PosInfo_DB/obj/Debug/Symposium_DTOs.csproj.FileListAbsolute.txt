@@ -1,0 +1,14 @@
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\PosInfo_DB.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\PosInfo_DB.pdb
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Dapper.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Symposiummdls.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Newtonsoft.Json.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Symposiummdls.pdb
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Dapper.xml
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\bin\Debug\Newtonsoft.Json.xml
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Debug\Symposium_DTOs.csprojAssemblyReference.cache
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Debug\Symposium_DTOs.csproj.CoreCompileInputs.cache
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Debug\Symposium_DTOs.csproj.CopyComplete
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Debug\PosInfo_DB.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\PosInfo_DB\obj\Debug\PosInfo_DB.pdb

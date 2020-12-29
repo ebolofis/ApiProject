@@ -1,0 +1,39 @@
+<Orders><Order>
+		<Customer>
+			<customerID>2679</customerID>
+			<ShopcustomerID>2</ShopcustomerID>
+			<surname>ΛΥΧΡΟΥ</surname>
+			<name>ΜΑΡΙΑ</name><loyaltyID>True</loyaltyID>
+      <bellname>Υποδοχή/Φύλακας</bellname>
+			<tel>2102893167</tel>
+      <addressID>2479</addressID>
+			<address>ΣΠΑΡΤΗΣ</address>
+      <streetno>30</streetno>
+			<region>ΜΕΤΑΜΟΡΦΩΣΗ</region>
+      <zip>14452</zip>
+      <datetime>2019-03-19 12:46:29</datetime>
+      <ll></ll>
+			<floor>2</floor>
+      <addresscomments>Τέρμα Οδού Σπάρτης/Τζανή</addresscomments>
+			<company_name></company_name>
+			<timologio>False</timologio>
+      <company></company>
+      <company_address></company_address>
+			<profession></profession>
+			<vat_number></vat_number>
+			<doy></doy>
+			<comments>Παρακαλώ στείλτε μας 2 μαχαιροπίρουνο(α)</comments>
+		</Customer>
+  <OrderBody>
+			<orderID>685648</orderID>
+			<credit>0</credit>
+			<delivery>0</delivery>
+			<origin>ΜΕΤΑΜΟΡΦΩΣΗ</origin>
+			<discount>2.07</discount>
+      <deliverycharge>0.00</deliverycharge>
+			<total>18.63</total>
+      <grandTotal>18.63</grandTotal>
+	    <mpos>1</mpos>
+    <Products><Product flag='0' productID='1589' sizeID='1' quantity='1' price='3.70' total='3.7' featureID='0' offerCode='' itemComments='με blue cheese sauce παρακαλώ'><Material materialID='280' flag='-1' price='0' /></Product><Product flag='0' productID='1784' sizeID='1' quantity='1' price='6.60' total='6.6' featureID='0' offerCode='' itemComments=''></Product><Product flag='0' productID='147' sizeID='1' quantity='1' price='3.60' total='3.6' featureID='0' offerCode='' itemComments=''></Product><Product flag='0' productID='149' sizeID='1' quantity='1' price='5.20' total='5.2' featureID='0' offerCode='' itemComments=''><Material materialID='356' flag='1' price='1.6' /></Product></Products>
+  </OrderBody>
+	</Order></Orders>

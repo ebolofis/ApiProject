@@ -1,0 +1,11 @@
+{
+  "IMapGeocode_WebApiUrl": "http://localhost:5420/",
+  "IMapGeocode_Language": "el",
+  "IMapGeocode_ApiKey": "",
+  "IMapGeocode_RequestUrl": "https://locators.terra.gr/TerraLocatorEverest/findAddressCandidatesEverest",
+  "IMapGeocode_RemoveRegions": "¡ËﬁÌ·,¡ËÁÌ·,¡»«Õ¡",
+  "IMapGeocode_ApiJs": "https://js.arcgis.com/4.12/",
+  "IMapGeocode_UrlLatLng": "http://locators.terra.gr/terralocatoreverest/reverseGeocodeEverest",
+  "IMapGeocode_MapInit": "http://tiles.arcgis.com/tiles/mrOMWpWGs9ExyHNf/arcgis/rest/services/gr16Q4WMGr/VectorTileServer/resources/styles/root.json",
+  "IMapGeocode_MapCss": "https://js.arcgis.com/4.12/esri/themes/light/main.css"
+}

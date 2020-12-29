@@ -1,0 +1,53 @@
+﻿{
+  "General": [
+    {
+      "Key": "Channel",
+      "Description": "Περιγραφή του client που χρησιμοποιεί το api της velti. <br>Παράδειγμα: 'call_center' ή 'store'",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.19.0"
+    },
+    {
+      "Key": "goodysStoreIds",
+      "Description": "Αντιστοίχιση καταστημάτων με κωδικούς καταστημάτων της velti. Η αντιστοίχιση πρέπει να γίνει ως εξης: <br>Αντιστοιχίζουμε το Id του DA_Store με των κωδικό καταστήματος της velti χρησιμοποιώντας τον χαρακτήρα ','. Διαχωρίζουμε τις αντιστοιχίσεις με τον χαρακτήρα ';'. <br> Παράδειγμα: '1,1-6MLL1;5,4-J4LLA;7,T-MM3FD' όπου τα Id των καταστημάτων είναι τα 1, 5, 7 και οι κωδικοί των καταστημάτων είναι οι 1-6MLL1, 4-J4LLA, T-MM3FD.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.19.0"
+    },
+    {
+      "Key": "veltiApi",
+      "Description": "Το url της velti για τα κουπόνια.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "veltiLoyalty",
+      "Description": "Το url της velti για το Loyalty.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "callMobile",
+      "Description": "Το url του call center.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "SupplementaryLoyaltyProduct",
+      "Description": "Ο κωδικός του έξτρα προϊόντος που εισάγεται στην παραγγελία κατά τη χρήση Goody's Loyalty, σε περίπτωση που υπάρχουν διαφορετικά Φ.Π.Α.",
+      "Type": "string",
+      "DefaultValue": "3522",
+      "ApiVersion": "5.0.13.0"
+    },
+    {
+      "Key": "SupplementaryCouponProduct",
+      "Description": "Ο κωδικός του έξτρα προϊόντος που εισάγεται στην παραγγελία κατά τη χρήση κουπονιού Goody's, σε περίπτωση που υπάρχουν διαφορετικά Φ.Π.Α.",
+      "Type": "string",
+      "DefaultValue": "3593",
+      "ApiVersion": "5.0.13.0"
+    }
+  ]
+}

@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E49C4F1-A294-4FCA-A109-87B8C70FC504}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Symposium.WebApi.MainLogic</RootNamespace>
+    <AssemblyName>Symposiumml</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD, Version=1.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.SimpleCRUD.1.13.0\lib\net45\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Geocoding, Version=3.6.0.0, Culture=neutral, PublicKeyToken=7c714700b88674c7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Geocoding.net.3.6.1\lib\net40\Geocoding.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.3.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.3.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Flows\DahuaRecorder\PosRecorderFlows.cs" />
+    <Compile Include="Flows\Configuration\ConfigurationFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_CustomerMessagesFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_CustomerTokenFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_EFoodGetOrdersFlow.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_HangFireJobsMakeCustomerAnonymousFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_LoyaltyExecutionsFlow.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_OpeningHoursFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_EfoodFlows.cs" />
+    <Compile Include="Flows\ExternalSystems\OldGoodysFlow.cs" />
+    <Compile Include="Flows\Delivery\DeliveryRoutingFlows.cs" />
+    <Compile Include="Flows\Goodys\GoodysFlow.cs" />
+    <Compile Include="Flows\Goodys\GoodysOrdersFlow.cs" />
+    <Compile Include="Flows\HotelInfo\HotelInfoV3Flow.cs" />
+    <Compile Include="Flows\Hotelizer\HotelizerFlows.cs" />
+    <Compile Include="Flows\Hotel\HotelFlows.cs" />
+    <Compile Include="Flows\Infrastructure\GuestFutureFlows.cs" />
+    <Compile Include="Flows\Infrastructure\SuppliersFlows.cs" />
+    <Compile Include="Flows\Kds\KdsFlows.cs" />
+    <Compile Include="Flows\Orders\AccountFlows.cs" />
+    <Compile Include="Flows\Orders\PaymentsFlows.cs" />
+    <Compile Include="Flows\Payroll\PayrollFlows.cs" />
+    <Compile Include="Flows\Products\CategoriesFlows.cs" />
+    <Compile Include="Flows\Products\ComboFlows.cs" />
+    <Compile Include="Flows\Orders\CreditTransactionsFlows.cs" />
+    <Compile Include="Flows\Infrastructure\CustomerFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_AddressesFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_ClientJobsFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_ConfigFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_CustomerFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_HangFireJobsCheckIsDelayOnStoresFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_HangFireJobsSendOrdersFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_HangFireJobsUpdateClientTableFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_HangFireJobsUpdateStatusFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_GeoPolygonsFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_LoyaltyFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_OrdersFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_OrderStatusFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_ScheduledTaskesFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_ShortagesFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_StaffFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_StoresFlows.cs" />
+    <Compile Include="Flows\DeliveryAgent\DA_Store_PriceListAssocFlows.cs" />
+    <Compile Include="Flows\Delivery\DeliveryCustomerFlows.cs" />
+    <Compile Include="Flows\Delivery\DeliveryOrdersFlows.cs" />
+    <Compile Include="Flows\Delivery\Delivery_CustomersBillingAddressFlows.cs" />
+    <Compile Include="Flows\Delivery\Delivery_CustomersShippingAddressFlows.cs" />
+    <Compile Include="Flows\ExternalSystems\ExtDeliverySystemsFlows.cs" />
+    <Compile Include="Flows\ExternalSystems\ICouponFlows.cs" />
+    <Compile Include="Flows\ExternalSystems\ForexServiceFlows.cs" />
+    <Compile Include="Flows\Infrastructure\GdprFlows.cs" />
+    <Compile Include="Flows\Infrastructure\HotelInfoFlows.cs" />
+    <Compile Include="Flows\Products\IngredientCategoriesFlows.cs" />
+    <Compile Include="Flows\Products\IngredientsFlows.cs" />
+    <Compile Include="Flows\Products\Ingredient_ProdCategoryAssocFlows.cs" />
+    <Compile Include="Flows\Orders\InvoiceShippingDetailsFlows.cs" />
+    <Compile Include="Flows\Orders\Invoice_Guest_TransFlows.cs" />
+    <Compile Include="Flows\Orders\OrderDetailFlows.cs" />
+    <Compile Include="Flows\Orders\OrderDetailIngredientsFlows.cs" />
+    <Compile Include="Flows\Orders\OrderDetailInvoicesFlows.cs" />
+    <Compile Include="Flows\Orders\OrderFlows.cs" />
+    <Compile Include="Flows\Orders\OrderStatusFlows.cs" />
+    <Compile Include="Flows\Products\PageButtonDetailFlows.cs" />
+    <Compile Include="Flows\Products\PageSetFlows.cs" />
+    <Compile Include="Flows\Infrastructure\PosInfoDetailFlows.cs" />
+    <Compile Include="Flows\Infrastructure\PosInfoFlows.cs" />
+    <Compile Include="Flows\Products\PricelistDetailFlows.cs" />
+    <Compile Include="Flows\Products\PricelistFlows.cs" />
+    <Compile Include="Flows\Products\PricelistMasterFlows.cs" />
+    <Compile Include="Flows\Products\PriceList_EffectiveHoursFlows.cs" />
+    <Compile Include="Flows\Products\ProductBarcodesFlows.cs" />
+    <Compile Include="Flows\Products\ProductCategoriesFlows.cs" />
+    <Compile Include="Flows\Products\ProductExtrasFlows.cs" />
+    <Compile Include="Flows\Products\ProductFlows.cs" />
+    <Compile Include="Flows\Infrastructure\RegionLockersFlows.cs" />
+    <Compile Include="Flows\ExternalDelivery\ForkeyFlows.cs" />
+    <Compile Include="Flows\Infrastructure\NFCcardFlows.cs" />
+    <Compile Include="Flows\Orders\InvoicesFlows.cs" />
+    <Compile Include="Flows\Products\PageButtonFlows.cs" />
+    <Compile Include="Flows\Products\PagesFlows.cs" />
+    <Compile Include="Flows\Orders\PredefinedCreditsFlows.cs" />
+    <Compile Include="Flows\Products\ProductRecipeFlows.cs" />
+    <Compile Include="Flows\Products\ReceiptDetailsForExtecrFlows.cs" />
+    <Compile Include="Flows\Infrastructure\RegionFlows.cs" />
+    <Compile Include="Flows\Infrastructure\ReportFlows.cs" />
+    <Compile Include="Flows\Products\SalesPosLookupsFlows.cs" />
+    <Compile Include="Flows\Orders\SalesTypeFlows.cs" />
+    <Compile Include="Flows\Infrastructure\StaffFlows.cs" />
+    <Compile Include="Flows\Infrastructure\StoreFlows.cs" />
+    <Compile Include="Flows\Infrastructure\StoreMessagesFlows.cs" />
+    <Compile Include="Flows\Promos\PromosFlows.cs" />
+    <Compile Include="Flows\Promos\PromotionsFlows.cs" />
+    <Compile Include="Flows\TableReservations\CapacitiesFlows.cs" />
+    <Compile Include="Flows\TableReservations\ConfigFlows.cs" />
+    <Compile Include="Flows\TableReservations\EmailConfigFlows.cs" />
+    <Compile Include="Flows\TableReservations\ExcludeDaysFlows.cs" />
+    <Compile Include="Flows\TableReservations\ExcludeRestrictionsFlows.cs" />
+    <Compile Include="Flows\TableReservations\OverwrittenCapacitiesFlows.cs" />
+    <Compile Include="Flows\TableReservations\ReservationCustomersFlows.cs" />
+    <Compile Include="Flows\TableReservations\ReservationsFlows.cs" />
+    <Compile Include="Flows\TableReservations\ReservationTypesFlows.cs" />
+    <Compile Include="Flows\TableReservations\RestaurantsFlows.cs" />
+    <Compile Include="Flows\TableReservations\RestrictionsFlows.cs" />
+    <Compile Include="Flows\TableReservations\RestrictionsRestaurantsAssocFlows.cs" />
+    <Compile Include="Flows\Orders\TaxFlows.cs" />
+    <Compile Include="Flows\Orders\TransactionsFlows.cs" />
+    <Compile Include="Flows\Orders\TransferToPmsFlows.cs" />
+    <Compile Include="Flows\Products\UnitsFlows.cs" />
+    <Compile Include="Flows\Orders\VatFlows.cs" />
+    <Compile Include="Interfaces\Flows\DahuaRecorder\IPosRecorderFlows.cs" />
+    <Compile Include="Interfaces\Flows\Configuration\IConfigurationFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_CustomerMessagesFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_AddressesFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_ConfigFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_ClientJobsFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_CustomerFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_CustomerTokenFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_EFoodGetOrdersFlow.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_HangFireJobsCheckIsDelayOnStoresFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_HangFireJobsMakeCustomerAnonymousFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_HangFireJobsSendOrdersFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_HangFireJobsUpdateClientTableFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_HangFireJobsUpdateStatusFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_GeoPolygonsFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_LoyaltyExecutionsFlow.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_LoyaltyFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_OpeningHoursFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_OrdersFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_OrderStatusFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_ScheduledTaskesFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_ShortagesFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_StaffFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_EfoodFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_StoresFlows.cs" />
+    <Compile Include="Interfaces\Flows\DeliveryAgent\IDA_Store_PriceListAssocFlows.cs" />
+    <Compile Include="Interfaces\Flows\Delivery\IDeliveryRoutingFlows.cs" />
+    <Compile Include="Interfaces\Flows\ExternalDelivery\IForkeyFlows.cs" />
+    <Compile Include="Interfaces\Flows\ExternalSystems\IExtDeliverySystemsFlows.cs" />
+    <Compile Include="Interfaces\Flows\ExternalSystems\IiCouponFlows.cs" />
+    <Compile Include="Interfaces\Flows\ExternalSystems\IOldGoodysFlow.cs" />
+    <Compile Include="Interfaces\Flows\Goodys\IGoodysFlow.cs" />
+    <Compile Include="Interfaces\Flows\Goodys\IGoodysOrdersFlow.cs" />
+    <Compile Include="Interfaces\Flows\HotelInfo\IHotelInfoV3Flow.cs" />
+    <Compile Include="Interfaces\Flows\Hotel\IHotelFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IGuestFutureFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\ISuppliersFlows.cs" />
+    <Compile Include="Interfaces\Flows\Kds\IKdsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IAccountFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IPaymentsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Payroll\IPayrollFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\ICategoriesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IComboFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\ICreditTransactionsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\ICustomerFlows.cs" />
+    <Compile Include="Interfaces\Flows\Delivery\IDelivery_CustomersBillingAddressFlows.cs" />
+    <Compile Include="Interfaces\Flows\Delivery\IDelivery_CustomersShippingAddressFlows.cs" />
+    <Compile Include="Interfaces\Flows\ExternalSystems\IForexServiceFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IGdprFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IHotelInfoFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IIngredientCategoriesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IIngredientsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IIngredient_ProdCategoryAssocFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IInvoiceShippingDetailsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IInvoice_Guest_TransFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IOrderDetailFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IOrderDetailIngredientsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IOrderDetailInvoicesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IOrderFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IOrderStatusFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPageButtonDetailFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPageSetFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IPosInfoDetailFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IPosInfoFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPricelistDetailFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPricelistFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPricelistMasterFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPriceList_EffectiveHoursFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IProductBarcodesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IProductCategoriesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IProductExtrasFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IProductFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IRegionLockersFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPagesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IPredefinedCreditsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IRegionFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IProductRecipeFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\ISalesPosLookupsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\ISalesTypeFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IStaffFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IReceiptDetailsForExtecrFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\ITaxFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\ITransactionsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\ITransferToPmsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IUnitsFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IVatFlows.cs" />
+    <Compile Include="Interfaces\Flows\Promos\IPromosFlows.cs" />
+    <Compile Include="Interfaces\Flows\Promos\IPromotionsFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\ICapacitiesFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IConfigFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IEmailConfigFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IExcludeDaysFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IExcludeRestrictionsFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IOverwrittenCapacitiesFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IReservationCustomersFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IReservationsFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IReservationTypesFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IRestaurantsFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IRestrictionFlows.cs" />
+    <Compile Include="Interfaces\Flows\TableReservations\IRestrictionsRestaurantsAssocFlows.cs" />
+    <Compile Include="Interfaces\Tasks\DahuaRecorder\IPosRecorderTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Configuration\IConfigurationTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_CustomerMessagesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_AddressesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_ConfigTasks.cs" />
+    <Compile Include="Interfaces\ISchedulerJobs.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_ClientJobsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_CustomerTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_CustomerTokenTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_HangFireJobsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_GeoPolygonsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_LoyaltyTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_OpeningHoursTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_OrdersTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_OrderStatusTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_ScheduledTaskesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_ShortagesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_StaffTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_EfoodTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_StoresTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_Store_PriceListAssocTasks.cs" />
+    <Compile Include="Interfaces\Tasks\DeliveryAgent\IDA_UpdateStoresTablesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Delivery\IDeliveryRoutingTasks.cs" />
+    <Compile Include="Interfaces\Tasks\ExternalDelivery\IForkeyTasks.cs" />
+    <Compile Include="Interfaces\Tasks\ExternalSystems\IiCouponTasks.cs" />
+    <Compile Include="Interfaces\Tasks\ExternalSystems\IOldGoodysTask.cs" />
+    <Compile Include="Interfaces\Tasks\Goodys\IGoodysTasks.cs" />
+    <Compile Include="Interfaces\Tasks\HotelInfo\IHotelInfoV3Tasks.cs" />
+    <Compile Include="Interfaces\Tasks\Hotel\IHotelTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IGuestFutureTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\ISuppliersTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Kds\IKdsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ILoyaltyTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IPaymentsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Payroll\IPayrollTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\ICategoriesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IComboTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ICreditTransactionsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\ICustomerTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Delivery\IDelivery_CustomersBillingAddressTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Delivery\IDelivery_CustomersShippingAddressTasks.cs" />
+    <Compile Include="Interfaces\Tasks\ExternalSystems\IExtDeliverySystemsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\ExternalSystems\IEmailTasks.cs" />
+    <Compile Include="Interfaces\Tasks\ExternalSystems\IForexServiceTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IGdprTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IGuestTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IHotelInfoTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IIngredientCategoriesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IIngredientsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IIngredient_ProdCategoryAssocTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IInvoiceShippingDetailsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IInvoiceTypeTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IInvoice_Guest_TransTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IOrderDetailIngredientsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IOrderDetailTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IOrderStatusTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IOrderTask.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPageSetTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IPosInfoDetailTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IPosInfoTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPricelistMasterTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPriceList_EffectiveHoursTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPageButtonDetailTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPricelistDetailTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPricelistTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IProductBarcodesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IProductCategoriesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IProductExtrasTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IProductRecipeTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IProductTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IRegionLockersTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPagesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IPredefinedCreditsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IReceiptDetailsForExtecrTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IRegionTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\ISalesPosLookupsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ISalesTypeTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IStaffTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ITaxTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ITransactionsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ITransferToPmsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IUnitsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Promos\IPromosTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Promos\IPromotionsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\ICapacitiesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IConfigTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IEmailConfigTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IExcludeDaysTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IExcludeRestrictionsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IOverwrittenCapacitiesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IReservationCustomersTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IReservationsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IReservationTypesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IRestaurantsTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IRestrictionsRestaurantsAssocTasks.cs" />
+    <Compile Include="Interfaces\Tasks\TableReservations\IRestrictionTasks.cs" />
+    <Compile Include="Tasks\DahuaRecorder\PosRecorderTasks.cs" />
+    <Compile Include="Tasks\Configuration\ConfigurationTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_CustomerMessagesTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_CustomerTokenTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_OpeningHoursTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_EfoodTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_UpdateStoresTablesTasks.cs" />
+    <Compile Include="Tasks\Delivery\DeliveryRoutingTasks.cs" />
+    <Compile Include="Tasks\ExternalSystems\OldGoodysTask.cs" />
+    <Compile Include="Tasks\Goodys\GoodysTasks.cs" />
+    <Compile Include="Tasks\HotelInfo\HotelInfoV3Tasks.cs" />
+    <Compile Include="Tasks\Hotel\HotelTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\GuestFutureTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\SuppliersTasks.cs" />
+    <Compile Include="Tasks\Kds\KdsTasks.cs" />
+    <Compile Include="Tasks\Orders\LoyaltyTasks.cs" />
+    <Compile Include="Tasks\Orders\PaymentsTasks.cs" />
+    <Compile Include="Tasks\Payroll\PayrollTasks.cs" />
+    <Compile Include="Tasks\Products\CategoriesTasks.cs" />
+    <Compile Include="Tasks\Products\ComboTasks.cs" />
+    <Compile Include="Tasks\Orders\CreditTransactionsTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\CustomerTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_AddressesTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_ClientJobsTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_ConfigTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_CustomerTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_HangFireJobsTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_GeoPolygonsTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_LoyaltyTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_OrdersTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_OrderStatusTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_ScheduledTaskesTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_ShortagesTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_StaffTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_StoresTasks.cs" />
+    <Compile Include="Tasks\DeliveryAgent\DA_Store_PriceListAssocTasks.cs" />
+    <Compile Include="Tasks\Delivery\Delivery_CustomersBillingAddressTasks.cs" />
+    <Compile Include="Tasks\Delivery\Delivery_CustomersShippingAddressTasks.cs" />
+    <Compile Include="Tasks\ExternalSystems\EmailTasks.cs" />
+    <Compile Include="Tasks\ExternalSystems\ExtDeliverySystemsTasks.cs" />
+    <Compile Include="Tasks\ExternalSystems\ICouponsTasks.cs" />
+    <Compile Include="Tasks\ExternalSystems\ForexServiceTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\GdprTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\GuestTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\HotelInfoTasks.cs" />
+    <Compile Include="Tasks\Products\IngredientCategoriesTasks.cs" />
+    <Compile Include="Tasks\Products\IngredientsTasks.cs" />
+    <Compile Include="Tasks\Products\Ingredient_ProdCategoryAssocTasks.cs" />
+    <Compile Include="Tasks\Orders\InvoiceShippingDetailsTasks.cs" />
+    <Compile Include="Tasks\Orders\InvoiceTypeTasks.cs" />
+    <Compile Include="Tasks\Orders\Invoice_Guest_TransTasks.cs" />
+    <Compile Include="Tasks\Orders\OrderDetailIngredientsTasks.cs" />
+    <Compile Include="Tasks\Orders\OrderDetailTasks.cs" />
+    <Compile Include="Tasks\Orders\OrderStatusTasks.cs" />
+    <Compile Include="Tasks\Orders\OrderTask.cs" />
+    <Compile Include="Tasks\Products\PageSetTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\PosInfoDetailTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\PosInfoTasks.cs" />
+    <Compile Include="Tasks\Products\PricelistMasterTasks.cs" />
+    <Compile Include="Tasks\Products\PriceList_EffectiveHoursTasks.cs" />
+    <Compile Include="Tasks\Products\PageButtonDetailTasks.cs" />
+    <Compile Include="Tasks\Products\PricelistDetailTasks.cs" />
+    <Compile Include="Tasks\Products\PricelistTasks.cs" />
+    <Compile Include="Tasks\Products\ProductBarcodesTasks.cs" />
+    <Compile Include="Tasks\Products\ProductCategoriesTasks.cs" />
+    <Compile Include="Tasks\Products\ProductExtrasTasks.cs" />
+    <Compile Include="Tasks\Products\ProductRecipeTasks.cs" />
+    <Compile Include="Tasks\Products\ProductTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\RegionLockersTasks.cs" />
+    <Compile Include="Tasks\ExternalDelivery\ForkeyTasks.cs" />
+    <Compile Include="Tasks\Products\ReceiptDetailsForExtecrTasks.cs" />
+    <Compile Include="Tasks\Products\SalesPosLookupsTasks.cs" />
+    <Compile Include="Tasks\Orders\SalesTypeTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\StaffTasks.cs" />
+    <Compile Include="Tasks\Products\PagesTasks.cs" />
+    <Compile Include="Tasks\Orders\PredefinedCreditsTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\RegionTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\StoreMessagesTasks.cs" />
+    <Compile Include="Flows\Products\TableForDisplayFlow.cs" />
+    <Compile Include="Interfaces\Flows\Delivery\IDeliveryCustomerFlows.cs" />
+    <Compile Include="Interfaces\Flows\Delivery\IDeliveryOrdersFlows.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IInvoicesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\INFCcardFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\IPageButtonFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IReportFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IStoreFlows.cs" />
+    <Compile Include="Interfaces\Flows\Infrastructure\IStoreMessagesFlows.cs" />
+    <Compile Include="Interfaces\Flows\Products\ITableForDisplayFlows.cs" />
+    <Compile Include="Interfaces\Tasks\Delivery\IDeliveryCustomerTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IAccountTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\ICancelReceiptTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Delivery\IDeliveryOrderTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IEndOfDayTasks.cs" />
+    <Compile Include="Interfaces\Flows\Orders\IEndOfDayFlows.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IInvoiceTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\INFCcardTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IOrderDetailInvoicesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\IPageButtonTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IReportTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IStoreMessagesTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Infrastructure\IStoreTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Products\ITableForDisplayTasks.cs" />
+    <Compile Include="Interfaces\Tasks\Orders\IVatTasks.cs" />
+    <Compile Include="Tasks\Orders\AccountTasks.cs" />
+    <Compile Include="MainLogicDIModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tasks\Orders\CancelReceiptTasks.cs" />
+    <Compile Include="Tasks\Delivery\DeliveryCustomerTasks.cs" />
+    <Compile Include="Tasks\Delivery\DeliveryOrderTasks.cs" />
+    <Compile Include="Tasks\Orders\EndOfDayTasks.cs" />
+    <Compile Include="Flows\Orders\EndOfDayFlows.cs" />
+    <Compile Include="Tasks\Orders\InvoiceTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\NFCcardTasks.cs" />
+    <Compile Include="Tasks\Orders\OrderDetailInvoicesTasks.cs" />
+    <Compile Include="Tasks\Products\PageButtonTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\ReportTasks.cs" />
+    <Compile Include="Tasks\Infrastructure\StoreTasks.cs" />
+    <Compile Include="Tasks\Products\TableForDisplayTasks.cs" />
+    <Compile Include="Tasks\Promos\PromosTasks.cs" />
+    <Compile Include="Tasks\Promos\PromotionsTasks.cs" />
+    <Compile Include="Tasks\TableReservations\ConfigTasks.cs" />
+    <Compile Include="Tasks\TableReservations\EmailConfigTasks.cs" />
+    <Compile Include="Tasks\TableReservations\ExcludeDaysTasks.cs" />
+    <Compile Include="Tasks\TableReservations\ExcludeRestrictionsTasks.cs" />
+    <Compile Include="Tasks\TableReservations\CapacitiesTasks.cs" />
+    <Compile Include="Tasks\TableReservations\OverwrittenCapacitiesTasks.cs" />
+    <Compile Include="Tasks\TableReservations\ReservationCustomersTasks.cs" />
+    <Compile Include="Tasks\TableReservations\ReservationsTasks.cs" />
+    <Compile Include="Tasks\TableReservations\ReservationTypesTasks.cs" />
+    <Compile Include="Tasks\TableReservations\RestaurantsTasks.cs" />
+    <Compile Include="Tasks\TableReservations\RestrictionsRestaurantsAssocTasks.cs" />
+    <Compile Include="Tasks\TableReservations\RestrictionsTasks.cs" />
+    <Compile Include="Tasks\Orders\TaxTasks.cs" />
+    <Compile Include="Tasks\Orders\TransactionsTasks.cs" />
+    <Compile Include="Tasks\Orders\TransferToPmsTasks.cs" />
+    <Compile Include="Tasks\Products\UnitsTasks.cs" />
+    <Compile Include="Tasks\Orders\VatTasks.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.6.4-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.4.js" />
+    <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.4.0.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PosInfo_DB\Symposium_DTOs.csproj">
+      <Project>{E4E12035-70A0-4BAA-BF23-65E792958536}</Project>
+      <Name>Symposium_DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_DataBase\Symposium_DataAccess.csproj">
+      <Project>{B3834CCA-4FF3-4F38-BF76-781634F92508}</Project>
+      <Name>Symposium_DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Helpers\Symposium_Helpers.csproj">
+      <Project>{ED15B2DD-FB51-4C87-893B-F5820FC5E127}</Project>
+      <Name>Symposium_Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Models\Symposium_Models.csproj">
+      <Project>{9FC67B5B-9151-40E2-B5F2-5B88CC716D2B}</Project>
+      <Name>Symposium_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Plugins\Symposium_Plugins.csproj">
+      <Project>{1fa881d3-cce6-4e3a-8f9e-3e768189e9aa}</Project>
+      <Name>Symposium_Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Resources\Symposium_Resources.csproj">
+      <Project>{80728d71-9a95-4e60-9e16-0462ea44c339}</Project>
+      <Name>Symposium_Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a3259ad043cd4db28fd332a3afd32e3d" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="PosModel.Accounts" Width="1.5" PointX="0.75" PointY="109.75" />
+        <EntityTypeShape EntityType="PosModel.Actions" Width="1.5" PointX="15" PointY="63.25" />
+        <EntityTypeShape EntityType="PosModel.AllowedMealsPerBoard" Width="1.5" PointX="13.5" PointY="66" />
+        <EntityTypeShape EntityType="PosModel.AllowedMealsPerBoardDetails" Width="1.5" PointX="16.75" PointY="113.25" />
+        <EntityTypeShape EntityType="PosModel.AssignedPositions" Width="1.5" PointX="21.25" PointY="120.375" />
+        <EntityTypeShape EntityType="PosModel.AuthorizedGroup" Width="1.5" PointX="15" PointY="94" />
+        <EntityTypeShape EntityType="PosModel.AuthorizedGroupDetail" Width="1.5" PointX="17.25" PointY="94" />
+        <EntityTypeShape EntityType="PosModel.BoardMeals" Width="1.5" PointX="9.75" PointY="194.625" />
+        <EntityTypeShape EntityType="PosModel.Categories" Width="1.5" PointX="3" PointY="161.875" />
+        <EntityTypeShape EntityType="PosModel.ClientPos" Width="1.5" PointX="5.25" PointY="147.125" />
+        <EntityTypeShape EntityType="PosModel.Combo" Width="1.5" PointX="9.75" PointY="143.625" />
+        <EntityTypeShape EntityType="PosModel.ComboDetail" Width="1.5" PointX="18" PointY="151.125" />
+        <EntityTypeShape EntityType="PosModel.CreditAccounts" Width="1.5" PointX="7.5" PointY="185.875" />
+        <EntityTypeShape EntityType="PosModel.CreditAccounts_Hist" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.CreditCodes" Width="1.5" PointX="9.75" PointY="185.875" />
+        <EntityTypeShape EntityType="PosModel.CreditCodes_Hist" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.CreditTransactions" Width="1.5" PointX="22" PointY="145.125" />
+        <EntityTypeShape EntityType="PosModel.CreditTransactions_Hist" Width="1.5" PointX="7.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PosModel.DA_CustomerMessages" Width="1.5" PointX="15.75" PointY="208.25" />
+        <EntityTypeShape EntityType="PosModel.DA_Customers" Width="1.5" PointX="8.25" PointY="206.125" />
+        <EntityTypeShape EntityType="PosModel.DA_CustomersTokens" Width="1.5" PointX="10.5" PointY="217.375" />
+        <EntityTypeShape EntityType="PosModel.DA_GeoPolygons" Width="1.5" PointX="12.75" PointY="177.875" />
+        <EntityTypeShape EntityType="PosModel.DA_GeoPolygonsDetails" Width="1.5" PointX="15" PointY="178.125" />
+        <EntityTypeShape EntityType="PosModel.DA_LoyalGainAmountRange" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PosModel.DA_LoyalPoints" Width="1.5" PointX="17.25" PointY="154.5" />
+        <EntityTypeShape EntityType="PosModel.DA_LoyalRedeemFreeProduct" Width="1.5" PointX="12.75" PointY="135.75" />
+        <EntityTypeShape EntityType="PosModel.DA_MainMessages" Width="1.5" PointX="13.5" PointY="216.625" />
+        <EntityTypeShape EntityType="PosModel.DA_Messages" Width="1.5" PointX="13.5" PointY="205.125" />
+        <EntityTypeShape EntityType="PosModel.DA_MessagesDetails" Width="1.5" PointX="13.5" PointY="212.875" />
+        <EntityTypeShape EntityType="PosModel.DA_OrderDetails" Width="1.5" PointX="27.25" PointY="149.25" />
+        <EntityTypeShape EntityType="PosModel.DA_OrderDetailsExtras" Width="1.5" PointX="15" PointY="157.5" />
+        <EntityTypeShape EntityType="PosModel.DA_OrderStatus" Width="1.5" PointX="12.75" PointY="209.125" />
+        <EntityTypeShape EntityType="PosModel.DA_ScheduledTaskes" Width="1.5" PointX="9.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PosModel.DA_ShortageProds" Width="1.5" PointX="12.75" PointY="140.125" />
+        <EntityTypeShape EntityType="PosModel.DA_Stores" Width="1.5" PointX="10.5" PointY="174.625" />
+        <EntityTypeShape EntityType="PosModel.DAStore_PriceListAssoc" Width="1.5" PointX="22.5" PointY="132.375" />
+        <EntityTypeShape EntityType="PosModel.Delivery_AddressTypes" Width="1.5" PointX="14.75" PointY="89" />
+        <EntityTypeShape EntityType="PosModel.Delivery_Customers" Width="1.5" PointX="14.75" PointY="80.25" />
+        <EntityTypeShape EntityType="PosModel.Delivery_CustomersBillingAddress" Width="1.5" PointX="17" PointY="81.375" />
+        <EntityTypeShape EntityType="PosModel.Delivery_CustomersPhones" Width="1.5" PointX="17" PointY="77.375" />
+        <EntityTypeShape EntityType="PosModel.Delivery_CustomersPhonesAndAddress" Width="1.5" PointX="19.25" PointY="78.25" />
+        <EntityTypeShape EntityType="PosModel.Delivery_CustomersShippingAddress" Width="1.5" PointX="20" PointY="81.375" />
+        <EntityTypeShape EntityType="PosModel.Delivery_CustomersTypes" Width="1.5" PointX="12.5" PointY="83.125" />
+        <EntityTypeShape EntityType="PosModel.Delivery_PhoneTypes" Width="1.5" PointX="14.75" PointY="77.125" />
+        <EntityTypeShape EntityType="PosModel.Department" Width="1.5" PointX="0.75" PointY="105.5" />
+        <EntityTypeShape EntityType="PosModel.DigitalSignature" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.Discount" Width="1.5" PointX="11.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PosModel.EFoodBucket" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.EmailConfig" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfDay" Width="1.5" PointX="5.25" PointY="150.875" />
+        <EntityTypeShape EntityType="PosModel.EndOfDay_Hist" Width="1.5" PointX="13.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfDayDetail" Width="1.5" PointX="7.5" PointY="152.5" />
+        <EntityTypeShape EntityType="PosModel.EndOfDayDetail_Hist" Width="1.5" PointX="13.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfDayPaymentAnalysis" Width="1.5" PointX="6" PointY="114.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfDayPaymentAnalysis_Hist" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfDayVoidsAnalysis" Width="1.5" PointX="6" PointY="106.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfDayVoidsAnalysis_Hist" Width="1.5" PointX="15.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PosModel.EndOfYear" Width="1.5" PointX="15.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PosModel.EODAccountToPmsTransfer" Width="1.5" PointX="5.25" PointY="110.5" />
+        <EntityTypeShape EntityType="PosModel.EODAccountToPmsTransfer_Hist" Width="1.5" PointX="9.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PosModel.ExternalLostOrders" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PosModel.ExternalLostOrders_Hist" Width="1.5" PointX="15.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PosModel.ExternalProductMapping" Width="1.5" PointX="9.75" PointY="182.75" />
+        <EntityTypeShape EntityType="PosModel.ExternalStateMatch" Width="1.5" PointX="15.75" PointY="14.75" />
+        <EntityTypeShape EntityType="PosModel.ExternalUsers" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.ForexService" Width="1.5" PointX="11.75" PointY="16.75" />
+        <EntityTypeShape EntityType="PosModel.Guest" Width="1.5" PointX="7.5" PointY="70" />
+        <EntityTypeShape EntityType="PosModel.GuestFuture" Width="1.5" PointX="17.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PosModel.HitPosCustomers" Width="1.5" PointX="17.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PosModel.HitPosOrders" Width="1.5" PointX="13.75" PointY="17.75" />
+        <EntityTypeShape EntityType="PosModel.HitPosOrders_Hist" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="PosModel.HotelCustomerDataConfig" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.HotelCustomMessages" Width="1.5" PointX="15.75" PointY="18.75" />
+        <EntityTypeShape EntityType="PosModel.HotelInfo" Width="1.5" PointX="5.25" PointY="22.25" />
+        <EntityTypeShape EntityType="PosModel.HotelMacroResults" Width="1.5" PointX="17.75" PointY="18.75" />
+        <EntityTypeShape EntityType="PosModel.HotelMacroRules" Width="1.5" PointX="19.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PosModel.HotelMacros" Width="1.5" PointX="11.25" PointY="156.25" />
+        <EntityTypeShape EntityType="PosModel.HotelMacros_Hist" Width="1.5" PointX="19.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PosModel.HotelMacroTimezone" Width="1.5" PointX="19.75" PointY="9.75" />
+        <EntityTypeShape EntityType="PosModel.Ingredient_ProdCategoryAssoc" Width="1.5" PointX="9.75" PointY="19.75" />
+        <EntityTypeShape EntityType="PosModel.IngredientCategories" Width="1.5" PointX="11.25" PointY="170.875" />
+        <EntityTypeShape EntityType="PosModel.Ingredients" Width="1.5" PointX="13.5" PointY="167.75" />
+        <EntityTypeShape EntityType="PosModel.Invoice_Guests_Trans" Width="1.5" PointX="17" PointY="130.5" />
+        <EntityTypeShape EntityType="PosModel.Invoice_Guests_Trans_Hist" Width="1.5" PointX="19.75" PointY="12.75" />
+        <EntityTypeShape EntityType="PosModel.InvoiceShippingDetails" Width="1.5" PointX="12" PointY="160.375" />
+        <EntityTypeShape EntityType="PosModel.InvoiceShippingDetails_Hist" Width="1.5" PointX="21.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.InvoiceTypes" Width="1.5" PointX="9" PointY="95.625" />
+        <EntityTypeShape EntityType="PosModel.Items" Width="1.5" PointX="11.25" PointY="167" />
+        <EntityTypeShape EntityType="PosModel.Kds" Width="1.5" PointX="5.25" PointY="143.875" />
+        <EntityTypeShape EntityType="PosModel.Kitchen" Width="1.5" PointX="5.25" PointY="132.5" />
+        <EntityTypeShape EntityType="PosModel.KitchenInstruction" Width="1.5" PointX="6" PointY="135.875" />
+        <EntityTypeShape EntityType="PosModel.KitchenInstruction_Hist" Width="1.5" PointX="21.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PosModel.KitchenInstructionLogger" Width="1.5" PointX="10.5" PointY="148.375" />
+        <EntityTypeShape EntityType="PosModel.KitchenInstructionLogger_Hist" Width="1.5" PointX="21.75" PointY="10.75" />
+        <EntityTypeShape EntityType="PosModel.KitchenRegion" Width="1.5" PointX="5.25" PointY="158.375" />
+        <EntityTypeShape EntityType="PosModel.Lockers" Width="1.5" PointX="12.5" PointY="129.75" />
+        <EntityTypeShape EntityType="PosModel.Lockers_Hist" Width="1.5" PointX="21.75" PointY="15.75" />
+        <EntityTypeShape EntityType="PosModel.Loyalty" Width="1.5" PointX="16" PointY="124.875" />
+        <EntityTypeShape EntityType="PosModel.Loyalty_Hist" Width="1.5" PointX="15.75" PointY="21.75" />
+        <EntityTypeShape EntityType="PosModel.MealConsumption" Width="1.5" PointX="7.5" PointY="129.625" />
+        <EntityTypeShape EntityType="PosModel.MealConsumption_Hist" Width="1.5" PointX="21.75" PointY="21.75" />
+        <EntityTypeShape EntityType="PosModel.MetadataTable" Width="1.5" PointX="23.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.NFCcard" Width="1.5" PointX="23.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PosModel.Notifications" Width="1.5" PointX="11.25" PointY="114.625" />
+        <EntityTypeShape EntityType="PosModel.OnlineRegistration" Width="1.5" PointX="23.75" PointY="7.75" />
+        <EntityTypeShape EntityType="PosModel.OnlineRegistration_Hist" Width="1.5" PointX="9.75" PointY="23.75" />
+        <EntityTypeShape EntityType="PosModel.Order" Width="1.5" PointX="13.5" PointY="119.375" />
+        <EntityTypeShape EntityType="PosModel.Order_Hist" Width="1.5" PointX="23.75" PointY="13.75" />
+        <EntityTypeShape EntityType="PosModel.OrderDetail" Width="1.5" PointX="22" PointY="123" />
+        <EntityTypeShape EntityType="PosModel.OrderDetail_Hist" Width="1.5" PointX="23.75" PointY="22.75" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailIgredients" Width="1.5" PointX="24.25" PointY="136.25" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailIgredients_Hist" Width="1.5" PointX="25.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailIgredientVatAnal" Width="1.5" PointX="26.5" PointY="136.5" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailIgredientVatAnal_Hist" Width="1.5" PointX="25.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailInvoices" Width="1.5" PointX="19.5" PointY="132.875" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailInvoices_Hist" Width="1.5" PointX="25.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailVatAnal" Width="1.5" PointX="24.25" PointY="125" />
+        <EntityTypeShape EntityType="PosModel.OrderDetailVatAnal_Hist" Width="1.5" PointX="17.75" PointY="25.75" />
+        <EntityTypeShape EntityType="PosModel.OrdersStaff" Width="1.5" PointX="18.75" PointY="121" />
+        <EntityTypeShape EntityType="PosModel.OrdersStaff_Hist" Width="1.5" PointX="25.75" PointY="20.75" />
+        <EntityTypeShape EntityType="PosModel.OrderStatus" Width="1.5" PointX="15.75" PointY="120.5" />
+        <EntityTypeShape EntityType="PosModel.OrderStatus_Hist" Width="1.5" PointX="25.75" PointY="23.75" />
+        <EntityTypeShape EntityType="PosModel.PageButton" Width="1.5" PointX="15.75" PointY="142.75" />
+        <EntityTypeShape EntityType="PosModel.PageButtonDetail" Width="1.5" PointX="18" PointY="146.25" />
+        <EntityTypeShape EntityType="PosModel.PagePosAssoc" Width="1.5" PointX="11.25" PointY="111" />
+        <EntityTypeShape EntityType="PosModel.Pages" Width="1.5" PointX="13.5" PointY="115.625" />
+        <EntityTypeShape EntityType="PosModel.PageSet" Width="1.5" PointX="9" PointY="86.75" />
+        <EntityTypeShape EntityType="PosModel.Payrole" Width="1.5" PointX="14.25" PointY="110.625" />
+        <EntityTypeShape EntityType="PosModel.PayrollNew" Width="1.5" PointX="8.25" PointY="110.5" />
+        <EntityTypeShape EntityType="PosModel.PdaModule" Width="1.5" PointX="5.25" PointY="118.25" />
+        <EntityTypeShape EntityType="PosModel.PdaModuleDetail" Width="1.5" PointX="7.5" PointY="120.875" />
+        <EntityTypeShape EntityType="PosModel.PosInfo" Width="1.5" PointX="3" PointY="106.375" />
+        <EntityTypeShape EntityType="PosModel.PosInfo_KitchenInstruction_Assoc" Width="1.5" PointX="8.25" PointY="118" />
+        <EntityTypeShape EntityType="PosModel.PosInfo_Pricelist_Assoc" Width="1.5" PointX="8.25" PointY="115" />
+        <EntityTypeShape EntityType="PosModel.PosInfo_Region_Assoc" Width="1.5" PointX="8.5" PointY="107.25" />
+        <EntityTypeShape EntityType="PosModel.PosInfo_StaffPositin_Assoc" Width="1.5" PointX="11.25" PointY="119" />
+        <EntityTypeShape EntityType="PosModel.PosInfoDetail" Width="1.5" PointX="11.25" PointY="104" />
+        <EntityTypeShape EntityType="PosModel.PosInfoDetail_Excluded_Accounts" Width="1.5" PointX="16.5" PointY="108.125" />
+        <EntityTypeShape EntityType="PosModel.PosInfoDetail_Pricelist_Assoc" Width="1.5" PointX="13.5" PointY="106" />
+        <EntityTypeShape EntityType="PosModel.PosInfoKdsAssoc" Width="1.5" PointX="7.5" PointY="125.375" />
+        <EntityTypeShape EntityType="PosModel.PredefinedCredits" Width="1.5" PointX="11.25" PointY="76" />
+        <EntityTypeShape EntityType="PosModel.Pricelist" Width="1.5" PointX="11.25" PointY="89.25" />
+        <EntityTypeShape EntityType="PosModel.PriceList_EffectiveHours" Width="1.5" PointX="13.5" PointY="70.125" />
+        <EntityTypeShape EntityType="PosModel.PricelistDetail" Width="1.5" PointX="15.75" PointY="149" />
+        <EntityTypeShape EntityType="PosModel.PricelistMaster" Width="1.5" PointX="9" PointY="90.875" />
+        <EntityTypeShape EntityType="PosModel.Product" Width="1.5" PointX="7.5" PointY="140.75" />
+        <EntityTypeShape EntityType="PosModel.ProductBarcodes" Width="1.5" PointX="9.75" PointY="191.625" />
+        <EntityTypeShape EntityType="PosModel.ProductCategories" Width="1.5" PointX="5.25" PointY="161.125" />
+        <EntityTypeShape EntityType="PosModel.ProductExtras" Width="1.5" PointX="9.75" PointY="138" />
+        <EntityTypeShape EntityType="PosModel.ProductForBarcodeEod" Width="1.5" PointX="9.75" PointY="189.25" />
+        <EntityTypeShape EntityType="PosModel.ProductRecipe" Width="1.5" PointX="15.75" PointY="136.875" />
+        <EntityTypeShape EntityType="PosModel.ProductSalesHistoryPerDay" Width="1.5" PointX="19.75" PointY="26.75" />
+        <EntityTypeShape EntityType="PosModel.ProductsForEOD" Width="1.5" PointX="9.75" PointY="197.625" />
+        <EntityTypeShape EntityType="PosModel.Promotions_Combos" Width="1.5" PointX="8" PointY="4.25" />
+        <EntityTypeShape EntityType="PosModel.Promotions_Discounts" Width="1.5" PointX="8" PointY="1.125" />
+        <EntityTypeShape EntityType="PosModel.Promotions_Headers" Width="1.5" PointX="5.75" PointY="2.125" />
+        <EntityTypeShape EntityType="PosModel.Promotions_Pricelists" Width="1.5" PointX="13.5" PointY="73.75" />
+        <EntityTypeShape EntityType="PosModel.Region" Width="1.5" PointX="5.25" PointY="101.125" />
+        <EntityTypeShape EntityType="PosModel.RegionLockerProduct" Width="1.5" PointX="14.75" PointY="130.25" />
+        <EntityTypeShape EntityType="PosModel.ReportEntity" Width="1.5" PointX="27.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.ReportList" Width="1.5" PointX="8.75" PointY="8.125" />
+        <EntityTypeShape EntityType="PosModel.SalesType" Width="1.5" PointX="10.5" PointY="200.875" />
+        <EntityTypeShape EntityType="PosModel.SalesType_PricelistMaster_Assoc" Width="1.5" PointX="20.75" PointY="151.125" />
+        <EntityTypeShape EntityType="PosModel.Staff" Width="1.5" PointX="12" PointY="95.75" />
+        <EntityTypeShape EntityType="PosModel.StaffAuthorization" Width="1.5" PointX="17.25" PointY="98" />
+        <EntityTypeShape EntityType="PosModel.StaffCash" Width="1.5" PointX="10.5" PointY="153.125" />
+        <EntityTypeShape EntityType="PosModel.StaffPosition" Width="1.5" PointX="9" PointY="157.125" />
+        <EntityTypeShape EntityType="PosModel.StaffSchedule" Width="1.5" PointX="12" PointY="85.875" />
+        <EntityTypeShape EntityType="PosModel.StaffSecheduleDetails" Width="1.5" PointX="14.25" PointY="96.875" />
+        <EntityTypeShape EntityType="PosModel.StatisticsMenus" Width="1.5" PointX="11" PointY="8" />
+        <EntityTypeShape EntityType="PosModel.Store" Width="1.5" PointX="9" PointY="80.75" />
+        <EntityTypeShape EntityType="PosModel.StoreMessages" Width="1.5" PointX="11.25" PointY="79" />
+        <EntityTypeShape EntityType="PosModel.StoreMessages_Hist" Width="1.5" PointX="2.75" PointY="27.75" />
+        <EntityTypeShape EntityType="PosModel.Suppliers" Width="1.5" PointX="17.5" PointY="116.25" />
+        <EntityTypeShape EntityType="PosModel.Table" Width="1.5" PointX="7.5" PointY="100.125" />
+        <EntityTypeShape EntityType="PosModel.TablePaySuggestion" Width="1.5" PointX="24.25" PointY="147.5" />
+        <EntityTypeShape EntityType="PosModel.TablePaySuggestion_Hist" Width="1.5" PointX="27.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PosModel.Tax" Width="1.5" PointX="13.5" PointY="173.875" />
+        <EntityTypeShape EntityType="PosModel.TR_Capacities" Width="1.5" PointX="3" PointY="15.125" />
+        <EntityTypeShape EntityType="PosModel.TR_Config" Width="1.5" PointX="7.5" PointY="23.375" />
+        <EntityTypeShape EntityType="PosModel.TR_ExcludeDays" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="PosModel.TR_ExcludeRestrictions" Width="1.5" PointX="3" PointY="5.875" />
+        <EntityTypeShape EntityType="PosModel.TR_OvewrittenCapacities" Width="1.5" PointX="5.25" PointY="11.125" />
+        <EntityTypeShape EntityType="PosModel.TR_ReservationCustomers" Width="1.5" PointX="7.5" PointY="18" />
+        <EntityTypeShape EntityType="PosModel.TR_Reservations" Width="1.5" PointX="5.25" PointY="18" />
+        <EntityTypeShape EntityType="PosModel.TR_Restaurants" Width="1.5" PointX="0.75" PointY="6.875" />
+        <EntityTypeShape EntityType="PosModel.TR_Restrictions" Width="1.5" PointX="3.75" PointY="3.125" />
+        <EntityTypeShape EntityType="PosModel.TR_Restrictions_Restaurants_Assoc" Width="1.5" PointX="6" PointY="7.75" />
+        <EntityTypeShape EntityType="PosModel.Transactions" Width="1.5" PointX="19.75" PointY="124.5" />
+        <EntityTypeShape EntityType="PosModel.Transactions_Hist" Width="1.5" PointX="4.75" PointY="27.75" />
+        <EntityTypeShape EntityType="PosModel.TransactionTypes" Width="1.5" PointX="6.75" PointY="27.75" />
+        <EntityTypeShape EntityType="PosModel.TransferMappingDetails" Width="1.5" PointX="15" PointY="154.125" />
+        <EntityTypeShape EntityType="PosModel.TransferMappingDetails_Hist" Width="1.5" PointX="27.75" PointY="8.75" />
+        <EntityTypeShape EntityType="PosModel.TransferMappings" Width="1.5" PointX="12.75" PointY="143" />
+        <EntityTypeShape EntityType="PosModel.TransferMappings_Hist" Width="1.5" PointX="27.75" PointY="11.75" />
+        <EntityTypeShape EntityType="PosModel.TransferToPms" Width="1.5" PointX="22" PointY="137.75" />
+        <EntityTypeShape EntityType="PosModel.TransferToPms_Hist" Width="1.5" PointX="27.75" PointY="16.75" />
+        <EntityTypeShape EntityType="PosModel.TransferToPms_LastIds" Width="1.5" PointX="27.75" PointY="24.75" />
+        <EntityTypeShape EntityType="PosModel.Units" Width="1.5" PointX="5.25" PointY="139.875" />
+        <EntityTypeShape EntityType="PosModel.ValidModules" Width="1.5" PointX="25.75" PointY="27.75" />
+        <EntityTypeShape EntityType="PosModel.Vat" Width="1.5" PointX="9" PointY="167.375" />
+        <EntityTypeShape EntityType="PosModel.Version" Width="1.5" PointX="27.75" PointY="27.75" />
+        <EntityTypeShape EntityType="PosModel.Vodafone11Details" Width="1.5" PointX="29.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PosModel.Vodafone11Headers" Width="1.5" PointX="29.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PosModel.WorkSheet" Width="1.5" PointX="14.25" PointY="100.875" />
+        <EntityTypeShape EntityType="PosModel.DA_LoyalConfig" Width="1.5" PointX="29.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PosModel.DA_LoyalGainAmountRatio" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PosModel.DA_LoyalRedeemDiscount" Width="1.5" PointX="29.75" PointY="9.75" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayPaymentAnalysis_Accounts" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayVoids_Accounts" />
+        <AssociationConnector Association="PosModel.FK_EODAccountToPmsTransfer_Accounts" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_Accounts" />
+        <AssociationConnector Association="PosModel.FK_PosInfoDetail_Excluded_Accounts_Accounts" />
+        <AssociationConnector Association="PosModel.FK_TablePaySuggestion_Accounts" />
+        <AssociationConnector Association="PosModel.FK_Transactions_Accounts" />
+        <AssociationConnector Association="PosModel.FK_AuthorizedGroupDetail_Actions" />
+        <AssociationConnector Association="PosModel.FK_AllowedMealsPerBoard_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_AllowedMealsPerBoardDetails_AllowedMealsPerBoard" />
+        <AssociationConnector Association="PosModel.FK_AllowedMealsPerBoardDetails_ProductCategories" />
+        <AssociationConnector Association="PosModel.FK_AssignedPositions_Staff" />
+        <AssociationConnector Association="PosModel.FK_AssignedPositions_StaffPosition" />
+        <AssociationConnector Association="PosModel.FK_AuthorizedGroupDetail_AuthorizedGroup" />
+        <AssociationConnector Association="PosModel.FK_StaffAuthorization_AuthorizedGroup" />
+        <AssociationConnector Association="PosModel.FK_BoardMeals_Product" />
+        <AssociationConnector Association="PosModel.FK_ProductCategories_Categories" />
+        <AssociationConnector Association="PosModel.FK_ClientPos_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Combo_Department" />
+        <AssociationConnector Association="PosModel.FK_Combo_Product" />
+        <AssociationConnector Association="PosModel.FK_ComboDetail_Combo" />
+        <AssociationConnector Association="PosModel.FK_ComboDetail_Product" />
+        <AssociationConnector Association="PosModel.FK_CreditAccounts_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_CreditCodes_CreditAccounts" />
+        <AssociationConnector Association="PosModel.FK_CreditTransactions_CreditAccounts" />
+        <AssociationConnector Association="PosModel.FK_CreditTransactions_CreditCodes" />
+        <AssociationConnector Association="PosModel.FK_TablePaySuggestion_CreditCodes" />
+        <AssociationConnector Association="PosModel.FK_CreditTransactions_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_CreditTransactions_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_CreditTransactions_Staff" />
+        <AssociationConnector Association="PosModel.FK_dbo_CreditTransactions_dbo_Transactions_TransactionId" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomerMessages_DA_Customers" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomerMessages_DA_MainMessages" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomerMessages_DA_Messages" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomerMessages_DA_MessagesDetails" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomersTokens_DA_Customers" />
+        <AssociationConnector Association="PosModel.FK_DA_LoyalPoints_DA_Customers" />
+        <AssociationConnector Association="PosModel.FK_DA_GeoPolygons_DA_Stores" />
+        <AssociationConnector Association="PosModel.FK_DA_GeoPolygonsDetails_DA_GeoPolygons" />
+        <AssociationConnector Association="PosModel.FK_DA_LoyalPoints_Staff" />
+        <AssociationConnector Association="PosModel.FK_DA_LoyalRedeemFreeProduct_Product" />
+        <AssociationConnector Association="PosModel.FK_DA_LoyalRedeemFreeProduct_ProductCategories" />
+        <AssociationConnector Association="PosModel.FK_DA_Messages_DA_MainMessages" />
+        <AssociationConnector Association="PosModel.FK_DA_MesaggesDetails_DA_Messages" />
+        <AssociationConnector Association="PosModel.FK_DA_OrderDetails_Product" />
+        <AssociationConnector Association="PosModel.FK_DA_OrderDetailsExtras_DA_OrderDetails" />
+        <AssociationConnector Association="PosModel.FK_DA_ShortageProds_DA_Stores" />
+        <AssociationConnector Association="PosModel.FK_DA_ShortageProds_Product" />
+        <AssociationConnector Association="PosModel.FK_DAStore_PriceListAssoc_DA_Stores" />
+        <AssociationConnector Association="PosModel.FK_DAStore_PriceListAssoc_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersBillingAddress_Delivery_AddressTypes" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersShippingAddress_Delivery_AddressTypes" />
+        <AssociationConnector Association="PosModel.FK_Delivery_Customers_Delivery_CustomersTypes" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersBillingAddress_Delivery_Customers" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersPhones_Delivery_Customers" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersPhonesAndAddress_Delivery_Customers" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersShippingAddress_Delivery_Customers" />
+        <AssociationConnector Association="PosModel.FK_Invoice_Guests_Trans_Delivery_Customers" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersPhones_Delivery_PhoneTypes" />
+        <AssociationConnector Association="PosModel.FK_Delivery_CustomersPhonesAndAddress_Delivery_CustomersPhones" />
+        <AssociationConnector Association="PosModel.FK_MealConsumption_Department" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_Department" />
+        <AssociationConnector Association="PosModel.FK_StaffSchedule_Department" />
+        <AssociationConnector Association="PosModel.FK_Transactions_Department" />
+        <AssociationConnector Association="PosModel.FK_TransferMappings_Department" />
+        <AssociationConnector Association="PosModel.FK_WorkSheet_Department" />
+        <AssociationConnector Association="PosModel.FK_dbo_OrderDetailInvoices_dbo_EndOfDay_EndOfDayId" />
+        <AssociationConnector Association="PosModel.FK_dbo_Transactions_dbo_EndOfDay_EndOfDayId" />
+        <AssociationConnector Association="PosModel.FK_dbo_TransferToPms_dbo_EndOfDay_EndOfDayId" />
+        <AssociationConnector Association="PosModel.FK_EndOfDay_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayDetail_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayPaymentAnalysis_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayVoids_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_KitchenInstructionLogger_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_Lockers_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_MealConsumption_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_Order_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_StaffCash_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayDetail_Tax" />
+        <AssociationConnector Association="PosModel.FK_EndOfDayDetail_Vat" />
+        <AssociationConnector Association="PosModel.FK_EODAccountToPmsTransfer_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_ExternalProductMapping_Product" />
+        <AssociationConnector Association="PosModel.FK_Invoice_Guests_Trans_Guest" />
+        <AssociationConnector Association="PosModel.FK_MealConsumption_Guest" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_Guest" />
+        <AssociationConnector Association="PosModel.FK_TablePaySuggestion_Guest" />
+        <AssociationConnector Association="PosModel.FK__HotelInfo__Store__6E565CE8" />
+        <AssociationConnector Association="PosModel.FK_TR_Config_HotelInfo" />
+        <AssociationConnector Association="PosModel.FK_TR_ReservationCustomers_HotelInfo" />
+        <AssociationConnector Association="PosModel.FK_Order_MacroGuid" />
+        <AssociationConnector Association="PosModel.FK_Ingredients_IngredientCategories" />
+        <AssociationConnector Association="PosModel.FK_Ingredients_Ingredients" />
+        <AssociationConnector Association="PosModel.FK_Ingredients_Units" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailIgredients_Ingredients" />
+        <AssociationConnector Association="PosModel.FK_PricelistDetail_Ingredients" />
+        <AssociationConnector Association="PosModel.FK_ProductExtras_Ingredients" />
+        <AssociationConnector Association="PosModel.FK_ProductRecipe_Ingredients" />
+        <AssociationConnector Association="PosModel.FK_Invoice_Guests_Trans_Transactions" />
+        <AssociationConnector Association="PosModel.FK_PosInfoDetail_InvoiceTypes" />
+        <AssociationConnector Association="PosModel.FK_PredefinedCredits_InvoiceTypes" />
+        <AssociationConnector Association="PosModel.FK_Items_Units" />
+        <AssociationConnector Association="PosModel.FK_Items_Vat" />
+        <AssociationConnector Association="PosModel.FK_ProductExtras_Items" />
+        <AssociationConnector Association="PosModel.FK_ProductRecipe_Items" />
+        <AssociationConnector Association="PosModel.FK_Kds_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfoKdsAssoc_Kds" />
+        <AssociationConnector Association="PosModel.FK_Product_Kds" />
+        <AssociationConnector Association="PosModel.FK_Product_Kitchen" />
+        <AssociationConnector Association="PosModel.FK_KitchenInstructionLogger_KitchenInstructionLogger" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_KitchenInstruction_Assoc_KitchenInstruction" />
+        <AssociationConnector Association="PosModel.FK_Product_KitchenRegion" />
+        <AssociationConnector Association="PosModel.FK_Lockers_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_MealConsumption_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_MealConsumption_Staff" />
+        <AssociationConnector Association="PosModel.FK_Notifications_Notifications" />
+        <AssociationConnector Association="PosModel.FK_Notifications_Store" />
+        <AssociationConnector Association="PosModel.FK_Order_PdaModule" />
+        <AssociationConnector Association="PosModel.FK_Order_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Order_Staff" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_Order" />
+        <AssociationConnector Association="PosModel.FK_OrdersStaff_Order" />
+        <AssociationConnector Association="PosModel.FK_OrderStatus_Order" />
+        <AssociationConnector Association="PosModel.FK_Transactions_Order" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_PricelistDetail" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_Product" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_SalesType" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_Table" />
+        <AssociationConnector Association="PosModel.FK_OrderDetail_Transactions" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailIgredients_OrderDetail" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailInvoices_OrderDetail" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailVatAnal_OrderDetail" />
+        <AssociationConnector Association="PosModel.FK_TablePaySuggestion_OrderDetail" />
+        <AssociationConnector Association="PosModel.FK_dbo_OrderDetailInvoices_dbo_OrderDetailIgredients_OrderDetailIgredientsId" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailIgredients_PricelistDetail" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailIgredientVatAnal_OrderDetailIgredients" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailIgredientVatAnal_Tax" />
+        <AssociationConnector Association="PosModel.FK_dbo_OrderDetailInvoices_dbo_Pricelist_PricelistId" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailInvoices_PosInfoDetail" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailInvoices_Staff" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailVatAnal_Tax" />
+        <AssociationConnector Association="PosModel.FK_OrdersStaff_Staff" />
+        <AssociationConnector Association="PosModel.FK_OrderStatus_Staff" />
+        <AssociationConnector Association="PosModel.FK_PageButton_Pages" />
+        <AssociationConnector Association="PosModel.FK_PageButton_Product" />
+        <AssociationConnector Association="PosModel.FK_PageButtonDetail_PageButton" />
+        <AssociationConnector Association="PosModel.FK_PagePosAssoc_PageSet" />
+        <AssociationConnector Association="PosModel.FK_PagePosAssoc_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Pages_PageSet" />
+        <AssociationConnector Association="PosModel.FK_PdaModule_PageSet" />
+        <AssociationConnector Association="PosModel.FK_Payrole_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Payrole_Staff" />
+        <AssociationConnector Association="PosModel.FK_PayrollNew_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PayrollNew_Staff" />
+        <AssociationConnector Association="PosModel.FK_PdaModule_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PdaModuleDetail_PdaModule" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_KitchenInstruction_Assoc_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_Pricelist_Assoc_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_Region_Assoc_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_StaffPositin_Assoc_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfoDetail_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfoKdsAssoc_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Region_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_RegionLockerProduct_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Transactions_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_Pricelist_Assoc_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_Region_Assoc_Region" />
+        <AssociationConnector Association="PosModel.FK_PosInfo_StaffPositin_Assoc_StaffPosition" />
+        <AssociationConnector Association="PosModel.FK_PosInfoDetail_Excluded_Accounts_PosInfoDetail" />
+        <AssociationConnector Association="PosModel.FK_PosInfoDetail_Pricelist_Assoc_PosInfoDetail" />
+        <AssociationConnector Association="PosModel.FK_PosInfoDetail_Pricelist_Assoc_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_PriceList_EffectiveHours_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_Pricelist_PricelistMaster" />
+        <AssociationConnector Association="PosModel.FK_PricelistDetail_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_Promotions_Pricelists_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_RegionLockerProduct_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_TransferMappings_Pricelist" />
+        <AssociationConnector Association="PosModel.FK_PricelistDetail_Product" />
+        <AssociationConnector Association="PosModel.FK_PricelistDetail_Tax" />
+        <AssociationConnector Association="PosModel.FK_PricelistDetail_Vat" />
+        <AssociationConnector Association="PosModel.FK_SalesType_PricelistMaster_Assoc_PricelistMaster" />
+        <AssociationConnector Association="PosModel.FK_Product_ProductCategories" />
+        <AssociationConnector Association="PosModel.FK_Product_Units" />
+        <AssociationConnector Association="PosModel.FK_ProductBarcodes_Product" />
+        <AssociationConnector Association="PosModel.FK_ProductExtras_Product" />
+        <AssociationConnector Association="PosModel.FK_ProductForBarcodeEod_Product" />
+        <AssociationConnector Association="PosModel.FK_ProductRecipe_Product" />
+        <AssociationConnector Association="PosModel.FK_ProductsForEOD_Product" />
+        <AssociationConnector Association="PosModel.FK_RegionLockerProduct_Product" />
+        <AssociationConnector Association="PosModel.FK_TransferMappings_Product1" />
+        <AssociationConnector Association="PosModel.FK_TransferMappings_ProductCategories" />
+        <AssociationConnector Association="PosModel.FK_ProductExtras_Units" />
+        <AssociationConnector Association="PosModel.FK_ProductRecipe_Units" />
+        <AssociationConnector Association="PosModel.FK_Promotions_Combos_Promotions_Headers" />
+        <AssociationConnector Association="PosModel.FK_Promotions_Discounts_Promotions_Headers" />
+        <AssociationConnector Association="PosModel.FK_Table_Region" />
+        <AssociationConnector Association="PosModel.FK_SatisticsMenus_ReportList" />
+        <AssociationConnector Association="PosModel.FK_SalesType_PricelistMaster_Assoc_SalesType_PricelistMaster_Assoc" />
+        <AssociationConnector Association="PosModel.FK_TransferMappings_SalesType1" />
+        <AssociationConnector Association="PosModel.FK_StaffAuthorization_Staff" />
+        <AssociationConnector Association="PosModel.FK_StaffCash_Staff" />
+        <AssociationConnector Association="PosModel.FK_StaffSecheduleDetails_Staff" />
+        <AssociationConnector Association="PosModel.FK_Transactions_Staff" />
+        <AssociationConnector Association="PosModel.FK_WorkSheet_Staff" />
+        <AssociationConnector Association="PosModel.FK_StaffSecheduleDetails_StaffSchedule" />
+        <AssociationConnector Association="PosModel.FK_StoreMessages_Store" />
+        <AssociationConnector Association="PosModel.FK_Transactions_Suppliers" />
+        <AssociationConnector Association="PosModel.FK_TR_Capacities_TR_Restaurants" />
+        <AssociationConnector Association="PosModel.FK_TR_OvewrittenCapacities_TR_Capacities" />
+        <AssociationConnector Association="PosModel.FK_TR_Reservations_TR_Capacities" />
+        <AssociationConnector Association="PosModel.FK_TR_ExcludeDays_TR_Restaurants" />
+        <AssociationConnector Association="PosModel.FK_TR_ExcludeRestrictions_TR_Restaurants" />
+        <AssociationConnector Association="PosModel.FK_TR_ExcludeRestrictions_TR_Restrictions_Restaurants_Assoc" />
+        <AssociationConnector Association="PosModel.FK_TR_OvewrittenCapacities_TR_Restaurants" />
+        <AssociationConnector Association="PosModel.FK_TR_ReservationCustomers_TR_Reservations" />
+        <AssociationConnector Association="PosModel.FK_TR_Restrictions_Restaurants_Assoc_TR_Restaurants" />
+        <AssociationConnector Association="PosModel.FK_TR_Restrictions_Restaurants_Assoc_TR_Restrictions" />
+        <AssociationConnector Association="PosModel.FK_TransferToPms_Transactions" />
+        <AssociationConnector Association="PosModel.FK_dbo_TransferMappingDetails_dbo_TransferMappings_TransferMappingsId" />
+        <EntityTypeShape EntityType="PosModel.DA_Addresses" Width="1.5" PointX="8.25" PointY="175.625" />
+        <EntityTypeShape EntityType="PosModel.DA_Orders" Width="1.5" PointX="12.75" PointY="188.375" />
+        <AssociationConnector Association="PosModel.FK_DA_Orders_DA_Addresses" />
+        <AssociationConnector Association="PosModel.FK_DA_Stores_DA_Addresses" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomerMessages_DA_Orders" />
+        <AssociationConnector Association="PosModel.FK_DA_Orders_DA_Customers" />
+        <AssociationConnector Association="PosModel.FK_DA_OrderDetails_DA_Orders" />
+        <AssociationConnector Association="PosModel.FK_DA_Orders_DA_Stores" />
+        <AssociationConnector Association="PosModel.FK_DA_OrderStatus_DA_Orders" />
+        <AssociationConnector Association="PosModel.FK_Loyalty_DA_Orders" />
+        <EntityTypeShape EntityType="PosModel.Invoices" Width="1.5" PointX="19.25" PointY="104.125" />
+        <EntityTypeShape EntityType="PosModel.Invoices_Hist" Width="1.5" PointX="12.375" PointY="29.75" />
+        <AssociationConnector Association="PosModel.FK_Invoices_ClientPos" />
+        <AssociationConnector Association="PosModel.FK_CreditTransactions_Invoices" />
+        <AssociationConnector Association="PosModel.FK_Invoices_EndOfDay" />
+        <AssociationConnector Association="PosModel.FK_Invoices_Guest" />
+        <AssociationConnector Association="PosModel.FK_Invoice_Guests_Trans_Invoices" />
+        <AssociationConnector Association="PosModel.FK_Invoices_InvoiceTypes" />
+        <AssociationConnector Association="PosModel.FK_Invoices_PdaModule" />
+        <AssociationConnector Association="PosModel.FK_Invoices_PosInfo" />
+        <AssociationConnector Association="PosModel.FK_Invoices_Staff" />
+        <AssociationConnector Association="PosModel.FK_Invoices_Table" />
+        <AssociationConnector Association="PosModel.FK_InvoiceShippingDetails_Invoices" />
+        <AssociationConnector Association="PosModel.FK_Loyalty_Invoices" />
+        <AssociationConnector Association="PosModel.FK_OrderDetailInvoices_Invoices" />
+        <AssociationConnector Association="PosModel.FK_Transactions_Invoices" />
+        <EntityTypeShape EntityType="PosModel.DeliveryRouting" Width="1.5" PointX="14.375" PointY="30" />
+        <EntityTypeShape EntityType="PosModel.DeliveryRoutingHist" Width="1.5" PointX="16.375" PointY="29.75" />
+        <AssociationConnector Association="PosModel.FK_DA_CustomerMessages_DA_Stores" />
+        <AssociationConnector Association="PosModel.FK_Order_DeliveryRouting" />
+        <EntityTypeShape EntityType="PosModel.TR_ReservationTypes" Width="1.5" PointX="18.375" PointY="21.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

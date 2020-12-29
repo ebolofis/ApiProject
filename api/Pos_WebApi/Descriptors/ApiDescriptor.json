@@ -1,0 +1,386 @@
+﻿{
+  "DeliveryAgent": [
+    {
+      "Key": "IsDeliveryAgent",
+      "Description": "Oριζει ότι το api είναι DA. ",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.2.1.0"
+    },
+    {
+      "Key": "DA_IsClient",
+      "Description": "Οριζει τον τύπο του καταστήματος: <br><b>DA_IsClient=true and IsDeliveryAgent=false:</b> Oριζει ότι το api είναι Kατάστημα με DA. <br><b>DA_IsClient=false and IsDeliveryAgent=false:</b> Oριζει ότι το api είναι standalone εγκατάσταση (κατάστημα χωρίς DA). <br><b>DA_IsClient=true and IsDeliveryAgent=true:</b> Προκείπτει σφάλμα. ",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "4.5.0.0"
+    }
+  ],
+  "General": [
+    {
+      "Key": "CultureInfo",
+      "Description": "Language information in culture code format. πχ: el",
+      "Type": "string",
+      "DefaultValue": "el",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "BIPolicy.Product.UniqueCode",
+      "Description": "Enable unique product code. ex: true",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "BIPolicy.Ingredients.UniqueCode",
+      "Description": "Enable unique ingredient code. ex: true",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "GroupReceiptItems",
+      "Description": "Group same items when issuing a receipt.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "CustomerClass",
+      "Description": "Load specific customer functionality. ('Pos_WebApi.Customer_Modules.Goodies', 'Pos_WebApi.Customer_Modules.Autogrill', 'Pos_WebApi.Customer_Modules.Waterpark')",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "CommunicationBetweenKdsAndDelivery",
+      "Description": "Set Communication between KDS and Delivery.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.40.0"
+    }
+  ],
+  "Forky": [
+    {
+      "Key": "forkeyPatch",
+      "Description": "Forky url.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "forkeyAuth",
+      "Description": "Forky authorization header.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    }
+  ],
+  "Goodys": [
+    {
+      "Key": "goodysStoreId",
+      "Description": "External id of Goodys store.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "veltiApi",
+      "Description": "Velti api url.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "veltiLoyalty",
+      "Description": "Velti loyalty url.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "callMobile",
+      "Description": "Call center url.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    }
+  ],
+  "ICoupon": [
+    {
+      "Key": "icouponApiRef",
+      "Description": "Base icoupon api url.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icouponTokenUrl",
+      "Description": "Url extension to get header token.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icoupon_grant_type",
+      "Description": "Authorization value for token request.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icoupon_client_id",
+      "Description": "Authorization value for token request.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icoupon_client_secret",
+      "Description": "Authorization value for token request.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icouponGetCouponsByBarcodeUrl",
+      "Description": "Url extension to get coupons.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icouponUpdateCouponUrl",
+      "Description": "Url extension to update (redeem/void) coupons.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icouponPostSalesUrl",
+      "Description": "Url extension to update (redeem/void) coupons.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "icouponAccountTypeId",
+      "Description": "Account id to match payments of split on tender coupon.",
+      "Type": "int",
+      "DefaultValue": "0",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "barcodeFormat",
+      "Description": "barcodeFormat",
+      "Type": "string",
+      "DefaultValue": "auto",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "tillRef",
+      "Description": "tillRef",
+      "Type": "string",
+      "DefaultValue": "111112",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "locationRef",
+      "Description": "locationRef",
+      "Type": "string",
+      "DefaultValue": "ATH",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "serviceProviderRef",
+      "Description": "serviceProviderRef",
+      "Type": "string",
+      "DefaultValue": "AC",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "tradingOutletRef",
+      "Description": "tradingOutletRef",
+      "Type": "string",
+      "DefaultValue": "1000004",
+      "ApiVersion": "4.5.0.0"
+    },
+    {
+      "Key": "tradingOutletName",
+      "Description": "tradingOutletName",
+      "Type": "string",
+      "DefaultValue": "ACPOS",
+      "ApiVersion": "4.5.0.0"
+    }
+  ],
+  "PMSConnection": [
+    {
+      "Key": "MakeProcedure",
+      "Description": "Μεταβλητή που ελέγχει τη δημιουργία της store Procedure <b>GetReservationInfo</b> και <b>GetReservationInfo2</b>. <br> Στη περίπτωση που είναι <b>true</b> δημιουργείται αυτόματα. <br> Στη περίπτωση που είναι <b>false</b> δεν δημιουργείται και πρέπει να τη δημιουργείσουμε εμείς.",
+      "Type": "bool",
+      "DefaultValue": true,
+      "ApiVersion": "5.0.10.0"
+    }
+  ],
+  "XVRRevorder": [
+    {
+      "Key": "XvrIpAddress",
+      "Description": "Ορίζουμε την IP του XVR που θέλουμε να επικοινωνήσουμε.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.15.0"
+    },
+    {
+      "Key": "XvrPosPort",
+      "Description": "Ορίζουμε τη Πόρτα του Pos που έχουμε επιλέξει στο XVR είναι κοινή για όλα τα POS.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.0.15.0"
+    }
+  ],
+  "DeliveryRouting": [
+    {
+      "Key": "drUseRouting",
+      "Description": "Ορίζει τη χρήση του υποσυστήματος ανάθεσης παραγγελιών σε διανομείς. True: Ενεργοποιήται η διαδικασία ανάθεσης παραγγελιών σε διανομείς, False: Απενεργοποιήται η διαδικασία ανάθεσης παραγγελιών σε διανομείς και χρησιμοποιήται η προϋπάρχουσα διαδικασία.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drAutoAssignRouting",
+      "Description": "Ορίζει την αυτόματη ανάθεση από την εφαρμογή των παραγγελιών σε διανομείς. True: Η εφαρμογή αναθέτει αυτόματα τις νέες παραγγελίες στον πρώτο κατάλληλο διαθέσιμο διανομέα, False: Η εφαρμογή δεν αναθέτει αυτόματα τις νέες παραγγελίες σε διανομέα.",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drAutoAssignRoutingDelay",
+      "Description": "Ορίζει τον χρόνο αναμονής σε δευτερόλεπτα μεταξύ των προσπαθειών για αυτόματη ανάθεση των παραγγελιών σε διανομείς.",
+      "Type": "int",
+      "DefaultValue": "10",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drAutoAssignRoutingMaxRetries",
+      "Description": "Ορίζει τον μέγιστο αριθμό προσπαθειών για αυτόματη ανάθεση των παραγγελιών σε διανομείς. Σε περίπτωση αποτυχίας ενημερώνεται η κατάσταση του δρομολογίου σε αποτυχία ανάθεσης.",
+      "Type": "int",
+      "DefaultValue": "5",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drActivateMobileApp",
+      "Description": "Ορίζει τη χρήση της εφαρμογής κινητού από την ανάθεση δρομολογίων. True: ενεργοποιείται η χρήση της εφαρμογής κινητού, False: απενεργοποιείται η χρήση της εφαρμογής κινητού",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drExternalApiUrlAssign",
+      "Description": "URL για την εφαρμογή κινητού στο οποίο θα αποστέλλονται κλήσης για την ενημέρωση ανάθεσης διανομέα σε δρομολόγιο",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drExternalApiUrlChangeStaff",
+      "Description": "URL για την εφαρμογή κινητού στο οποίο θα αποστέλλονται κλήσης για την ενημέρωση αλλαγής διανομέα σε δρομολόγιο",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drExternalApiUrlUnassign",
+      "Description": "URL για την εφαρμογή κινητού στο οποίο θα αποστέλλονται κλήσης για την αποδέσμευση δρομολογίου",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drExternalApiAuthorization",
+      "Description": "authorization string για την εφαρμογή κινητού στο οποίο θα αποστέλλονται κλήσης για την ενημέρωση αλλαγής διανομέα σε δρομολόγιο. Έχει τη μορφή username:password π.χ. '1:1'.",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drDefaultGuid",
+      "Description": "ΥΠΟΧΡΕΩΤΙΚΟ ΠΕΔΙΟ αν η χρήση του υποσυστήματος ανάθεσης παραγγελιών σε διανομείς είναι ενεργή! Το guid της βάσης του usersToDatabases που θα χρησιμοποιηθεί. ",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drStoreId",
+      "Description": "Store id για χρήση στη δρομολόγηση παραγγελιών.",
+      "Type": "int",
+      "DefaultValue": "1",
+      "ApiVersion": "5.2.23.0"
+    },
+    {
+      "Key": "drDefaultPosInfoId",
+      "Description": "Προεπιλεγμένο PosInfoId για χρήση στο clockin του προσωπικού.",
+      "Type": "int",
+      "DefaultValue": "1",
+      "ApiVersion": "5.2.41.0"
+    }
+  ],
+  "Hotelizer": [
+    {
+      "Key": "isExternalApi",
+      "Description": "Όταν είναι true τότε αντί να γίνει κλήση στις store procedure είτε του Ερμή είτε του Protel, γίνεται κλήση σε Api Url.Στην συγκεκριμένη έκδοση είναι για το Hotelizer",
+      "Type": "bool",
+      "DefaultValue": false,
+      "ApiVersion": "5.2.41.0"
+    },
+    {
+      "Key": "externalApiURL",
+      "Description": "Είναι το Api Url που θα χρησιμοποιήσουμε για να πάρουμε data από Api Call. Στην συγκεκριμένη έκδοση είναι για το Hotelizer και μπορεί να επεκταθεί και για άλλα συστήματα.",
+      "Type": "string",
+      "DefaultValue": "https://app.hotelizer.net/",
+      "ApiVersion": "5.2.41.0"
+    },
+    {
+      "Key": "externalApiAuthentication",
+      "Description": "To authentication για την κλήση στο Api Url. Η μορφή του είναι username:password ",
+      "Type": "string",
+      "DefaultValue": "username:pass",
+      "ApiVersion": "5.2.41.0"
+    },
+    {
+      "Key": "externalApiMappingMethodOfPayments",
+      "Description": "Για το σύστημα Hotelizer πρέπει να κάνουμε mapping τους τρόπους πληρωμής<br>Για να δούμε τα αποτελέσματα από το hotelizer κάνουμε την κλήση <br>https://app.hotelizer.net/api/integrations/pos/payment_methods <br>όπου το https://app.hotelizer.net είναι το url που θα μας πει η hotelizer.<br>Τα αποτελέσματα είναι μια λίστα της μορφής <br>id: 26, int <br>name: Cash, string <br>payment_type: cash, string <br>credit_card_type: mastercard string το οποίο μπρεί να είναι null<br>Η κλήση γίνεται από Chrome με το add ons Talend Api Tester και είναι τύπου GET<br>Αφού πάρουμε αποτελεσμάτα θα πρέπει να τα δηλώσουμε με την ακόλουθη μορφή <br>9601-1;9602-5;   όπου το 9601 είναι το πεδίο PmsRoom από τον πίνακα EODAccountToPmsTransfer<br>από το webpos και 1 ή 5 στο παράδειγμα μας είναι το id από την κλήση στην Hotelizer. <br>Η παύλα (-) ξεχωρίζει τα δύο πεδία και το ερωτηματικά (;) προσθέτει νέα καταχώρηση. <br>Δεν έχει σημασία αν τελειώνει με (;) ή όχι. Δεχόμαστε και τα δύο <br>Για το Talend Api Tester <br>Μετά την εγκατάσταση του εμφανίζεται εικονίδιο στο chrome. Πατώντας το ανοίγει νέα σελίδα <br>και στις τρεις κάθετες τελείες δίπλα στο my drive μπορούμε να φτιάξουμε νέο project (Add new Project)<br> Δηλώνουμε όνομα αν θέλουμε και το επιλέγουμε πατόντας πάνω του. Στις τρεις τελίες που είνια δίπλα του <br>επιλέγουμε Add a Service για να φτιάξουμε νέα κλήση. Δίνουμε όνομα αν θέλουμε<br>Επιλέγοντας την στην σελίδα που εφμανίζεαι επιλέγουμε σαν Method (Get) και δίπλα γράφουμε το <br>Url που αναφέραμε παραπάνω. Εν συνεχεία αν χρειάζεται πατάμε το κουμπί Add authorization για να <br>δηλώσουμε το user name και το password. Τέλος πατάμε το κουμπί Send και τααποτελέσματα εμφανίζονται <br>από κάτω με την ένδειξη Responce. Αν η επιστροφή είναι 200 τότε έχουμε και τα αποτελέσματα στο πεδίο body<br>Τα αποτελέσματα είναι σε μορφή json και μπορούμε να δούμε μια ποιο καλή εμφάνιση στον chrome σε μια <br>σελίδα json editor.",
+      "Type": "string",
+      "DefaultValue": "9601-1;9602-5",
+      "ApiVersion": "5.2.41.0"
+    }
+  ],
+  "HashEncryptionProperties": [
+    {
+      "Key": "hashEncryptedKey1",
+      "Description": "The first encryption key will be used to encrept and decrypt reservation number ",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.49.0"
+    },
+    {
+      "Key": "hashEncryptedKey2",
+      "Description": "The second encryption key will be used to encrept and decrypt reservation number ",
+      "Type": "string",
+      "DefaultValue": "",
+      "ApiVersion": "5.2.49.0"
+    },
+    {
+      "Key": "hashArrayLength",
+      "Description": "The hash encryption method has as parameters an int array. The length for this array will be placed in this parameter ",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.49.0"
+    },
+    {
+      "Key": "hashNumberPosition",
+      "Description": "The position of the number we want to encrypt in the above parameter array ",
+      "Type": "int",
+      "DefaultValue": 0,
+      "ApiVersion": "5.2.49.0"
+    }
+  ]
+}

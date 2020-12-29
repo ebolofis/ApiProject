@@ -1,0 +1,9 @@
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\bin\Debug\Symposiummdls.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\bin\Debug\Symposiummdls.pdb
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\bin\Debug\Newtonsoft.Json.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\bin\Debug\Newtonsoft.Json.xml
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\obj\Debug\Symposium_Models.csproj.CoreCompileInputs.cache
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\obj\Debug\Symposium_Models.csproj.CopyComplete
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\obj\Debug\Symposiummdls.dll
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\obj\Debug\Symposiummdls.pdb
+C:\Code\WEBPOS\WebApi\Pos_WebApi\Symposium_Models\obj\Debug\Symposium_Models.csprojAssemblyReference.cache

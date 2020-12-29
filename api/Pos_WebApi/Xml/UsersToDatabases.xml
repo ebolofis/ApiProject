@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Installations>
+  <!--Developers-->
+
+	<Store Id="0001eeec-752a-45cf-a214-1a868731f088"
+         Username="1"
+         Password="1"
+         DataSource="sisifos\sql2014"
+         DataBase="WebPos_Goodys"
+         DataBaseUsername="sqladmin"
+         DataBasePassword="111111"
+         IsIntegrated="false"
+         Role="BOUser"/>
+  
+  <Store Id="0002eeec-752a-45cf-a214-1a868731f088"
+         Username="2"
+         Password="2"
+         DataSource="sisifos"
+         DataBase="Pos_NikkiBeach"
+         DataBaseUsername="sqladmin"
+         DataBasePassword="111111"
+         IsIntegrated="false"
+         Role="BOUser"/>
+
+  <Store Id="0003eeec-752a-45cf-a214-1a868731f088"
+         Username="3"
+         Password="3"
+         DataSource="sisifos"
+         DataBase="DeliveryAgent"
+         DataBaseUsername="sqladmin"
+         DataBasePassword="111111"
+         IsIntegrated="false"
+         Role="BOUser"/>
+
+  <Store Id="0004eeec-752a-45cf-a214-1a868731f088"
+         Username="4"
+         Password="4"
+         DataSource="DNIKOL-LAPTOP"
+         DataBase="DeliveryStore2"
+         DataBaseUsername="sa"
+         DataBasePassword="111111"
+         IsIntegrated="false"
+         Role="BOUser"/>
+ 
+	<Store Id="0005eeec-752a-45cf-a214-1a868731f088"
+         Username="5"
+         Password="5"
+         DataSource="SISIFOS\SQL2014"
+         DataBase="WebPosDevelopersONLY"
+         DataBaseUsername="sa"
+         DataBasePassword="hitprog"
+         IsIntegrated="false"
+         Role="BOUser"/>
+	
+</Installations>

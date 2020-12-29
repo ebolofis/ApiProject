@@ -1,0 +1,345 @@
+﻿18/01/2019 Version 4.2.56.0
+===========================
+- Πεδίο PMSPaymentId στα Accounts κατά τη διαχείρισή τους από το BackOffice
+- Πεδίο PMSInvoiceId στα PosInfoDetail κατά τη διαχείρισή τους από το BackOffice
+- Stored procedures για το mappping των Accounts και PosInfoDetail με τις αντίστοιχες οντότητες από το PMS
+- Στοιχεία πελάτη delivery κατά τη δημιουργία παραστατικού από τραπέζι
+
+14/01/2019 Version 4.2.55.0
+===========================
+- Σετάρισμα πίνακα Combo από BackOffice (Υλοποιήση κλήσεων)
+- Σετάρισμα πίνακα ComboDetail από BackOffice (Υλοποιήση κλήσεων)
+- Πεδια StartTime και EndTime στον πίνακα Combo
+
+04/01/2019 Version 4.2.54.0
+===========================
+- Πεδίο IsReturnItem στα Products κατά τη διαχείρισή τους από το BackOffice
+- Πεδίο CustomerDisplayGif στο PosInfo κατά τη διαχείρισή τους από το BackOffice
+- Τρόποι πληρωμής και τύποι παραστατικού για την αναζήτηση πελάτη με Α.Φ.Μ. (μονο συναρτήσεις, όχι κλήσεις τους)
+
+02/01/2019 Version 4.2.53.0
+===========================
+- Combo ανα Department
+
+19/12/2018 Version 4.2.52.0
+===========================
+- Νέος πίνακας IngredientCategories
+- Σετάρισμα πίνακα IngredientCategories από BackOffice (Υλοποιήση κλήσεων)
+- Συσχετισμός extras ανα κατηγορία
+- Μη γκρουπάρισμα αντικειμένων σε εκτύπωση κουζίνας
+- Ρέστα στην απόδειξη
+- Pre-Bill ως PosInfoDetail
+
+10/12/2018 Version 4.2.51.0
+===========================
+- Ετικέτα τραπεζιού στον πίνακα Order Detail Invoices
+
+06/12/2018 Version 4.2.50.0
+===========================
+- Εμφάνιση ταξιωτικού γραφείου και εταιρείας κατά την αναζήτηση πελάτη
+- Διαχωρισμός αντικειμένων με ποσότητα μεγαλύτερη του ενός
+
+30/11/2018 Version 4.2.49.0
+===========================
+- Bugfix: New columns in Invoices historic table
+
+26/11/2018 Version 4.2.48.0
+===========================
+- Υλοποίηση για εκτυπωτη Αρμενίας (Πεδίο ExtECRCode στον πίνακα Invoices και στο μοντέλο της απόδειξης)
+
+22/11/2018 Version 4.2.47.0
+===========================
+- Καταγραφή CurrencyFrom αντί για CurrencyId κατά τη χρήση ξένου συναλλάγματος
+
+21/11/2018 Version 4.2.46.0
+===========================
+- Υλοποίηση ξένου συναλλάγματος
+
+15/11/2018 Version 4.2.45.0
+===========================
+- Αλλαγή τρόπου ανάκτησης των iCoupons από το server.
+- Προσθήκη μηνυμάτων σε περίπτωση μη επιτυχούς αναζήτησης.
+- Αναζήτηση πελάτη με Α.Φ.Μ.
+
+07/11/2018 Version 4.2.44.0
+===========================
+- Combo items basic implementation
+- Save new open item price with flag
+- Correlate receipt and its cancel receipt through script
+
+01/11/2018 Version 4.2.43.0
+===========================
+-Save new open item price in database
+
+29/10/2018 Version 4.2.42.0
+===========================
+-τα δεδομένα του πελάτη Delivery διατηρούνται στο τραπέζι μετα απο refresh
+
+25/10/2018 Version 4.2.41.0
+===========================
+-pistosi option added
+
+22/10/2018 Version 4.2.40.0
+============================
+-iCoupons InsertSalesDataRequest Bad Request
+-Bug with print roomCharge Receipt 
+
+16/10/2018 Version 4.2.39.0
+============================
+-iCoupons Support multiple Vouchers
+
+08/10/2018 Version 4.2.38.0
+============================
+-Icoupons Changes
+-Delivery changes to Receive orders and insert them to HitPosOrders
+-Group Receipt Items By item Code
+-Fixing Bug with Return Invoice Items
+
+20/8/2018 Version 4.2.35.0
+============================
+*InsertZlogger added to EndOfDayV3Controller to insert zlogger to db
+
+20/8/2018 Version 4.2.33.0
+============================
+*New View for Changing WebConfig keys
+*Forky: When a cancelled order comes send patch with cancelled status
+ If has same Id then write in transactions cancelled transaction
+
+ 05/09/2018 4.2.36.0
+ *Remove one If statement in order to create opposite rec in transferToPms after receipt cancellation.
+
+ 29/8/2018 Version 4.2.34.0
+*Fixing Bug with PaymentList on Receipt
+
+24/7/2018 Version 4.2.30.0
+*Keep new phone number in customer when is different from json
+
+23/7/2018 Version 4.2.30.0
+*New query with index which brings the orders by state in delivery
+
+19/7/2018 Version 4.2.30.0
+*Sending status assigned to forkey when completing the order
+
+16/7/2018 Version 4.2.29.0
+*CalculateVatPrice  function  added
+*In completed status we do not patch order
+
+11/7/2018 Version 4.2.28.0
+*Filter in delivery by ExtType
+
+9/7/2018 Version 4.2.27.0
+*ExtType 2 does not patch order like forkey
+
+6/7/2018 Version 4.2.24.0
+*Change forkey external status when clicked (ontheroad, complete, canceled)
+
+4/7/2018 Version 4.2.23.0
+============================
+*Change SignalR so that when an order from delivery is extType 2 || 3 does not go to KDS when print button is pressed
+
+
+4/7/2018 Version 4.2.22.0
+============================
+*Change status forkey
+*Print DP when download forkey orders from external api
+
+
+29/06/2018 Version 4.2.19.0
+============================
+* Forkey Changes 2 Controller Functionality actions (post orders , print CO and patch order to printed)
+* Changes on Invoice Repository to clean code and isolate Main action for layer perposes (print invoice from Receipt)
+* Created Enums and Models for forkey lookups and actions 
+* simple entities DAO  with filters for entities lookups
+
+08/06/2018 Version 4.2.18.0
+============================
+* DB Update Delivery_Customer with GDPR Entities
+* Forkey Functionallity (ctrl , flow , task , dt)
+* Simple Entities DAOS added for forkey functionality
+* Invoice4DisplayCTRL (POST Receipts @Invoice Repository changed to ManageReceipts as Insert Receipts)
+* InvoiceRepository Clean-Up split functions to partial
+* InvoiceRepository Extend with PatchOrder If Receipt 
+* OrderStatusController to forkey orders call of PatchOrderFromStatus
+* Table Reservation Cancel Reservation BO 4.0.4
+*
+* return locker fixed
+
+
+6/6/2018 Version 4.2.17.0
+============================
+*Νέα κλήση για TR που φέρνει την μεγαλύτερη ώρα ανα restaurantID.
+
+6/4/2018 Version 4.2.16.0
+============================
+*Αλλαγή body από το e-mail για Table Reservation
+
+25/05/2018 Version 4.2.15.0
+============================
+*Δημιουργία νέας κλήσης που επιστρέφει τα data του RegionLockerProduct.
+
+24/05/2018 Version 4.2.14.0
+============================
+*InvoiceTypeId αλλαγή σε 1 όταν κλείνουμε locker 
+*Αλλαγή CommandTimeout σε 50000 κατά την εκτέλεση των queries από το back office
+
+22/05/2018 Version 4.2.13.0
+============================
+*Νέα κλήση για να φέρνει τα lockers statistics
+*Επιδιόρθωση σφάλματος για το κλείσιμο ημέρας.
+*Προσθήκη ελέγχων για το Τιμολόγιο. (Απαιτείται Πελάτης και να συμπληρωθούν όλα τα υποχρεωτικά πεδία)
+
+11/05/2018 Version 4.2.11.0
+============================
+*Εμφάνιση Αλλαγής Locker στην απόδειξη αντι να γράφει Έκπτωση
+
+10/05/2018 Version 4.2.9.0
+============================
+*Change startWith with equals to barcode products
+*IsDeleted updated to true to TransferToPms when delete receipt from notifications
+
+02/05/2018 Version 4.2.8.0
+============================
+*BO version Sync TR
+*tr  GetCapacitiesByRestId
+
+02/05/2018 Version 4.2.6.0
+============================
+* Υποστήριξη για 2 ξενοδοχεία με διαφορετικές βάσεις
+* Δεν γίνεται δημιουργία ή αλλαγή στην store procedure αν ο server είναι 2000
+* Καινούργια κλήση στον ExtEcr
+
+18/04/2018 Version 4.2.4.0
+============================
+* Fix pos edmx model to work with sql 2008_r2 (problem with paged results) !!! SOS !!! (edit model with txt editor to  apply  ProviderManifestToken="2008" )
+* Table reservation fix on calls based on model 
+* Table Res email handle in diff task
+
+17/04/2018 Version 4.2.3.0
+============================
+* Changes on PmsDepartments lookup loaded over Ermis on ProtelRepository same for CustomerPolicyEnum.NoCustomers - CustomerPolicyEnum.PmsInterface
+
+17/04/2018 Version 4.2.2.0  (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+* Αλλαγές στο Table Reservation.
+* Procedure for Restaurant selection added on DB version 16.
+* Change orderstatus Post to time on server (missmatch on delivery ).
+* Add product from file fix bug for cost price list.
+
+02/03/2018 Version 4.0.19.0
+============================
+* Αλλαγή στον InvoiceRepository.cs, στο τρόπο που καταχωρείται η συμβολοσειρά Rοοms του πίνακα Invoices. (Προσθήκη String.Trim Method ()).
+
+06/12/2017 Version 4.0.0.0
+============================
+* Resource for FYROM (greek words) added
+
+23/11/2017 Version 2.3.0.0
+============================
+* Resources added
+* Translations
+
+20/10/2017 Version 2.2.5.0
+============================
+* Staff authorization action of barcodes management
+* Barcode totals and locker totals in eod data
+* Remaing credit amount in receipt
+
+19/10/2017 Version 2.2.4.0
+============================
+* Payment receipt and refund receipt not in X and Z report sums
+
+18/10/2017 Version 2.2.3.0 (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+* Products for EOD stats in X and Z reports
+* Set default value NoPos = 0 for hotel type = 10 (customers from DB.Guest)
+* Correct type of invoice types payment receipt and refund receipt
+* Goodys coupons in DB.Loyalty
+
+27/07/2017 Version 2.2.0.0 (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+* New signalR messages and http requests for nfc card
+
+27/07/2017 Version 2.1.9.0  
+============================
+* Update DB για το WebPosReports v2.0.0.0
+
+27/06/2017 Version 2.1.5.0  
+============================
+* για τους V3 Controllers δεν χρειάζεται το StoreId
+* αλλαγή στο μοντέλο EODAnalysisReceiptModel: το πεδίο OrderNo από long έγινε string
+
+27/06/2017 Version 2.1.4.0  
+============================
+* Δεν γίνεται resolve το DNS name του client.
+
+23/06/2017 Version 2.1.0.0  (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+* Αλλαγή της procedure του Ermis. Πλέον η GetReservationInfo του ερμή περιλαμβάνει και το πεδίο noPos.
+* SignalR μέθοδοι για επικοινωνία POS - NFCdriver
+* Κλείσιμο έτους
+* ΔΗΜΙΟΥΡΓΙΑ LAYERS, (ΒΛ CONTROLLERS V3)
+
+
+29/05/2017 Version 2.0.31.0  (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+* Σωστή καταγραφή δεδομένων στον πίνακα TransferToPms για Multiple Hotels (HotelIds = 1, 2, 3, ...)
+* Πεδίο HotelId στους τρόπους πληρωμής μιας απόδειξης στις κλήσεις των Clients
+* Πεδίο HotelId στους προτεινόμενους πελάτες για ένα δελτίο παραγγελίας ή μια απόδειξη χωρίς εξόφληση
+
+
+15/05/2017 Version 2.0.30.0  (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+* Προσθήκη πεδίου PosInfo.DefaultHotelId
+* Καλύτερη διαχείρηση του αρχείου signalRConnections.xml
+  
+
+05/05/2017 Version 2.0.29.0
+============================
+* Βελτίωση της ρουτίνας GetReservationInfo2 για καλύτερη αναζήτηση. 
+
+
+27/04/2017 Version 2.0.28.0
+============================
+* Διόρθωση προβλήματος με το κλείσιμο ημέρας. Κατά το κλείσιμο ημέρας γινόταν μια κλήση στο HotelInterface. Αυτή η κλήση αφαιρέθηκε.
+
+
+19/04/2017 Version 2.0.27.0
+============================
+* Αλλαγές στη ρουτίνα GetReservationInfo2. Άλλαξε ο τρόπος υπολογισμού των boards και βελτιστοποιήθηκε για να φέρνει γρηγορότερα αποτελέσματα.
+
+
+19/04/2017 Version 2.0.26.0  (ΑΠΑΙΤΕΙΤΑΙ Database Update)
+============================
+  * επιμέρους αλλαγές για την υποστήριξη των client εφαρμογών
+  * αλλαγές για τους  πελάτες:
+        Goodys (coupons),
+        Waterpark (lockers, barcodes, online registration),
+        Autogrill (partial printing, users authentication, payroll, ακύρωση αποδείξεων παλαιότερων ημερομηνιών).
+   * Καλύτερο logging:
+        Σαν Info θα καταγράφονται
+            όλα τα requests και τα αντίστοιχα responses από και προς τους clients.
+            επικοινωνία με εξωτερικά συστήματα όπως pms και κουπόνια της Goodys.
+        Σαν Error θα καταγράφονται όλα τα errors και exceptions που παράγονται στο webapi.
+  * Έλεγχος ασύμβατων/παλαιών versions των client εφαρμογών (webpos, BO, Extecr, PDA) κατά τη σύνδεσή τους με το webapi.
+
+Στο webconfig θα πρέπει να οριστεί :
+
+    Το path των log files.
+    Το ελάχιστο logging level σε  Info: <level value="Info" />   (Καλό είναι σε νέες εγκαταστάσεις το ελάχιστο logging level να ορίζεται σε  Info, και μετά από μερικές μέρες λειτουργίας αυτό να μεταβάλλετε σε Error).
+     To CustomerClass :
+
+                         <setting name="CustomerClass" serializeAs="String">
+                                      <value>VALE_KATI_EDO</value>
+                         </setting>
+
+         Για τη Goodies με κουπόνια η τιμή είναι :    Pos_WebApi.Customer_Modules.Goodies
+         Για την Autogrill η τιμή είναι :    Pos_WebApi.Customer_Modules.Autogrill
+		 Για το WaterPark η τιμη είναι :	Pos_WebApi.Customer_Modules.Waterpark
+         Για κάθε άλλη περίπτωση/πελάτη η τιμή θα είναι κενή, δηλ: <value></value>
+
+		 
+
+
+ 
+
+

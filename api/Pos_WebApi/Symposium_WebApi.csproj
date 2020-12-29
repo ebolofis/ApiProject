@@ -1,0 +1,1758 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE23AA53-4581-4C61-BC72-81BB81795722}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pos_WebApi</RootNamespace>
+    <AssemblyName>Symposiumwa</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <MvcProjectUpgradeChecked>true</MvcProjectUpgradeChecked>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac, Version=4.6.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.0\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.0.1\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.1.3.1, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.3.1\lib\net45\LinqKit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.3.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb, Version=2.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.2.3.0\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.7.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.7.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.3.0.1\lib\net45\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.4.0.52\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.0.52\lib\portable-wp80+sl5+net40+win8+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.52.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.4.0.52\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Linq.Dynamic, Version=1.0.5840.25917, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.Dynamic.1.0.6\lib\net40\System.Linq.Dynamic.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Spatial, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.7.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.3\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.3\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.30506\lib\net40\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.5.2.3\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>..\__My Pos_WebApi\bin\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Actions.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllowedMealsPerBoard.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AllowedMealsPerBoardDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.SignalR.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="AssignedPositions.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizedGroup.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorizedGroupDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BoardMeals.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Categories.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientPos.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Combo.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ComboDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers.V3\DahuaRecorder\PosRecorderV3Controller.cs" />
+    <Compile Include="Controllers.V3\Configuration\ConfigurationController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_CustomerMessagesV3Controller.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_CustomerTokenController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_OpeningHoursController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_PhoneCenterController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_EfoodController.cs" />
+    <Compile Include="Controllers.V3\Delivery\DeliveryRoutingV3Controller.cs" />
+    <Compile Include="Controllers.V3\ExternalSystems\GoodysV3Controller.cs" />
+    <Compile Include="Controllers.V3\ExternalSystems\OldGoodysV3Controller.cs" />
+    <Compile Include="Controllers.V3\Hotel\HotelController.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\HotelInfoV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\SuppliersV3Controller.cs" />
+    <Compile Include="Controllers.V3\KDS\KdsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\AccountsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\PaymentsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Payroll\PayrollController.cs" />
+    <Compile Include="Controllers.V3\Products\CategoriesV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\ComboItemsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\CustomerV3Controller.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_AddressesController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_ConfigController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_CustomerController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_GeoPolygonsController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_LoyaltyController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_OrdersController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_ShortagesController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_StaffController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_StoresController.cs" />
+    <Compile Include="Controllers.V3\DeliveryAgent\DA_Store_PriceListAssocController.cs" />
+    <Compile Include="Controllers.V3\Delivery\DeliveryCustomerV3Controller.cs" />
+    <Compile Include="Controllers.V3\Delivery\DeliveryOrdersV3Controller.cs" />
+    <Compile Include="Controllers.V3\ExternalSystems\EfoodV3Controller.cs" />
+    <Compile Include="Controllers.V3\ExternalSystems\ICouponV3Controller.cs" />
+    <Compile Include="Controllers.V3\ExternalSystems\ForexServiceV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\IngredientCategoriesV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\IngredientsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\Ingredient_ProdCategoryAssocV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PageButtonDetailV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PageSetV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PriceListDetailV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PricelistMasterV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PriceListV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PriceList_EffectiveHoursV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PricingV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\ProductCategoriesV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\ProductExtrasV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\ProductRecipeV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\ProductV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\RegionLockerProductV3Controller.cs" />
+    <Compile Include="Controllers.V3\ExternalDelivery\ForkyV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\ReceiptDetailsForExtecrV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\InvoicesV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\NFCcardV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\OrderV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PageButtonV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\PagesV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\PredefinedCreditsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\RegionV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\ReportV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\SalesPosLookupsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\SalesTypeV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\StaffV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\StoreMessagesV3Controller.cs" />
+    <Compile Include="Controllers.V3\Infrastructure\StoreV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\TableForDisplayV3Controller.cs" />
+    <Compile Include="Controllers.V3\Promos\PromosController.cs" />
+    <Compile Include="Controllers.V3\Promos\PromotionsV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\CapacitiesV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\ConfigV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\EmailConfigV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\ExcludeDaysV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\ExcludeRestrictionsV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\OverwrittenCapacitiesV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\ReservationCustomersV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\ReservationsV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\ReservationTypesV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\RestaurantsV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\RestrictionsRestaurantsAssocV3Controller.cs" />
+    <Compile Include="Controllers.V3\TableReservations\RestrictionsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\TaxV3Controller.cs" />
+    <Compile Include="Controllers.V3\Products\UnitsV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\VatV3Controller.cs" />
+    <Compile Include="Controllers.V3\_BasicV3Controller.cs" />
+    <Compile Include="Controllers.V3\Orders\EndOfDayV3Controller.cs" />
+    <Compile Include="Controllers\ActionsController.cs" />
+    <Compile Include="Controllers\AllowedMealsPerBoardController.cs" />
+    <Compile Include="Controllers\AllowedMealsPerBoardDetailsController.cs" />
+    <Compile Include="Controllers\AppControllerBase.cs" />
+    <Compile Include="Controllers\AssignedPositionsController.cs" />
+    <Compile Include="Controllers\BoardMealsController.cs" />
+    <Compile Include="Controllers\BOControllers\AccountMappingController.cs" />
+    <Compile Include="Controllers\BOControllers\AccountsController.cs" />
+    <Compile Include="Controllers\BOControllers\AuthorizedGroupController.cs" />
+    <Compile Include="Controllers\BOControllers\AuthorizedGroupDetailController.cs" />
+    <Compile Include="Controllers\BOControllers\BOPageSetController.cs" />
+    <Compile Include="Controllers\BOControllers\CategoriesController.cs" />
+    <Compile Include="Controllers\BOControllers\ClientPosController.cs" />
+    <Compile Include="Controllers\BOControllers\ComboController.cs" />
+    <Compile Include="Controllers\BOControllers\ComboDetailController.cs" />
+    <Compile Include="Controllers\BOControllers\ConnectionServiceController.cs" />
+    <Compile Include="Controllers\BOControllers\DepartmentController.cs" />
+    <Compile Include="Controllers\BOControllers\DiscountController.cs" />
+    <Compile Include="Controllers\BOControllers\DynSingleGridController.cs" />
+    <Compile Include="Controllers\BOControllers\EntitiesLookUpController.cs" />
+    <Compile Include="Controllers\BOControllers\ExcludedAcountsController.cs" />
+    <Compile Include="Controllers\BOControllers\ExcludedPricelistsController.cs" />
+    <Compile Include="Controllers\BOControllers\ExternalProductMappingController.cs" />
+    <Compile Include="Controllers\BOControllers\IGenericService.cs" />
+    <Compile Include="Controllers\BOControllers\IngredientCategoriesController.cs" />
+    <Compile Include="Controllers\BOControllers\IngredientsController.cs" />
+    <Compile Include="Controllers\BOControllers\Ingredient_ProdCategoryAssocController.cs" />
+    <Compile Include="Controllers\BOControllers\InvoiceTypesController.cs" />
+    <Compile Include="Controllers\BOControllers\ItemsController.cs" />
+    <Compile Include="Controllers\BOControllers\KdsController.cs" />
+    <Compile Include="Controllers\BOControllers\KitchenController.cs" />
+    <Compile Include="Controllers\BOControllers\KitchenInstructionController.cs" />
+    <Compile Include="Controllers\BOControllers\KitchenRegionController.cs" />
+    <Compile Include="Controllers\BOControllers\LookUpController.cs" />
+    <Compile Include="Controllers\BOControllers\LookupEnumController.cs" />
+    <Compile Include="Controllers\BOControllers\PayroleController.cs" />
+    <Compile Include="Controllers\BOControllers\PdaModuleController.cs" />
+    <Compile Include="Controllers\BOControllers\PosInfoController.cs" />
+    <Compile Include="Controllers\BOControllers\PosInfoDetailController.cs" />
+    <Compile Include="Controllers\BOControllers\PosInfoDetail_Excluded_AccountsController.cs" />
+    <Compile Include="Controllers\BOControllers\PosInfoDetail_Pricelist_AssocController.cs" />
+    <Compile Include="Controllers\BOControllers\PosInfo_Pricelist_AssocController.cs" />
+    <Compile Include="Controllers\BOControllers\PredefinedCreditsController.cs" />
+    <Compile Include="Controllers\BOControllers\PricelistController.cs" />
+    <Compile Include="Controllers\BOControllers\PricelistMasterController.cs" />
+    <Compile Include="Controllers\BOControllers\ProductBarcodesController.cs" />
+    <Compile Include="Controllers\BOControllers\ProductCategoriesController.cs" />
+    <Compile Include="Controllers\BOControllers\ProductController.cs" />
+    <Compile Include="Controllers\BOControllers\ProductExtrasController.cs" />
+    <Compile Include="Controllers\BOControllers\ProductPricesController.cs" />
+    <Compile Include="Controllers\BOControllers\ProductRecipeController.cs" />
+    <Compile Include="Controllers\BOControllers\RegionLockerProductController.cs" />
+    <Compile Include="Controllers\BOControllers\RemoteActionsController.cs" />
+    <Compile Include="Controllers\BOControllers\SalesTypeController.cs" />
+    <Compile Include="Controllers\BOControllers\StaffController.cs" />
+    <Compile Include="Controllers\BOControllers\StaffPositionController.cs" />
+    <Compile Include="Controllers\BOControllers\TaxController.cs" />
+    <Compile Include="Controllers\BOControllers\TransactionTypesController.cs" />
+    <Compile Include="Controllers\BOControllers\TransferMappingsController.cs" />
+    <Compile Include="Controllers\BOControllers\UnitsController.cs" />
+    <Compile Include="Controllers\BOControllers\UploadController.cs" />
+    <Compile Include="Controllers\BOControllers\VatController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EndOfYearController.cs" />
+    <Compile Include="Controllers\CreditCodesController.cs" />
+    <Compile Include="Controllers\CreditsController.cs" />
+    <Compile Include="Controllers\CreditTransactionsController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DayAuditController.cs" />
+    <Compile Include="Controllers\DeliveryOrdersController.cs" />
+    <Compile Include="Controllers\FODayFromPMSController.cs" />
+    <Compile Include="Controllers\goodysLoyaltyController.cs" />
+    <Compile Include="Controllers\goodysApiController.cs" />
+    <Compile Include="Controllers\Helpers\CustomMultipartFormDataStreamProvider.cs" />
+    <Compile Include="Controllers\Helpers\StringHelpers.cs" />
+    <Compile Include="Controllers\InvoiceForDisplayController.cs" />
+    <Compile Include="Controllers\KitchenInstructionLoggerController.cs" />
+    <Compile Include="Controllers\LockersController.cs" />
+    <Compile Include="Controllers\MealConsumptionController.cs" />
+    <Compile Include="Controllers\MetaDataTableController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\OnlineRegistrationController.cs" />
+    <Compile Include="Controllers\PatchesController.cs" />
+    <Compile Include="Controllers\PosInfo_KitchenIstruction_AssocController.cs" />
+    <Compile Include="Controllers\PdaModuleDetailController.cs" />
+    <Compile Include="Controllers\HelperController.cs" />
+    <Compile Include="Controllers\HotelInfoController.cs" />
+    <Compile Include="Controllers\OrderDetailInvoicesController.cs" />
+    <Compile Include="Controllers\ProductForBarcodeEodController.cs" />
+    <Compile Include="Controllers\ProductInfoController.cs" />
+    <Compile Include="Controllers\ProductSalesHistoryPerDayController.cs" />
+    <Compile Include="Controllers\ReportListController.cs" />
+    <Compile Include="Controllers\SinglePagesetController.cs" />
+    <Compile Include="Controllers\StatisticsMenuController.cs" />
+    <Compile Include="Controllers\StoreMessagesController.cs" />
+    <Compile Include="Controllers\TableForDisplayController.cs" />
+    <Compile Include="Controllers\ValidModulesController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\EndOfDayController.cs" />
+    <Compile Include="Controllers\PosInfoKdsAssoc.cs" />
+    <Compile Include="Controllers\OrderDetailController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\OrderStatusController.cs" />
+    <Compile Include="Controllers\PageButtonDetailController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageButtonController.cs" />
+    <Compile Include="Controllers\PagePosAssocController.cs" />
+    <Compile Include="Controllers\PagesController.cs" />
+    <Compile Include="Controllers\PageSetController.cs" />
+    <Compile Include="Controllers\PosInfo_StaffPositin_AssocController.cs" />
+    <Compile Include="Controllers\PricelistDetailController.cs" />
+    <Compile Include="Controllers\PriceList_EffectiveHoursController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RegionController.cs" />
+    <Compile Include="Controllers\SalesPosLookupsController.cs" />
+    <Compile Include="Controllers\SecurityController.cs" />
+    <Compile Include="Controllers\StaffAuthorizationController.cs" />
+    <Compile Include="Controllers\StaffScheduleController.cs" />
+    <Compile Include="Controllers\StaffSecheduleDetailsController.cs" />
+    <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\TableController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
+    <Compile Include="Controllers\WorkSheetController.cs" />
+    <Compile Include="CreditAccounts.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditAccounts_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCodes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCodes_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditTransactions.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditTransactions_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAStore_PriceListAssoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_Addresses.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_CustomerMessages.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_Customers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_CustomersTokens.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_GeoPolygons.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_GeoPolygonsDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_LoyalConfig.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_LoyalGainAmountRange.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_LoyalGainAmountRatio.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_LoyalPoints.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_LoyalRedeemDiscount.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_LoyalRedeemFreeProduct.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_MainMessages.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_Messages.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_MessagesDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_OrderDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_OrderDetailsExtras.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_Orders.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_OrderStatus.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_ScheduledTaskes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_ShortageProds.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA_Stores.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryRouting.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryRoutingHist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_AddressTypes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_Customers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_CustomersBillingAddress.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_CustomersPhones.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_CustomersPhonesAndAddress.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_CustomersShippingAddress.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_CustomersTypes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery_PhoneTypes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Department.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DigitalSignature.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Discount.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFoodBucket.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailConfig.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDay.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisByAccount_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisCanceled_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisDiscount_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisLoyaltyDiscount_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisNotInvoiced_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisNotPaid_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisNotPrinted_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayAnalysisReceiptTotal_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayByStaff_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayDetail_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayPaymentAnalysis.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayPaymentAnalysis_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayTotal_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayVoidsAnalysis.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDayVoidsAnalysis_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfDay_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EndOfYear.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EODAccountToPmsTransfer.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EODAccountToPmsTransfer_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalLostOrders.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalLostOrders_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalProductMapping.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalStateMatch.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExternalUsers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ForexService.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Guest.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GuestFuture.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HitPosCustomers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HitPosOrders.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HitPosOrders_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelCustomerDataConfig.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelCustomMessages.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelInfo.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelMacroResults.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelMacroRules.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelMacros.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelMacros_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotelMacroTimezone.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IngredientCategories.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredients.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ingredient_ProdCategoryAssoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceShippingDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceShippingDetails_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoices_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceTypes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice_Guests_Trans.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice_Guests_Trans_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Items.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kds.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kitchen.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenInstruction.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenInstructionLogger.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenInstructionLogger_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenInstruction_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KitchenRegion.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lockers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Lockers_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loyalty.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Loyalty_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MealConsumption.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MealConsumption_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MetadataTable.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Customer Modules\Autogrill.cs" />
+    <Compile Include="Modules\Customer Modules\ICustomerClass.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="DataIntegrityPatch.cs" />
+    <Compile Include="Helpers.V3\DeliveryAgentHelper.cs" />
+    <Compile Include="Helpers.V3\HttpRequestUtil.cs" />
+    <Compile Include="Hubs\DA_Hub.cs" />
+    <Compile Include="Models\ExternalProductPricelistDetailMapping.cs" />
+    <Compile Include="Models\CredAccounts.cs" />
+    <Compile Include="Models\DTOModels\PayroleDTO.cs" />
+    <Compile Include="Models\FilterModels\PayroleFilter.cs" />
+    <Compile Include="Models\OnlineRegistrationsStats.cs" />
+    <Compile Include="Models\OnlineRegistrationsModel.cs" />
+    <Compile Include="Models\RemoteDefinedActionsModel.cs" />
+    <Compile Include="Models\StaffIdentification.cs" />
+    <Compile Include="Models\TransferMappingsBO\TransferMappingsHelper.cs" />
+    <Compile Include="Models\TransferMappingsBO\UpdateTransferMappingsModel.cs" />
+    <Compile Include="Models\WebConfig.cs" />
+    <Compile Include="Modules\BasicAuthHttpModule.cs" />
+    <Compile Include="Controllers\Helpers\BOEnums.cs" />
+    <Compile Include="Controllers\Helpers\ConnectionUtil.cs" />
+    <Compile Include="Controllers\Helpers\CreateTransfer.cs" />
+    <Compile Include="Controllers\Helpers\Economic.cs" />
+    <Compile Include="Controllers\Helpers\Enumerators.cs" />
+    <Compile Include="Controllers\Helpers\General.cs" />
+    <Compile Include="Controllers\Helpers\GeneralUtils.cs" />
+    <Compile Include="Controllers\Helpers\HitUtilsHelper.cs" />
+    <Compile Include="Hubs\WebPosHub.cs" />
+    <Compile Include="Models\DTOModels\AccountsDTO.cs" />
+    <Compile Include="Models\DTOModels\AllowedMealsPerBoardDetailsDTO.cs" />
+    <Compile Include="Models\DTOModels\AllowedMealsPerBoardDTO.cs" />
+    <Compile Include="Models\DTOModels\BOProductDTOModel.cs" />
+    <Compile Include="Models\DTOModels\CreditAccountsDTO.cs" />
+    <Compile Include="Models\DTOModels\CreditAccountTransactions.cs" />
+    <Compile Include="Models\DTOModels\CreditTransactionDTO.cs" />
+    <Compile Include="Models\DTOModels\EODAccountToPmsTransferDTO.cs" />
+    <Compile Include="Models\DTOModels\ExcludedAccountsDTO.cs" />
+    <Compile Include="Models\DTOModels\ExcludedPricelistsDTO.cs" />
+    <Compile Include="Models\DTOModels\IDTOModel.cs" />
+    <Compile Include="Models\DTOModels\LockerDBO.cs" />
+    <Compile Include="Models\DTOModels\PageButtonDTO.cs" />
+    <Compile Include="Models\DTOModels\PagePosAssocDTO.cs" />
+    <Compile Include="Models\DTOModels\PagesDTO.cs" />
+    <Compile Include="Models\DTOModels\PageSetDTO.cs" />
+    <Compile Include="Models\DTOModels\PosInfoDetailTemplateDTO.cs" />
+    <Compile Include="Models\DTOModels\PosInfoDTO.cs" />
+    <Compile Include="Models\DTOModels\PosInfoKdsAssocDTO.cs" />
+    <Compile Include="Models\DTOModels\PosInfo_KitchenInstruction_AssocDTO.cs" />
+    <Compile Include="Models\DTOModels\PosInfo_Pricelist_AssocDTO.cs" />
+    <Compile Include="Models\DTOModels\PosInfo_Region_AssocDTO.cs" />
+    <Compile Include="Models\DTOModels\PricelistMasterDTO.cs" />
+    <Compile Include="Models\DTOModels\ProductBarcodeDTO.cs" />
+    <Compile Include="Models\DTOModels\ProductDTO.cs" />
+    <Compile Include="Models\DTOModels\ProductExtrasDTO.cs" />
+    <Compile Include="Models\DTOModels\ProductPricesDTO.cs" />
+    <Compile Include="Models\DTOModels\ProductReceipeDTO.cs" />
+    <Compile Include="Models\DTOModels\RegionDTO.cs" />
+    <Compile Include="Models\DTOModels\SalesType_PricelistMaster_AssocDTO.cs" />
+    <Compile Include="Models\DTOModels\StaffDTO.cs" />
+    <Compile Include="Models\DTOModels\TableDTO.cs" />
+    <Compile Include="Models\DynGridModel.cs" />
+    <Compile Include="Models\DynSingleGridCreatorModel.cs" />
+    <Compile Include="Models\ExtecrModels\EXTECR_ReceiptModelcs.cs" />
+    <Compile Include="Models\FilterModels\PageSetFilter.cs" />
+    <Compile Include="Models\FilterModels\PagesFilter.cs" />
+    <Compile Include="Models\FilterModels\ProductFilter.cs" />
+    <Compile Include="Models\FilterModels\ProductsWithCategoriesFlatFilters.cs" />
+    <Compile Include="Models\FilterModels\ReceiptFilters.cs" />
+    <Compile Include="Models\ProductPricesModel.cs" />
+    <Compile Include="Models\ReceiptDetails.cs" />
+    <Compile Include="Models\ReceiptPayments.cs" />
+    <Compile Include="Models\Receipts.cs" />
+    <Compile Include="Models\TransferMappingsLookupModel.cs" />
+    <Compile Include="Modules\CheckModelForNullAttribute.cs" />
+    <Compile Include="Modules\IsDAAttribute.cs" />
+    <Compile Include="Modules\TraceHandler.cs" />
+    <Compile Include="Modules\ValidateModelStateAttribute.cs" />
+    <Compile Include="MoveDataToHistoric_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NFCcard.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notifications.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineRegistration.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OnlineRegistration_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailIgredients.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailIgredients_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailIgredientVatAnal.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailIgredientVatAnal_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailInvoices.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailInvoices_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailVatAnal.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetailVatAnal_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersStaff.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrdersStaff_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatus.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderStatus_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageButton.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageButtonDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PagePosAssoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pages.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PageSet.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="parseJSON_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Patches\FixWaiterUnpaidInvoices.cs" />
+    <Compile Include="PatchManager.cs" />
+    <Compile Include="Payrole.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PayrollNew.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PdaModule.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PdaModuleDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfo.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfoDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfoDetail_Excluded_Accounts.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfoDetail_Pricelist_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfoKdsAssoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfo_KitchenInstruction_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfo_Pricelist_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfo_Region_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosInfo_StaffPositin_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PosModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PosModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PredefinedCredits.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pricelist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PricelistDetail.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PricelistMaster.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PriceList_EffectiveHours.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductBarcodes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductCategories.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductExtras.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductForBarcodeEod.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductRecipe.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSalesHistoryPerDay.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ProductsForEOD.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promotions_Combos.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promotions_Discounts.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promotions_Headers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Promotions_Pricelists.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Region.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RegionLockerProduct.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportEntity.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ReportList.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\BORepos\AllowedMealsPerBoardRepository.cs" />
+    <Compile Include="Repositories\BORepos\DynSingleGridRepository.cs" />
+    <Compile Include="Repositories\BORepos\ExcludedAcountsRepository.cs" />
+    <Compile Include="Repositories\BORepos\ExludedPricelistsRepository.cs" />
+    <Compile Include="Repositories\BORepos\GenericRepository.cs" />
+    <Compile Include="Repositories\BORepos\LookUpFactoryRepository.cs" />
+    <Compile Include="Repositories\BORepos\LookUpRepository.cs" />
+    <Compile Include="Repositories\BORepos\PageSetRepository.cs" />
+    <Compile Include="Repositories\BORepos\PayroleRepository.cs" />
+    <Compile Include="Repositories\BORepos\PosInfoRepository.cs" />
+    <Compile Include="Repositories\BORepos\PricelistMasterRepository.cs" />
+    <Compile Include="Repositories\BORepos\ProductPricesRepository.cs" />
+    <Compile Include="Repositories\BORepos\ProductRepository.cs" />
+    <Compile Include="Repositories\BORepos\RegionRepository.cs" />
+    <Compile Include="Repositories\BORepos\StaffRepository.cs" />
+    <Compile Include="Repositories\BussinessRepository.cs" />
+    <Compile Include="Repositories\CreditAccountsRepository.cs" />
+    <Compile Include="Repositories\DayAuditRepository.cs" />
+    <Compile Include="Repositories\InvoiceRepository.cs" />
+    <Compile Include="Controllers\Helpers\LinqExtenders.cs" />
+    <Compile Include="Controllers\Helpers\MD5.cs" />
+    <Compile Include="Controllers\Helpers\OrderInvoicingHelper.cs" />
+    <Compile Include="Controllers\Helpers\PageButtonCreator.cs" />
+    <Compile Include="Controllers\Helpers\PmsBoards.cs" />
+    <Compile Include="Controllers\Helpers\PmsDepartments.cs" />
+    <Compile Include="Controllers\Helpers\ReportsHelper.cs" />
+    <Compile Include="Repositories\LockerRepository.cs" />
+    <Compile Include="Repositories\PMSRepositories\IPMS_Base.cs" />
+    <Compile Include="Repositories\PMSRepositories\ProtelRepository.cs" />
+    <Compile Include="Repositories\SendTransferRepository.cs" />
+    <Compile Include="Repositories\StatisticsRepository.cs" />
+    <Compile Include="Controllers\Helpers\UnhandledExceptionFilter.cs" />
+    <Compile Include="Controllers\Helpers\XmlHelpers.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Models\DeliverySearchModel.cs" />
+    <Compile Include="Models\DepatmentsModel.cs" />
+    <Compile Include="Models\InvoiceForDisplay.cs" />
+    <Compile Include="Models\InvoicForDisplayDetails.cs" />
+    <Compile Include="Models\LookUpModel.cs" />
+    <Compile Include="Models\MetadataModel.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\PageButtonModel.cs" />
+    <Compile Include="Models\PagedResultsModel.cs" />
+    <Compile Include="Models\PeriodicSalesFlatModel.cs" />
+    <Compile Include="Models\PmsBoardsModel.cs" />
+    <Compile Include="Models\PmsDepartmentModel.cs" />
+    <Compile Include="Models\PosEntities.cs" />
+    <Compile Include="Models\ProductModel.cs" />
+    <Compile Include="Models\ReceiptsModel.cs" />
+    <Compile Include="Models\StaffModel.cs" />
+    <Compile Include="Models\TransactionsWithAccountsModel.cs" />
+    <Compile Include="Models\UsersToDatabasesModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\LookUpRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\TableRepository.cs" />
+    <Compile Include="SalesType.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SalesType_PricelistMaster_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SimplyStoreReport_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Execute_CloseOfYear_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffAuthorization.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffCash.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPosition.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffSchedule.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StaffSecheduleDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Startup.cs" />
+    <Compile Include="StatisticsMenus.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreMessages.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StoreMessages_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Suppliers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TablePaySuggestion.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TablePaySuggestion_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tax.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transactions_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionTypes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferMappingDetails.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferMappingDetails_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferMappings.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferMappings_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferToPms.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferToPms_Hist.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TransferToPms_LastIds.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_Capacities.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_Config.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_ExcludeDays.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_ExcludeRestrictions.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_GetAvailableRestaurantsDatesAndTime_Result.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_OvewrittenCapacities.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_ReservationCustomers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_Reservations.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_ReservationTypes.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_Restaurants.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_Restrictions.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TR_Restrictions_Restaurants_Assoc.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Units.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ValidModules.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vat.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Version.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vodafone11Details.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Vodafone11Headers.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkSheet.cs">
+      <DependentUpon>PosModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="bin\Plugins\ReadMe.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Compile Include="Controllers\Helpers\InvoiceRepository_Update.cs" />
+    <Compile Include="Controllers\Helpers\CustomerPolicy.cs" />
+    <Compile Include="Models\DTOModels\PosInfo_StaffPosition_AssocDTO.cs" />
+    <Content Include="hit.ico" />
+    <Content Include="Images\DefaultTables\beachchair.png" />
+    <Content Include="Images\DefaultTables\beachchair_v.png" />
+    <Content Include="Images\DefaultTables\billiards.png" />
+    <Content Include="Images\DefaultTables\billiards_v.png" />
+    <Content Include="Images\DefaultTables\g22qc4.png" />
+    <Content Include="Images\DefaultTables\g22qc4a.png" />
+    <Content Include="Images\DefaultTables\g22qc4b.png" />
+    <Content Include="Images\DefaultTables\g22qc4c.png" />
+    <Content Include="Images\DefaultTables\g22rc3a.png" />
+    <Content Include="Images\DefaultTables\g22rc4a.png" />
+    <Content Include="Images\DefaultTables\g22rc4b.png" />
+    <Content Include="Images\DefaultTables\g23qc4.png" />
+    <Content Include="Images\DefaultTables\g24qc4a.png" />
+    <Content Include="Images\DefaultTables\g32qc4.png" />
+    <Content Include="Images\DefaultTables\g33rc6a.png" />
+    <Content Include="Images\DefaultTables\g34qc6a.png" />
+    <Content Include="Images\DefaultTables\g34qc6b.png" />
+    <Content Include="Images\DefaultTables\g34qc6c.png" />
+    <Content Include="Images\DefaultTables\g34qc6d.png" />
+    <Content Include="Images\DefaultTables\g34qc6e.png" />
+    <Content Include="Images\DefaultTables\g34qc6f.png" />
+    <Content Include="Images\DefaultTables\g34rc6a.png" />
+    <Content Include="Images\DefaultTables\g34rc6b.png" />
+    <Content Include="Images\DefaultTables\g35qc8a.png" />
+    <Content Include="Images\DefaultTables\g35qc8b.png" />
+    <Content Include="Images\DefaultTables\g42qc4a.png" />
+    <Content Include="Images\DefaultTables\g43qc6a.png" />
+    <Content Include="Images\DefaultTables\g43qc6b.png" />
+    <Content Include="Images\DefaultTables\g43qc6c.png" />
+    <Content Include="Images\DefaultTables\g43qc6d.png" />
+    <Content Include="Images\DefaultTables\g43qc6e.png" />
+    <Content Include="Images\DefaultTables\g43qc6f.png" />
+    <Content Include="Images\DefaultTables\g43rc6a.png" />
+    <Content Include="Images\DefaultTables\g43rc6b.png" />
+    <Content Include="Images\DefaultTables\g46qc12.png" />
+    <Content Include="Images\DefaultTables\g48qc12.png" />
+    <Content Include="Images\DefaultTables\g53qc8a.png" />
+    <Content Include="Images\DefaultTables\g53qc8b.png" />
+    <Content Include="Images\DefaultTables\g55rc8a.png" />
+    <Content Include="Images\DefaultTables\g64qc12.png" />
+    <Content Include="Images\DefaultTables\g84qc12.png" />
+    <Content Include="Images\DefaultTables\hall55c7.png" />
+    <Content Include="Images\DefaultTables\hall55c7_v.png" />
+    <Content Include="Images\DefaultTables\hallgrey45c6.png" />
+    <Content Include="Images\DefaultTables\hallgrey45c6_v.png" />
+    <Content Include="Images\DefaultTables\l22qc2a.png" />
+    <Content Include="Images\DefaultTables\l22qc4.png" />
+    <Content Include="Images\DefaultTables\l22qc4b.png" />
+    <Content Include="Images\DefaultTables\l22qc4c.png" />
+    <Content Include="Images\DefaultTables\l22qc4d.png" />
+    <Content Include="Images\DefaultTables\l22qc4e.png" />
+    <Content Include="Images\DefaultTables\l22qc4f.png" />
+    <Content Include="Images\DefaultTables\l22qc4g.png" />
+    <Content Include="Images\DefaultTables\l22qc4h.png" />
+    <Content Include="Images\DefaultTables\l22rc2a.png" />
+    <Content Include="Images\DefaultTables\l22rc4a.png" />
+    <Content Include="Images\DefaultTables\l22rc4b.png" />
+    <Content Include="Images\DefaultTables\l22rc4c.png" />
+    <Content Include="Images\DefaultTables\l22rc4d.png" />
+    <Content Include="Images\DefaultTables\l23qc6a.png" />
+    <Content Include="Images\DefaultTables\l32qc6a.png" />
+    <Content Include="Images\DefaultTables\l33rc6a.png" />
+    <Content Include="Images\DefaultTables\l33rc6b.png" />
+    <Content Include="Images\DefaultTables\l34qc5.png" />
+    <Content Include="Images\DefaultTables\l34qc6.png" />
+    <Content Include="Images\DefaultTables\l34qc6a.png" />
+    <Content Include="Images\DefaultTables\l34qc6b.png" />
+    <Content Include="Images\DefaultTables\l34qc6c.png" />
+    <Content Include="Images\DefaultTables\l35qc8.png" />
+    <Content Include="Images\DefaultTables\l35rc6.png" />
+    <Content Include="Images\DefaultTables\l35rc8.png" />
+    <Content Include="Images\DefaultTables\l42sc2.png" />
+    <Content Include="Images\DefaultTables\l43qc5.png" />
+    <Content Include="Images\DefaultTables\l43qc6.png" />
+    <Content Include="Images\DefaultTables\l43qc6a.png" />
+    <Content Include="Images\DefaultTables\l43qc6b.png" />
+    <Content Include="Images\DefaultTables\l43qc6c.png" />
+    <Content Include="Images\DefaultTables\l53qc8.png" />
+    <Content Include="Images\DefaultTables\l53rc6.png" />
+    <Content Include="Images\DefaultTables\l53rc8.png" />
+    <Content Include="Images\DefaultTables\l55rc8a.png" />
+    <Content Include="Images\DefaultTables\l55rc8b.png" />
+    <Content Include="Images\DefaultTables\l66rc10.png" />
+    <Content Include="Images\DefaultTables\s22sc2a.png" />
+    <Content Include="Images\DefaultTables\s22sc2b.png" />
+    <Content Include="Images\DefaultTables\s22sc2c.png" />
+    <Content Include="Images\DefaultTables\s32sc3.png" />
+    <Content Include="Images\DefaultTables\s33sc6.png" />
+    <Content Include="Images\DefaultTables\s33sc6d180.png" />
+    <Content Include="Images\DefaultTables\s33sc6d270.png" />
+    <Content Include="Images\DefaultTables\s33sc6d90.png" />
+    <Content Include="Images\DefaultTables\s43sc7.png" />
+    <Content Include="Images\DefaultTables\s43sc7d180.png" />
+    <Content Include="Images\DefaultTables\s43sc7d270.png" />
+    <Content Include="Images\DefaultTables\s43sc7d90.png" />
+    <Content Include="Images\DefaultTables\s53sc6.png" />
+    <Content Include="Images\DefaultTables\s53sc6_v.png" />
+    <Content Include="Images\DefaultTables\s53sc8.png" />
+    <Content Include="Images\DefaultTables\s53sc8d180.png" />
+    <Content Include="Images\DefaultTables\s53sc8d270.png" />
+    <Content Include="Images\DefaultTables\s53sc8d90.png" />
+    <Content Include="Images\DefaultTables\s56c10rmeeting.png" />
+    <Content Include="Images\DefaultTables\sl22c2umbrella.png" />
+    <Content Include="Images\DefaultTables\sl32sofa.png" />
+    <Content Include="Images\DefaultTables\sofagrey22c2.png" />
+    <Content Include="Images\DefaultTables\sofagrey22c2d180.png" />
+    <Content Include="Images\DefaultTables\sofagrey22c2d270.png" />
+    <Content Include="Images\DefaultTables\sofagrey22c2d90.png" />
+    <Content Include="Images\DefaultTables\sofagrey32c3.png" />
+    <Content Include="Images\DefaultTables\sofagrey32c3d180.png" />
+    <Content Include="Images\DefaultTables\sofagrey32c3d270.png" />
+    <Content Include="Images\DefaultTables\sofagrey32cd90.png" />
+    <Content Include="Images\DefaultTables\sofaorangec3.png" />
+    <Content Include="Images\DefaultTables\sofaorangec3d180.png" />
+    <Content Include="Images\DefaultTables\sofaorangehor32c3.png" />
+    <Content Include="Images\DefaultTables\sofaorangehor32c3d180.png" />
+    <Content Include="PosModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PosModel.edmx</DependentUpon>
+      <LastGenOutput>PosModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PosModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PosModel.edmx</DependentUpon>
+      <LastGenOutput>PosModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery.signalR-2.3.0.js" />
+    <Content Include="Scripts\jquery.signalR-2.3.0.min.js" />
+    <Content Include="MainConfiguration\Agent\agent.json" />
+    <Content Include="Xml\UsersToDatabases.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Descriptors\ApiDescriptor.json" />
+    <Content Include="Descriptors\DaDescriptor.json" />
+    <Content Include="Descriptors\AgentDescriptor.json" />
+    <Content Include="MainConfiguration\Pos\testpos2.json" />
+    <Content Include="Descriptors\PosDescriptor.json" />
+    <Content Include="MainConfiguration\Api\api.json" />
+    <Content Include="Versions\versions.json" />
+    <Content Include="MainConfiguration\Api\da.json" />
+    <Content Include="MainConfiguration\Pos\testpos1.json" />
+    <None Include="XmlOrders\xmlOrder.xml.example" />
+    <Content Include="Xml\PredefinedQuickActions.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <EntityDeploy Include="PosModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PosModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="PosModel.edmx.diagram">
+      <DependentUpon>PosModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\MyDefaultPublishProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\WebApiPublish.pubxml" />
+    <None Include="Properties\PublishProfiles\WebApi_publish.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="Scripts\knockout-2.2.0.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\WebConfig.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Queries\" />
+    <Folder Include="Controllers.V3\App_LocalResources\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\OldGoodysV3\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PMSConnectionLib\Symposium_PmsInterface.csproj">
+      <Project>{89b08db2-bb38-472c-8ea3-0a7cfeecb72f}</Project>
+      <Name>Symposium_PmsInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PosInfo_DB\Symposium_DTOs.csproj">
+      <Project>{e4e12035-70a0-4baa-bf23-65e792958536}</Project>
+      <Name>Symposium_DTOs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Helpers\Symposium_Helpers.csproj">
+      <Project>{ED15B2DD-FB51-4C87-893B-F5820FC5E127}</Project>
+      <Name>Symposium_Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_MainLogic\Symposium_MainLogic.csproj">
+      <Project>{9E49C4F1-A294-4FCA-A109-87B8C70FC504}</Project>
+      <Name>Symposium_MainLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Models\Symposium_Models.csproj">
+      <Project>{9FC67B5B-9151-40E2-B5F2-5B88CC716D2B}</Project>
+      <Name>Symposium_Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Plugins\Symposium_Plugins.csproj">
+      <Project>{1fa881d3-cce6-4e3a-8f9e-3e768189e9aa}</Project>
+      <Name>Symposium_Plugins</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_Resources\Symposium_Resources.csproj">
+      <Project>{80728d71-9a95-4e60-9e16-0462ea44c339}</Project>
+      <Name>Symposium_Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Symposium_SchedulerJob\Symposium_SchedulerJob.csproj">
+      <Project>{989c6ba8-cb03-4d20-a9e8-1ee892cf809a}</Project>
+      <Name>Symposium_SchedulerJob</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51038</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5420/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

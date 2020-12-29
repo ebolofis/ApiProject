@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B584C790-A7F7-4BDF-8D57-36B712DF67E6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hit.webpos</RootNamespace>
+    <AssemblyName>hit.webpos.dataaccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="entities\Account.cs" />
+    <Compile Include="entities\Action.cs" />
+    <Compile Include="entities\AllowedMealsPerBoard.cs" />
+    <Compile Include="entities\AllowedMealsPerBoardDetail.cs" />
+    <Compile Include="entities\AssignedPosition.cs" />
+    <Compile Include="entities\AuthorizedGroup.cs" />
+    <Compile Include="entities\AuthorizedGroupDetail.cs" />
+    <Compile Include="entities\BoardMeal.cs" />
+    <Compile Include="entities\Category.cs" />
+    <Compile Include="entities\ClientPos.cs" />
+    <Compile Include="entities\CreditAccount.cs" />
+    <Compile Include="entities\CreditCode.cs" />
+    <Compile Include="entities\CreditTransaction.cs" />
+    <Compile Include="entities\Department.cs" />
+    <Compile Include="entities\Discount.cs" />
+    <Compile Include="entities\EndOfDay.cs" />
+    <Compile Include="entities\EndOfDayDetail.cs" />
+    <Compile Include="entities\EndOfDayPaymentAnalysi.cs" />
+    <Compile Include="entities\EndOfDayVoidsAnalysi.cs" />
+    <Compile Include="entities\EODAccountToPmsTransfer.cs" />
+    <Compile Include="entities\Guest.cs" />
+    <Compile Include="entities\HotelInfo.cs" />
+    <Compile Include="entities\Ingredient.cs" />
+    <Compile Include="entities\Ingredient_ProdCategoryAssoc.cs" />
+    <Compile Include="entities\Invoice.cs" />
+    <Compile Include="entities\InvoiceShippingDetail.cs" />
+    <Compile Include="entities\InvoiceType.cs" />
+    <Compile Include="entities\Invoice_Guests_Trans.cs" />
+    <Compile Include="entities\Item.cs" />
+    <Compile Include="entities\Kd.cs" />
+    <Compile Include="entities\Kitchen.cs" />
+    <Compile Include="entities\KitchenInstruction.cs" />
+    <Compile Include="entities\KitchenInstructionLogger.cs" />
+    <Compile Include="entities\KitchenRegion.cs" />
+    <Compile Include="entities\Locker.cs" />
+    <Compile Include="entities\MealConsumption.cs" />
+    <Compile Include="entities\MetadataTable.cs" />
+    <Compile Include="entities\Notification.cs" />
+    <Compile Include="entities\Order.cs" />
+    <Compile Include="entities\OrderDetail.cs" />
+    <Compile Include="entities\OrderDetailIgredient.cs" />
+    <Compile Include="entities\OrderDetailIgredientVatAnal.cs" />
+    <Compile Include="entities\OrderDetailInvoice.cs" />
+    <Compile Include="entities\OrderDetailVatAnal.cs" />
+    <Compile Include="entities\OrdersStaff.cs" />
+    <Compile Include="entities\OrderStatu.cs" />
+    <Compile Include="entities\Page.cs" />
+    <Compile Include="entities\PageButton.cs" />
+    <Compile Include="entities\PageButtonDetail.cs" />
+    <Compile Include="entities\PagePosAssoc.cs" />
+    <Compile Include="entities\PageSet.cs" />
+    <Compile Include="entities\PdaModule.cs" />
+    <Compile Include="entities\PdaModuleDetail.cs" />
+    <Compile Include="entities\PosInfo.cs" />
+    <Compile Include="entities\PosInfoDetail.cs" />
+    <Compile Include="entities\PosInfoDetail_Excluded_Accounts.cs" />
+    <Compile Include="entities\PosInfoDetail_Pricelist_Assoc.cs" />
+    <Compile Include="entities\PosInfoKdsAssoc.cs" />
+    <Compile Include="entities\PosInfo_KitchenInstruction_Assoc.cs" />
+    <Compile Include="entities\PosInfo_Pricelist_Assoc.cs" />
+    <Compile Include="entities\PosInfo_Region_Assoc.cs" />
+    <Compile Include="entities\PosInfo_StaffPositin_Assoc.cs" />
+    <Compile Include="entities\PredefinedCredit.cs" />
+    <Compile Include="entities\Pricelist.cs" />
+    <Compile Include="entities\PricelistDetail.cs" />
+    <Compile Include="entities\PricelistMaster.cs" />
+    <Compile Include="entities\PriceList_EffectiveHours.cs" />
+    <Compile Include="entities\Product.cs" />
+    <Compile Include="entities\ProductBarcode.cs" />
+    <Compile Include="entities\ProductCategory.cs" />
+    <Compile Include="entities\ProductExtra.cs" />
+    <Compile Include="entities\ProductForBarcodeEod.cs" />
+    <Compile Include="entities\ProductRecipe.cs" />
+    <Compile Include="entities\ProductSalesHistoryPerDay.cs" />
+    <Compile Include="entities\ProductsForEOD.cs" />
+    <Compile Include="entities\Region.cs" />
+    <Compile Include="entities\RegionLockerProduct.cs" />
+    <Compile Include="entities\ReportList.cs" />
+    <Compile Include="entities\SalesType.cs" />
+    <Compile Include="entities\SalesType_PricelistMaster_Assoc.cs" />
+    <Compile Include="entities\Staff.cs" />
+    <Compile Include="entities\StaffAuthorization.cs" />
+    <Compile Include="entities\StaffPosition.cs" />
+    <Compile Include="entities\StaffSchedule.cs" />
+    <Compile Include="entities\StaffSecheduleDetail.cs" />
+    <Compile Include="entities\StatisticsMenu.cs" />
+    <Compile Include="entities\Store.cs" />
+    <Compile Include="entities\StoreMessage.cs" />
+    <Compile Include="entities\Table.cs" />
+    <Compile Include="entities\TablePaySuggestion.cs" />
+    <Compile Include="entities\Tax.cs" />
+    <Compile Include="entities\Transaction.cs" />
+    <Compile Include="entities\TransactionType.cs" />
+    <Compile Include="entities\TransferMapping.cs" />
+    <Compile Include="entities\TransferMappingDetail.cs" />
+    <Compile Include="entities\TransferToPm.cs" />
+    <Compile Include="entities\Unit.cs" />
+    <Compile Include="entities\ValidModule.cs" />
+    <Compile Include="entities\Vat.cs" />
+    <Compile Include="entities\Version.cs" />
+    <Compile Include="entities\WebPos.cs" />
+    <Compile Include="entities\WorkSheet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
